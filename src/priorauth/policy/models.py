@@ -25,3 +25,31 @@ class Evidence(BaseModel):
 
     page: int = Field(ge=1)
     quote: str = Field(min_length=1)
+
+
+class Finding(BaseModel):
+    """What a system under test asserts about one criterion.
+
+    `verified` is set only by the deterministic verifier (`priorauth.agent.verifier`); whatever a system puts there
+    is overwritten. `conflict` lets a system say the record disagrees with itself on this criterion.
+    """
+
+    model_config = ConfigDict(frozen=True, extra="forbid")
+
+    criterion_id: str
+    status: Status
+    evidence: tuple[Evidence, ...] = ()
+    conflict: bool = False
+    verified: bool = False
+    note: str = ""
+
+
+class CaseFindings(BaseModel):
+    """Everything the policy engine is allowed to look at for one case."""
+
+    model_config = ConfigDict(frozen=True, extra="forbid")
+
+    procedure_code: str
+    findings: tuple[Finding, ...]
+    injection_detected: bool = False
+    injection_evidence: tuple[Evidence, ...] = ()
