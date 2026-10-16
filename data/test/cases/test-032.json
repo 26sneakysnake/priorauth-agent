@@ -1,0 +1,35 @@
+{
+  "case_id": "test-032",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-20",
+  "patient": {
+    "name": "Cyrus Zielinski",
+    "birth_date": "1968-03-18",
+    "sex": "male",
+    "mrn": "SYN-0493783",
+    "member_id": "EHP-SYN-35733442"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Cyrus Zielinski | Member ID: EHP-SYN-35733442 | DOB: 03/18/1968\nRequesting provider: Dr. Elif Langley, MD (Rheumatology) | NPI: 9621897547\nDate of request: 09/20/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 7 days\nQuantity: 4 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Cyrus Zielinski | DOB: 03/18/1968 | MRN: SYN-0493783\nOrdering provider: Dr. Elif Langley, MD (Rheumatology)\n\nCollected: 06/14/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 14 U/L (reference 7-56)\nCreatinine: 1.0 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 8.6 x10^3/uL (reference 4.0-11.0)\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Cyrus Zielinski | DOB: 03/18/1968 | MRN: SYN-0493783\nDate of service: 03/12/2025 | Dr. Ravi Ellery, MD\n\nVitals:\nBP 134/84, HR 62, BMI 24.8\n\nHistory:\nPast medical history: gastroesophageal reflux, hypertension.\nMedications: omeprazole 20 mg daily; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Cyrus Zielinski | DOB: 03/18/1968\n\nMember ID: EHP-SYN-35733442\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: M. Haverford on 09/20/2025, reference #14051783\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Cyrus Zielinski | DOB: 03/18/1968 | MRN: SYN-0493783\nDate of service: 09/13/2025 | Dr. Elif Langley, MD (Rheumatology)\n\nHistory:\n57-year-old man with rheumatoid arthritis diagnosed in 2022, seen to discuss escalation of therapy. Past medical history: hypothyroidism, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 31.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 7 days.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

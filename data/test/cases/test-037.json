@@ -1,0 +1,35 @@
+{
+  "case_id": "test-037",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-02-15",
+  "patient": {
+    "name": "Jonas Galloway",
+    "birth_date": "1967-01-16",
+    "sex": "male",
+    "mrn": "SYN-1184343",
+    "member_id": "EHP-SYN-10418366"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Jonas Galloway | Member ID: EHP-SYN-10418366 | DOB: 01/16/1967\nRequesting provider: Petra Iverson, PT, DPT | NPI: 9270546497\nDate of request: 02/15/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Jonas Galloway | DOB: 01/16/1967 | MRN: SYN-1184343\nDate of service: 07/09/2024 | Dr. Marek Merriweather, MD\n\nVitals:\nBP 130/77, HR 59, BMI 22.6\n\nHistory:\nPast medical history: hypothyroidism, gastroesophageal reflux.\nMedications: levothyroxine 75 mcg daily; omeprazole 20 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Jonas Galloway | DOB: 01/16/1967 | MRN: SYN-1184343\nDate of service: 02/07/2025 | Petra Iverson, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the right shoulder (M75.101).\n\nPlan:\nPlan of care: 2 visits per week for 8 weeks, start of care 01/02/2025, certified through 02/27/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 85 to 115 degrees; QuickDASH score improved from 53 to 29.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Jonas Galloway | DOB: 01/16/1967 | MRN: SYN-1184343\nDate of service: 02/07/2025 | completed by patient\n\nAllergies: none known\nTobacco use: former, quit 10 years ago\nAlcohol: none\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Jonas Galloway | DOB: 01/16/1967\n\nMember ID: EHP-SYN-10418366\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: M. Haverford on 02/15/2025, reference #45431260\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

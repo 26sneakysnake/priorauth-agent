@@ -1,0 +1,47 @@
+{
+  "case_id": "dev-024",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-06-24",
+  "patient": {
+    "name": "Priya Szabo",
+    "birth_date": "1977-05-10",
+    "sex": "female",
+    "mrn": "SYN-9299173",
+    "member_id": "EHP-SYN-06516163"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Ashford Arthritis and Rheumatology\nDate: 06/24/2025\nRe: Prior authorization request - Priya Szabo\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Priya Szabo | Member ID: EHP-SYN-06516163 | DOB: 05/10/1977\nRequesting provider: Dr. Isla Ashgrove, MD (Rheumatology) | NPI: 9180997201\nDate of request: 06/24/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Priya Szabo | DOB: 05/10/1977 | MRN: SYN-9299173\nDate of service: 06/19/2025 | Dr. Isla Ashgrove, MD (Rheumatology)\n\nHistory:\n48-year-old woman with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, hypothyroidism.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nMethotrexate 25 mg weekly was stopped after 15 weeks because of persistent transaminase elevation (intolerance).\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 33.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Priya Szabo | DOB: 05/10/1977 | MRN: SYN-9299173\nDate of service: 05/13/2025 | R. Lindgren\n\nRequest: refill of loratadine 10 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Priya Szabo | DOB: 05/10/1977 | MRN: SYN-9299173\nDate of service: 09/24/2024 | Dr. Teodor Ellery, MD\n\nVitals:\nBP 127/81, HR 75, BMI 25.6\n\nHistory:\nPast medical history: seasonal allergies, hypothyroidism.\nMedications: loratadine 10 mg daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Priya Szabo | DOB: 05/10/1977 | MRN: SYN-9299173\nOrdering provider: Dr. Isla Ashgrove, MD (Rheumatology)\n\nCollected: 05/04/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): POSITIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 19 U/L (reference 7-56)\nCreatinine: 1.1 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 5.1 x10^3/uL (reference 4.0-11.0)\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Lakeview Internal Medicine Associates\nScheduling Note\nPatient: Priya Szabo | DOB: 05/10/1977 | MRN: SYN-9299173\nDate of service: 06/24/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (312) 555-0146\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Priya Szabo | DOB: 05/10/1977\n\nMember ID: EHP-SYN-06516163\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: T. Okafor on 06/24/2025, reference #97286592\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

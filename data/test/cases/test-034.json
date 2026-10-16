@@ -1,0 +1,39 @@
+{
+  "case_id": "test-034",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-01-06",
+  "patient": {
+    "name": "Ines Fairbanks",
+    "birth_date": "1968-02-11",
+    "sex": "female",
+    "mrn": "SYN-8482087",
+    "member_id": "EHP-SYN-62902317"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Brookside Rehabilitation\nDate: 01/06/2025\nRe: Prior authorization request - Ines Fairbanks\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Ines Fairbanks | Member ID: EHP-SYN-62902317 | DOB: 02/11/1968\nRequesting provider: Oskar Penrose, PT, DPT | NPI: 9118933109\nDate of request: 01/06/2025\n\nRequested service: Outpatient physical therapy, 6 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Ines Fairbanks | DOB: 02/11/1968 | MRN: SYN-8482087\nDate of service: 05/20/2024 | Dr. Petra Draycott, MD\n\nVitals:\nBP 138/84, HR 82, BMI 30.7\n\nHistory:\nPast medical history: seasonal allergies, gastroesophageal reflux.\nMedications: loratadine 10 mg daily; omeprazole 20 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Ines Fairbanks | DOB: 02/11/1968 | MRN: SYN-8482087\nDate of service: 12/29/2024 | Oskar Penrose, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 10 weeks, start of care 11/28/2024, certified through 02/06/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 95 to 111 degrees; KOOS score improved from 39 to 56.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Ines Fairbanks | DOB: 02/11/1968 | MRN: SYN-8482087\nDate of service: 01/06/2025 | R. Lindgren\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0194\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Juniper Bone and Joint Clinic\nOrthopedic Follow-up\nPatient: Ines Fairbanks | DOB: 02/11/1968 | MRN: SYN-8482087\nDate of service: 12/29/2024 | Dr. Elif Jessop, MD\n\nInterval history:\nFollow-up of right knee pain during physical therapy.\nPatient reports no improvement with therapy so far; function is unchanged.\n\nPlan:\nContinue home exercises; review therapy notes at the next visit.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

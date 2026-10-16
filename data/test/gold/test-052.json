@@ -1,0 +1,68 @@
+{
+  "case_id": "test-052",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Diagnosis: M16.11 Unilateral primary osteoarthritis, right hip"
+        },
+        {
+          "page": 3,
+          "quote": "Assessment: wear-and-tear arthritis of the right hip, as coded on the referral (M16.11)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis, reworded"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "She is scheduled three times weekly over eight weeks in total, from 06/06/2025 to 08/01/2025."
+        }
+      ],
+      "rationale": "3x/week for 8 weeks, reworded"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Progress since start of care: hip flexion improved from 85 to 102 degrees; HOOS score improved from 50 to 68."
+        }
+      ],
+      "rationale": "measurable range-of-motion and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Body part / side: Right hip"
+        },
+        {
+          "page": 3,
+          "quote": "Assessment: wear-and-tear arthritis of the right hip, as coded on the referral (M16.11)."
+        }
+      ],
+      "rationale": "right hip on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "PT_EXTENSION.diagnosis",
+    "PT_EXTENSION.plan_of_care"
+  ],
+  "page_kinds": [
+    "request_form",
+    "intake_form",
+    "therapy_note"
+  ]
+}

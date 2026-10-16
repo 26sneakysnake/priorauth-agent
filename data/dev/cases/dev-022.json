@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-022",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-20",
+  "patient": {
+    "name": "Greta Vasquez",
+    "birth_date": "1972-04-25",
+    "sex": "female",
+    "mrn": "SYN-5355099",
+    "member_id": "EHP-SYN-27408335"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Greta Vasquez | Member ID: EHP-SYN-27408335 | DOB: 04/25/1972\nRequesting provider: Marek Ashgrove, PT, DPT | NPI: 9855241740\nDate of request: 03/20/2025\n\nRequested service: Outpatient physical therapy, 7 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Greta Vasquez | DOB: 04/25/1972 | MRN: SYN-5355099\nDate of service: 03/17/2025 | completed by patient\n\nAllergies: none known\nTobacco use: former, quit 10 years ago\nAlcohol: none\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Greta Vasquez | DOB: 04/25/1972 | MRN: SYN-5355099\nDate of service: 08/28/2024 | Dr. Ylva Jessop, MD\n\nVitals:\nBP 122/70, HR 81, BMI 26.4\n\nHistory:\nPast medical history: gastroesophageal reflux, hypothyroidism.\nMedications: omeprazole 20 mg daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Greta Vasquez | DOB: 04/25/1972 | MRN: SYN-5355099\nDate of service: 02/18/2025 | R. Lindgren\n\nRequest: refill of omeprazole 20 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Greta Vasquez | DOB: 04/25/1972 | MRN: SYN-5355099\nDate of service: 03/17/2025 | Marek Ashgrove, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 3 visits per week for 8 weeks, start of care 02/08/2025, certified through 04/05/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 82 to 109 degrees; KOOS score improved from 39 to 58.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

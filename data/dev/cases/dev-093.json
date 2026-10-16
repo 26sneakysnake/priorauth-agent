@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-093",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-01-25",
+  "patient": {
+    "name": "Rosa Esposito",
+    "birth_date": "1970-12-23",
+    "sex": "female",
+    "mrn": "SYN-4919204",
+    "member_id": "EHP-SYN-20653393"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Ashford Arthritis and Rheumatology\nDate: 01/25/2025\nRe: Prior authorization request - Rosa Esposito\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Rosa Esposito | Member ID: EHP-SYN-20653393 | DOB: 12/23/1970\nRequesting provider: Dr. Noor Iverson, MD (Rheumatology) | NPI: 9762193178\nDate of request: 01/25/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Rosa Esposito | DOB: 12/23/1970 | MRN: SYN-4919204\nDate of service: 01/03/2025 | K. Brennan\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Rosa Esposito | DOB: 12/23/1970 | MRN: SYN-4919204\nDate of service: 09/27/2024 | Dr. Bram Ashgrove, MD\n\nVitals:\nBP 119/79, HR 78, BMI 24.5\n\nHistory:\nPast medical history: hypothyroidism, hypertension.\nMedications: levothyroxine 75 mcg daily; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Rosa Esposito | DOB: 12/23/1970\n\nMember ID: EHP-SYN-20653393\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: R. Lindgren on 01/25/2025, reference #82006179\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Rosa Esposito | DOB: 12/23/1970 | MRN: SYN-4919204\nDate of service: 01/17/2025 | Dr. Noor Iverson, MD (Rheumatology)\n\nHistory:\n54-year-old woman with rheumatoid arthritis diagnosed in 2023, seen to discuss escalation of therapy. Past medical history: hypertension, type 2 diabetes.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nShe has taken weekly methotrexate (25 mg) for the better part of six months, yet the small joints of both hands remain swollen.\n\nAssessment and plan:\nAssessment: active seropositive rheumatoid arthritis; clinical disease activity index sixteen today.\nLatent TB blood test and hepatitis B panel drawn on 11/12/2024 both came back clear.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

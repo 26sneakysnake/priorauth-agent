@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-035",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-05-29",
+  "patient": {
+    "name": "Talia Rasmussen",
+    "birth_date": "1985-08-08",
+    "sex": "female",
+    "mrn": "SYN-3221454",
+    "member_id": "EHP-SYN-43332773"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Talia Rasmussen | Member ID: EHP-SYN-43332773 | DOB: 08/08/1985\nRequesting provider: Oskar Iverson, PT, DPT | NPI: 9050155265\nDate of request: 05/29/2025\n\nRequested service: Outpatient physical therapy, 7 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Talia Rasmussen | DOB: 08/08/1985 | MRN: SYN-3221454\nDate of service: 05/16/2025 | M. Haverford\n\nRequest: refill of lisinopril 10 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Talia Rasmussen | DOB: 08/08/1985 | MRN: SYN-3221454\nDate of service: 05/26/2025 | Oskar Iverson, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: wear-and-tear arthritis of the right hip, as coded on the referral (M16.11).\n\nPlan:\nShe is scheduled twice weekly over seven weeks in total, from 04/21/2025 to 06/09/2025.\n\nObjective measures:\nShe now walks for thirty-six minutes without stopping, compared with ten minutes at intake.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Talia Rasmussen | DOB: 08/08/1985\n\nMember ID: EHP-SYN-43332773\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: R. Lindgren on 05/29/2025, reference #59186419\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

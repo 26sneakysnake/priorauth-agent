@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-043",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-09-04",
+  "patient": {
+    "name": "Dario Castellano",
+    "birth_date": "1981-12-24",
+    "sex": "male",
+    "mrn": "SYN-4797756",
+    "member_id": "EHP-SYN-55580131"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Dario Castellano | Member ID: EHP-SYN-55580131 | DOB: 12/24/1981\nRequesting provider: Dr. Adele Cordero, MD | NPI: 9213325955\nDate of request: 09/04/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left L5 radiculopathy.\nSymptom onset date: 04/30/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Summary\nPatient: Dario Castellano | DOB: 12/24/1981 | MRN: SYN-4797756\nDate of service: 08/27/2025 | Bram Bellamy, PT, DPT\n\nEpisode of care:\nReferring diagnosis: low back pain with right radicular symptoms.\nStart of care: 06/20/2025\nVisits attended: 16\nInterventions: core stabilization, directional preference exercises, manual therapy.\nStatus: symptoms persist; patient returned to the referring physician.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nOffice Visit - Follow-up\nPatient: Dario Castellano | DOB: 12/24/1981 | MRN: SYN-4797756\nDate of service: 08/27/2025 | Dr. Adele Cordero, MD\n\nHistory of present illness:\n43-year-old man seen for follow-up of low back pain. Low back pain radiating to the right leg for 17 weeks.\n\nTreatment to date:\nCompleted 9 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: hyperlipidemia, seasonal allergies.\nMedications: atorvastatin 20 mg nightly; loratadine 10 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 30 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

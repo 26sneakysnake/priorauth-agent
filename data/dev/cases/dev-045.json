@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-045",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-04-10",
+  "patient": {
+    "name": "Alma Underhill",
+    "birth_date": "1964-02-05",
+    "sex": "female",
+    "mrn": "SYN-2637430",
+    "member_id": "EHP-SYN-44357184"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Alma Underhill | Member ID: EHP-SYN-44357184 | DOB: 02/05/1964\nRequesting provider: Gwen Draycott, PT, DPT | NPI: 9137178251\nDate of request: 04/10/2025\n\nRequested service: Outpatient physical therapy, 6 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Alma Underhill | DOB: 02/05/1964 | MRN: SYN-2637430\nDate of service: 04/09/2025 | Gwen Draycott, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 9 weeks, start of care 03/05/2025, certified through 05/07/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 81 to 96 degrees; KOOS score improved from 34 to 47.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Alma Underhill | DOB: 02/05/1964\n\nMember ID: EHP-SYN-44357184\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: M. Haverford on 04/10/2025, reference #92276151\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Alma Underhill | DOB: 02/05/1964 | MRN: SYN-2637430\nDate of service: 03/04/2025 | M. Haverford\n\nRequest: refill of loratadine 10 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

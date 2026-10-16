@@ -1,0 +1,83 @@
+{
+  "case_id": "test-024",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "date_conflict",
+  "target_criterion": "MRI_LUMBAR.conservative_therapy",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Low back pain radiating to the left leg for 15 weeks."
+        },
+        {
+          "page": 2,
+          "quote": "Symptom onset date: 10/14/2024"
+        }
+      ],
+      "rationale": "15 weeks documented"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Completed 8 weeks of physical therapy and daily naproxen without adequate relief."
+        },
+        {
+          "page": 6,
+          "quote": "Start of care: 01/15/2025"
+        }
+      ],
+      "rationale": "note says 8 weeks of therapy but physical therapy started 12 days before the visit"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Red flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer."
+        }
+      ],
+      "rationale": "negative red-flag screen"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Neuro: strength 4/5 in left ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the left foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings documented"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Clinical indication: Left L5 radiculopathy."
+        },
+        {
+          "page": 3,
+          "quote": "Low back pain radiating to the left leg for 15 weeks."
+        }
+      ],
+      "rationale": "left side on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "clinic_note",
+    "administrative",
+    "clinic_note",
+    "therapy_note",
+    "eligibility"
+  ]
+}

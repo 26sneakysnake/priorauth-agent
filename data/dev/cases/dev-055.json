@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-055",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-02-04",
+  "patient": {
+    "name": "Emil Ivanova",
+    "birth_date": "1980-07-25",
+    "sex": "male",
+    "mrn": "SYN-3329984",
+    "member_id": "EHP-SYN-58561788"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Emil Ivanova | Member ID: EHP-SYN-58561788 | DOB: 07/25/1980\nRequesting provider: Dr. Gwen Northcott, MD | NPI: 9247919505\nDate of request: 02/04/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left L5 radiculopathy.\nSymptom onset date: 10/08/2024\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Emil Ivanova | DOB: 07/25/1980\n\nMember ID: EHP-SYN-58561788\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: K. Brennan on 02/04/2025, reference #98639545\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Emil Ivanova | DOB: 07/25/1980 | MRN: SYN-3329984\nDate of service: 01/23/2025 | T. Okafor\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Emil Ivanova | DOB: 07/25/1980 | MRN: SYN-3329984\nDate of service: 02/04/2025 | R. Lindgren\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (312) 555-0183\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nOffice Visit - Follow-up\nPatient: Emil Ivanova | DOB: 07/25/1980 | MRN: SYN-3329984\nDate of service: 02/01/2025 | Dr. Gwen Northcott, MD\n\nHistory of present illness:\n44-year-old man seen for follow-up of low back pain. He first noticed the pain shooting down his left leg after a weekend of gardening, nearly four months before this visit.\n\nTreatment to date:\nTwo months of supervised exercise sessions plus over-the-counter anti-inflammatories have not brought lasting relief.\n\nHistory:\nPast medical history: hypothyroidism, gastroesophageal reflux.\nMedications: levothyroxine 75 mcg daily; omeprazole 20 mg daily.\n\nReview of systems:\nNo trouble controlling urine or stool, no numbness in the groin area, no fevers, stable weight, and no prior malignancy.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 30 degrees.\nHe struggles to walk on his heels on the left, ankle jerks are equal, and touch feels dull across the top of the left foot.\n\nAssessment and plan:\nAssessment: left L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

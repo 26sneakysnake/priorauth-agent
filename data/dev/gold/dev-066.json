@@ -1,0 +1,73 @@
+{
+  "case_id": "dev-066",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Diagnosis: M17.12 Unilateral primary osteoarthritis, left knee"
+        },
+        {
+          "page": 4,
+          "quote": "Assessment: wear-and-tear arthritis of the left knee, as coded on the referral (M17.12)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis, reworded"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "He is scheduled three times weekly over six weeks in total, from 08/09/2025 to 09/20/2025."
+        }
+      ],
+      "rationale": "3x/week for 6 weeks, reworded"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "He now manages a full flight of stairs without the handrail, which he could not do at intake, and bends the knee about eighteen degrees further."
+        }
+      ],
+      "rationale": "functional gains since intake, reworded"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Body part / side: Left knee"
+        },
+        {
+          "page": 4,
+          "quote": "Assessment: wear-and-tear arthritis of the left knee, as coded on the referral (M17.12)."
+        }
+      ],
+      "rationale": "left knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "PT_EXTENSION.diagnosis",
+    "PT_EXTENSION.plan_of_care",
+    "PT_EXTENSION.progress"
+  ],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "telephone_note",
+    "therapy_note",
+    "clinic_note",
+    "eligibility",
+    "administrative"
+  ]
+}

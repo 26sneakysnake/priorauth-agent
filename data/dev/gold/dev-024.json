@@ -1,0 +1,70 @@
+{
+  "case_id": "dev-024",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "contradiction",
+  "target_criterion": "BIOLOGIC_RA.pretreatment_screening",
+  "expected_decision": "PEND",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Assessment: seropositive rheumatoid arthritis with high disease activity, CDAI 33."
+        }
+      ],
+      "rationale": "CDAI 33 > 10"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Methotrexate 25 mg weekly was stopped after 15 weeks because of persistent transaminase elevation (intolerance)."
+        }
+      ],
+      "rationale": "documented methotrexate intolerance"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Dose: 40 mg subcutaneously every 14 days"
+        },
+        {
+          "page": 3,
+          "quote": "Plan: start fictimab 40 mg subcutaneously every 14 days."
+        }
+      ],
+      "rationale": "40 mg per 14 days, within range"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Pre-biologic screening: tuberculosis and hepatitis B screens negative."
+        },
+        {
+          "page": 6,
+          "quote": "QuantiFERON-TB Gold Plus (interferon-gamma release assay): POSITIVE"
+        }
+      ],
+      "rationale": "note says screens negative, lab report shows a positive TB assay"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "specialist_note",
+    "telephone_note",
+    "clinic_note",
+    "lab_report",
+    "administrative",
+    "eligibility"
+  ]
+}

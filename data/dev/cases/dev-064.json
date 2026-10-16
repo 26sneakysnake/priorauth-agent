@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-064",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-10-14",
+  "patient": {
+    "name": "Viktor Whitlock",
+    "birth_date": "1982-08-17",
+    "sex": "male",
+    "mrn": "SYN-8407824",
+    "member_id": "EHP-SYN-94161994"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Viktor Whitlock | Member ID: EHP-SYN-94161994 | DOB: 08/17/1982\nRequesting provider: Dr. Kaveh Jessop, MD (Rheumatology) | NPI: 9328995350\nDate of request: 10/14/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Viktor Whitlock | DOB: 08/17/1982 | MRN: SYN-8407824\nDate of service: 07/09/2025 | Dr. Bram Langley, MD\n\nVitals:\nBP 117/85, HR 80, BMI 22.8\n\nHistory:\nPast medical history: hyperlipidemia, seasonal allergies.\nMedications: atorvastatin 20 mg nightly; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Viktor Whitlock | DOB: 08/17/1982 | MRN: SYN-8407824\nDate of service: 10/07/2025 | Dr. Kaveh Jessop, MD (Rheumatology)\n\nHistory:\n43-year-old man with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: hyperlipidemia, seasonal allergies.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nHe has taken weekly methotrexate (25 mg) for the better part of six months, yet the small joints of both hands remain swollen.\n\nAssessment and plan:\nAssessment: active seropositive rheumatoid arthritis; clinical disease activity index thirty-one today.\nLatent TB blood test and hepatitis B panel drawn on 09/23/2025 both came back clear.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

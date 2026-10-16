@@ -1,0 +1,77 @@
+{
+  "case_id": "test-035",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "date_conflict",
+  "target_criterion": "BIOLOGIC_RA.first_line_failure",
+  "expected_decision": "PEND",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Assessment: seropositive rheumatoid arthritis, DAS28-CRP 5.9 (high disease activity)."
+        }
+      ],
+      "rationale": "DAS28 5.9 > 3.2"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Inadequate response to methotrexate 25 mg weekly for 25 weeks despite good adherence."
+        },
+        {
+          "page": 3,
+          "quote": "Methotrexate 25 mg by mouth once weekly - start date 05/11/2025"
+        }
+      ],
+      "rationale": "note says 25 weeks but the medication list shows methotrexate started 36 days before the visit"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Dose: 40 mg subcutaneously every 7 days"
+        },
+        {
+          "page": 6,
+          "quote": "Plan: start fictimab 40 mg subcutaneously every 7 days."
+        }
+      ],
+      "rationale": "80 mg per 14 days, within range"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Collected: 04/14/2025"
+        },
+        {
+          "page": 5,
+          "quote": "QuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE"
+        },
+        {
+          "page": 5,
+          "quote": "Hepatitis B surface antigen: NON-REACTIVE"
+        }
+      ],
+      "rationale": "both screens negative, collected 04/14/2025"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "medication_list",
+    "clinic_note",
+    "lab_report",
+    "specialist_note",
+    "eligibility"
+  ]
+}

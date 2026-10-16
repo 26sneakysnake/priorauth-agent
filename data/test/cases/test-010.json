@@ -1,0 +1,31 @@
+{
+  "case_id": "test-010",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-01-14",
+  "patient": {
+    "name": "Ivo Nakamura",
+    "birth_date": "1959-09-27",
+    "sex": "male",
+    "mrn": "SYN-2296797",
+    "member_id": "EHP-SYN-40660691"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Ivo Nakamura | Member ID: EHP-SYN-40660691 | DOB: 09/27/1959\nRequesting provider: Dr. Lucia Ashgrove, MD (Rheumatology) | NPI: 9416752045\nDate of request: 01/14/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Ivo Nakamura | DOB: 09/27/1959 | MRN: SYN-2296797\nDate of service: 01/04/2025 | Dr. Lucia Ashgrove, MD (Rheumatology)\n\nHistory:\n65-year-old man with rheumatoid arthritis diagnosed in 2023, seen to discuss escalation of therapy. Past medical history: seasonal allergies, hyperlipidemia.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 25 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 26.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Ivo Nakamura | DOB: 09/27/1959 | MRN: SYN-2296797\nDate of service: 12/30/2024 | T. Okafor\n\nRequest: refill of omeprazole 20 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Ivo Nakamura | DOB: 09/27/1959 | MRN: SYN-2296797\nOrdering provider: Dr. Lucia Ashgrove, MD (Rheumatology)\n\nCollected: 11/16/2024\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 28 U/L (reference 7-56)\nCreatinine: 0.9 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 7.9 x10^3/uL (reference 4.0-11.0)\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

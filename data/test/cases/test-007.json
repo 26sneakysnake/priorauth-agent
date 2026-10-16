@@ -1,0 +1,43 @@
+{
+  "case_id": "test-007",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-11-25",
+  "patient": {
+    "name": "Joelle Ivanova",
+    "birth_date": "1970-08-20",
+    "sex": "female",
+    "mrn": "SYN-3011761",
+    "member_id": "EHP-SYN-25197031"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 11/25/2025\nRe: Prior authorization request - Joelle Ivanova\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Joelle Ivanova | Member ID: EHP-SYN-25197031 | DOB: 08/20/1970\nRequesting provider: Adele Draycott, PT, DPT | NPI: 9414973658\nDate of request: 11/25/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Joelle Ivanova | DOB: 08/20/1970 | MRN: SYN-3011761\nDate of service: 03/10/2025 | Dr. Jasper Grantham, MD\n\nVitals:\nBP 121/77, HR 58, BMI 26.4\n\nHistory:\nPast medical history: hypertension, type 2 diabetes.\nMedications: lisinopril 10 mg daily; metformin 500 mg twice daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Joelle Ivanova | DOB: 08/20/1970 | MRN: SYN-3011761\nDate of service: 11/21/2025 | Adele Draycott, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the left shoulder (M75.102).\n\nPlan:\nPlan of care: 2 visits per week for 11 weeks, start of care 10/31/2025, certified through 01/16/2026.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 92 to 126 degrees; QuickDASH score improved from 58 to 37.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Joelle Ivanova | DOB: 08/20/1970\n\nMember ID: EHP-SYN-25197031\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: R. Lindgren on 11/25/2025, reference #88052098\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Cedar Hollow Primary Care\nPatient Intake Questionnaire\nPatient: Joelle Ivanova | DOB: 08/20/1970 | MRN: SYN-3011761\nDate of service: 11/21/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: retired\nPreferred pharmacy: on file\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Cedar Hollow Primary Care\nScheduling Note\nPatient: Joelle Ivanova | DOB: 08/20/1970 | MRN: SYN-3011761\nDate of service: 11/25/2025 | T. Okafor\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0116\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

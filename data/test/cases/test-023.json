@@ -1,0 +1,39 @@
+{
+  "case_id": "test-023",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-07-06",
+  "patient": {
+    "name": "Odile Whitlock",
+    "birth_date": "1966-04-04",
+    "sex": "female",
+    "mrn": "SYN-2004870",
+    "member_id": "EHP-SYN-63782485"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Westfield Rheumatology Group\nDate: 07/06/2025\nRe: Prior authorization request - Odile Whitlock\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Odile Whitlock | Member ID: EHP-SYN-63782485 | DOB: 04/04/1966\nRequesting provider: Dr. Dmitri Penrose, MD (Rheumatology) | NPI: 9166870631\nDate of request: 07/06/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Odile Whitlock | DOB: 04/04/1966 | MRN: SYN-2004870\nOrdering provider: Dr. Dmitri Penrose, MD (Rheumatology)\n\nCollected: 06/05/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): POSITIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 14 U/L (reference 7-56)\nCreatinine: 0.8 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 9.2 x10^3/uL (reference 4.0-11.0)\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Odile Whitlock | DOB: 04/04/1966 | MRN: SYN-2004870\nDate of service: 07/01/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Odile Whitlock | DOB: 04/04/1966 | MRN: SYN-2004870\nDate of service: 07/06/2025 | M. Haverford\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0195\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Odile Whitlock | DOB: 04/04/1966 | MRN: SYN-2004870\nDate of service: 07/01/2025 | Dr. Dmitri Penrose, MD (Rheumatology)\n\nHistory:\n59-year-old woman with rheumatoid arthritis diagnosed in 2022, seen to discuss escalation of therapy. Past medical history: hyperlipidemia, hypothyroidism.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 37 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with moderate disease activity, CDAI 15.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-073",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-01-14",
+  "patient": {
+    "name": "Talia Underhill",
+    "birth_date": "1981-03-08",
+    "sex": "female",
+    "mrn": "SYN-3525474",
+    "member_id": "EHP-SYN-64562447"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Talia Underhill | Member ID: EHP-SYN-64562447 | DOB: 03/08/1981\nRequesting provider: Teodor Draycott, PT, DPT | NPI: 9279926323\nDate of request: 01/14/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Talia Underhill | DOB: 03/08/1981 | MRN: SYN-3525474\nDate of service: 01/14/2025 | S. Duarte\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (312) 555-0120\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Talia Underhill | DOB: 03/08/1981 | MRN: SYN-3525474\nDate of service: 01/11/2025 | Teodor Draycott, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 3 visits per week for 8 weeks, start of care 12/12/2024, certified through 02/06/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 96 to 123 degrees; KOOS score improved from 39 to 51.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Juniper Bone and Joint Clinic\nOrthopedic Follow-up\nPatient: Talia Underhill | DOB: 03/08/1981 | MRN: SYN-3525474\nDate of service: 01/13/2025 | Dr. Felix Penrose, MD\n\nInterval history:\nFollow-up of right knee pain during physical therapy.\nPatient reports no improvement with therapy so far; function is unchanged.\n\nPlan:\nContinue home exercises; review therapy notes at the next visit.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-001",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-05-25",
+  "patient": {
+    "name": "Rosa Zielinski",
+    "birth_date": "1959-01-04",
+    "sex": "female",
+    "mrn": "SYN-7835740",
+    "member_id": "EHP-SYN-85756847"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Summit Motion Therapy\nDate: 05/25/2025\nRe: Prior authorization request - Rosa Zielinski\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Rosa Zielinski | Member ID: EHP-SYN-85756847 | DOB: 01/04/1959\nRequesting provider: Ylva Northcott, PT, DPT | NPI: 9096431790\nDate of request: 05/25/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Rosa Zielinski | DOB: 01/04/1959 | MRN: SYN-7835740\nDate of service: 05/15/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: none\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Rosa Zielinski | DOB: 01/04/1959 | MRN: SYN-7835740\nDate of service: 05/15/2025 | Ylva Northcott, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 12 weeks, start of care 04/10/2025, certified through 07/03/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 80 to 98 degrees; KOOS score improved from 40 to 61.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Rosa Zielinski | DOB: 01/04/1959 | MRN: SYN-7835740\nDate of service: 05/25/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (312) 555-0138\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Rosa Zielinski | DOB: 01/04/1959 | MRN: SYN-7835740\nDate of service: 10/29/2024 | Dr. Oskar Langley, MD\n\nVitals:\nBP 117/78, HR 64, BMI 29.1\n\nHistory:\nPast medical history: seasonal allergies, hypothyroidism.\nMedications: loratadine 10 mg daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

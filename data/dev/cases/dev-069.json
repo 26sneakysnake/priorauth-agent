@@ -1,0 +1,43 @@
+{
+  "case_id": "dev-069",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-06",
+  "patient": {
+    "name": "Emil Lindqvist",
+    "birth_date": "1969-06-15",
+    "sex": "male",
+    "mrn": "SYN-3461412",
+    "member_id": "EHP-SYN-23637985"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 03/06/2025\nRe: Prior authorization request - Emil Lindqvist\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Emil Lindqvist | Member ID: EHP-SYN-23637985 | DOB: 06/15/1969\nRequesting provider: Dmitri Jessop, PT, DPT | NPI: 9356672378\nDate of request: 03/06/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M75.101 Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic\nBody part / side: Right shoulder\nPlace of service: Outpatient clinic\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Emil Lindqvist | DOB: 06/15/1969 | MRN: SYN-3461412\nDate of service: 08/11/2024 | Dr. Celine Ashgrove, MD\n\nVitals:\nBP 120/85, HR 75, BMI 29.8\n\nHistory:\nPast medical history: type 2 diabetes, hypothyroidism.\nMedications: metformin 500 mg twice daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Emil Lindqvist | DOB: 06/15/1969 | MRN: SYN-3461412\nDate of service: 03/06/2025 | R. Lindgren\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (720) 555-0124\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Emil Lindqvist | DOB: 06/15/1969 | MRN: SYN-3461412\nDate of service: 02/24/2025 | Dmitri Jessop, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the right shoulder (M75.101).\n\nPlan:\nPlan of care: 3 visits per week for 7 weeks, start of care 01/19/2025, certified through 05/25/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 86 to 111 degrees; QuickDASH score improved from 56 to 44.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Emil Lindqvist | DOB: 06/15/1969 | MRN: SYN-3461412\nDate of service: 02/24/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Emil Lindqvist | DOB: 06/15/1969\n\nMember ID: EHP-SYN-23637985\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: K. Brennan on 03/06/2025, reference #16874580\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

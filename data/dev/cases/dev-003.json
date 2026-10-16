@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-003",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-12",
+  "patient": {
+    "name": "Emil Esposito",
+    "birth_date": "1972-01-25",
+    "sex": "male",
+    "mrn": "SYN-4424759",
+    "member_id": "EHP-SYN-76101998"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Emil Esposito | Member ID: EHP-SYN-76101998 | DOB: 01/25/1972\nRequesting provider: Gwen Draycott, PT, DPT | NPI: 9287033811\nDate of request: 07/12/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Emil Esposito | DOB: 01/25/1972 | MRN: SYN-4424759\nDate of service: 06/07/2025 | M. Haverford\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Emil Esposito | DOB: 01/25/1972 | MRN: SYN-4424759\nDate of service: 07/11/2025 | Gwen Draycott, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left knee (M17.12).\n\nPlan:\nPlan of care: 3 visits per week for 6 weeks, start of care 06/19/2025, certified through 07/31/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 90 to 106 degrees; KOOS score improved from 36 to 54.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

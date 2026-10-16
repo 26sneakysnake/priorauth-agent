@@ -1,0 +1,65 @@
+{
+  "case_id": "test-044",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "clean_pend",
+  "target_criterion": "PT_EXTENSION.progress",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Diagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic"
+        },
+        {
+          "page": 2,
+          "quote": "Assessment: non-traumatic rotator cuff tear of the left shoulder (M75.102)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Plan of care: 2 visits per week for 12 weeks, start of care 09/03/2025, certified through 11/26/2025."
+        }
+      ],
+      "rationale": "2x/week for 12 weeks, dates consistent"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Progress since start of care: no measurable change; shoulder abduction unchanged at 85 degrees and QuickDASH score unchanged at 50."
+        }
+      ],
+      "rationale": "no measurable change since the start of care"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Body part / side: Left shoulder"
+        },
+        {
+          "page": 2,
+          "quote": "Assessment: non-traumatic rotator cuff tear of the left shoulder (M75.102)."
+        }
+      ],
+      "rationale": "left shoulder on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "therapy_note",
+    "clinic_note"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "dev-025",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-04-02",
+  "patient": {
+    "name": "Hugo Pellegrini",
+    "birth_date": "1990-03-18",
+    "sex": "male",
+    "mrn": "SYN-6384453",
+    "member_id": "EHP-SYN-40800226"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 04/02/2025\nRe: Prior authorization request - Hugo Pellegrini\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Hugo Pellegrini | Member ID: EHP-SYN-40800226 | DOB: 03/18/1990\nRequesting provider: Noor Grantham, PT, DPT | NPI: 9188614752\nDate of request: 04/02/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M16.12 Unilateral primary osteoarthritis, left hip\nBody part / side: Left hip\nPlace of service: Outpatient clinic\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Hugo Pellegrini | DOB: 03/18/1990\n\nMember ID: EHP-SYN-40800226\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: S. Duarte on 04/02/2025, reference #89193983\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nScheduling Note\nPatient: Hugo Pellegrini | DOB: 03/18/1990 | MRN: SYN-6384453\nDate of service: 04/02/2025 | T. Okafor\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0154\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Hugo Pellegrini | DOB: 03/18/1990 | MRN: SYN-6384453\nDate of service: 03/24/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: warehouse associate\nPreferred pharmacy: on file\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Hugo Pellegrini | DOB: 03/18/1990 | MRN: SYN-6384453\nDate of service: 03/24/2025 | Noor Grantham, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left hip (M16.12).\n\nPlan:\nPlan of care: 3 visits per week for 12 weeks, start of care 02/28/2025, certified through 05/23/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 80 to 94 degrees; HOOS score improved from 49 to 71.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Hugo Pellegrini | DOB: 03/18/1990 | MRN: SYN-6384453\nDate of service: 03/18/2025 | T. Okafor\n\nRequest: refill of atorvastatin 20 mg nightly.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Hugo Pellegrini | DOB: 03/18/1990 | MRN: SYN-6384453\nDate of service: 07/27/2024 | Dr. Dmitri Fenwick, MD\n\nVitals:\nBP 137/84, HR 73, BMI 25.9\n\nHistory:\nPast medical history: hyperlipidemia, hypertension.\nMedications: atorvastatin 20 mg nightly; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

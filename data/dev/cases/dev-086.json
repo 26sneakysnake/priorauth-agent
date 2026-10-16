@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-086",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-26",
+  "patient": {
+    "name": "Cyrus Marchetti",
+    "birth_date": "1960-04-28",
+    "sex": "male",
+    "mrn": "SYN-3474935",
+    "member_id": "EHP-SYN-70099501"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Cyrus Marchetti | Member ID: EHP-SYN-70099501 | DOB: 04/28/1960\nRequesting provider: Dr. Marek Ashgrove, MD (Rheumatology) | NPI: 9011867177\nDate of request: 09/26/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Cyrus Marchetti | DOB: 04/28/1960\n\nMember ID: EHP-SYN-70099501\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: R. Lindgren on 09/26/2025, reference #82223523\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Cyrus Marchetti | DOB: 04/28/1960 | MRN: SYN-3474935\nDate of service: 03/30/2025 | Dr. Lucia Bellamy, MD\n\nVitals:\nBP 125/75, HR 63, BMI 27.3\n\nHistory:\nPast medical history: gastroesophageal reflux, type 2 diabetes.\nMedications: omeprazole 20 mg daily; metformin 500 mg twice daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Cyrus Marchetti | DOB: 04/28/1960 | MRN: SYN-3474935\nDate of service: 09/20/2025 | Dr. Marek Ashgrove, MD (Rheumatology)\n\nHistory:\n65-year-old man with rheumatoid arthritis diagnosed in 2020, seen to discuss escalation of therapy. Past medical history: seasonal allergies, hypothyroidism.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 37.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Cyrus Marchetti | DOB: 04/28/1960 | MRN: SYN-3474935\nDate of service: 09/20/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Cyrus Marchetti | DOB: 04/28/1960 | MRN: SYN-3474935\nOrdering provider: Dr. Marek Ashgrove, MD (Rheumatology)\n\nCollected: 05/23/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 16 U/L (reference 7-56)\nCreatinine: 1.0 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 6.3 x10^3/uL (reference 4.0-11.0)\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

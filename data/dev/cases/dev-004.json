@@ -1,0 +1,43 @@
+{
+  "case_id": "dev-004",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-05-24",
+  "patient": {
+    "name": "Edith Castellano",
+    "birth_date": "1993-08-21",
+    "sex": "female",
+    "mrn": "SYN-3640336",
+    "member_id": "EHP-SYN-81847844"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Lakeview Internal Medicine Associates\nDate: 05/24/2025\nRe: Prior authorization request - Edith Castellano\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Edith Castellano | Member ID: EHP-SYN-81847844 | DOB: 08/21/1993\nRequesting provider: Dr. Gwen Langley, MD | NPI: 9210105494\nDate of request: 05/24/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left L5 radiculopathy.\nSymptom onset date: 02/21/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Summary\nPatient: Edith Castellano | DOB: 08/21/1993 | MRN: SYN-3640336\nDate of service: 05/16/2025 | Sanne Iverson, PT, DPT\n\nEpisode of care:\nReferring diagnosis: low back pain with left radicular symptoms.\nStart of care: 05/04/2025\nVisits attended: 4\nInterventions: core stabilization, directional preference exercises, manual therapy.\nStatus: symptoms persist; patient returned to the referring physician.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nOffice Visit - Follow-up\nPatient: Edith Castellano | DOB: 08/21/1993 | MRN: SYN-3640336\nDate of service: 05/16/2025 | Dr. Gwen Langley, MD\n\nHistory of present illness:\n31-year-old woman seen for follow-up of low back pain. Low back pain radiating to the left leg for 12 weeks.\n\nTreatment to date:\nCompleted 7 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: seasonal allergies, gastroesophageal reflux.\nMedications: loratadine 10 mg daily; omeprazole 20 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 40 degrees.\nNeuro: strength 4/5 in left ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the left foot.\n\nAssessment and plan:\nAssessment: left L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Cedar Hollow Primary Care\nScheduling Note\nPatient: Edith Castellano | DOB: 08/21/1993 | MRN: SYN-3640336\nDate of service: 05/24/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0181\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Edith Castellano | DOB: 08/21/1993 | MRN: SYN-3640336\nDate of service: 12/19/2024 | Dr. Marek Grantham, MD\n\nVitals:\nBP 124/76, HR 86, BMI 24.1\n\nHistory:\nPast medical history: gastroesophageal reflux, seasonal allergies.\nMedications: omeprazole 20 mg daily; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Edith Castellano | DOB: 08/21/1993\n\nMember ID: EHP-SYN-81847844\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: S. Duarte on 05/24/2025, reference #46057305\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

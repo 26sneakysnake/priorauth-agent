@@ -1,0 +1,27 @@
+{
+  "case_id": "test-046",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-09",
+  "patient": {
+    "name": "Cyrus Nakamura",
+    "birth_date": "1995-01-16",
+    "sex": "male",
+    "mrn": "SYN-8066845",
+    "member_id": "EHP-SYN-02480652"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Brookside Rehabilitation\nDate: 03/09/2025\nRe: Prior authorization request - Cyrus Nakamura\nNumber of pages (including cover): 3\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Cyrus Nakamura | Member ID: EHP-SYN-02480652 | DOB: 01/16/1995\nRequesting provider: Gwen Ellery, PT, DPT | NPI: 9065727852\nDate of request: 03/09/2025\n\nRequested service: Outpatient physical therapy, 6 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Cyrus Nakamura | DOB: 01/16/1995 | MRN: SYN-8066845\nDate of service: 03/08/2025 | Gwen Ellery, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left knee (M17.12).\n\nPlan:\nPlan of care: 3 visits per week for 8 weeks, start of care 02/15/2025, certified through 07/19/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 86 to 107 degrees; KOOS score improved from 43 to 66.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

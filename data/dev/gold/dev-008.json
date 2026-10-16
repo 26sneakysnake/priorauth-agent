@@ -1,0 +1,81 @@
+{
+  "case_id": "dev-008",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "laterality_swap",
+  "target_criterion": "MRI_LUMBAR.laterality",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Low back pain radiating to the left leg for 13 weeks."
+        },
+        {
+          "page": 1,
+          "quote": "Symptom onset date: 01/03/2025"
+        }
+      ],
+      "rationale": "13 weeks documented"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Completed 7 weeks of physical therapy and daily naproxen without adequate relief."
+        },
+        {
+          "page": 4,
+          "quote": "Start of care: 02/11/2025"
+        }
+      ],
+      "rationale": "7 weeks of physical therapy and NSAID"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Red flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer."
+        }
+      ],
+      "rationale": "negative red-flag screen"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Neuro: strength 4/5 in left ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the left foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings documented"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Clinical indication: Right L5 radiculopathy."
+        },
+        {
+          "page": 3,
+          "quote": "Low back pain radiating to the left leg for 13 weeks."
+        }
+      ],
+      "rationale": "request says right, the clinical notes say left"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "intake_form",
+    "clinic_note",
+    "therapy_note",
+    "specialist_note"
+  ]
+}

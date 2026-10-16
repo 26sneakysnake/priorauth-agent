@@ -1,0 +1,27 @@
+{
+  "case_id": "test-033",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-02-26",
+  "patient": {
+    "name": "Carmen Fairbanks",
+    "birth_date": "1955-04-01",
+    "sex": "female",
+    "mrn": "SYN-0403257",
+    "member_id": "EHP-SYN-27955838"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Carmen Fairbanks | Member ID: EHP-SYN-27955838 | DOB: 04/01/1955\nRequesting provider: Dmitri Fenwick, PT, DPT | NPI: 9961695205\nDate of request: 02/26/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: not provided\nBody part / side: Right shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Carmen Fairbanks | DOB: 04/01/1955 | MRN: SYN-0403257\nDate of service: 02/25/2025 | Dmitri Fenwick, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: right shoulder pain, continuing therapy.\n\nPlan:\nPlan of care: 3 visits per week for 8 weeks, start of care 01/20/2025, certified through 03/17/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 83 to 124 degrees; QuickDASH score improved from 60 to 43.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Carmen Fairbanks | DOB: 04/01/1955\n\nMember ID: EHP-SYN-27955838\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: R. Lindgren on 02/26/2025, reference #16281936\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

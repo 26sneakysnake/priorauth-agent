@@ -1,0 +1,43 @@
+{
+  "case_id": "dev-066",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-09-19",
+  "patient": {
+    "name": "Emil Rasmussen",
+    "birth_date": "1994-08-24",
+    "sex": "male",
+    "mrn": "SYN-1832032",
+    "member_id": "EHP-SYN-62185776"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Summit Motion Therapy\nDate: 09/19/2025\nRe: Prior authorization request - Emil Rasmussen\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Emil Rasmussen | Member ID: EHP-SYN-62185776 | DOB: 08/24/1994\nRequesting provider: Noor Oakhurst, PT, DPT | NPI: 9589046542\nDate of request: 09/19/2025\n\nRequested service: Outpatient physical therapy, 12 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Emil Rasmussen | DOB: 08/24/1994 | MRN: SYN-1832032\nDate of service: 08/17/2025 | J. Marlow\n\nRequest: refill of atorvastatin 20 mg nightly.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Emil Rasmussen | DOB: 08/24/1994 | MRN: SYN-1832032\nDate of service: 09/14/2025 | Noor Oakhurst, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: wear-and-tear arthritis of the left knee, as coded on the referral (M17.12).\n\nPlan:\nHe is scheduled three times weekly over six weeks in total, from 08/09/2025 to 09/20/2025.\n\nObjective measures:\nHe now manages a full flight of stairs without the handrail, which he could not do at intake, and bends the knee about eighteen degrees further.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Emil Rasmussen | DOB: 08/24/1994 | MRN: SYN-1832032\nDate of service: 05/03/2025 | Dr. Kaveh Kestrel, MD\n\nVitals:\nBP 120/72, HR 81, BMI 29.6\n\nHistory:\nPast medical history: hyperlipidemia, gastroesophageal reflux.\nMedications: atorvastatin 20 mg nightly; omeprazole 20 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Emil Rasmussen | DOB: 08/24/1994\n\nMember ID: EHP-SYN-62185776\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: T. Okafor on 09/19/2025, reference #71409798\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Emil Rasmussen | DOB: 08/24/1994 | MRN: SYN-1832032\nDate of service: 09/19/2025 | M. Haverford\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (312) 555-0158\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

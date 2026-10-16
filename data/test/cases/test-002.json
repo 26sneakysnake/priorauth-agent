@@ -1,0 +1,35 @@
+{
+  "case_id": "test-002",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-10-25",
+  "patient": {
+    "name": "Farid Marchetti",
+    "birth_date": "1969-08-10",
+    "sex": "male",
+    "mrn": "SYN-6024523",
+    "member_id": "EHP-SYN-03693074"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Riverbend Family Medicine\nDate: 10/25/2025\nRe: Prior authorization request - Farid Marchetti\nNumber of pages (including cover): 5\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Farid Marchetti | Member ID: EHP-SYN-03693074 | DOB: 08/10/1969\nRequesting provider: Dr. Gwen Langley, MD | NPI: 9131202027\nDate of request: 10/25/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right L5 radiculopathy.\nSymptom onset date: 07/05/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Farid Marchetti | DOB: 08/10/1969 | MRN: SYN-6024523\nDate of service: 10/20/2025 | Dr. Gwen Langley, MD\n\nHistory of present illness:\n56-year-old man seen for follow-up of low back pain. Low back pain radiating to the right leg for 15 weeks.\n\nTreatment to date:\nNo physical therapy or anti-inflammatory trial to date; patient requests imaging first.\n\nHistory:\nPast medical history: hypothyroidism, gastroesophageal reflux.\nMedications: levothyroxine 75 mcg daily; omeprazole 20 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 40 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Farid Marchetti | DOB: 08/10/1969 | MRN: SYN-6024523\nDate of service: 10/09/2025 | T. Okafor\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Farid Marchetti | DOB: 08/10/1969 | MRN: SYN-6024523\nDate of service: 02/17/2025 | Dr. Ravi Bellamy, MD\n\nVitals:\nBP 134/85, HR 60, BMI 24.4\n\nHistory:\nPast medical history: hypothyroidism, hypertension.\nMedications: levothyroxine 75 mcg daily; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

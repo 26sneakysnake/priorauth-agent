@@ -1,0 +1,77 @@
+{
+  "case_id": "test-002",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "clean_pend",
+  "target_criterion": "MRI_LUMBAR.conservative_therapy",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Low back pain radiating to the right leg for 15 weeks."
+        },
+        {
+          "page": 2,
+          "quote": "Symptom onset date: 07/05/2025"
+        }
+      ],
+      "rationale": "15 weeks documented"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "No physical therapy or anti-inflammatory trial to date; patient requests imaging first."
+        }
+      ],
+      "rationale": "no conservative therapy tried"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Red flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer."
+        }
+      ],
+      "rationale": "negative red-flag screen"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Neuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings documented"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Clinical indication: Right L5 radiculopathy."
+        },
+        {
+          "page": 3,
+          "quote": "Low back pain radiating to the right leg for 15 weeks."
+        }
+      ],
+      "rationale": "right side on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "clinic_note",
+    "telephone_note",
+    "clinic_note"
+  ]
+}

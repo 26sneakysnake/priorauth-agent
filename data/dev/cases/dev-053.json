@@ -1,0 +1,47 @@
+{
+  "case_id": "dev-053",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-06-18",
+  "patient": {
+    "name": "Pavel Galloway",
+    "birth_date": "1958-11-20",
+    "sex": "male",
+    "mrn": "SYN-7627234",
+    "member_id": "EHP-SYN-64041887"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Ashford Arthritis and Rheumatology\nDate: 06/18/2025\nRe: Prior authorization request - Pavel Galloway\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Pavel Galloway | Member ID: EHP-SYN-64041887 | DOB: 11/20/1958\nRequesting provider: Dr. Kaveh Ellery, MD (Rheumatology) | NPI: 9367983100\nDate of request: 06/18/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Pavel Galloway | DOB: 11/20/1958 | MRN: SYN-7627234\nDate of service: 06/18/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (312) 555-0104\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Pavel Galloway | DOB: 11/20/1958\n\nMember ID: EHP-SYN-64041887\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: R. Lindgren on 06/18/2025, reference #58842897\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Pavel Galloway | DOB: 11/20/1958 | MRN: SYN-7627234\nDate of service: 09/19/2024 | Dr. Teodor Northcott, MD\n\nVitals:\nBP 130/81, HR 59, BMI 24.3\n\nHistory:\nPast medical history: seasonal allergies, hyperlipidemia.\nMedications: loratadine 10 mg daily; atorvastatin 20 mg nightly.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Pavel Galloway | DOB: 11/20/1958 | MRN: SYN-7627234\nDate of service: 06/16/2025 | Dr. Kaveh Ellery, MD (Rheumatology)\n\nHistory:\n66-year-old man with rheumatoid arthritis diagnosed in 2022, seen to discuss escalation of therapy. Past medical history: hypothyroidism, gastroesophageal reflux.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nNo prior conventional DMARD therapy; patient prefers to start a biologic.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 4.1 (moderate disease activity).\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Pavel Galloway | DOB: 11/20/1958 | MRN: SYN-7627234\nDate of service: 05/12/2025 | R. Lindgren\n\nRequest: refill of loratadine 10 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Pavel Galloway | DOB: 11/20/1958 | MRN: SYN-7627234\nOrdering provider: Dr. Kaveh Ellery, MD (Rheumatology)\n\nCollected: 03/09/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 28 U/L (reference 7-56)\nCreatinine: 0.8 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 7.9 x10^3/uL (reference 4.0-11.0)\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

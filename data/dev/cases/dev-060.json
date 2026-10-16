@@ -1,0 +1,43 @@
+{
+  "case_id": "dev-060",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-10-05",
+  "patient": {
+    "name": "Greta Thorne",
+    "birth_date": "1973-03-15",
+    "sex": "female",
+    "mrn": "SYN-3239538",
+    "member_id": "EHP-SYN-25089509"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Ashford Arthritis and Rheumatology\nDate: 10/05/2025\nRe: Prior authorization request - Greta Thorne\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Greta Thorne | Member ID: EHP-SYN-25089509 | DOB: 03/15/1973\nRequesting provider: Dr. Petra Ashgrove, MD (Rheumatology) | NPI: 9938441026\nDate of request: 10/05/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Greta Thorne | DOB: 03/15/1973\n\nMember ID: EHP-SYN-25089509\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: S. Duarte on 10/05/2025, reference #03617391\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Greta Thorne | DOB: 03/15/1973 | MRN: SYN-3239538\nDate of service: 09/27/2025 | Dr. Petra Ashgrove, MD (Rheumatology)\n\nActive medications:\nMethotrexate 15 mg by mouth once weekly - start date 04/02/2025\nFolic acid 1 mg by mouth daily\nLevothyroxine 75 mcg daily\nLisinopril 10 mg daily\n\nAllergies:\nSulfa (hives)\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Greta Thorne | DOB: 03/15/1973 | MRN: SYN-3239538\nDate of service: 09/27/2025 | Dr. Petra Ashgrove, MD (Rheumatology)\n\nHistory:\n52-year-old woman with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: hypothyroidism, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 25 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 30.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Greta Thorne | DOB: 03/15/1973 | MRN: SYN-3239538\nDate of service: 09/22/2025 | M. Haverford\n\nRequest: refill of loratadine 10 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Greta Thorne | DOB: 03/15/1973 | MRN: SYN-3239538\nDate of service: 09/27/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: retired\nPreferred pharmacy: on file\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

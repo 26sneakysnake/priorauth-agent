@@ -1,0 +1,31 @@
+{
+  "case_id": "test-005",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-07-11",
+  "patient": {
+    "name": "Viktor Szabo",
+    "birth_date": "1960-07-21",
+    "sex": "male",
+    "mrn": "SYN-9874895",
+    "member_id": "EHP-SYN-18052994"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Viktor Szabo | Member ID: EHP-SYN-18052994 | DOB: 07/21/1960\nRequesting provider: Dr. Celine Grantham, MD (Rheumatology) | NPI: 9152080963\nDate of request: 07/11/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Viktor Szabo | DOB: 07/21/1960 | MRN: SYN-9874895\nOrdering provider: Dr. Celine Grantham, MD (Rheumatology)\n\nCollected: 06/13/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 23 U/L (reference 7-56)\nCreatinine: 0.8 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 6.2 x10^3/uL (reference 4.0-11.0)\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Viktor Szabo | DOB: 07/21/1960 | MRN: SYN-9874895\nDate of service: 07/01/2025 | Dr. Celine Grantham, MD (Rheumatology)\n\nActive medications:\nMethotrexate 20 mg by mouth once weekly - start date 11/03/2024\nFolic acid 1 mg by mouth daily\nAtorvastatin 20 mg nightly\nOmeprazole 20 mg daily\n\nAllergies:\nNo known drug allergies\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Viktor Szabo | DOB: 07/21/1960 | MRN: SYN-9874895\nDate of service: 07/01/2025 | Dr. Celine Grantham, MD (Rheumatology)\n\nHistory:\n64-year-old man with rheumatoid arthritis diagnosed in 2019, seen to discuss escalation of therapy. Past medical history: hyperlipidemia, gastroesophageal reflux.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 34 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 36.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

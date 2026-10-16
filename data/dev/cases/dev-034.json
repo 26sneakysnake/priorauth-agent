@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-034",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-25",
+  "patient": {
+    "name": "Nils Zielinski",
+    "birth_date": "1962-06-26",
+    "sex": "male",
+    "mrn": "SYN-9017747",
+    "member_id": "EHP-SYN-07607154"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Nils Zielinski | Member ID: EHP-SYN-07607154 | DOB: 06/26/1962\nRequesting provider: Gwen Merriweather, PT, DPT | NPI: 9722355603\nDate of request: 08/25/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Nils Zielinski | DOB: 06/26/1962 | MRN: SYN-9017747\nDate of service: 08/24/2025 | Gwen Merriweather, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left hip (M16.12).\n\nPlan:\nPlan of care: 2 visits per week for 9 weeks, start of care 07/27/2025, certified through 09/28/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 76 to 98 degrees; HOOS score improved from 49 to 74.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Nils Zielinski | DOB: 06/26/1962 | MRN: SYN-9017747\nDate of service: 08/24/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

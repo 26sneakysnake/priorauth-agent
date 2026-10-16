@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-054",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-03",
+  "patient": {
+    "name": "Farah Yilmaz",
+    "birth_date": "1954-09-07",
+    "sex": "female",
+    "mrn": "SYN-6143432",
+    "member_id": "EHP-SYN-78797163"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Farah Yilmaz | Member ID: EHP-SYN-78797163 | DOB: 09/07/1954\nRequesting provider: Celine Kestrel, PT, DPT | NPI: 9087953135\nDate of request: 08/03/2025\n\nRequested service: Outpatient physical therapy, 12 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Farah Yilmaz | DOB: 09/07/1954 | MRN: SYN-6143432\nDate of service: 08/03/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (312) 555-0141\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Farah Yilmaz | DOB: 09/07/1954 | MRN: SYN-6143432\nDate of service: 07/26/2025 | Celine Kestrel, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nShe is scheduled three times weekly over seven weeks in total, from 06/19/2025 to 08/07/2025.\n\nObjective measures:\nShe now walks for twenty-four minutes without stopping, compared with seven minutes at intake.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Farah Yilmaz | DOB: 09/07/1954 | MRN: SYN-6143432\nDate of service: 04/30/2025 | Dr. Felix Langley, MD\n\nVitals:\nBP 117/77, HR 76, BMI 29.1\n\nHistory:\nPast medical history: hypothyroidism, hyperlipidemia.\nMedications: levothyroxine 75 mcg daily; atorvastatin 20 mg nightly.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

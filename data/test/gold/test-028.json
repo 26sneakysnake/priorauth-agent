@@ -1,0 +1,84 @@
+{
+  "case_id": "test-028",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "She first noticed the pain shooting down her right leg after moving furniture, nearly four months before this visit."
+        },
+        {
+          "page": 1,
+          "quote": "Symptom onset date: 01/29/2025"
+        }
+      ],
+      "rationale": "nearly 4 months of symptoms"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Two months of supervised exercise sessions plus over-the-counter anti-inflammatories have not brought lasting relief."
+        }
+      ],
+      "rationale": "two months of exercise therapy and NSAIDs"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "No trouble controlling urine or stool, no numbness in the groin area, no fevers, stable weight, and no prior malignancy."
+        }
+      ],
+      "rationale": "negative red-flag screen, reworded"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "She cannot rise onto her toes on the right as well as on the other side, the ankle jerk is reduced on the right, and touch feels dull along the outer edge of that foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings, reworded"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Clinical indication: Right S1 radiculopathy."
+        },
+        {
+          "page": 2,
+          "quote": "She first noticed the pain shooting down her right leg after moving furniture, nearly four months before this visit."
+        }
+      ],
+      "rationale": "right side on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "MRI_LUMBAR.symptom_duration",
+    "MRI_LUMBAR.conservative_therapy",
+    "MRI_LUMBAR.red_flags",
+    "MRI_LUMBAR.neuro_exam"
+  ],
+  "page_kinds": [
+    "request_form",
+    "clinic_note",
+    "intake_form",
+    "imaging_report",
+    "telephone_note",
+    "clinic_note",
+    "specialist_note"
+  ]
+}

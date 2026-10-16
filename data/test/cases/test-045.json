@@ -1,0 +1,43 @@
+{
+  "case_id": "test-045",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-04-04",
+  "patient": {
+    "name": "Vera Zielinski",
+    "birth_date": "1992-12-03",
+    "sex": "female",
+    "mrn": "SYN-4195754",
+    "member_id": "EHP-SYN-88453115"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Vera Zielinski | Member ID: EHP-SYN-88453115 | DOB: 12/03/1992\nRequesting provider: Dr. Kaveh Draycott, MD (Rheumatology) | NPI: 9899752581\nDate of request: 04/04/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 160 mg subcutaneously every 14 days\nQuantity: 8 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Vera Zielinski | DOB: 12/03/1992 | MRN: SYN-4195754\nDate of service: 04/04/2025 | S. Duarte\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (415) 555-0199\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Vera Zielinski | DOB: 12/03/1992 | MRN: SYN-4195754\nDate of service: 03/25/2025 | Dr. Kaveh Draycott, MD (Rheumatology)\n\nHistory:\n32-year-old woman with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: hypothyroidism, hyperlipidemia.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 40 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 4.5 (moderate disease activity).\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 160 mg subcutaneously every 14 days.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Vera Zielinski | DOB: 12/03/1992\n\nMember ID: EHP-SYN-88453115\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: M. Haverford on 04/04/2025, reference #60062636\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Vera Zielinski | DOB: 12/03/1992 | MRN: SYN-4195754\nDate of service: 03/25/2025 | Dr. Kaveh Draycott, MD (Rheumatology)\n\nActive medications:\nMethotrexate 15 mg by mouth once weekly - start date 06/12/2024\nFolic acid 1 mg by mouth daily\nLevothyroxine 75 mcg daily\nAtorvastatin 20 mg nightly\n\nAllergies:\nPenicillin (rash)\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Vera Zielinski | DOB: 12/03/1992 | MRN: SYN-4195754\nOrdering provider: Dr. Kaveh Draycott, MD (Rheumatology)\n\nCollected: 02/26/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 18 U/L (reference 7-56)\nCreatinine: 0.7 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 6.8 x10^3/uL (reference 4.0-11.0)\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Vera Zielinski | DOB: 12/03/1992 | MRN: SYN-4195754\nDate of service: 03/25/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

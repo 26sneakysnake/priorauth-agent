@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-005",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-08-30",
+  "patient": {
+    "name": "Farid Jaramillo",
+    "birth_date": "1986-01-01",
+    "sex": "male",
+    "mrn": "SYN-9424302",
+    "member_id": "EHP-SYN-77368935"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Farid Jaramillo | Member ID: EHP-SYN-77368935 | DOB: 01/01/1986\nRequesting provider: Dr. Petra Draycott, MD (Rheumatology) | NPI: 9943907171\nDate of request: 08/30/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 160 mg subcutaneously every 14 days\nQuantity: 8 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Farid Jaramillo | DOB: 01/01/1986 | MRN: SYN-9424302\nOrdering provider: Dr. Petra Draycott, MD (Rheumatology)\n\nCollected: 04/22/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 27 U/L (reference 7-56)\nCreatinine: 0.6 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 9.5 x10^3/uL (reference 4.0-11.0)\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Farid Jaramillo | DOB: 01/01/1986 | MRN: SYN-9424302\nDate of service: 08/20/2025 | Dr. Petra Draycott, MD (Rheumatology)\n\nHistory:\n39-year-old man with rheumatoid arthritis diagnosed in 2023, seen to discuss escalation of therapy. Past medical history: type 2 diabetes, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 34 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 3.9 (moderate disease activity).\nPlan: start fictimab 160 mg subcutaneously every 14 days.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

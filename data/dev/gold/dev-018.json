@@ -1,0 +1,78 @@
+{
+  "case_id": "dev-018",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "clean_pend",
+  "target_criterion": "MRI_LUMBAR.symptom_duration",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Low back pain radiating to the left leg for 4 weeks."
+        },
+        {
+          "page": 2,
+          "quote": "Symptom onset date: 02/09/2025"
+        }
+      ],
+      "rationale": "4 weeks documented; policy requires 6"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Started physical therapy 2 weeks ago; too early to judge the response."
+        }
+      ],
+      "rationale": "only 2 weeks of therapy; policy requires 6"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Red flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer."
+        }
+      ],
+      "rationale": "negative red-flag screen"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Neuro: strength 4/5 in left plantar flexion, left Achilles reflex 1+, decreased light touch over the lateral left foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings documented"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Clinical indication: Left S1 radiculopathy."
+        },
+        {
+          "page": 5,
+          "quote": "Low back pain radiating to the left leg for 4 weeks."
+        }
+      ],
+      "rationale": "left side on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "eligibility",
+    "clinic_note",
+    "clinic_note",
+    "administrative"
+  ]
+}

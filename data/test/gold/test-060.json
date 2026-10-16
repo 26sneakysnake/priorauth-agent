@@ -1,0 +1,76 @@
+{
+  "case_id": "test-060",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "clean_pend",
+  "target_criterion": "BIOLOGIC_RA.diagnosis",
+  "expected_decision": "PEND",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Assessment: rheumatoid arthritis with low disease activity, CDAI 4."
+        }
+      ],
+      "rationale": "CDAI 4 is low activity"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Inadequate response to methotrexate 20 mg weekly for 18 weeks despite good adherence."
+        }
+      ],
+      "rationale": "18 weeks of methotrexate 20 mg/week"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Dose: 40 mg subcutaneously every 14 days"
+        },
+        {
+          "page": 4,
+          "quote": "Plan: start fictimab 40 mg subcutaneously every 14 days."
+        }
+      ],
+      "rationale": "40 mg per 14 days, within range"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Collected: 01/09/2025"
+        },
+        {
+          "page": 6,
+          "quote": "QuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE"
+        },
+        {
+          "page": 6,
+          "quote": "Hepatitis B surface antigen: NON-REACTIVE"
+        },
+        {
+          "page": 4,
+          "quote": "Pre-biologic screening: tuberculosis and hepatitis B screens negative."
+        }
+      ],
+      "rationale": "both screens negative, collected 01/09/2025"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "clinic_note",
+    "telephone_note",
+    "specialist_note",
+    "administrative",
+    "lab_report"
+  ]
+}

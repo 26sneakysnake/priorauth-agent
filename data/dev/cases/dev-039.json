@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-039",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-02",
+  "patient": {
+    "name": "Bastien Delacroix",
+    "birth_date": "1957-10-15",
+    "sex": "male",
+    "mrn": "SYN-6725234",
+    "member_id": "EHP-SYN-38398040"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 08/02/2025\nRe: Prior authorization request - Bastien Delacroix\nNumber of pages (including cover): 5\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Bastien Delacroix | Member ID: EHP-SYN-38398040 | DOB: 10/15/1957\nRequesting provider: Ravi Jessop, PT, DPT | NPI: 9126315187\nDate of request: 08/02/2025\n\nRequested service: Outpatient physical therapy, 6 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Bastien Delacroix | DOB: 10/15/1957 | MRN: SYN-6725234\nDate of service: 07/25/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: retired\nPreferred pharmacy: on file\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Bastien Delacroix | DOB: 10/15/1957 | MRN: SYN-6725234\nDate of service: 07/25/2025 | Ravi Jessop, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nPlan of care: 2 visits per week for 22 weeks, start of care 06/17/2025, certified through 11/18/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 84 to 97 degrees; HOOS score improved from 40 to 59.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Bastien Delacroix | DOB: 10/15/1957 | MRN: SYN-6725234\nDate of service: 08/02/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0121\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

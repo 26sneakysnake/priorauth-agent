@@ -1,0 +1,47 @@
+{
+  "case_id": "dev-096",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-11",
+  "patient": {
+    "name": "Joelle Delacroix",
+    "birth_date": "1972-08-20",
+    "sex": "female",
+    "mrn": "SYN-8979296",
+    "member_id": "EHP-SYN-46794592"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Summit Motion Therapy\nDate: 08/11/2025\nRe: Prior authorization request - Joelle Delacroix\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Joelle Delacroix | Member ID: EHP-SYN-46794592 | DOB: 08/20/1972\nRequesting provider: Dmitri Kestrel, PT, DPT | NPI: 9914014318\nDate of request: 08/11/2025\n\nRequested service: Outpatient physical therapy, 9 additional visits\nDiagnosis: M16.12 Unilateral primary osteoarthritis, left hip\nBody part / side: Left hip\nPlace of service: Outpatient clinic\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Joelle Delacroix | DOB: 08/20/1972 | MRN: SYN-8979296\nDate of service: 08/10/2025 | Dmitri Kestrel, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left hip (M16.12).\n\nPlan:\nPlan of care: 2 visits per week for 12 weeks, start of care 07/20/2025, certified through 10/12/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 90 to 113 degrees; HOOS score improved from 34 to 52.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Joelle Delacroix | DOB: 08/20/1972 | MRN: SYN-8979296\nDate of service: 07/08/2025 | R. Lindgren\n\nRequest: refill of atorvastatin 20 mg nightly.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Joelle Delacroix | DOB: 08/20/1972 | MRN: SYN-8979296\nDate of service: 08/10/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: former, quit 10 years ago\nAlcohol: none\nOccupation: warehouse associate\nPreferred pharmacy: on file\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Joelle Delacroix | DOB: 08/20/1972 | MRN: SYN-8979296\nDate of service: 01/30/2025 | Dr. Ylva Northcott, MD\n\nVitals:\nBP 121/79, HR 80, BMI 24.0\n\nHistory:\nPast medical history: hyperlipidemia, hypothyroidism.\nMedications: atorvastatin 20 mg nightly; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Lakeview Internal Medicine Associates\nScheduling Note\nPatient: Joelle Delacroix | DOB: 08/20/1972 | MRN: SYN-8979296\nDate of service: 08/11/2025 | R. Lindgren\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0199\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Joelle Delacroix | DOB: 08/20/1972\n\nMember ID: EHP-SYN-46794592\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: M. Haverford on 08/11/2025, reference #46728087\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

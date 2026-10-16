@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-007",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-05-11",
+  "patient": {
+    "name": "Kenji Okonkwo",
+    "birth_date": "1972-10-08",
+    "sex": "male",
+    "mrn": "SYN-2322560",
+    "member_id": "EHP-SYN-68219373"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Kenji Okonkwo | Member ID: EHP-SYN-68219373 | DOB: 10/08/1972\nRequesting provider: Dr. Ravi Kestrel, MD | NPI: 9057672408\nDate of request: 05/11/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right L5 radiculopathy.\nSymptom onset date: 02/09/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Kenji Okonkwo | DOB: 10/08/1972\n\nMember ID: EHP-SYN-68219373\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: M. Haverford on 05/11/2025, reference #90093587\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Kenji Okonkwo | DOB: 10/08/1972 | MRN: SYN-2322560\nDate of service: 05/04/2025 | Dr. Ravi Kestrel, MD\n\nHistory of present illness:\n52-year-old man seen for follow-up of low back pain. Low back pain radiating to the right leg for 12 weeks.\n\nHistory:\nPast medical history: hypertension, hypothyroidism.\nMedications: lisinopril 10 mg daily; levothyroxine 75 mcg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 50 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "case_id": "test-041",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Diagnosis: M17.12 Unilateral primary osteoarthritis, left knee"
+        },
+        {
+          "page": 3,
+          "quote": "Assessment: primary osteoarthritis of the left knee (M17.12)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "He is scheduled three times weekly over eight weeks in total, from 04/08/2025 to 06/03/2025."
+        }
+      ],
+      "rationale": "3x/week for 8 weeks, reworded"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "He now manages a full flight of stairs without the handrail, which he could not do at intake, and bends the knee about twenty-two degrees further."
+        }
+      ],
+      "rationale": "functional gains since intake, reworded"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Body part / side: Left knee"
+        },
+        {
+          "page": 3,
+          "quote": "Assessment: primary osteoarthritis of the left knee (M17.12)."
+        }
+      ],
+      "rationale": "left knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "PT_EXTENSION.plan_of_care",
+    "PT_EXTENSION.progress"
+  ],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "therapy_note",
+    "administrative",
+    "intake_form",
+    "clinic_note",
+    "eligibility"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "case_id": "dev-059",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Assessment: seropositive rheumatoid arthritis with high disease activity, CDAI 34."
+        }
+      ],
+      "rationale": "CDAI 34 > 10"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "She has taken weekly methotrexate (20 mg) for the better part of nine months, yet the small joints of both hands remain swollen."
+        }
+      ],
+      "rationale": "about 9 months of methotrexate, reworded"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Dose: 40 mg subcutaneously every 14 days"
+        },
+        {
+          "page": 4,
+          "quote": "Plan: start fictimab 40 mg subcutaneously every 14 days."
+        }
+      ],
+      "rationale": "40 mg per 14 days, within range"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Latent TB blood test and hepatitis B panel drawn on 02/02/2025 both came back clear."
+        }
+      ],
+      "rationale": "both screens negative, reworded"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "BIOLOGIC_RA.first_line_failure",
+    "BIOLOGIC_RA.pretreatment_screening"
+  ],
+  "page_kinds": [
+    "request_form",
+    "clinic_note",
+    "intake_form",
+    "specialist_note"
+  ]
+}

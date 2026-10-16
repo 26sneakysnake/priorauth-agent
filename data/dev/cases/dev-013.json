@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-013",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-23",
+  "patient": {
+    "name": "Mateo Pellegrini",
+    "birth_date": "1971-08-28",
+    "sex": "male",
+    "mrn": "SYN-9265196",
+    "member_id": "EHP-SYN-08057649"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Summit Motion Therapy\nDate: 08/23/2025\nRe: Prior authorization request - Mateo Pellegrini\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Mateo Pellegrini | Member ID: EHP-SYN-08057649 | DOB: 08/28/1971\nRequesting provider: Dmitri Oakhurst, PT, DPT | NPI: 9676746751\nDate of request: 08/23/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M16.12 Unilateral primary osteoarthritis, left hip\nBody part / side: Left hip\nPlace of service: Outpatient clinic\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Mateo Pellegrini | DOB: 08/28/1971 | MRN: SYN-9265196\nDate of service: 08/21/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Mateo Pellegrini | DOB: 08/28/1971 | MRN: SYN-9265196\nDate of service: 07/19/2025 | R. Lindgren\n\nRequest: refill of loratadine 10 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Mateo Pellegrini | DOB: 08/28/1971 | MRN: SYN-9265196\nDate of service: 08/21/2025 | Dmitri Oakhurst, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nPlan of care: 2 visits per week for 8 weeks, start of care 07/23/2025, certified through 09/17/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 74 to 90 degrees; HOOS score improved from 36 to 52.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Mateo Pellegrini | DOB: 08/28/1971 | MRN: SYN-9265196\nDate of service: 08/23/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0185\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

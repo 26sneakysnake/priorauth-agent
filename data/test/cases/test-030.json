@@ -1,0 +1,27 @@
+{
+  "case_id": "test-030",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-09-15",
+  "patient": {
+    "name": "Farah Castellano",
+    "birth_date": "1954-05-06",
+    "sex": "female",
+    "mrn": "SYN-9817838",
+    "member_id": "EHP-SYN-67875446"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Farah Castellano | Member ID: EHP-SYN-67875446 | DOB: 05/06/1954\nRequesting provider: Lucia Northcott, PT, DPT | NPI: 9400693606\nDate of request: 09/15/2025\n\nRequested service: Outpatient physical therapy, 9 additional visits\nDiagnosis: M75.101 Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic\nBody part / side: Right shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Farah Castellano | DOB: 05/06/1954 | MRN: SYN-9817838\nDate of service: 09/08/2025 | Lucia Northcott, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the right shoulder (M75.101).\n\nPlan:\nPlan of care: 3 visits per week for 6 weeks, start of care 08/02/2025, certified through 09/13/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 90 to 118 degrees; QuickDASH score improved from 62 to 48.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Farah Castellano | DOB: 05/06/1954 | MRN: SYN-9817838\nDate of service: 01/10/2025 | Dr. Oskar Draycott, MD\n\nVitals:\nBP 137/80, HR 65, BMI 23.5\n\nHistory:\nPast medical history: hypothyroidism, type 2 diabetes.\nMedications: levothyroxine 75 mcg daily; metformin 500 mg twice daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

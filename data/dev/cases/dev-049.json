@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-049",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-05-25",
+  "patient": {
+    "name": "Farid Zielinski",
+    "birth_date": "1994-05-24",
+    "sex": "male",
+    "mrn": "SYN-6953259",
+    "member_id": "EHP-SYN-74898722"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Farid Zielinski | Member ID: EHP-SYN-74898722 | DOB: 05/24/1994\nRequesting provider: Dr. Kaveh Bellamy, MD | NPI: 9655519972\nDate of request: 05/25/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left L5 radiculopathy.\nSymptom onset date: 02/12/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nOffice Visit - Follow-up\nPatient: Farid Zielinski | DOB: 05/24/1994 | MRN: SYN-6953259\nDate of service: 05/21/2025 | Dr. Kaveh Bellamy, MD\n\nHistory of present illness:\n30-year-old man seen for follow-up of low back pain. Low back pain radiating to the left leg for 14 weeks.\n\nTreatment to date:\nCompleted 7 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: type 2 diabetes, hypertension.\nMedications: metformin 500 mg twice daily; lisinopril 10 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 45 degrees.\nNeuro: strength 4/5 in left ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the left foot.\n\nAssessment and plan:\nAssessment: left L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Summary\nPatient: Farid Zielinski | DOB: 05/24/1994 | MRN: SYN-6953259\nDate of service: 05/21/2025 | Celine Grantham, PT, DPT\n\nEpisode of care:\nReferring diagnosis: low back pain with left radicular symptoms.\nStart of care: 03/27/2025\nVisits attended: 13\nInterventions: core stabilization, directional preference exercises, manual therapy.\nStatus: symptoms persist; patient returned to the referring physician.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

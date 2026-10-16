@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-009",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-11",
+  "patient": {
+    "name": "Hana Szabo",
+    "birth_date": "1995-08-27",
+    "sex": "female",
+    "mrn": "SYN-4177752",
+    "member_id": "EHP-SYN-90651464"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 08/11/2025\nRe: Prior authorization request - Hana Szabo\nNumber of pages (including cover): 3\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Hana Szabo | Member ID: EHP-SYN-90651464 | DOB: 08/27/1995\nRequesting provider: Petra Langley, PT, DPT | NPI: 9823698921\nDate of request: 08/11/2025\n\nRequested service: Outpatient physical therapy, 6 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Hana Szabo | DOB: 08/27/1995 | MRN: SYN-4177752\nDate of service: 08/08/2025 | Petra Langley, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nPlan of care: 2 visits per week for 9 weeks, start of care 07/10/2025, certified through 09/11/2025.\n\nObjective measures:\nProgress since start of care: no measurable change; hip flexion unchanged at 90 degrees and HOOS score unchanged at 41.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

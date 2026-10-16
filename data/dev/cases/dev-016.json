@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-016",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-01-22",
+  "patient": {
+    "name": "Farah Szabo",
+    "birth_date": "1978-02-17",
+    "sex": "female",
+    "mrn": "SYN-8953726",
+    "member_id": "EHP-SYN-82653935"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 01/22/2025\nRe: Prior authorization request - Farah Szabo\nNumber of pages (including cover): 5\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Farah Szabo | Member ID: EHP-SYN-82653935 | DOB: 02/17/1978\nRequesting provider: Petra Langley, PT, DPT | NPI: 9208475274\nDate of request: 01/22/2025\n\nRequested service: Outpatient physical therapy, 7 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Farah Szabo | DOB: 02/17/1978 | MRN: SYN-8953726\nDate of service: 01/15/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: retired\nPreferred pharmacy: on file\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Farah Szabo | DOB: 02/17/1978\n\nMember ID: EHP-SYN-82653935\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: M. Haverford on 01/22/2025, reference #32650111\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Farah Szabo | DOB: 02/17/1978 | MRN: SYN-8953726\nDate of service: 01/15/2025 | Petra Langley, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nPlan of care: 2 visits per week for 6 weeks, start of care 12/24/2024, certified through 02/04/2025.\n\nObjective measures:\nProgress since start of care: no measurable change; hip flexion unchanged at 83 degrees and HOOS score unchanged at 49.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

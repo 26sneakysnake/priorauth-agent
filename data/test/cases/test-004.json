@@ -1,0 +1,31 @@
+{
+  "case_id": "test-004",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-25",
+  "patient": {
+    "name": "Kira Baptiste",
+    "birth_date": "1957-05-26",
+    "sex": "female",
+    "mrn": "SYN-5790040",
+    "member_id": "EHP-SYN-07067276"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Kira Baptiste | Member ID: EHP-SYN-07067276 | DOB: 05/26/1957\nRequesting provider: Dr. Ravi Fenwick, MD (Rheumatology) | NPI: 9596605518\nDate of request: 09/25/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Kira Baptiste | DOB: 05/26/1957 | MRN: SYN-5790040\nDate of service: 09/24/2025 | Dr. Ravi Fenwick, MD (Rheumatology)\n\nHistory:\n68-year-old woman with rheumatoid arthritis diagnosed in 2023, seen to discuss escalation of therapy. Past medical history: type 2 diabetes, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nShe has taken weekly methotrexate (15 mg) for the better part of nine months, yet the small joints of both hands remain swollen.\n\nAssessment and plan:\nAssessment: active seropositive rheumatoid arthritis; clinical disease activity index nineteen today.\nLatent TB blood test and hepatitis B panel drawn on 07/22/2025 both came back clear.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Kira Baptiste | DOB: 05/26/1957\n\nMember ID: EHP-SYN-07067276\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: K. Brennan on 09/25/2025, reference #85551656\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Cedar Hollow Primary Care\nPatient Intake Questionnaire\nPatient: Kira Baptiste | DOB: 05/26/1957 | MRN: SYN-5790040\nDate of service: 09/24/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

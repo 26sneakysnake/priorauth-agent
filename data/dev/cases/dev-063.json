@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-063",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-02-08",
+  "patient": {
+    "name": "Rosa Zielinski",
+    "birth_date": "1987-08-13",
+    "sex": "female",
+    "mrn": "SYN-3073567",
+    "member_id": "EHP-SYN-38222450"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Maple Ridge Community Clinic\nDate: 02/08/2025\nRe: Prior authorization request - Rosa Zielinski\nNumber of pages (including cover): 5\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Rosa Zielinski | Member ID: EHP-SYN-38222450 | DOB: 08/13/1987\nRequesting provider: Dr. Isla Kestrel, MD | NPI: 9680384274\nDate of request: 02/08/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right S1 radiculopathy.\nSymptom onset date: 10/07/2024\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nOffice Visit - Follow-up\nPatient: Rosa Zielinski | DOB: 08/13/1987 | MRN: SYN-3073567\nDate of service: 01/31/2025 | Dr. Isla Kestrel, MD\n\nHistory of present illness:\n37-year-old woman seen for follow-up of low back pain. She first noticed the pain shooting down her right leg after a weekend of gardening, nearly four months before this visit.\n\nTreatment to date:\nTwo months of supervised exercise sessions plus over-the-counter anti-inflammatories have not brought lasting relief.\n\nHistory:\nPast medical history: hypothyroidism, type 2 diabetes.\nMedications: levothyroxine 75 mcg daily; metformin 500 mg twice daily.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Harborview Orthopedic Spine Center\nSpine Consultation\nPatient: Rosa Zielinski | DOB: 08/13/1987 | MRN: SYN-3073567\nDate of service: 01/31/2025 | Dr. Kaveh Kestrel, DO\n\nReason for consultation:\nLow back pain with right leg symptoms, referred by Dr. Isla Kestrel, MD.\n\nReview of systems:\nNo trouble controlling urine or stool, no numbness in the groin area, no fevers, stable weight, and no prior malignancy.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 30 degrees.\nShe cannot rise onto her toes on the right as well as on the other side, the ankle jerk is reduced on the right, and touch feels dull along the outer edge of that foot.\n\nAssessment and plan:\nAssessment: right S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Rosa Zielinski | DOB: 08/13/1987\n\nMember ID: EHP-SYN-38222450\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: S. Duarte on 02/08/2025, reference #09291881\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

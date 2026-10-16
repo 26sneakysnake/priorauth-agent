@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-083",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-06-15",
+  "patient": {
+    "name": "Ivo Delacroix",
+    "birth_date": "1996-02-25",
+    "sex": "male",
+    "mrn": "SYN-3347371",
+    "member_id": "EHP-SYN-19503425"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Ivo Delacroix | Member ID: EHP-SYN-19503425 | DOB: 02/25/1996\nRequesting provider: Dr. Petra Ellery, MD | NPI: 9921372327\nDate of request: 06/15/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left S1 radiculopathy.\nSymptom onset date: 02/16/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Ivo Delacroix | DOB: 02/25/1996 | MRN: SYN-3347371\nDate of service: 06/10/2025 | Dr. Petra Ellery, MD\n\nHistory of present illness:\n29-year-old man seen for follow-up of low back pain. Low back pain radiating to the left leg for 16 weeks.\n\nTreatment to date:\nCompleted 8 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: hyperlipidemia, gastroesophageal reflux.\nMedications: atorvastatin 20 mg nightly; omeprazole 20 mg daily.\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Harborview Orthopedic Spine Center\nSpine Consultation\nPatient: Ivo Delacroix | DOB: 02/25/1996 | MRN: SYN-3347371\nDate of service: 06/10/2025 | Dr. Adele Cordero, DO\n\nReason for consultation:\nLow back pain with left leg symptoms, referred by Dr. Petra Ellery, MD.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 30 degrees.\nNeuro: strength 4/5 in left plantar flexion, left Achilles reflex 1+, decreased light touch over the lateral left foot.\n\nAssessment and plan:\nAssessment: left S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Ivo Delacroix | DOB: 02/25/1996 | MRN: SYN-3347371\nDate of service: 10/03/2024 | Dr. Sanne Jessop, MD\n\nVitals:\nBP 130/84, HR 63, BMI 28.5\n\nHistory:\nPast medical history: hyperlipidemia, seasonal allergies.\nMedications: atorvastatin 20 mg nightly; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Summary\nPatient: Ivo Delacroix | DOB: 02/25/1996 | MRN: SYN-3347371\nDate of service: 06/10/2025 | Marek Draycott, PT, DPT\n\nEpisode of care:\nReferring diagnosis: low back pain with left radicular symptoms.\nStart of care: 05/28/2025\nVisits attended: 2\nInterventions: core stabilization, directional preference exercises, manual therapy.\nStatus: symptoms persist; patient returned to the referring physician.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

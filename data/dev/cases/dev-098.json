@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-098",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-02-21",
+  "patient": {
+    "name": "Rafael Szabo",
+    "birth_date": "1971-05-03",
+    "sex": "male",
+    "mrn": "SYN-6051666",
+    "member_id": "EHP-SYN-02181119"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Rafael Szabo | Member ID: EHP-SYN-02181119 | DOB: 05/03/1971\nRequesting provider: Dr. Ylva Fenwick, MD (Rheumatology) | NPI: 9202410434\nDate of request: 02/21/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Rafael Szabo | DOB: 05/03/1971 | MRN: SYN-6051666\nDate of service: 02/19/2025 | Dr. Ylva Fenwick, MD (Rheumatology)\n\nHistory:\n53-year-old man with rheumatoid arthritis diagnosed in 2020, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, hyperlipidemia.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 27 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 32.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Rafael Szabo | DOB: 05/03/1971 | MRN: SYN-6051666\nDate of service: 02/19/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: none\nOccupation: warehouse associate\nPreferred pharmacy: on file\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Rafael Szabo | DOB: 05/03/1971 | MRN: SYN-6051666\nOrdering provider: Dr. Ylva Fenwick, MD (Rheumatology)\n\nCollected: 11/18/2024\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): POSITIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 35 U/L (reference 7-56)\nCreatinine: 1.0 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 4.9 x10^3/uL (reference 4.0-11.0)\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

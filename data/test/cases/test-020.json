@@ -1,0 +1,31 @@
+{
+  "case_id": "test-020",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-08-19",
+  "patient": {
+    "name": "Rafael Pellegrini",
+    "birth_date": "1963-05-11",
+    "sex": "male",
+    "mrn": "SYN-5910924",
+    "member_id": "EHP-SYN-14175436"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Rafael Pellegrini | Member ID: EHP-SYN-14175436 | DOB: 05/11/1963\nRequesting provider: Dr. Bram Fenwick, MD (Rheumatology) | NPI: 9242716695\nDate of request: 08/19/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 160 mg subcutaneously every 14 days\nQuantity: 8 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Rafael Pellegrini | DOB: 05/11/1963 | MRN: SYN-5910924\nDate of service: 08/11/2025 | Dr. Bram Fenwick, MD (Rheumatology)\n\nHistory:\n62-year-old man with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: hypertension, seasonal allergies.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 25 mg weekly for 39 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 4.5 (moderate disease activity).\nPlan: start fictimab 160 mg subcutaneously every 14 days.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Rafael Pellegrini | DOB: 05/11/1963 | MRN: SYN-5910924\nOrdering provider: Dr. Bram Fenwick, MD (Rheumatology)\n\nCollected: 06/03/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 21 U/L (reference 7-56)\nCreatinine: 0.8 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 6.8 x10^3/uL (reference 4.0-11.0)\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Rafael Pellegrini | DOB: 05/11/1963 | MRN: SYN-5910924\nDate of service: 08/11/2025 | Dr. Bram Fenwick, MD (Rheumatology)\n\nActive medications:\nMethotrexate 25 mg by mouth once weekly - start date 11/08/2024\nFolic acid 1 mg by mouth daily\nLisinopril 10 mg daily\nLoratadine 10 mg daily\n\nAllergies:\nSulfa (hives)\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

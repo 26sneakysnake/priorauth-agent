@@ -1,0 +1,43 @@
+{
+  "case_id": "dev-029",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-03-25",
+  "patient": {
+    "name": "Jonas Fairbanks",
+    "birth_date": "1983-10-22",
+    "sex": "male",
+    "mrn": "SYN-2874379",
+    "member_id": "EHP-SYN-04465635"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Cedar Hollow Primary Care\nDate: 03/25/2025\nRe: Prior authorization request - Jonas Fairbanks\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Jonas Fairbanks | Member ID: EHP-SYN-04465635 | DOB: 10/22/1983\nRequesting provider: Dr. Henrik Bellamy, MD | NPI: 9342309013\nDate of request: 03/25/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right L5 radiculopathy.\nSymptom onset date: 12/26/2024\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Jonas Fairbanks | DOB: 10/22/1983 | MRN: SYN-2874379\nDate of service: 02/20/2025 | T. Okafor\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Pinecrest Diagnostic Imaging\nRadiology Report - XR Lumbar Spine, 2 Views\nPatient: Jonas Fairbanks | DOB: 10/22/1983 | MRN: SYN-2874379\nDate of service: 02/10/2025 | Dr. Adele Langley, MD (Radiology)\n\nFindings:\nMild disc space narrowing at L4-L5. Alignment is normal. No fracture.\n\nImpression:\nMild degenerative changes of the lower lumbar spine.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Jonas Fairbanks | DOB: 10/22/1983\n\nMember ID: EHP-SYN-04465635\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: T. Okafor on 03/25/2025, reference #56985632\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Cedar Hollow Primary Care\nOffice Visit - Follow-up\nPatient: Jonas Fairbanks | DOB: 10/22/1983 | MRN: SYN-2874379\nDate of service: 03/20/2025 | Dr. Henrik Bellamy, MD\n\nHistory of present illness:\n41-year-old man seen for follow-up of low back pain. He first noticed the pain shooting down his right leg after lifting a heavy box, nearly three months before this visit.\n\nTreatment to date:\nTwo months of supervised exercise sessions plus over-the-counter anti-inflammatories have not brought lasting relief.\n\nHistory:\nPast medical history: type 2 diabetes, hyperlipidemia.\nMedications: metformin 500 mg twice daily; atorvastatin 20 mg nightly.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 40 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Lakeview Internal Medicine Associates\nScheduling Note\nPatient: Jonas Fairbanks | DOB: 10/22/1983 | MRN: SYN-2874379\nDate of service: 03/25/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (720) 555-0183\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

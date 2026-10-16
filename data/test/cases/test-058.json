@@ -1,0 +1,27 @@
+{
+  "case_id": "test-058",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-05-27",
+  "patient": {
+    "name": "Ines Thorne",
+    "birth_date": "1964-10-19",
+    "sex": "female",
+    "mrn": "SYN-1503914",
+    "member_id": "EHP-SYN-43376158"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Ines Thorne | Member ID: EHP-SYN-43376158 | DOB: 10/19/1964\nRequesting provider: Kaveh Cordero, PT, DPT | NPI: 9493188061\nDate of request: 05/27/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Ines Thorne | DOB: 10/19/1964 | MRN: SYN-1503914\nDate of service: 05/23/2025 | Kaveh Cordero, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 10 weeks, start of care 04/15/2025, certified through 06/24/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 90 to 104 degrees; KOOS score improved from 49 to 60.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Juniper Bone and Joint Clinic\nOrthopedic Follow-up\nPatient: Ines Thorne | DOB: 10/19/1964 | MRN: SYN-1503914\nDate of service: 05/23/2025 | Dr. Ravi Draycott, MD\n\nInterval history:\nFollow-up of right knee pain during physical therapy.\nPatient reports no improvement with therapy so far; function is unchanged.\n\nPlan:\nContinue home exercises; review therapy notes at the next visit.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

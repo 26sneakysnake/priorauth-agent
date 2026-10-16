@@ -1,0 +1,27 @@
+{
+  "case_id": "test-044",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-10-06",
+  "patient": {
+    "name": "Greta Whitlock",
+    "birth_date": "1987-08-04",
+    "sex": "female",
+    "mrn": "SYN-2037472",
+    "member_id": "EHP-SYN-55386802"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Greta Whitlock | Member ID: EHP-SYN-55386802 | DOB: 08/04/1987\nRequesting provider: Sanne Cordero, PT, DPT | NPI: 9274763544\nDate of request: 10/06/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Greta Whitlock | DOB: 08/04/1987 | MRN: SYN-2037472\nDate of service: 10/03/2025 | Sanne Cordero, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the left shoulder (M75.102).\n\nPlan:\nPlan of care: 2 visits per week for 12 weeks, start of care 09/03/2025, certified through 11/26/2025.\n\nObjective measures:\nProgress since start of care: no measurable change; shoulder abduction unchanged at 85 degrees and QuickDASH score unchanged at 50.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Greta Whitlock | DOB: 08/04/1987 | MRN: SYN-2037472\nDate of service: 12/11/2024 | Dr. Adele Fenwick, MD\n\nVitals:\nBP 116/71, HR 60, BMI 25.5\n\nHistory:\nPast medical history: gastroesophageal reflux, hypothyroidism.\nMedications: omeprazole 20 mg daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

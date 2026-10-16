@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-067",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-02-14",
+  "patient": {
+    "name": "Bastien Galloway",
+    "birth_date": "1951-12-05",
+    "sex": "male",
+    "mrn": "SYN-0005861",
+    "member_id": "EHP-SYN-48666022"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Bastien Galloway | Member ID: EHP-SYN-48666022 | DOB: 12/05/1951\nRequesting provider: Dr. Oskar Ashgrove, MD | NPI: 9608410416\nDate of request: 02/14/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right L5 radiculopathy.\nSymptom onset date: 01/06/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Bastien Galloway | DOB: 12/05/1951 | MRN: SYN-0005861\nDate of service: 02/04/2025 | Dr. Oskar Ashgrove, MD\n\nHistory of present illness:\n73-year-old man seen for follow-up of low back pain. Low back pain radiating to the right leg for 4 weeks.\n\nTreatment to date:\nNo physical therapy or anti-inflammatory trial to date; patient requests imaging first.\n\nHistory:\nPast medical history: type 2 diabetes, hypertension.\nMedications: metformin 500 mg twice daily; lisinopril 10 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 40 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Bastien Galloway | DOB: 12/05/1951\n\nMember ID: EHP-SYN-48666022\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: J. Marlow on 02/14/2025, reference #70077240\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Bastien Galloway | DOB: 12/05/1951 | MRN: SYN-0005861\nDate of service: 10/13/2024 | Dr. Henrik Holloway, MD\n\nVitals:\nBP 133/82, HR 79, BMI 25.1\n\nHistory:\nPast medical history: hypothyroidism, type 2 diabetes.\nMedications: levothyroxine 75 mcg daily; metformin 500 mg twice daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

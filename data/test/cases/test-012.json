@@ -1,0 +1,43 @@
+{
+  "case_id": "test-012",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-12",
+  "patient": {
+    "name": "Farid Szabo",
+    "birth_date": "1953-05-12",
+    "sex": "male",
+    "mrn": "SYN-3003111",
+    "member_id": "EHP-SYN-34642802"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Westfield Rheumatology Group\nDate: 09/12/2025\nRe: Prior authorization request - Farid Szabo\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Farid Szabo | Member ID: EHP-SYN-34642802 | DOB: 05/12/1953\nRequesting provider: Dr. Isla Draycott, MD (Rheumatology) | NPI: 9684744567\nDate of request: 09/12/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 160 mg subcutaneously every 14 days\nQuantity: 8 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Farid Szabo | DOB: 05/12/1953\n\nMember ID: EHP-SYN-34642802\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: R. Lindgren on 09/12/2025, reference #60034906\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Farid Szabo | DOB: 05/12/1953 | MRN: SYN-3003111\nDate of service: 09/03/2025 | Dr. Isla Draycott, MD (Rheumatology)\n\nHistory:\n72-year-old man with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 14 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 31.\nPlan: start fictimab 160 mg subcutaneously every 14 days.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Farid Szabo | DOB: 05/12/1953 | MRN: SYN-3003111\nOrdering provider: Dr. Isla Draycott, MD (Rheumatology)\n\nCollected: 06/26/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 32 U/L (reference 7-56)\nCreatinine: 1.1 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 5.8 x10^3/uL (reference 4.0-11.0)\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Westfield Rheumatology Group\nMedication List\nPatient: Farid Szabo | DOB: 05/12/1953 | MRN: SYN-3003111\nDate of service: 09/03/2025 | Dr. Isla Draycott, MD (Rheumatology)\n\nActive medications:\nMethotrexate 20 mg by mouth once weekly - start date 05/23/2025\nFolic acid 1 mg by mouth daily\nOmeprazole 20 mg daily\nLisinopril 10 mg daily\n\nAllergies:\nNo known drug allergies\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Farid Szabo | DOB: 05/12/1953 | MRN: SYN-3003111\nDate of service: 11/27/2024 | Dr. Lucia Fenwick, MD\n\nVitals:\nBP 133/84, HR 68, BMI 24.1\n\nHistory:\nPast medical history: hypertension, hypothyroidism.\nMedications: lisinopril 10 mg daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

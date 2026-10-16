@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-099",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-10-25",
+  "patient": {
+    "name": "Dalia Abernethy",
+    "birth_date": "1973-04-24",
+    "sex": "female",
+    "mrn": "SYN-1373461",
+    "member_id": "EHP-SYN-07273591"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Dalia Abernethy | Member ID: EHP-SYN-07273591 | DOB: 04/24/1973\nRequesting provider: Noor Ashgrove, PT, DPT | NPI: 9133814633\nDate of request: 10/25/2025\n\nRequested service: Outpatient physical therapy, 6 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Dalia Abernethy | DOB: 04/24/1973 | MRN: SYN-1373461\nDate of service: 10/25/2025 | R. Lindgren\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (415) 555-0193\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Dalia Abernethy | DOB: 04/24/1973 | MRN: SYN-1373461\nDate of service: 10/24/2025 | completed by patient\n\nAllergies: none known\nTobacco use: former, quit 10 years ago\nAlcohol: none\nOccupation: warehouse associate\nPreferred pharmacy: on file\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Dalia Abernethy | DOB: 04/24/1973 | MRN: SYN-1373461\nDate of service: 01/11/2025 | Dr. Felix Draycott, MD\n\nVitals:\nBP 122/81, HR 78, BMI 25.3\n\nHistory:\nPast medical history: hypertension, seasonal allergies.\nMedications: lisinopril 10 mg daily; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Dalia Abernethy | DOB: 04/24/1973 | MRN: SYN-1373461\nDate of service: 10/24/2025 | Noor Ashgrove, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 21 weeks, start of care 10/01/2025, certified through 02/25/2026.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 96 to 121 degrees; KOOS score improved from 30 to 51.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

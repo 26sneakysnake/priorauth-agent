@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-092",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-31",
+  "patient": {
+    "name": "Edith Vasquez",
+    "birth_date": "1958-07-28",
+    "sex": "female",
+    "mrn": "SYN-1076377",
+    "member_id": "EHP-SYN-36960411"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Brookside Rehabilitation\nDate: 03/31/2025\nRe: Prior authorization request - Edith Vasquez\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Edith Vasquez | Member ID: EHP-SYN-36960411 | DOB: 07/28/1958\nRequesting provider: Oskar Ellery, PT, DPT | NPI: 9021565723\nDate of request: 03/31/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: not provided\nBody part / side: Right shoulder\nPlace of service: Outpatient clinic\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Edith Vasquez | DOB: 07/28/1958 | MRN: SYN-1076377\nDate of service: 02/23/2025 | J. Marlow\n\nRequest: refill of omeprazole 20 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Edith Vasquez | DOB: 07/28/1958\n\nMember ID: EHP-SYN-36960411\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: M. Haverford on 03/31/2025, reference #89882158\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Edith Vasquez | DOB: 07/28/1958 | MRN: SYN-1076377\nDate of service: 09/20/2024 | Dr. Kaveh Iverson, MD\n\nVitals:\nBP 132/71, HR 58, BMI 24.6\n\nHistory:\nPast medical history: gastroesophageal reflux, seasonal allergies.\nMedications: omeprazole 20 mg daily; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Edith Vasquez | DOB: 07/28/1958 | MRN: SYN-1076377\nDate of service: 03/21/2025 | Oskar Ellery, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: right shoulder pain, continuing therapy.\n\nPlan:\nPlan of care: 3 visits per week for 9 weeks, start of care 02/20/2025, certified through 04/24/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 99 to 129 degrees; QuickDASH score improved from 58 to 48.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

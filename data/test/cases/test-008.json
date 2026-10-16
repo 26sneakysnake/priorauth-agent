@@ -1,0 +1,27 @@
+{
+  "case_id": "test-008",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-04-01",
+  "patient": {
+    "name": "Carmen Fairbanks",
+    "birth_date": "1984-10-16",
+    "sex": "female",
+    "mrn": "SYN-6501318",
+    "member_id": "EHP-SYN-66143162"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Carmen Fairbanks | Member ID: EHP-SYN-66143162 | DOB: 10/16/1984\nRequesting provider: Dr. Henrik Grantham, MD | NPI: 9839273557\nDate of request: 04/01/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left S1 radiculopathy.\nSymptom onset date: 01/19/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Carmen Fairbanks | DOB: 10/16/1984 | MRN: SYN-6501318\nDate of service: 03/30/2025 | Dr. Henrik Grantham, MD\n\nHistory of present illness:\n40-year-old woman seen for follow-up of low back pain. Low back pain radiating to the left leg for 10 weeks.\n\nTreatment to date:\nCompleted 8 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: seasonal allergies, hypertension.\nMedications: loratadine 10 mg daily; lisinopril 10 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 50 degrees.\nNeuro: strength 4/5 in left plantar flexion, left Achilles reflex 1+, decreased light touch over the lateral left foot.\n\nAssessment and plan:\nAssessment: left S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Nurse Triage\nPatient: Carmen Fairbanks | DOB: 10/16/1984 | MRN: SYN-6501318\nDate of service: 03/31/2025 | R. Calloway, RN\n\nCaller: patient.\nPatient reports new episodes of urinary incontinence since 03/31/2025.\nAdvised emergency department evaluation if symptoms worsen; message routed to Dr. Henrik Grantham, MD.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "case_id": "test-032",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "missing_evidence",
+  "target_criterion": "BIOLOGIC_RA.first_line_failure",
+  "expected_decision": "PEND",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Assessment: seropositive rheumatoid arthritis with high disease activity, CDAI 31."
+        }
+      ],
+      "rationale": "CDAI 31 > 10"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "INSUFFICIENT",
+      "evidence": [],
+      "rationale": "methotrexate history not documented"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Dose: 40 mg subcutaneously every 7 days"
+        },
+        {
+          "page": 5,
+          "quote": "Plan: start fictimab 40 mg subcutaneously every 7 days."
+        }
+      ],
+      "rationale": "80 mg per 14 days, within range"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Collected: 06/14/2025"
+        },
+        {
+          "page": 2,
+          "quote": "QuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE"
+        },
+        {
+          "page": 2,
+          "quote": "Hepatitis B surface antigen: NON-REACTIVE"
+        },
+        {
+          "page": 5,
+          "quote": "Pre-biologic screening: tuberculosis and hepatitis B screens negative."
+        }
+      ],
+      "rationale": "both screens negative, collected 06/14/2025"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "lab_report",
+    "clinic_note",
+    "eligibility",
+    "specialist_note"
+  ]
+}

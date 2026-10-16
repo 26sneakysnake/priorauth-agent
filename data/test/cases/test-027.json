@@ -1,0 +1,31 @@
+{
+  "case_id": "test-027",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-09-26",
+  "patient": {
+    "name": "Edith Delacroix",
+    "birth_date": "1983-07-27",
+    "sex": "female",
+    "mrn": "SYN-1766558",
+    "member_id": "EHP-SYN-76223436"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Maple Ridge Community Clinic\nDate: 09/26/2025\nRe: Prior authorization request - Edith Delacroix\nNumber of pages (including cover): 4\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Edith Delacroix | Member ID: EHP-SYN-76223436 | DOB: 07/27/1983\nRequesting provider: Dr. Bram Oakhurst, MD | NPI: 9149043579\nDate of request: 09/26/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right L5 radiculopathy.\nSymptom onset date: 06/21/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nOffice Visit - Follow-up\nPatient: Edith Delacroix | DOB: 07/27/1983 | MRN: SYN-1766558\nDate of service: 09/16/2025 | Dr. Bram Oakhurst, MD\n\nHistory of present illness:\n42-year-old woman seen for follow-up of low back pain. Low back pain radiating to the right leg for 12 weeks.\n\nTreatment to date:\nCompleted 9 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: gastroesophageal reflux, hypertension.\nMedications: omeprazole 20 mg daily; lisinopril 10 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 45 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Edith Delacroix | DOB: 07/27/1983 | MRN: SYN-1766558\nDate of service: 02/09/2025 | Dr. Jasper Jessop, MD\n\nVitals:\nBP 120/74, HR 75, BMI 22.2\n\nHistory:\nPast medical history: gastroesophageal reflux, hyperlipidemia.\nMedications: omeprazole 20 mg daily; atorvastatin 20 mg nightly.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

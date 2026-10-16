@@ -1,0 +1,43 @@
+{
+  "case_id": "test-038",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-07-27",
+  "patient": {
+    "name": "Rosa Quintero",
+    "birth_date": "1951-04-12",
+    "sex": "female",
+    "mrn": "SYN-7002994",
+    "member_id": "EHP-SYN-99354673"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Westfield Rheumatology Group\nDate: 07/27/2025\nRe: Prior authorization request - Rosa Quintero\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Rosa Quintero | Member ID: EHP-SYN-99354673 | DOB: 04/12/1951\nRequesting provider: Dr. Ravi Langley, MD (Rheumatology) | NPI: 9876858834\nDate of request: 07/27/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Cedar Hollow Primary Care\nPatient Intake Questionnaire\nPatient: Rosa Quintero | DOB: 04/12/1951 | MRN: SYN-7002994\nDate of service: 07/19/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: none\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Cedar Hollow Primary Care\nScheduling Note\nPatient: Rosa Quintero | DOB: 04/12/1951 | MRN: SYN-7002994\nDate of service: 07/27/2025 | M. Haverford\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (720) 555-0111\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Rosa Quintero | DOB: 04/12/1951 | MRN: SYN-7002994\nDate of service: 02/07/2025 | Dr. Petra Iverson, MD\n\nVitals:\nBP 125/77, HR 75, BMI 28.1\n\nHistory:\nPast medical history: hypothyroidism, type 2 diabetes.\nMedications: levothyroxine 75 mcg daily; metformin 500 mg twice daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Rosa Quintero | DOB: 04/12/1951 | MRN: SYN-7002994\nDate of service: 07/19/2025 | Dr. Ravi Langley, MD (Rheumatology)\n\nHistory:\n74-year-old woman with rheumatoid arthritis diagnosed in 2022, seen to discuss escalation of therapy. Past medical history: seasonal allergies, type 2 diabetes.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nShe has taken weekly methotrexate (20 mg) for the better part of nine months, yet the small joints of both hands remain swollen.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 26.\nLatent TB blood test and hepatitis B panel drawn on 07/06/2025 both came back clear.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Rosa Quintero | DOB: 04/12/1951 | MRN: SYN-7002994\nDate of service: 07/10/2025 | K. Brennan\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

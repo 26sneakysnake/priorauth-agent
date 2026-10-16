@@ -1,0 +1,65 @@
+{
+  "case_id": "test-025",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "clean_pend",
+  "target_criterion": "PT_EXTENSION.plan_of_care",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Diagnosis: M17.11 Unilateral primary osteoarthritis, right knee"
+        },
+        {
+          "page": 2,
+          "quote": "Assessment: primary osteoarthritis of the right knee (M17.11)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Plan of care: 2 visits per week for 20 weeks, start of care 06/12/2025, certified through 10/30/2025."
+        }
+      ],
+      "rationale": "20 weeks planned; policy maximum is 12"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Progress since start of care: knee flexion improved from 84 to 105 degrees; KOOS score improved from 31 to 42."
+        }
+      ],
+      "rationale": "measurable range-of-motion and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Body part / side: Right knee"
+        },
+        {
+          "page": 2,
+          "quote": "Assessment: primary osteoarthritis of the right knee (M17.11)."
+        }
+      ],
+      "rationale": "right knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "therapy_note",
+    "eligibility"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "case_id": "dev-023",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "laterality_swap",
+  "target_criterion": "MRI_LUMBAR.laterality",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Low back pain radiating to the right leg for 10 weeks."
+        },
+        {
+          "page": 2,
+          "quote": "Symptom onset date: 03/30/2025"
+        }
+      ],
+      "rationale": "10 weeks documented"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Completed 6 weeks of physical therapy and daily naproxen without adequate relief."
+        },
+        {
+          "page": 5,
+          "quote": "Start of care: 04/25/2025"
+        }
+      ],
+      "rationale": "6 weeks of physical therapy and NSAID"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Red flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer."
+        }
+      ],
+      "rationale": "negative red-flag screen"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Neuro: strength 4/5 in right plantar flexion, right Achilles reflex 1+, decreased light touch over the lateral right foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings documented"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Clinical indication: Left S1 radiculopathy."
+        },
+        {
+          "page": 4,
+          "quote": "Low back pain radiating to the right leg for 10 weeks."
+        }
+      ],
+      "rationale": "request says left, the clinical notes say right"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "administrative",
+    "clinic_note",
+    "therapy_note",
+    "eligibility",
+    "imaging_report"
+  ]
+}

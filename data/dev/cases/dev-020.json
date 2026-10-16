@@ -1,0 +1,43 @@
+{
+  "case_id": "dev-020",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-05-14",
+  "patient": {
+    "name": "Cyrus Haddad",
+    "birth_date": "1968-02-11",
+    "sex": "male",
+    "mrn": "SYN-8569629",
+    "member_id": "EHP-SYN-67980084"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Cyrus Haddad | Member ID: EHP-SYN-67980084 | DOB: 02/11/1968\nRequesting provider: Henrik Holloway, PT, DPT | NPI: 9025961696\nDate of request: 05/14/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M16.12 Unilateral primary osteoarthritis, left hip\nBody part / side: Left hip\nPlace of service: Outpatient clinic\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Cyrus Haddad | DOB: 02/11/1968 | MRN: SYN-8569629\nDate of service: 08/28/2024 | Dr. Jasper Draycott, MD\n\nVitals:\nBP 127/72, HR 58, BMI 24.3\n\nHistory:\nPast medical history: hyperlipidemia, type 2 diabetes.\nMedications: atorvastatin 20 mg nightly; metformin 500 mg twice daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Cyrus Haddad | DOB: 02/11/1968 | MRN: SYN-8569629\nDate of service: 05/14/2025 | R. Lindgren\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (720) 555-0190\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Cyrus Haddad | DOB: 02/11/1968\n\nMember ID: EHP-SYN-67980084\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: R. Lindgren on 05/14/2025, reference #99304310\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Cyrus Haddad | DOB: 02/11/1968 | MRN: SYN-8569629\nDate of service: 05/07/2025 | Henrik Holloway, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left hip (M16.12).\n\nPlan:\nPlan of care: 2 visits per week for 10 weeks, start of care 04/07/2025, certified through 06/16/2025.\n\nObjective measures:\nTolerated today's session without increased pain.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Cyrus Haddad | DOB: 02/11/1968 | MRN: SYN-8569629\nDate of service: 04/10/2025 | M. Haverford\n\nRequest: refill of atorvastatin 20 mg nightly.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Cyrus Haddad | DOB: 02/11/1968 | MRN: SYN-8569629\nDate of service: 05/07/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: former, quit 10 years ago\nAlcohol: none\nOccupation: retired\nPreferred pharmacy: on file\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "test-048",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-27",
+  "patient": {
+    "name": "Mirela Underhill",
+    "birth_date": "1959-01-07",
+    "sex": "female",
+    "mrn": "SYN-0109193",
+    "member_id": "EHP-SYN-83187456"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Mirela Underhill | Member ID: EHP-SYN-83187456 | DOB: 01/07/1959\nRequesting provider: Ravi Merriweather, PT, DPT | NPI: 9475703845\nDate of request: 03/27/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Mirela Underhill | DOB: 01/07/1959 | MRN: SYN-0109193\nDate of service: 03/19/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Mirela Underhill | DOB: 01/07/1959 | MRN: SYN-0109193\nDate of service: 03/27/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (312) 555-0103\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Mirela Underhill | DOB: 01/07/1959\n\nMember ID: EHP-SYN-83187456\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: R. Lindgren on 03/27/2025, reference #88992349\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Mirela Underhill | DOB: 01/07/1959 | MRN: SYN-0109193\nDate of service: 03/19/2025 | Ravi Merriweather, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 8 weeks, start of care 02/10/2025, certified through 04/07/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 90 to 109 degrees; KOOS score improved from 38 to 49.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Mirela Underhill | DOB: 01/07/1959 | MRN: SYN-0109193\nDate of service: 02/10/2025 | K. Brennan\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "case_id": "dev-085",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "contradiction",
+  "target_criterion": "PT_EXTENSION.progress",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Diagnosis: M75.101 Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic"
+        },
+        {
+          "page": 6,
+          "quote": "Assessment: non-traumatic rotator cuff tear of the right shoulder (M75.101)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Plan of care: 3 visits per week for 7 weeks, start of care 10/04/2025, certified through 11/22/2025."
+        }
+      ],
+      "rationale": "3x/week for 7 weeks, dates consistent"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Progress since start of care: shoulder abduction improved from 82 to 103 degrees; QuickDASH score improved from 63 to 47."
+        },
+        {
+          "page": 7,
+          "quote": "Patient reports no improvement with therapy so far; function is unchanged."
+        }
+      ],
+      "rationale": "therapist documents gains, physician note says no improvement"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Body part / side: Right shoulder"
+        },
+        {
+          "page": 6,
+          "quote": "Assessment: non-traumatic rotator cuff tear of the right shoulder (M75.101)."
+        }
+      ],
+      "rationale": "right shoulder on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "fax_cover",
+    "request_form",
+    "intake_form",
+    "clinic_note",
+    "administrative",
+    "therapy_note",
+    "clinic_note",
+    "eligibility"
+  ]
+}

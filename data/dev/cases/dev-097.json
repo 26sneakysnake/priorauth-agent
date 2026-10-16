@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-097",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-09-13",
+  "patient": {
+    "name": "Kira Nakamura",
+    "birth_date": "1958-07-12",
+    "sex": "female",
+    "mrn": "SYN-1205513",
+    "member_id": "EHP-SYN-50915756"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Summit Motion Therapy\nDate: 09/13/2025\nRe: Prior authorization request - Kira Nakamura\nNumber of pages (including cover): 4\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Kira Nakamura | Member ID: EHP-SYN-50915756 | DOB: 07/12/1958\nRequesting provider: Oskar Penrose, PT, DPT | NPI: 9453135198\nDate of request: 09/13/2025\n\nRequested service: Outpatient physical therapy, 12 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Kira Nakamura | DOB: 07/12/1958 | MRN: SYN-1205513\nDate of service: 09/12/2025 | Oskar Penrose, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the left shoulder (M75.102).\n\nPlan:\nPlan of care: 3 visits per week for 6 weeks, start of care 08/12/2025, certified through 12/02/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 90 to 115 degrees; QuickDASH score improved from 46 to 27.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Kira Nakamura | DOB: 07/12/1958\n\nMember ID: EHP-SYN-50915756\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: M. Haverford on 09/13/2025, reference #08774340\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

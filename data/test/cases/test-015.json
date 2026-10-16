@@ -1,0 +1,27 @@
+{
+  "case_id": "test-015",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-02-19",
+  "patient": {
+    "name": "Anton Galloway",
+    "birth_date": "1955-08-14",
+    "sex": "male",
+    "mrn": "SYN-9783829",
+    "member_id": "EHP-SYN-78316404"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Anton Galloway | Member ID: EHP-SYN-78316404 | DOB: 08/14/1955\nRequesting provider: Jasper Bellamy, PT, DPT | NPI: 9793567672\nDate of request: 02/19/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Anton Galloway | DOB: 08/14/1955 | MRN: SYN-9783829\nDate of service: 02/09/2025 | Jasper Bellamy, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the left shoulder (M75.102).\n\nPlan:\nPlan of care: 2 visits per week for 7 weeks, start of care 01/02/2025, certified through 05/29/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 99 to 141 degrees; QuickDASH score improved from 50 to 29.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Anton Galloway | DOB: 08/14/1955 | MRN: SYN-9783829\nDate of service: 09/05/2024 | Dr. Celine Ashgrove, MD\n\nVitals:\nBP 137/73, HR 85, BMI 24.7\n\nHistory:\nPast medical history: hypertension, hyperlipidemia.\nMedications: lisinopril 10 mg daily; atorvastatin 20 mg nightly.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

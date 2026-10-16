@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-046",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-11-09",
+  "patient": {
+    "name": "Vera Yilmaz",
+    "birth_date": "1990-05-03",
+    "sex": "female",
+    "mrn": "SYN-0988003",
+    "member_id": "EHP-SYN-38002037"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Vera Yilmaz | Member ID: EHP-SYN-38002037 | DOB: 05/03/1990\nRequesting provider: Dr. Isla Iverson, MD (Rheumatology) | NPI: 9509980693\nDate of request: 11/09/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Vera Yilmaz | DOB: 05/03/1990 | MRN: SYN-0988003\nDate of service: 11/01/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Vera Yilmaz | DOB: 05/03/1990 | MRN: SYN-0988003\nDate of service: 11/01/2025 | Dr. Isla Iverson, MD (Rheumatology)\n\nActive medications:\nMethotrexate 15 mg by mouth once weekly - start date 01/27/2025\nFolic acid 1 mg by mouth daily\nAtorvastatin 20 mg nightly\nLisinopril 10 mg daily\n\nAllergies:\nSulfa (hives)\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Vera Yilmaz | DOB: 05/03/1990 | MRN: SYN-0988003\nDate of service: 11/01/2025 | Dr. Isla Iverson, MD (Rheumatology)\n\nHistory:\n35-year-old woman with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: hyperlipidemia, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 39 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: rheumatoid arthritis with low disease activity, CDAI 4.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Vera Yilmaz | DOB: 05/03/1990 | MRN: SYN-0988003\nOrdering provider: Dr. Isla Iverson, MD (Rheumatology)\n\nCollected: 10/03/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 26 U/L (reference 7-56)\nCreatinine: 0.8 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 7.6 x10^3/uL (reference 4.0-11.0)\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

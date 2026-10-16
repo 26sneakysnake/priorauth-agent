@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-031",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-05-16",
+  "patient": {
+    "name": "Anton Ivanova",
+    "birth_date": "1979-09-22",
+    "sex": "male",
+    "mrn": "SYN-4642105",
+    "member_id": "EHP-SYN-46350879"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Anton Ivanova | Member ID: EHP-SYN-46350879 | DOB: 09/22/1979\nRequesting provider: Dr. Adele Merriweather, MD (Rheumatology) | NPI: 9419716418\nDate of request: 05/16/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 160 mg subcutaneously every 14 days\nQuantity: 8 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Anton Ivanova | DOB: 09/22/1979 | MRN: SYN-4642105\nOrdering provider: Dr. Adele Merriweather, MD (Rheumatology)\n\nCollected: 04/20/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 38 U/L (reference 7-56)\nCreatinine: 0.7 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 4.5 x10^3/uL (reference 4.0-11.0)\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Anton Ivanova | DOB: 09/22/1979 | MRN: SYN-4642105\nDate of service: 05/15/2025 | Dr. Adele Merriweather, MD (Rheumatology)\n\nHistory:\n45-year-old man with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, type 2 diabetes.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 29 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 36.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 160 mg subcutaneously every 14 days.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

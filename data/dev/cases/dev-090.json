@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-090",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-10-08",
+  "patient": {
+    "name": "Cyrus Szabo",
+    "birth_date": "1954-07-10",
+    "sex": "male",
+    "mrn": "SYN-4679862",
+    "member_id": "EHP-SYN-48814871"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Westfield Rheumatology Group\nDate: 10/08/2025\nRe: Prior authorization request - Cyrus Szabo\nNumber of pages (including cover): 4\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Cyrus Szabo | Member ID: EHP-SYN-48814871 | DOB: 07/10/1954\nRequesting provider: Dr. Jasper Grantham, MD (Rheumatology) | NPI: 9568070905\nDate of request: 10/08/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 160 mg subcutaneously every 14 days\nQuantity: 8 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Cyrus Szabo | DOB: 07/10/1954 | MRN: SYN-4679862\nDate of service: 10/05/2025 | Dr. Jasper Grantham, MD (Rheumatology)\n\nHistory:\n71-year-old man with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: seasonal allergies, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nMethotrexate 25 mg weekly was stopped after 20 weeks because of persistent transaminase elevation (intolerance).\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 25.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 160 mg subcutaneously every 14 days.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Cyrus Szabo | DOB: 07/10/1954 | MRN: SYN-4679862\nOrdering provider: Dr. Jasper Grantham, MD (Rheumatology)\n\nCollected: 09/05/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 38 U/L (reference 7-56)\nCreatinine: 0.7 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 8.1 x10^3/uL (reference 4.0-11.0)\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

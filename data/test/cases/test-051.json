@@ -1,0 +1,31 @@
+{
+  "case_id": "test-051",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-04-23",
+  "patient": {
+    "name": "Gideon Esposito",
+    "birth_date": "1967-03-25",
+    "sex": "male",
+    "mrn": "SYN-9148526",
+    "member_id": "EHP-SYN-76601730"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Brookside Rehabilitation\nDate: 04/23/2025\nRe: Prior authorization request - Gideon Esposito\nNumber of pages (including cover): 4\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Gideon Esposito | Member ID: EHP-SYN-76601730 | DOB: 03/25/1967\nRequesting provider: Oskar Kestrel, PT, DPT | NPI: 9074815531\nDate of request: 04/23/2025\n\nRequested service: Outpatient physical therapy, 12 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Gideon Esposito | DOB: 03/25/1967 | MRN: SYN-9148526\nDate of service: 04/14/2025 | Oskar Kestrel, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left knee (M17.12).\n\nPlan:\nPlan of care: 3 visits per week for 19 weeks, start of care 03/24/2025, certified through 08/04/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 91 to 119 degrees; KOOS score improved from 39 to 61.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Gideon Esposito | DOB: 03/25/1967 | MRN: SYN-9148526\nDate of service: 04/09/2025 | M. Haverford\n\nRequest: refill of omeprazole 20 mg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

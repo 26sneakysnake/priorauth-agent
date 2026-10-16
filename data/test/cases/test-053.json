@@ -1,0 +1,39 @@
+{
+  "case_id": "test-053",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-08-04",
+  "patient": {
+    "name": "Vera Zielinski",
+    "birth_date": "1972-04-05",
+    "sex": "female",
+    "mrn": "SYN-2135898",
+    "member_id": "EHP-SYN-57559023"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Vera Zielinski | Member ID: EHP-SYN-57559023 | DOB: 04/05/1972\nRequesting provider: Dr. Gwen Langley, MD | NPI: 9291969196\nDate of request: 08/04/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right S1 radiculopathy.\nSymptom onset date: 07/11/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Vera Zielinski | DOB: 04/05/1972 | MRN: SYN-2135898\nDate of service: 12/01/2024 | Dr. Celine Draycott, MD\n\nVitals:\nBP 124/84, HR 59, BMI 29.5\n\nHistory:\nPast medical history: hypertension, hyperlipidemia.\nMedications: lisinopril 10 mg daily; atorvastatin 20 mg nightly.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Vera Zielinski | DOB: 04/05/1972 | MRN: SYN-2135898\nDate of service: 07/27/2025 | completed by patient\n\nAllergies: none known\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nOffice Visit - Follow-up\nPatient: Vera Zielinski | DOB: 04/05/1972 | MRN: SYN-2135898\nDate of service: 07/27/2025 | Dr. Gwen Langley, MD\n\nHistory of present illness:\n53-year-old woman seen for follow-up of low back pain. Low back pain radiating to the right leg for 2 weeks.\n\nTreatment to date:\nNo physical therapy or anti-inflammatory trial to date; patient requests imaging first.\n\nHistory:\nPast medical history: type 2 diabetes, hyperlipidemia.\nMedications: metformin 500 mg twice daily; atorvastatin 20 mg nightly.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 30 degrees.\nNeuro: strength 4/5 in right plantar flexion, right Achilles reflex 1+, decreased light touch over the lateral right foot.\n\nAssessment and plan:\nAssessment: right S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Clearwater Imaging Center\nRadiology Report - XR Lumbar Spine, 2 Views\nPatient: Vera Zielinski | DOB: 04/05/1972 | MRN: SYN-2135898\nDate of service: 06/17/2025 | Dr. Marek Kestrel, MD (Radiology)\n\nFindings:\nMild disc space narrowing at L4-L5. Alignment is normal. No fracture.\n\nImpression:\nMild degenerative changes of the lower lumbar spine.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Vera Zielinski | DOB: 04/05/1972 | MRN: SYN-2135898\nDate of service: 08/04/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0145\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

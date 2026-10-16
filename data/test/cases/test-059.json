@@ -1,0 +1,43 @@
+{
+  "case_id": "test-059",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-10-02",
+  "patient": {
+    "name": "Joelle Vasquez",
+    "birth_date": "1950-08-12",
+    "sex": "female",
+    "mrn": "SYN-3685855",
+    "member_id": "EHP-SYN-31007248"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Joelle Vasquez | Member ID: EHP-SYN-31007248 | DOB: 08/12/1950\nRequesting provider: Petra Ashgrove, PT, DPT | NPI: 9282186463\nDate of request: 10/02/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Joelle Vasquez | DOB: 08/12/1950 | MRN: SYN-3685855\nDate of service: 09/30/2025 | Petra Ashgrove, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nPlan of care: 3 visits per week for 7 weeks, start of care 09/01/2025, certified through 10/20/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 80 to 95 degrees; HOOS score improved from 34 to 56.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Joelle Vasquez | DOB: 08/12/1950 | MRN: SYN-3685855\nDate of service: 09/30/2025 | completed by patient\n\nAllergies: none known\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Joelle Vasquez | DOB: 08/12/1950\n\nMember ID: EHP-SYN-31007248\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: S. Duarte on 10/02/2025, reference #03375632\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Joelle Vasquez | DOB: 08/12/1950 | MRN: SYN-3685855\nDate of service: 04/08/2025 | Dr. Petra Bellamy, MD\n\nVitals:\nBP 128/83, HR 87, BMI 23.1\n\nHistory:\nPast medical history: type 2 diabetes, hypertension.\nMedications: metformin 500 mg twice daily; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Lakeview Internal Medicine Associates\nScheduling Note\nPatient: Joelle Vasquez | DOB: 08/12/1950 | MRN: SYN-3685855\nDate of service: 10/02/2025 | S. Duarte\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0119\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Joelle Vasquez | DOB: 08/12/1950 | MRN: SYN-3685855\nDate of service: 09/13/2025 | J. Marlow\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "test-014",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-13",
+  "patient": {
+    "name": "Dario Nakamura",
+    "birth_date": "1996-07-24",
+    "sex": "male",
+    "mrn": "SYN-3122913",
+    "member_id": "EHP-SYN-15599649"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Dario Nakamura | Member ID: EHP-SYN-15599649 | DOB: 07/24/1996\nRequesting provider: Isla Penrose, PT, DPT | NPI: 9118093277\nDate of request: 03/13/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Dario Nakamura | DOB: 07/24/1996 | MRN: SYN-3122913\nDate of service: 03/08/2025 | Isla Penrose, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right hip (M16.11).\n\nPlan:\nPlan of care: 3 visits per week for 6 weeks, start of care 01/31/2025, certified through 03/14/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 79 to 90 degrees; HOOS score improved from 39 to 61.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Dario Nakamura | DOB: 07/24/1996 | MRN: SYN-3122913\nDate of service: 02/26/2025 | J. Marlow\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

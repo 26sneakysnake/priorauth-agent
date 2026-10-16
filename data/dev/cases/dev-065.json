@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-065",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-09-02",
+  "patient": {
+    "name": "Tobias Marchetti",
+    "birth_date": "1957-02-12",
+    "sex": "male",
+    "mrn": "SYN-0211422",
+    "member_id": "EHP-SYN-51810707"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Tobias Marchetti | Member ID: EHP-SYN-51810707 | DOB: 02/12/1957\nRequesting provider: Henrik Ashgrove, PT, DPT | NPI: 9968365186\nDate of request: 09/02/2025\n\nRequested service: Outpatient physical therapy, 7 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Tobias Marchetti | DOB: 02/12/1957 | MRN: SYN-0211422\nDate of service: 07/19/2025 | K. Brennan\n\nRequest: refill of atorvastatin 20 mg nightly.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Tobias Marchetti | DOB: 02/12/1957\n\nMember ID: EHP-SYN-51810707\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: J. Marlow on 09/02/2025, reference #06348420\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Tobias Marchetti | DOB: 02/12/1957 | MRN: SYN-0211422\nDate of service: 09/02/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0165\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Tobias Marchetti | DOB: 02/12/1957 | MRN: SYN-0211422\nDate of service: 08/24/2025 | Henrik Ashgrove, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: wear-and-tear arthritis of the left knee, as coded on the referral (M17.12).\n\nPlan:\nHe is scheduled twice weekly over ten weeks in total, from 08/02/2025 to 10/11/2025.\n\nObjective measures:\nHe now manages a full flight of stairs without the handrail, which he could not do at intake, and bends the knee about twenty-five degrees further.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

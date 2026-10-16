@@ -1,0 +1,81 @@
+{
+  "case_id": "test-045",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "dose_x4",
+  "target_criterion": "BIOLOGIC_RA.dose",
+  "expected_decision": "PEND",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Assessment: seropositive rheumatoid arthritis, DAS28-CRP 4.5 (moderate disease activity)."
+        }
+      ],
+      "rationale": "DAS28 4.5 > 3.2"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Inadequate response to methotrexate 15 mg weekly for 40 weeks despite good adherence."
+        },
+        {
+          "page": 5,
+          "quote": "Methotrexate 15 mg by mouth once weekly - start date 06/12/2024"
+        }
+      ],
+      "rationale": "40 weeks of methotrexate 15 mg/week"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Dose: 160 mg subcutaneously every 14 days"
+        },
+        {
+          "page": 3,
+          "quote": "Plan: start fictimab 160 mg subcutaneously every 14 days."
+        }
+      ],
+      "rationale": "160 mg per 14 days; maximum 80"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Collected: 02/26/2025"
+        },
+        {
+          "page": 6,
+          "quote": "QuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE"
+        },
+        {
+          "page": 6,
+          "quote": "Hepatitis B surface antigen: NON-REACTIVE"
+        },
+        {
+          "page": 3,
+          "quote": "Pre-biologic screening: tuberculosis and hepatitis B screens negative."
+        }
+      ],
+      "rationale": "both screens negative, collected 02/26/2025"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "administrative",
+    "specialist_note",
+    "eligibility",
+    "medication_list",
+    "lab_report",
+    "intake_form"
+  ]
+}

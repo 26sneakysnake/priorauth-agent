@@ -1,0 +1,47 @@
+{
+  "case_id": "dev-085",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-11-19",
+  "patient": {
+    "name": "Talia Lindqvist",
+    "birth_date": "1968-08-04",
+    "sex": "female",
+    "mrn": "SYN-0422429",
+    "member_id": "EHP-SYN-67819758"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Stillwater Physical Therapy\nDate: 11/19/2025\nRe: Prior authorization request - Talia Lindqvist\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Talia Lindqvist | Member ID: EHP-SYN-67819758 | DOB: 08/04/1968\nRequesting provider: Marek Kestrel, PT, DPT | NPI: 9192339371\nDate of request: 11/19/2025\n\nRequested service: Outpatient physical therapy, 9 additional visits\nDiagnosis: M75.101 Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic\nBody part / side: Right shoulder\nPlace of service: Outpatient clinic\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Talia Lindqvist | DOB: 08/04/1968 | MRN: SYN-0422429\nDate of service: 11/11/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Talia Lindqvist | DOB: 08/04/1968 | MRN: SYN-0422429\nDate of service: 04/03/2025 | Dr. Noor Fenwick, MD\n\nVitals:\nBP 134/73, HR 83, BMI 25.2\n\nHistory:\nPast medical history: seasonal allergies, hypertension.\nMedications: loratadine 10 mg daily; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Talia Lindqvist | DOB: 08/04/1968 | MRN: SYN-0422429\nDate of service: 11/19/2025 | M. Haverford\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0111\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Talia Lindqvist | DOB: 08/04/1968 | MRN: SYN-0422429\nDate of service: 11/11/2025 | Marek Kestrel, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the right shoulder (M75.101).\n\nPlan:\nPlan of care: 3 visits per week for 7 weeks, start of care 10/04/2025, certified through 11/22/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 82 to 103 degrees; QuickDASH score improved from 63 to 47.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Fairmont Orthopedics and Sports Medicine\nOrthopedic Follow-up\nPatient: Talia Lindqvist | DOB: 08/04/1968 | MRN: SYN-0422429\nDate of service: 11/13/2025 | Dr. Lucia Holloway, MD\n\nInterval history:\nFollow-up of right shoulder pain during physical therapy.\nPatient reports no improvement with therapy so far; function is unchanged.\n\nPlan:\nContinue home exercises; review therapy notes at the next visit.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Talia Lindqvist | DOB: 08/04/1968\n\nMember ID: EHP-SYN-67819758\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: R. Lindgren on 11/19/2025, reference #93665908\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

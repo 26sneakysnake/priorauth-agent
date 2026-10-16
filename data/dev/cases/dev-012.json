@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-012",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-02-22",
+  "patient": {
+    "name": "Rafael Haddad",
+    "birth_date": "1962-02-03",
+    "sex": "male",
+    "mrn": "SYN-8459972",
+    "member_id": "EHP-SYN-95150014"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Brookside Rehabilitation\nDate: 02/22/2025\nRe: Prior authorization request - Rafael Haddad\nNumber of pages (including cover): 6\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Rafael Haddad | Member ID: EHP-SYN-95150014 | DOB: 02/03/1962\nRequesting provider: Adele Cordero, PT, DPT | NPI: 9463507890\nDate of request: 02/22/2025\n\nRequested service: Outpatient physical therapy, 7 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Rafael Haddad | DOB: 02/03/1962 | MRN: SYN-8459972\nDate of service: 02/08/2025 | J. Marlow\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Rafael Haddad | DOB: 02/03/1962 | MRN: SYN-8459972\nDate of service: 02/13/2025 | Adele Cordero, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the left shoulder (M75.102).\n\nPlan:\nPlan of care: 2 visits per week for 8 weeks, start of care 01/09/2025, certified through 03/06/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 75 to 98 degrees; QuickDASH score improved from 48 to 33.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Rafael Haddad | DOB: 02/03/1962 | MRN: SYN-8459972\nDate of service: 02/13/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Lakeview Internal Medicine Associates\nScheduling Note\nPatient: Rafael Haddad | DOB: 02/03/1962 | MRN: SYN-8459972\nDate of service: 02/22/2025 | M. Haverford\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (312) 555-0154\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

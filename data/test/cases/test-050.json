@@ -1,0 +1,27 @@
+{
+  "case_id": "test-050",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-10-09",
+  "patient": {
+    "name": "Rosa Yilmaz",
+    "birth_date": "1979-11-13",
+    "sex": "female",
+    "mrn": "SYN-3614579",
+    "member_id": "EHP-SYN-29261300"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Rosa Yilmaz | Member ID: EHP-SYN-29261300 | DOB: 11/13/1979\nRequesting provider: Dr. Elif Kestrel, MD (Rheumatology) | NPI: 9210998517\nDate of request: 10/09/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Rosa Yilmaz | DOB: 11/13/1979 | MRN: SYN-3614579\nDate of service: 10/03/2025 | Dr. Elif Kestrel, MD (Rheumatology)\n\nHistory:\n45-year-old woman with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: hypothyroidism, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nNo prior conventional DMARD therapy; patient prefers to start a biologic.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with moderate disease activity, CDAI 20.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Rosa Yilmaz | DOB: 11/13/1979 | MRN: SYN-3614579\nOrdering provider: Dr. Elif Kestrel, MD (Rheumatology)\n\nCollected: 09/10/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 14 U/L (reference 7-56)\nCreatinine: 0.8 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 8.6 x10^3/uL (reference 4.0-11.0)\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

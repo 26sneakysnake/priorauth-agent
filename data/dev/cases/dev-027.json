@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-027",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-08-31",
+  "patient": {
+    "name": "Luca Delacroix",
+    "birth_date": "1986-05-15",
+    "sex": "male",
+    "mrn": "SYN-0297913",
+    "member_id": "EHP-SYN-66791361"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Luca Delacroix | Member ID: EHP-SYN-66791361 | DOB: 05/15/1986\nRequesting provider: Dr. Isla Langley, MD (Rheumatology) | NPI: 9213181349\nDate of request: 08/31/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Luca Delacroix | DOB: 05/15/1986 | MRN: SYN-0297913\nOrdering provider: Dr. Isla Langley, MD (Rheumatology)\n\nCollected: 07/26/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 20 U/L (reference 7-56)\nCreatinine: 1.1 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 6.5 x10^3/uL (reference 4.0-11.0)\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeview Internal Medicine Associates\nAnnual Wellness Visit\nPatient: Luca Delacroix | DOB: 05/15/1986 | MRN: SYN-0297913\nDate of service: 01/09/2025 | Dr. Oskar Langley, MD\n\nVitals:\nBP 138/86, HR 67, BMI 23.4\n\nHistory:\nPast medical history: hypothyroidism, gastroesophageal reflux.\nMedications: levothyroxine 75 mcg daily; omeprazole 20 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Luca Delacroix | DOB: 05/15/1986 | MRN: SYN-0297913\nDate of service: 08/21/2025 | Dr. Isla Langley, MD (Rheumatology)\n\nHistory:\n39-year-old man with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: hypertension, seasonal allergies.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 16 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with moderate disease activity, CDAI 21.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nPatient Intake Questionnaire\nPatient: Luca Delacroix | DOB: 05/15/1986 | MRN: SYN-0297913\nDate of service: 08/21/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: none\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-028",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-11-15",
+  "patient": {
+    "name": "Cyrus Vasquez",
+    "birth_date": "1967-11-17",
+    "sex": "male",
+    "mrn": "SYN-7286686",
+    "member_id": "EHP-SYN-57134348"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Lakeview Internal Medicine Associates\nDate: 11/15/2025\nRe: Prior authorization request - Cyrus Vasquez\nNumber of pages (including cover): 5\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Cyrus Vasquez | Member ID: EHP-SYN-57134348 | DOB: 11/17/1967\nRequesting provider: Dr. Kaveh Kestrel, MD | NPI: 9729536017\nDate of request: 11/15/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left S1 radiculopathy.\nSymptom onset date: 08/01/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Cyrus Vasquez | DOB: 11/17/1967 | MRN: SYN-7286686\nDate of service: 10/26/2025 | R. Lindgren\n\nRequest: refill of atorvastatin 20 mg nightly.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Cyrus Vasquez | DOB: 11/17/1967 | MRN: SYN-7286686\nDate of service: 11/10/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeview Internal Medicine Associates\nOffice Visit - Follow-up\nPatient: Cyrus Vasquez | DOB: 11/17/1967 | MRN: SYN-7286686\nDate of service: 11/10/2025 | Dr. Kaveh Kestrel, MD\n\nHistory of present illness:\n57-year-old man seen for follow-up of low back pain. Low back pain radiating to the left leg for 14 weeks.\n\nTreatment to date:\nCompleted 6 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: gastroesophageal reflux, hypertension.\nMedications: omeprazole 20 mg daily; lisinopril 10 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 45 degrees.\nNeuro: strength 4/5 in left plantar flexion, left Achilles reflex 1+, decreased light touch over the lateral left foot.\n\nAssessment and plan:\nAssessment: left S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

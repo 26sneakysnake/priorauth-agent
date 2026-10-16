@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-041",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-02-24",
+  "patient": {
+    "name": "Nils Marchetti",
+    "birth_date": "1996-09-15",
+    "sex": "male",
+    "mrn": "SYN-5311768",
+    "member_id": "EHP-SYN-65394758"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Nils Marchetti | Member ID: EHP-SYN-65394758 | DOB: 09/15/1996\nRequesting provider: Dr. Petra Iverson, MD | NPI: 9055511993\nDate of request: 02/24/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left L5 radiculopathy.\nSymptom onset date: 10/25/2024\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nOffice Visit - Follow-up\nPatient: Nils Marchetti | DOB: 09/15/1996 | MRN: SYN-5311768\nDate of service: 02/15/2025 | Dr. Petra Iverson, MD\n\nHistory of present illness:\n28-year-old man seen for follow-up of low back pain. Low back pain radiating to the left leg for 16 weeks.\n\nTreatment to date:\nStarted physical therapy 2 weeks ago; too early to judge the response.\n\nHistory:\nPast medical history: seasonal allergies, hyperlipidemia.\nMedications: loratadine 10 mg daily; atorvastatin 20 mg nightly.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Northgate Spine and Sports Medicine\nSpine Consultation\nPatient: Nils Marchetti | DOB: 09/15/1996 | MRN: SYN-5311768\nDate of service: 02/15/2025 | Dr. Ravi Northcott, DO\n\nReason for consultation:\nLow back pain with left leg symptoms, referred by Dr. Petra Iverson, MD.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 50 degrees.\nNeuro: strength 4/5 in left ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the left foot.\n\nAssessment and plan:\nAssessment: left L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Cedar Hollow Primary Care\nPatient Intake Questionnaire\nPatient: Nils Marchetti | DOB: 09/15/1996 | MRN: SYN-5311768\nDate of service: 02/15/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: none\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

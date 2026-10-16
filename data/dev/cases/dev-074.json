@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-074",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-08-12",
+  "patient": {
+    "name": "Greta Delacroix",
+    "birth_date": "1951-12-10",
+    "sex": "female",
+    "mrn": "SYN-4920281",
+    "member_id": "EHP-SYN-30047592"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Greta Delacroix | Member ID: EHP-SYN-30047592 | DOB: 12/10/1951\nRequesting provider: Dr. Teodor Ellery, MD | NPI: 9843791335\nDate of request: 08/12/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right S1 radiculopathy.\nSymptom onset date: 05/11/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Greta Delacroix | DOB: 12/10/1951 | MRN: SYN-4920281\nDate of service: 08/05/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: none\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Cedar Hollow Primary Care\nOffice Visit - Follow-up\nPatient: Greta Delacroix | DOB: 12/10/1951 | MRN: SYN-4920281\nDate of service: 08/05/2025 | Dr. Teodor Ellery, MD\n\nHistory of present illness:\n73-year-old woman seen for follow-up of low back pain. Low back pain radiating to the right leg for 12 weeks.\n\nTreatment to date:\nTwo months of supervised exercise sessions plus over-the-counter anti-inflammatories have not brought lasting relief.\n\nHistory:\nPast medical history: hyperlipidemia, hypertension.\nMedications: atorvastatin 20 mg nightly; lisinopril 10 mg daily.\n\nReview of systems:\nNo trouble controlling urine or stool, no numbness in the groin area, no fevers, stable weight, and no prior malignancy.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 50 degrees.\nShe cannot rise onto her toes on the right as well as on the other side, the ankle jerk is reduced on the right, and touch feels dull along the outer edge of that foot.\n\nAssessment and plan:\nAssessment: right S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Greta Delacroix | DOB: 12/10/1951 | MRN: SYN-4920281\nDate of service: 03/24/2025 | Dr. Celine Cordero, MD\n\nVitals:\nBP 130/75, HR 84, BMI 28.8\n\nHistory:\nPast medical history: hyperlipidemia, seasonal allergies.\nMedications: atorvastatin 20 mg nightly; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Greta Delacroix | DOB: 12/10/1951 | MRN: SYN-4920281\nDate of service: 08/12/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (415) 555-0145\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

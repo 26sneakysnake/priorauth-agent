@@ -1,0 +1,27 @@
+{
+  "case_id": "dev-082",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-26",
+  "patient": {
+    "name": "Selma Underhill",
+    "birth_date": "1952-11-15",
+    "sex": "female",
+    "mrn": "SYN-5106274",
+    "member_id": "EHP-SYN-45045932"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Selma Underhill | Member ID: EHP-SYN-45045932 | DOB: 11/15/1952\nRequesting provider: Sanne Northcott, PT, DPT | NPI: 9351204661\nDate of request: 08/26/2025\n\nRequested service: Outpatient physical therapy, 7 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Selma Underhill | DOB: 11/15/1952 | MRN: SYN-5106274\nDate of service: 08/16/2025 | Sanne Northcott, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: degenerative tear of the left rotator cuff, as coded on the referral (M75.102).\n\nPlan:\nShe is scheduled three times weekly over six weeks in total, from 07/16/2025 to 08/27/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 78 to 112 degrees; QuickDASH score improved from 59 to 45.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Selma Underhill | DOB: 11/15/1952\n\nMember ID: EHP-SYN-45045932\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: R. Lindgren on 08/26/2025, reference #30393521\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

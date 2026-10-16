@@ -1,0 +1,47 @@
+{
+  "case_id": "test-019",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-03-03",
+  "patient": {
+    "name": "Tobias Nakamura",
+    "birth_date": "1987-08-21",
+    "sex": "male",
+    "mrn": "SYN-9623929",
+    "member_id": "EHP-SYN-73048247"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Ashford Arthritis and Rheumatology\nDate: 03/03/2025\nRe: Prior authorization request - Tobias Nakamura\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Tobias Nakamura | Member ID: EHP-SYN-73048247 | DOB: 08/21/1987\nRequesting provider: Dr. Noor Jessop, MD (Rheumatology) | NPI: 9015360605\nDate of request: 03/03/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 7 days\nQuantity: 4 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Tobias Nakamura | DOB: 08/21/1987 | MRN: SYN-9623929\nOrdering provider: Dr. Noor Jessop, MD (Rheumatology)\n\nCollected: 02/03/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): POSITIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 14 U/L (reference 7-56)\nCreatinine: 1.0 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 8.9 x10^3/uL (reference 4.0-11.0)\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Tobias Nakamura | DOB: 08/21/1987 | MRN: SYN-9623929\nDate of service: 03/01/2025 | Dr. Noor Jessop, MD (Rheumatology)\n\nActive medications:\nMethotrexate 20 mg by mouth once weekly - start date 07/30/2024\nFolic acid 1 mg by mouth daily\nOmeprazole 20 mg daily\nMetformin 500 mg twice daily\n\nAllergies:\nPenicillin (rash)\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Cedar Hollow Primary Care\nAnnual Wellness Visit\nPatient: Tobias Nakamura | DOB: 08/21/1987 | MRN: SYN-9623929\nDate of service: 09/13/2024 | Dr. Lucia Merriweather, MD\n\nVitals:\nBP 118/70, HR 64, BMI 23.0\n\nHistory:\nPast medical history: type 2 diabetes, seasonal allergies.\nMedications: metformin 500 mg twice daily; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Tobias Nakamura | DOB: 08/21/1987 | MRN: SYN-9623929\nDate of service: 03/01/2025 | Dr. Noor Jessop, MD (Rheumatology)\n\nHistory:\n37-year-old man with rheumatoid arthritis diagnosed in 2020, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, type 2 diabetes.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 30 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 5.7 (high disease activity).\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 7 days.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Tobias Nakamura | DOB: 08/21/1987 | MRN: SYN-9623929\nDate of service: 01/20/2025 | M. Haverford\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Tobias Nakamura | DOB: 08/21/1987\n\nMember ID: EHP-SYN-73048247\nPlan: EPO Standard (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $50\nVerified by: T. Okafor on 03/03/2025, reference #98659731\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

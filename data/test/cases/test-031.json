@@ -1,0 +1,31 @@
+{
+  "case_id": "test-031",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-02",
+  "patient": {
+    "name": "Odile Lindqvist",
+    "birth_date": "1970-02-27",
+    "sex": "female",
+    "mrn": "SYN-0050697",
+    "member_id": "EHP-SYN-42470996"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Odile Lindqvist | Member ID: EHP-SYN-42470996 | DOB: 02/27/1970\nRequesting provider: Dmitri Jessop, PT, DPT | NPI: 9718413620\nDate of request: 07/02/2025\n\nRequested service: Outpatient physical therapy, 8 additional visits\nDiagnosis: M75.101 Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic\nBody part / side: Right shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Cedar Hollow Primary Care\nPatient Intake Questionnaire\nPatient: Odile Lindqvist | DOB: 02/27/1970 | MRN: SYN-0050697\nDate of service: 06/30/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: former, quit 10 years ago\nAlcohol: none\nOccupation: warehouse associate\nPreferred pharmacy: on file\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Cedar Hollow Primary Care\nScheduling Note\nPatient: Odile Lindqvist | DOB: 02/27/1970 | MRN: SYN-0050697\nDate of service: 07/02/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (415) 555-0130\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Odile Lindqvist | DOB: 02/27/1970 | MRN: SYN-0050697\nDate of service: 06/30/2025 | Dmitri Jessop, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: non-traumatic rotator cuff tear of the left shoulder (M75.102).\n\nPlan:\nPlan of care: 3 visits per week for 8 weeks, start of care 06/06/2025, certified through 08/01/2025.\n\nObjective measures:\nProgress since start of care: shoulder abduction improved from 79 to 119 degrees; QuickDASH score improved from 47 to 27.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

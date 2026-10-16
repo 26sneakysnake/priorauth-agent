@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-077",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-25",
+  "patient": {
+    "name": "Odile Haddad",
+    "birth_date": "1952-03-13",
+    "sex": "female",
+    "mrn": "SYN-9489767",
+    "member_id": "EHP-SYN-85136545"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Odile Haddad | Member ID: EHP-SYN-85136545 | DOB: 03/13/1952\nRequesting provider: Dr. Kaveh Draycott, MD (Rheumatology) | NPI: 9996435702\nDate of request: 09/25/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Odile Haddad | DOB: 03/13/1952 | MRN: SYN-9489767\nDate of service: 09/21/2025 | Dr. Kaveh Draycott, MD (Rheumatology)\n\nHistory:\n73-year-old woman with rheumatoid arthritis diagnosed in 2022, seen to discuss escalation of therapy. Past medical history: hyperlipidemia, gastroesophageal reflux.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 15 mg weekly for 33 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 4.3 (moderate disease activity).\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Odile Haddad | DOB: 03/13/1952 | MRN: SYN-9489767\nOrdering provider: Dr. Kaveh Draycott, MD (Rheumatology)\n\nCollected: 08/15/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): POSITIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 38 U/L (reference 7-56)\nCreatinine: 1.1 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 8.4 x10^3/uL (reference 4.0-11.0)\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Odile Haddad | DOB: 03/13/1952 | MRN: SYN-9489767\nDate of service: 09/04/2025 | J. Marlow\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

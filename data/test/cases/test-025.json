@@ -1,0 +1,27 @@
+{
+  "case_id": "test-025",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-21",
+  "patient": {
+    "name": "Hugo Haddad",
+    "birth_date": "1962-05-14",
+    "sex": "male",
+    "mrn": "SYN-2552157",
+    "member_id": "EHP-SYN-78269754"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Hugo Haddad | Member ID: EHP-SYN-78269754 | DOB: 05/14/1962\nRequesting provider: Henrik Langley, PT, DPT | NPI: 9821098820\nDate of request: 07/21/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: M17.11 Unilateral primary osteoarthritis, right knee\nBody part / side: Right knee\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Brookside Rehabilitation\nPhysical Therapy Re-evaluation\nPatient: Hugo Haddad | DOB: 05/14/1962 | MRN: SYN-2552157\nDate of service: 07/11/2025 | Henrik Langley, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the right knee (M17.11).\n\nPlan:\nPlan of care: 2 visits per week for 20 weeks, start of care 06/12/2025, certified through 10/30/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 84 to 105 degrees; KOOS score improved from 31 to 42.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Hugo Haddad | DOB: 05/14/1962\n\nMember ID: EHP-SYN-78269754\nPlan: PPO Gold (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: S. Duarte on 07/21/2025, reference #68592558\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

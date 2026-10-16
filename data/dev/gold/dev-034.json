@@ -1,0 +1,65 @@
+{
+  "case_id": "dev-034",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "laterality_swap",
+  "target_criterion": "PT_EXTENSION.laterality",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Diagnosis: M16.11 Unilateral primary osteoarthritis, right hip"
+        },
+        {
+          "page": 2,
+          "quote": "Assessment: primary osteoarthritis of the left hip (M16.12)."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Plan of care: 2 visits per week for 9 weeks, start of care 07/27/2025, certified through 09/28/2025."
+        }
+      ],
+      "rationale": "2x/week for 9 weeks, dates consistent"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Progress since start of care: hip flexion improved from 76 to 98 degrees; HOOS score improved from 49 to 74."
+        }
+      ],
+      "rationale": "measurable range-of-motion and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Body part / side: Right hip"
+        },
+        {
+          "page": 2,
+          "quote": "Assessment: primary osteoarthritis of the left hip (M16.12)."
+        }
+      ],
+      "rationale": "request says right hip, therapy notes say left hip"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "therapy_note",
+    "intake_form"
+  ]
+}

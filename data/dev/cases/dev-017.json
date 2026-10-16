@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-017",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-01-28",
+  "patient": {
+    "name": "Dalia Vasquez",
+    "birth_date": "1951-07-01",
+    "sex": "female",
+    "mrn": "SYN-4172506",
+    "member_id": "EHP-SYN-67050206"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Dalia Vasquez | Member ID: EHP-SYN-67050206 | DOB: 07/01/1951\nRequesting provider: Lucia Fenwick, PT, DPT | NPI: 9135711967\nDate of request: 01/28/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Dalia Vasquez | DOB: 07/01/1951\n\nMember ID: EHP-SYN-67050206\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: S. Duarte on 01/28/2025, reference #96864471\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Cedar Hollow Primary Care\nScheduling Note\nPatient: Dalia Vasquez | DOB: 07/01/1951 | MRN: SYN-4172506\nDate of service: 01/28/2025 | J. Marlow\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0134\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Dalia Vasquez | DOB: 07/01/1951 | MRN: SYN-4172506\nDate of service: 01/21/2025 | Lucia Fenwick, PT, DPT\n\nSubjective:\nPain 3/10 at rest and 4/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left knee (M17.12).\n\nPlan:\nPlan of care: 2 visits per week for 20 weeks, start of care 12/30/2024, certified through 05/19/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 83 to 101 degrees; KOOS score improved from 32 to 55.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Dalia Vasquez | DOB: 07/01/1951 | MRN: SYN-4172506\nDate of service: 01/08/2025 | J. Marlow\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

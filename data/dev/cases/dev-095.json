@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-095",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-09-05",
+  "patient": {
+    "name": "Nadia Abernethy",
+    "birth_date": "1979-05-10",
+    "sex": "female",
+    "mrn": "SYN-0038054",
+    "member_id": "EHP-SYN-72326313"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Nadia Abernethy | Member ID: EHP-SYN-72326313 | DOB: 05/10/1979\nRequesting provider: Ravi Ashgrove, PT, DPT | NPI: 9585338941\nDate of request: 09/05/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Fairmont Orthopedics and Sports Medicine\nOrthopedic Follow-up\nPatient: Nadia Abernethy | DOB: 05/10/1979 | MRN: SYN-0038054\nDate of service: 09/02/2025 | Dr. Isla Northcott, MD\n\nInterval history:\nFollow-up of left knee pain during physical therapy.\nPatient reports no improvement with therapy so far; function is unchanged.\n\nPlan:\nContinue home exercises; review therapy notes at the next visit.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Nadia Abernethy | DOB: 05/10/1979 | MRN: SYN-0038054\nDate of service: 08/30/2025 | Ravi Ashgrove, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 6/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left knee (M17.12).\n\nPlan:\nPlan of care: 3 visits per week for 10 weeks, start of care 07/24/2025, certified through 10/02/2025.\n\nObjective measures:\nProgress since start of care: knee flexion improved from 88 to 113 degrees; KOOS score improved from 40 to 50.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeview Internal Medicine Associates\nTelephone Encounter - Refill Request\nPatient: Nadia Abernethy | DOB: 05/10/1979 | MRN: SYN-0038054\nDate of service: 07/24/2025 | K. Brennan\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

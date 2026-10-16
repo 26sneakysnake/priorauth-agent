@@ -1,0 +1,47 @@
+{
+  "case_id": "dev-038",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-08-02",
+  "patient": {
+    "name": "Lena Fairbanks",
+    "birth_date": "1983-08-05",
+    "sex": "female",
+    "mrn": "SYN-3179811",
+    "member_id": "EHP-SYN-95609243"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Ashford Arthritis and Rheumatology\nDate: 08/02/2025\nRe: Prior authorization request - Lena Fairbanks\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Lena Fairbanks | Member ID: EHP-SYN-95609243 | DOB: 08/05/1983\nRequesting provider: Dr. Adele Fenwick, MD (Rheumatology) | NPI: 9696855860\nDate of request: 08/02/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M05.79 Rheumatoid arthritis with rheumatoid factor of multiple sites without organ involvement\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Lena Fairbanks | DOB: 08/05/1983 | MRN: SYN-3179811\nOrdering provider: Dr. Adele Fenwick, MD (Rheumatology)\n\nCollected: 06/22/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 29 U/L (reference 7-56)\nCreatinine: 0.6 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 4.6 x10^3/uL (reference 4.0-11.0)\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nTelephone Encounter - Refill Request\nPatient: Lena Fairbanks | DOB: 08/05/1983 | MRN: SYN-3179811\nDate of service: 07/13/2025 | R. Lindgren\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Lena Fairbanks | DOB: 08/05/1983 | MRN: SYN-3179811\nDate of service: 11/10/2024 | Dr. Teodor Kestrel, MD\n\nVitals:\nBP 126/73, HR 86, BMI 29.2\n\nHistory:\nPast medical history: hypothyroidism, gastroesophageal reflux.\nMedications: levothyroxine 75 mcg daily; omeprazole 20 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Lena Fairbanks | DOB: 08/05/1983 | MRN: SYN-3179811\nDate of service: 07/28/2025 | Dr. Adele Fenwick, MD (Rheumatology)\n\nHistory:\n41-year-old woman with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: hypothyroidism, hypertension.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nMethotrexate 25 mg weekly started 4 weeks ago; response not yet assessable.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 24.\nPre-biologic screening: tuberculosis and hepatitis B screens negative.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Lena Fairbanks | DOB: 08/05/1983 | MRN: SYN-3179811\nDate of service: 07/28/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Lena Fairbanks | DOB: 08/05/1983 | MRN: SYN-3179811\nDate of service: 08/02/2025 | S. Duarte\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0101\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

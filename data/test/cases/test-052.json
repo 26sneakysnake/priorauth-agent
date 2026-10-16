@@ -1,0 +1,27 @@
+{
+  "case_id": "test-052",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-19",
+  "patient": {
+    "name": "Nadia Rasmussen",
+    "birth_date": "1976-12-10",
+    "sex": "female",
+    "mrn": "SYN-4601592",
+    "member_id": "EHP-SYN-44989799"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Nadia Rasmussen | Member ID: EHP-SYN-44989799 | DOB: 12/10/1976\nRequesting provider: Ravi Langley, PT, DPT | NPI: 9177832071\nDate of request: 07/19/2025\n\nRequested service: Outpatient physical therapy, 11 additional visits\nDiagnosis: M16.11 Unilateral primary osteoarthritis, right hip\nBody part / side: Right hip\nPlace of service: Outpatient clinic\n\nPage 1 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Nadia Rasmussen | DOB: 12/10/1976 | MRN: SYN-4601592\nDate of service: 07/14/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 2 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Re-evaluation\nPatient: Nadia Rasmussen | DOB: 12/10/1976 | MRN: SYN-4601592\nDate of service: 07/14/2025 | Ravi Langley, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: wear-and-tear arthritis of the right hip, as coded on the referral (M16.11).\n\nPlan:\nShe is scheduled three times weekly over eight weeks in total, from 06/06/2025 to 08/01/2025.\n\nObjective measures:\nProgress since start of care: hip flexion improved from 85 to 102 degrees; HOOS score improved from 50 to 68.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 3 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

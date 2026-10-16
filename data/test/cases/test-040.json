@@ -1,0 +1,39 @@
+{
+  "case_id": "test-040",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-18",
+  "patient": {
+    "name": "Talia Haddad",
+    "birth_date": "1993-10-01",
+    "sex": "female",
+    "mrn": "SYN-1062585",
+    "member_id": "EHP-SYN-21648574"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Talia Haddad | Member ID: EHP-SYN-21648574 | DOB: 10/01/1993\nRequesting provider: Lucia Jessop, PT, DPT | NPI: 9321116594\nDate of request: 07/18/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M75.102 Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic\nBody part / side: Left shoulder\nPlace of service: Outpatient clinic\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Talia Haddad | DOB: 10/01/1993 | MRN: SYN-1062585\nDate of service: 07/18/2025 | T. Okafor\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (415) 555-0146\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Talia Haddad | DOB: 10/01/1993 | MRN: SYN-1062585\nDate of service: 12/07/2024 | Dr. Noor Oakhurst, MD\n\nVitals:\nBP 134/70, HR 69, BMI 28.1\n\nHistory:\nPast medical history: hypertension, hyperlipidemia.\nMedications: lisinopril 10 mg daily; atorvastatin 20 mg nightly.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Talia Haddad | DOB: 10/01/1993 | MRN: SYN-1062585\nDate of service: 07/14/2025 | Lucia Jessop, PT, DPT\n\nSubjective:\nPain 2/10 at rest and 5/10 with activity.\n\nEvaluation:\nAssessment: degenerative tear of the left rotator cuff, as coded on the referral (M75.102).\n\nPlan:\nPlan of care: 2 visits per week for 7 weeks, start of care 06/07/2025, certified through 07/26/2025.\n\nObjective measures:\nShe can now reach the top kitchen shelf with the left arm, which was impossible at intake, and lifts it about twenty-two degrees higher.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Talia Haddad | DOB: 10/01/1993\n\nMember ID: EHP-SYN-21648574\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: R. Lindgren on 07/18/2025, reference #10356460\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Talia Haddad | DOB: 10/01/1993 | MRN: SYN-1062585\nDate of service: 07/14/2025 | completed by patient\n\nAllergies: none known\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

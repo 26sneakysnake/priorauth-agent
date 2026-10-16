@@ -1,0 +1,31 @@
+{
+  "case_id": "dev-059",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-03-31",
+  "patient": {
+    "name": "Alma Vasquez",
+    "birth_date": "1974-06-13",
+    "sex": "female",
+    "mrn": "SYN-4718162",
+    "member_id": "EHP-SYN-66868707"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Alma Vasquez | Member ID: EHP-SYN-66868707 | DOB: 06/13/1974\nRequesting provider: Dr. Marek Cordero, MD (Rheumatology) | NPI: 9484790894\nDate of request: 03/31/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Alma Vasquez | DOB: 06/13/1974 | MRN: SYN-4718162\nDate of service: 01/13/2025 | Dr. Teodor Kestrel, MD\n\nVitals:\nBP 129/86, HR 75, BMI 25.2\n\nHistory:\nPast medical history: hyperlipidemia, hypertension.\nMedications: atorvastatin 20 mg nightly; lisinopril 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 2 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Alma Vasquez | DOB: 06/13/1974 | MRN: SYN-4718162\nDate of service: 03/24/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: teacher\nPreferred pharmacy: on file\n\nPage 3 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Alma Vasquez | DOB: 06/13/1974 | MRN: SYN-4718162\nDate of service: 03/24/2025 | Dr. Marek Cordero, MD (Rheumatology)\n\nHistory:\n50-year-old woman with rheumatoid arthritis diagnosed in 2020, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, hypothyroidism.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nShe has taken weekly methotrexate (20 mg) for the better part of nine months, yet the small joints of both hands remain swollen.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis with high disease activity, CDAI 34.\nLatent TB blood test and hepatitis B panel drawn on 02/02/2025 both came back clear.\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 4 of 4 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-079",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-02-27",
+  "patient": {
+    "name": "Viktor Whitlock",
+    "birth_date": "1974-06-08",
+    "sex": "male",
+    "mrn": "SYN-9011628",
+    "member_id": "EHP-SYN-42363852"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Viktor Whitlock | Member ID: EHP-SYN-42363852 | DOB: 06/08/1974\nRequesting provider: Dr. Ylva Grantham, MD (Rheumatology) | NPI: 9986857002\nDate of request: 02/27/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Meadowlark Clinical Laboratory\nLaboratory Report\nPatient: Viktor Whitlock | DOB: 06/08/1974 | MRN: SYN-9011628\nOrdering provider: Dr. Ylva Grantham, MD (Rheumatology)\n\nCollected: 11/17/2024\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 22 U/L (reference 7-56)\nCreatinine: 0.6 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 8.9 x10^3/uL (reference 4.0-11.0)\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Ashford Arthritis and Rheumatology\nMedication List\nPatient: Viktor Whitlock | DOB: 06/08/1974 | MRN: SYN-9011628\nDate of service: 02/18/2025 | Dr. Ylva Grantham, MD (Rheumatology)\n\nActive medications:\nMethotrexate 25 mg by mouth once weekly - start date 10/31/2024\nFolic acid 1 mg by mouth daily\nOmeprazole 20 mg daily\nMetformin 500 mg twice daily\n\nAllergies:\nPenicillin (rash)\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Ashford Arthritis and Rheumatology\nRheumatology Follow-up\nPatient: Viktor Whitlock | DOB: 06/08/1974 | MRN: SYN-9011628\nDate of service: 02/18/2025 | Dr. Ylva Grantham, MD (Rheumatology)\n\nHistory:\n50-year-old man with rheumatoid arthritis diagnosed in 2024, seen to discuss escalation of therapy. Past medical history: gastroesophageal reflux, type 2 diabetes.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 25 mg weekly for 15 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 6.4 (high disease activity).\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Cedar Hollow Primary Care\nScheduling Note\nPatient: Viktor Whitlock | DOB: 06/08/1974 | MRN: SYN-9011628\nDate of service: 02/27/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0162\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Viktor Whitlock | DOB: 06/08/1974 | MRN: SYN-9011628\nDate of service: 01/13/2025 | K. Brennan\n\nRequest: refill of levothyroxine 75 mcg daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

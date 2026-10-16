@@ -1,0 +1,43 @@
+{
+  "case_id": "test-041",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-05-17",
+  "patient": {
+    "name": "Ivo Jaramillo",
+    "birth_date": "1965-05-08",
+    "sex": "male",
+    "mrn": "SYN-1895775",
+    "member_id": "EHP-SYN-09786831"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Summit Motion Therapy\nDate: 05/17/2025\nRe: Prior authorization request - Ivo Jaramillo\nNumber of pages (including cover): 7\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - REHABILITATION SERVICES\nPayer: Example Health Plan (fictional)\nMember: Ivo Jaramillo | Member ID: EHP-SYN-09786831 | DOB: 05/08/1965\nRequesting provider: Jasper Bellamy, PT, DPT | NPI: 9440892698\nDate of request: 05/17/2025\n\nRequested service: Outpatient physical therapy, 10 additional visits\nDiagnosis: M17.12 Unilateral primary osteoarthritis, left knee\nBody part / side: Left knee\nPlace of service: Outpatient clinic\n\nPage 2 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Summit Motion Therapy\nPhysical Therapy Re-evaluation\nPatient: Ivo Jaramillo | DOB: 05/08/1965 | MRN: SYN-1895775\nDate of service: 05/09/2025 | Jasper Bellamy, PT, DPT\n\nSubjective:\nPain 1/10 at rest and 7/10 with activity.\n\nEvaluation:\nAssessment: primary osteoarthritis of the left knee (M17.12).\n\nPlan:\nHe is scheduled three times weekly over eight weeks in total, from 04/08/2025 to 06/03/2025.\n\nObjective measures:\nHe now manages a full flight of stairs without the handrail, which he could not do at intake, and bends the knee about twenty-two degrees further.\n\nTreatment today:\nTherapeutic exercise, manual therapy and neuromuscular re-education.\nHome exercise program reviewed and updated.\n\nPage 3 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nScheduling Note\nPatient: Ivo Jaramillo | DOB: 05/08/1965 | MRN: SYN-1895775\nDate of service: 05/17/2025 | K. Brennan\n\nPatient prefers morning appointments.\nInterpreter needed: yes (Spanish).\nCallback number: (312) 555-0194\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 4 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Ivo Jaramillo | DOB: 05/08/1965 | MRN: SYN-1895775\nDate of service: 05/09/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: none\nOccupation: warehouse associate\nPreferred pharmacy: on file\n\nPage 5 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Ivo Jaramillo | DOB: 05/08/1965 | MRN: SYN-1895775\nDate of service: 12/21/2024 | Dr. Henrik Cordero, MD\n\nVitals:\nBP 118/86, HR 84, BMI 29.5\n\nHistory:\nPast medical history: type 2 diabetes, seasonal allergies.\nMedications: metformin 500 mg twice daily; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 6 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Ivo Jaramillo | DOB: 05/08/1965\n\nMember ID: EHP-SYN-09786831\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $30\nVerified by: K. Brennan on 05/17/2025, reference #94513192\n\nPage 7 of 7 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "test-016",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-02-16",
+  "patient": {
+    "name": "Rafael Quintero",
+    "birth_date": "1968-11-24",
+    "sex": "male",
+    "mrn": "SYN-8789893",
+    "member_id": "EHP-SYN-71130629"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Rafael Quintero | Member ID: EHP-SYN-71130629 | DOB: 11/24/1968\nRequesting provider: Dr. Ravi Cordero, MD | NPI: 9011258988\nDate of request: 02/16/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Left S1 radiculopathy.\nSymptom onset date: 01/22/2025\nUrgency: Routine\nRendering facility: Pinecrest Diagnostic Imaging\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Pinecrest Diagnostic Imaging\nRadiology Report - XR Lumbar Spine, 2 Views\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 01/16/2025 | Dr. Ravi Jessop, MD (Radiology)\n\nFindings:\nMild disc space narrowing at L4-L5. Alignment is normal. No fracture.\n\nImpression:\nMild degenerative changes of the lower lumbar spine.\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Maple Ridge Community Clinic\nScheduling Note\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 02/16/2025 | S. Duarte\n\nPatient prefers morning appointments.\nInterpreter needed: no.\nCallback number: (617) 555-0139\nReminder: bring insurance card and photo ID to the appointment.\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nOffice Visit - Follow-up\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 02/13/2025 | Dr. Ravi Cordero, MD\n\nHistory of present illness:\n56-year-old man seen for follow-up of low back pain. Low back pain radiating to the left leg for 3 weeks.\n\nTreatment to date:\nStarted physical therapy 2 weeks ago; too early to judge the response.\n\nHistory:\nPast medical history: type 2 diabetes, hyperlipidemia.\nMedications: metformin 500 mg twice daily; atorvastatin 20 mg nightly.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Maple Ridge Community Clinic\nTelephone Encounter - Refill Request\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 01/31/2025 | J. Marlow\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Maple Ridge Community Clinic\nAnnual Wellness Visit\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 08/22/2024 | Dr. Kaveh Bellamy, MD\n\nVitals:\nBP 135/75, HR 67, BMI 29.5\n\nHistory:\nPast medical history: type 2 diabetes, hypothyroidism.\nMedications: metformin 500 mg twice daily; levothyroxine 75 mcg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Northgate Spine and Sports Medicine\nSpine Consultation\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 02/13/2025 | Dr. Felix Bellamy, DO\n\nReason for consultation:\nLow back pain with left leg symptoms, referred by Dr. Ravi Cordero, MD.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the left at 45 degrees.\nNeuro: strength 4/5 in left plantar flexion, left Achilles reflex 1+, decreased light touch over the lateral left foot.\n\nAssessment and plan:\nAssessment: left S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Rafael Quintero | DOB: 11/24/1968 | MRN: SYN-8789893\nDate of service: 02/13/2025 | completed by patient\n\nAllergies: shellfish\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: retired\nPreferred pharmacy: on file\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

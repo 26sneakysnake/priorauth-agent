@@ -1,0 +1,85 @@
+{
+  "case_id": "dev-019",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "contradiction",
+  "target_criterion": "MRI_LUMBAR.red_flags",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Low back pain radiating to the left leg for 13 weeks."
+        },
+        {
+          "page": 1,
+          "quote": "Symptom onset date: 06/27/2025"
+        }
+      ],
+      "rationale": "13 weeks documented"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Completed 6 weeks of physical therapy and daily naproxen without adequate relief."
+        },
+        {
+          "page": 5,
+          "quote": "Start of care: 08/10/2025"
+        }
+      ],
+      "rationale": "6 weeks of physical therapy and NSAID"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Red flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer."
+        },
+        {
+          "page": 3,
+          "quote": "Patient reports new episodes of urinary incontinence since 09/27/2025."
+        }
+      ],
+      "rationale": "negative screen in the note, new urinary incontinence reported in the triage call"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Neuro: strength 4/5 in left ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the left foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings documented"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Clinical indication: Left L5 radiculopathy."
+        },
+        {
+          "page": 4,
+          "quote": "Low back pain radiating to the left leg for 13 weeks."
+        }
+      ],
+      "rationale": "left side on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "specialist_note",
+    "triage_note",
+    "clinic_note",
+    "therapy_note"
+  ]
+}

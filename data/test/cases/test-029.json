@@ -1,0 +1,39 @@
+{
+  "case_id": "test-029",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-05-02",
+  "patient": {
+    "name": "Ines Pellegrini",
+    "birth_date": "1986-09-18",
+    "sex": "female",
+    "mrn": "SYN-5877967",
+    "member_id": "EHP-SYN-20992832"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Ines Pellegrini | Member ID: EHP-SYN-20992832 | DOB: 09/18/1986\nRequesting provider: Dr. Adele Langley, MD | NPI: 9904233606\nDate of request: 05/02/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right L5 radiculopathy.\nSymptom onset date: 01/02/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 1 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Northgate Spine and Sports Medicine\nSpine Consultation\nPatient: Ines Pellegrini | DOB: 09/18/1986 | MRN: SYN-5877967\nDate of service: 04/30/2025 | Dr. Isla Ellery, DO\n\nReason for consultation:\nLow back pain with right leg symptoms, referred by Dr. Adele Langley, MD.\n\nReview of systems:\nNo trouble controlling urine or stool, no numbness in the groin area, no fevers, stable weight, and no prior malignancy.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 40 degrees.\nNeuro: strength 4/5 in right ankle dorsiflexion and great toe extension, reflexes 2+ and symmetric, decreased light touch over the dorsum of the right foot.\n\nAssessment and plan:\nAssessment: right L5 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 2 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Pinecrest Diagnostic Imaging\nRadiology Report - XR Lumbar Spine, 2 Views\nPatient: Ines Pellegrini | DOB: 09/18/1986 | MRN: SYN-5877967\nDate of service: 04/05/2025 | Dr. Henrik Draycott, MD (Radiology)\n\nFindings:\nMild disc space narrowing at L4-L5. Alignment is normal. No fracture.\n\nImpression:\nMild degenerative changes of the lower lumbar spine.\n\nPage 3 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Cedar Hollow Primary Care\nPatient Intake Questionnaire\nPatient: Ines Pellegrini | DOB: 09/18/1986 | MRN: SYN-5877967\nDate of service: 04/30/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: nurse aide\nPreferred pharmacy: on file\n\nPage 4 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Ines Pellegrini | DOB: 09/18/1986 | MRN: SYN-5877967\nDate of service: 04/30/2025 | Dr. Adele Langley, MD\n\nHistory of present illness:\n38-year-old woman seen for follow-up of low back pain. She first noticed the pain shooting down her right leg after lifting a heavy box, nearly four months before this visit.\n\nTreatment to date:\nTwo months of supervised exercise sessions plus over-the-counter anti-inflammatories have not brought lasting relief.\n\nHistory:\nPast medical history: hypothyroidism, type 2 diabetes.\nMedications: levothyroxine 75 mcg daily; metformin 500 mg twice daily.\n\nPage 5 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Cedar Hollow Primary Care\nTelephone Encounter - Refill Request\nPatient: Ines Pellegrini | DOB: 09/18/1986 | MRN: SYN-5877967\nDate of service: 04/21/2025 | T. Okafor\n\nRequest: refill of metformin 500 mg twice daily.\nLast office visit within 12 months: yes.\nAction: 90-day supply sent to the pharmacy on file.\n\nPage 6 of 6 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

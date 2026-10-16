@@ -1,0 +1,47 @@
+{
+  "case_id": "test-047",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-07-10",
+  "patient": {
+    "name": "Bastien Underhill",
+    "birth_date": "1993-04-08",
+    "sex": "male",
+    "mrn": "SYN-7829803",
+    "member_id": "EHP-SYN-50422676"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Westfield Rheumatology Group\nDate: 07/10/2025\nRe: Prior authorization request - Bastien Underhill\nNumber of pages (including cover): 8\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - SPECIALTY PHARMACY\nPayer: Example Health Plan (fictional)\nMember: Bastien Underhill | Member ID: EHP-SYN-50422676 | DOB: 04/08/1993\nRequesting provider: Dr. Celine Bellamy, MD (Rheumatology) | NPI: 9229188918\nDate of request: 07/10/2025\n\nRequested medication: fictimab (fictional anti-TNF biologic)\nDose: 40 mg subcutaneously every 14 days\nQuantity: 2 prefilled syringes of 40 mg per 28 days\nDiagnosis: M06.9 Rheumatoid arthritis, unspecified\n\nPage 2 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Westfield Rheumatology Group\nRheumatology Follow-up\nPatient: Bastien Underhill | DOB: 04/08/1993 | MRN: SYN-7829803\nDate of service: 07/07/2025 | Dr. Celine Bellamy, MD (Rheumatology)\n\nHistory:\n32-year-old man with rheumatoid arthritis diagnosed in 2021, seen to discuss escalation of therapy. Past medical history: type 2 diabetes, hyperlipidemia.\n\nExam:\nSynovitis of the MCP and PIP joints of both hands; no rheumatoid nodules.\n\nTreatment history:\nInadequate response to methotrexate 20 mg weekly for 27 weeks despite good adherence.\n\nAssessment and plan:\nAssessment: seropositive rheumatoid arthritis, DAS28-CRP 4.0 (moderate disease activity).\nPlan: start fictimab 40 mg subcutaneously every 14 days.\n\nPage 3 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverbend Family Medicine\nAnnual Wellness Visit\nPatient: Bastien Underhill | DOB: 04/08/1993 | MRN: SYN-7829803\nDate of service: 04/03/2025 | Dr. Jasper Holloway, MD\n\nVitals:\nBP 123/72, HR 80, BMI 23.1\n\nHistory:\nPast medical history: hyperlipidemia, seasonal allergies.\nMedications: atorvastatin 20 mg nightly; loratadine 10 mg daily.\n\nPreventive care:\nInfluenza vaccine given today; tetanus booster up to date.\nColorectal cancer screening up to date; lipid panel ordered.\n\nAssessment and plan:\nChronic conditions stable. Continue current medications. Return in one year.\n\nPage 4 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Westfield Rheumatology Group\nMedication List\nPatient: Bastien Underhill | DOB: 04/08/1993 | MRN: SYN-7829803\nDate of service: 07/07/2025 | Dr. Celine Bellamy, MD (Rheumatology)\n\nActive medications:\nMethotrexate 20 mg by mouth once weekly - start date 12/26/2024\nFolic acid 1 mg by mouth daily\nMetformin 500 mg twice daily\nAtorvastatin 20 mg nightly\n\nAllergies:\nSulfa (hives)\n\nPage 5 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Bluestone Reference Labs\nLaboratory Report\nPatient: Bastien Underhill | DOB: 04/08/1993 | MRN: SYN-7829803\nOrdering provider: Dr. Celine Bellamy, MD (Rheumatology)\n\nCollected: 04/06/2025\n\nResults:\nQuantiFERON-TB Gold Plus (interferon-gamma release assay): NEGATIVE\nHepatitis B surface antigen: NON-REACTIVE\nHepatitis B core antibody, total: NON-REACTIVE\nALT: 38 U/L (reference 7-56)\nCreatinine: 0.6 mg/dL (reference 0.6-1.3)\nWhite blood cell count: 5.1 x10^3/uL (reference 4.0-11.0)\n\nPage 6 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Insurance Eligibility Verification\nPayer: Example Health Plan (fictional)\nMember: Bastien Underhill | DOB: 04/08/1993\n\nMember ID: EHP-SYN-50422676\nPlan: HMO Select (fictional)\nCoverage effective: 01/01/2025\nEligibility status: Active\nSpecialist copay: $40\nVerified by: J. Marlow on 07/10/2025, reference #78321174\n\nPage 7 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Riverbend Family Medicine\nPatient Intake Questionnaire\nPatient: Bastien Underhill | DOB: 04/08/1993 | MRN: SYN-7829803\nDate of service: 07/07/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: never\nAlcohol: socially, 1-2 drinks per week\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 8 of 8 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "dev-080",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-08-18",
+  "patient": {
+    "name": "Rosa Castellano",
+    "birth_date": "1971-08-17",
+    "sex": "female",
+    "mrn": "SYN-4384183",
+    "member_id": "EHP-SYN-77546136"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "FAX COVER SHEET\n\nTo: Utilization Management, Example Health Plan (fictional)\nFrom: Riverbend Family Medicine\nDate: 08/18/2025\nRe: Prior authorization request - Rosa Castellano\nNumber of pages (including cover): 5\nCONFIDENTIALITY NOTICE: this fax may contain protected health information intended only for the addressee.\n\nPage 1 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "PRIOR AUTHORIZATION REQUEST - OUTPATIENT IMAGING\nPayer: Example Health Plan (fictional)\nMember: Rosa Castellano | Member ID: EHP-SYN-77546136 | DOB: 08/17/1971\nRequesting provider: Dr. Isla Ashgrove, MD | NPI: 9720281398\nDate of request: 08/18/2025\n\nRequested service: MRI lumbar spine without contrast\nDiagnosis: M54.16 Radiculopathy, lumbar region\nClinical indication: Right S1 radiculopathy.\nSymptom onset date: 05/13/2025\nUrgency: Routine\nRendering facility: Clearwater Imaging Center\n\nPage 2 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Stillwater Physical Therapy\nPhysical Therapy Summary\nPatient: Rosa Castellano | DOB: 08/17/1971 | MRN: SYN-4384183\nDate of service: 08/13/2025 | Elif Cordero, PT, DPT\n\nEpisode of care:\nReferring diagnosis: low back pain with right radicular symptoms.\nStart of care: 08/03/2025\nVisits attended: 2\nInterventions: core stabilization, directional preference exercises, manual therapy.\nStatus: symptoms persist; patient returned to the referring physician.\n\nPage 3 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Maple Ridge Community Clinic\nPatient Intake Questionnaire\nPatient: Rosa Castellano | DOB: 08/17/1971 | MRN: SYN-4384183\nDate of service: 08/13/2025 | completed by patient\n\nAllergies: penicillin (rash)\nTobacco use: former, quit 10 years ago\nAlcohol: socially, 1-2 drinks per week\nOccupation: accountant\nPreferred pharmacy: on file\n\nPage 4 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Riverbend Family Medicine\nOffice Visit - Follow-up\nPatient: Rosa Castellano | DOB: 08/17/1971 | MRN: SYN-4384183\nDate of service: 08/13/2025 | Dr. Isla Ashgrove, MD\n\nHistory of present illness:\n53-year-old woman seen for follow-up of low back pain. Low back pain radiating to the right leg for 13 weeks.\n\nTreatment to date:\nCompleted 7 weeks of physical therapy and daily naproxen without adequate relief.\n\nHistory:\nPast medical history: hypothyroidism, gastroesophageal reflux.\nMedications: levothyroxine 75 mcg daily; omeprazole 20 mg daily.\n\nReview of systems:\nRed flag screen negative: denies bowel or bladder dysfunction, saddle anesthesia, fever, unexplained weight loss, or history of cancer.\n\nPhysical exam:\nBack: tenderness over the lower lumbar paraspinal muscles; straight-leg raise positive on the right at 30 degrees.\nNeuro: strength 4/5 in right plantar flexion, right Achilles reflex 1+, decreased light touch over the lateral right foot.\n\nAssessment and plan:\nAssessment: right S1 lumbar radiculopathy.\nPlan: MRI lumbar spine without contrast to evaluate for disc herniation; home exercise program; follow up after imaging.\n\nPage 5 of 5 | SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}
