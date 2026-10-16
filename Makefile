@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check
+.PHONY: help setup lint fmt test data data-check data-pdf
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -29,3 +29,6 @@ data: ## Regenerate data/dev and data/test (refuses to change the frozen test sp
 
 data-check: ## Fail if data/ differs byte for byte from a fresh generation
 	$(UV) run python -m priorauth.data.generator --out data --check
+
+data-pdf: ## Optional: export dev cases to build/pdf/dev/*.pdf (not committed)
+	$(UV) run python -m priorauth.data.pdf --split dev --out build/pdf
