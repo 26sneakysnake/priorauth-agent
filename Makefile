@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -32,3 +32,9 @@ data-check: ## Fail if data/ differs byte for byte from a fresh generation
 
 data-pdf: ## Optional: export dev cases to build/pdf/dev/*.pdf (not committed)
 	$(UV) run python -m priorauth.data.pdf --split dev --out build/pdf
+
+OFFLINE_SYSTEMS := rules_baseline
+
+eval-offline: ## Evaluate offline systems (no API key) on dev and test; writes results/
+	@for system in $(OFFLINE_SYSTEMS); do for split in dev test; do \
+		$(UV) run python -m eval.run --system $$system --split $$split || exit 1; done; done
