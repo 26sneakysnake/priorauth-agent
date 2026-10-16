@@ -70,7 +70,52 @@ priorauth-agent/
 - Acceptation : `make eval-offline` produit les résultats de la baseline 1 ; tests des métriques sur des cas
   dessinés à la main.
 
-### P3 à P10 (ne pas exécuter maintenant)
-P3 boucle d'agent + vérificateur + comparaison + gate en CI (le cœur) ; P4 API + file de jobs + FHIR ; P5 fiabilité et
-observabilité ; P6 sécurité alignée HIPAA ; P7 interface de revue en TypeScript ; P8 Docker, Kubernetes, CI ;
-P9 démo en ligne et documentation ; P10 audit final. Les détails seront fournis phase par phase.
+### P3 — Boucle d'agent, vérificateur, comparaison, gate (cœur du projet)
+- `llm/client.py` : Anthropic SDK, température 0, timeout, plafond de tokens, table de prix, plafond de coût par cas
+  et par run ; cassettes (`LLM_MODE=live|record|replay`, clé = hash de la requête normalisée, fichiers JSON dans
+  `eval/cassettes/`).
+- `agent/tools.py` : `list_pages`, `read_page(n)`, `search_policy(criterion_id)`, `record_finding(criterion_id, status,
+  evidence=[{page, quote}])`, `finish()`. Arguments validés avec Pydantic strict.
+- `agent/loop.py` : boucle manuelle de tool use, `max_steps=12`. Un argument invalide ou une page inexistante est
+  renvoyé au modèle comme erreur d'outil. Boucle sans progrès ou budget dépassé : arrêt avec `PEND` et la raison.
+  Le LLM ne décide jamais : la décision vient de `policy/engine.py`.
+- Réutiliser le vérificateur de citations déjà écrit. Mesurer le taux de preuves invalides **avant** vérification.
+- `agent/prompts/agent@v1.yaml`, puis `agent@v2.yaml` écrit après analyse des erreurs sur `dev` **uniquement**.
+  Garder les deux.
+- Baseline 2 : un seul appel LLM sans outils, sortie JSON, mêmes critères.
+- Modèles : agent avec `claude-haiku-5-5` ; comparaison avec `claude-sonnet-5-5`.
+- Nouveau jeu de robustesse `data/robust/` (ne pas toucher `data/test/`) : environ 40 dossiers générés avec des
+  formulations et des gabarits jamais utilisés pour `dev` ni pour le test (abréviations médicales, ordre de pages
+  différent, fautes de frappe de type OCR, phrases plus longues, doses écrites en lettres). Figé par un sha256 comme
+  le test. Les règles de la baseline 1 ne sont plus modifiées après l'avoir vu.
+- Évaluation : itérer sur `dev`, puis lancer **une fois** chaque système sur `test` et sur `robust`. Tous les résultats
+  dans `results/` avec intervalles de Wilson. Tableau comparatif : baseline 1, baseline 2, agent v1, agent v2,
+  agent Sonnet.
+- `eval/gate.py` : échoue si le taux d'approbations dangereuses dépasse celui de `results/baseline_gate.json`, ou si
+  l'exactitude par critère chute de plus de 2 points. En CI, le gate lit les cassettes rejouées (aucune clé).
+  Workflow manuel `eval-live.yml` avec plafond de coût.
+- `docs/LIMITS.md` : limites réelles issues des fichiers `*_errors.jsonl`, y compris la petite taille des échantillons
+  (3 dossiers `injection` dans le test) et le fait que les gabarits et la baseline 1 ont le même auteur.
+- Budget : plafond de coût total 10 € pour la phase, arrêt propre s'il est atteint.
+- Acceptation : `make eval-offline` rejoue les cassettes sans clé API ; `make gate` vert ; un test prouve qu'un prompt
+  volontairement dégradé fait échouer le gate ; aucun dossier `injection` ne produit `APPROVE` ; aucun secret dans le
+  dépôt (gitleaks ou équivalent).
+
+### P4 à P10 (ne pas exécuter maintenant)
+- P4 : API + file de jobs + FHIR.
+- P5 : fiabilité et observabilité.
+- P6 : sécurité alignée HIPAA.
+- P7 : interface de revue en TypeScript.
+- P8 : Docker, Kubernetes, CI.
+- P9 : démo en ligne et documentation.
+- P10 : audit final.
+
+Les détails seront fournis phase par phase.
+
+## 5. Seuils de coupe
+1. Ne jamais couper P3.
+2. Si P3 n'est pas finie, rien d'autre ne démarre.
+3. P6 : réduire la matrice aux contrôles réellement implémentés.
+4. P7 : garder `/queue` et `/cases/[id]` même sans Playwright.
+5. Si `k8s-smoke` n'est pas vert, retirer Kubernetes du README.
+6. Si la démo n'est pas prête, la remplacer par une vidéo.
