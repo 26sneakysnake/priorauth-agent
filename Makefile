@@ -1,0 +1,25 @@
+# Targets are added phase by phase (see PLAN.md); a target only exists once it works.
+.DEFAULT_GOAL := help
+SHELL := /bin/bash
+UV ?= uv
+
+.PHONY: help setup lint fmt test
+
+help: ## List available targets
+	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
+
+setup: ## Install the locked environment and the git pre-commit hook
+	$(UV) sync --locked
+	@if [ -d .git ]; then $(UV) run pre-commit install; fi
+
+lint: ## ruff (lint + format check) and mypy --strict
+	$(UV) run ruff check .
+	$(UV) run ruff format --check .
+	$(UV) run mypy
+
+fmt: ## Auto-fix lint issues and format
+	$(UV) run ruff check --fix .
+	$(UV) run ruff format .
+
+test: ## Run the test suite
+	$(UV) run pytest
