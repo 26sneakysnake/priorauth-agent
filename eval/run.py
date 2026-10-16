@@ -53,14 +53,18 @@ def error_record(gold: Gold, run: CaseRun) -> dict[str, Any] | None:
     for cid, gc in gold.criteria.items():
         retained = run.decision.criteria.get(cid, Status.INSUFFICIENT)
         if retained is not gc.status:
-            cited = [f.model_dump(mode="json", include={"status", "evidence", "note"}) for f in run.raw.findings]
+            claimed = [
+                f.model_dump(mode="json", include={"status", "evidence", "note"})
+                for f in run.raw.findings
+                if f.criterion_id == cid
+            ]
             mismatches.append(
                 {
                     "criterion_id": cid,
                     "gold": gc.status.value,
                     "retained": retained.value,
                     "gold_rationale": gc.rationale,
-                    "system": [c for c, f in zip(cited, run.raw.findings, strict=True) if f.criterion_id == cid],
+                    "system": claimed,
                 }
             )
     if predicted == gold.expected_decision and not mismatches and not run.verification.invalid and not run.error:
