@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -35,3 +35,6 @@ data-pdf: ## Optional: export dev cases to build/pdf/dev/*.pdf (not committed)
 
 eval-offline: ## Replay every committed result (rules + recorded LLM cassettes, no API key); writes results/
 	$(UV) run python -m eval.run --offline-all
+
+gate: ## Regression gate: replay the production agent on dev, compare with results/baseline_gate.json
+	$(UV) run python -m eval.gate

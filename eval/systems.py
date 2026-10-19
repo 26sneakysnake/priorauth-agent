@@ -17,6 +17,10 @@ SYSTEMS: dict[str, Callable[[], System]] = {
     "llm_single_haiku": lambda: SingleCallBaseline("llm_single_haiku", HAIKU, "single@v1", HAIKU_CASE_CAP_USD),
     "agent_v1_haiku": lambda: AgentSystem("agent_v1_haiku", HAIKU, "agent@v1", HAIKU_CASE_CAP_USD),
     "agent_v2_haiku": lambda: AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", HAIKU_CASE_CAP_USD),
+    # Prompt-sensitivity probe: a sloppy "lean toward MET" prompt (dev only).
+    "agent_lenient_haiku": lambda: AgentSystem("agent_lenient_haiku", HAIKU, "agent@lenient", HAIKU_CASE_CAP_USD),
+    # Test fixture for the gate (tests/test_gate.py): a deliberately broken prompt, replayed on dev only.
+    "agent_degraded_haiku": lambda: AgentSystem("agent_degraded_haiku", HAIKU, "agent@degraded", HAIKU_CASE_CAP_USD),
 }
 
 # Systems whose results can be regenerated with no network and no API key (checked in CI), with the splits whose
@@ -26,10 +30,12 @@ OFFLINE: dict[str, tuple[str, ...]] = {
     "llm_single_haiku": ("dev",),
     "agent_v1_haiku": ("dev",),
     "agent_v2_haiku": ("dev",),
+    "agent_lenient_haiku": ("dev",),
+    "agent_degraded_haiku": ("dev",),
 }
 
 # System whose recorded token usage serves as the prior when estimating the cost of a system's first recording.
-COST_PRIOR: dict[str, str] = {"agent_v2_haiku": "agent_v1_haiku"}
+COST_PRIOR: dict[str, str] = {"agent_v2_haiku": "agent_v1_haiku", "agent_degraded_haiku": "agent_v1_haiku"}
 
 
 def get_system(name: str) -> System:

@@ -17,6 +17,8 @@ jobs:
     name: lint, types, tests
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    env:
+      LLM_MODE: replay # every model call comes from eval/cassettes; no API key exists in this job
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -28,3 +30,5 @@ jobs:
         run: make lint
       - name: Tests
         run: make test
+      - name: Regression gate (replayed cassettes)
+        run: make gate
