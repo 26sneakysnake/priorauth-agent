@@ -65,31 +65,30 @@ async def serve(port: int, per_trap: int, data: Path, database_url: str | None, 
             review_feedback_path=feedback,
         )
         app = create_app(settings, system_factory=system)
-        server = uvicorn.Server(uvicorn.Config(app, host="127.0.0.1", port=port, log_level="warning"))
-        task = asyncio.create_task(server.serve())
-        while not server.started:
-            await asyncio.sleep(0.05)
-        async with httpx.AsyncClient(base_url=f"http://127.0.0.1:{port}") as client:
-            r = await client.post("/auth/token", json={"username": "demo-system", "password": password})
-            headers = {"Authorization": f"Bearer {r.json()['access_token']}"}
-            ids = []
-            for case, _ in pairs:
-                r = await client.post(
-                    "/cases",
-                    json=case_to_bundle(case, case.case_id),
-                    headers=headers | {"Idempotency-Key": case.case_id},
-                )
-                ids.append(r.json()["case_id"])
-            for case_id in ids:
-                while (await client.get(f"/cases/{case_id}", headers=headers)).json()["job"]["status"] not in (
-                    "done",
-                    "failed",
-                ):
-                    await asyncio.sleep(0.05)
-        print(
-            f"demo API ready on http://127.0.0.1:{port} with {len(ids)} synthetic cases (simulated model)", flush=True
-        )
-        await task
+        async with app.router.lifespan_context(app):  # seed in-process first: the port opens once cases are decided
+            transport = httpx.ASGITransport(app=app)
+            async with httpx.AsyncClient(transport=transport, base_url="http://demo") as client:
+                r = await client.post("/auth/token", json={"username": "demo-system", "password": password})
+                headers = {"Authorization": f"Bearer {r.json()['access_token']}"}
+                ids = []
+                for case, _ in pairs:
+                    r = await client.post(
+                        "/cases",
+                        json=case_to_bundle(case, case.case_id),
+                        headers=headers | {"Idempotency-Key": case.case_id},
+                    )
+                    ids.append(r.json()["case_id"])
+                for case_id in ids:
+                    while (await client.get(f"/cases/{case_id}", headers=headers)).json()["job"]["status"] not in (
+                        "done",
+                        "failed",
+                    ):
+                        await asyncio.sleep(0.05)
+            server = uvicorn.Server(
+                uvicorn.Config(app, host="127.0.0.1", port=port, log_level="warning", lifespan="off")
+            )
+            print(f"demo API on http://127.0.0.1:{port}: {len(ids)} synthetic cases (simulated model)", flush=True)
+            await server.serve()
 
 
 def main(argv: list[str] | None = None) -> int:

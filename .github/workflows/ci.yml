@@ -51,6 +51,32 @@ jobs:
       - name: Regression gate (replayed cassettes)
         run: make gate
 
+  ui:
+    name: reviewer UI (types, Vitest, build, Playwright)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      LLM_MODE: replay # the demo API's model is the scripted oracle; nothing calls a model
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+      - name: Setup (locked Python and Node environments)
+        run: make setup ui-setup
+      - name: API types, TypeScript strict, Vitest, production build
+        run: make ui-test
+      - name: Install Chromium for Playwright
+        working-directory: ui
+        run: npx playwright install --with-deps chromium
+      - name: End-to-end journeys (demo API with a simulated model)
+        run: make ui-e2e
+
   secrets:
     name: secret scan (gitleaks, full history)
     runs-on: ubuntu-24.04

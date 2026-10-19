@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test minimum-necessary hipaa-tests up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test minimum-necessary hipaa-tests ui-setup ui-test ui-e2e demo up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -73,6 +73,18 @@ hipaa-tests: ## Run exactly the tests named by the "covered" rows of docs/HIPAA_
 
 minimum-necessary: ## Pages sent to the model and identifiers redacted, per split; writes results/minimum_necessary.json
 	$(UV) run python -m eval.minimum_necessary
+
+ui-setup: ## Install the UI dependencies from ui/package-lock.json
+	cd ui && npm ci --no-audit --no-fund
+
+ui-test: ## UI: generated API types up to date, TypeScript strict, Vitest, production build
+	cd ui && npm run check:api && npm run typecheck && npm test && npm run build
+
+ui-e2e: ## UI: two Playwright journeys against the demo API (SIMULATED model) and the build of ui-test
+	cd ui && npx playwright test
+
+demo: ## Demo API on :8000 (SIMULATED model, synthetic cases); then `cd ui && npm run dev`
+	$(UV) run python -m eval.demo_api --port 8000
 
 up: ## Postgres + Jaeger (docker compose); then e.g. OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 make run
 	docker compose up -d

@@ -179,3 +179,15 @@ def test_review_actions_validate_and_update_the_queue(tmp_path: Path) -> None:
         assert all(gc.status is Status.MET for gc in approved_gold.criteria.values())
 
     asyncio.run(scenario())
+
+
+def test_ui_fixture_offsets_are_the_verifiers() -> None:
+    """ui/tests/fixtures/case_review.json (a real GET /cases/{id}/review response on a synthetic case) feeds the UI's
+    highlight tests; its offsets must be exactly what locate() computes from its pages."""
+    review = json.loads((Path(__file__).resolve().parents[1] / "ui/tests/fixtures/case_review.json").read_text())
+    pages = {p["number"]: p["text"] for p in review["pages"]}
+    assert all("SYNTHETIC RECORD" in text for text in pages.values())
+    evidence = [e for c in review["criteria"] for e in c["evidence"]] + review["injection_evidence"]
+    for ev in evidence:
+        assert (ev["start"], ev["end"]) == locate(pages[ev["page"]], ev["quote"])
+    assert len(evidence) > 5 and review["injection_detected"]
