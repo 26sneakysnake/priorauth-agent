@@ -20,7 +20,7 @@ here by hand; each one lives in the result file named next to it, and the genera
 
 - **Inside this project.** Demonstrating, on synthetic records, how an LLM can prepare a prior-authorization review:
   find and quote the evidence for each criterion of three fictional payer policies (lumbar MRI, physical therapy
-  extension, a fictional biologic for rheumatoid arthritis, `src/priorauth/policy/criteria.py`).
+  extension, a fictional biologic for rheumatoid arthritis, `src/priorauth/policy/policies.yaml`).
 - **Who uses the output.** A human reviewer, through the review UI. An APPROVE can only come from the engine.
 
 **Out of scope:**
