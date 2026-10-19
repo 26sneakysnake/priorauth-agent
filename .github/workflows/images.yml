@@ -1,0 +1,103 @@
+name: Publish images
+
+# The demo images on GitHub Container Registry, only for commits of main whose CI run passed:
+#   ghcr.io/<owner>/priorauth-agent-api and ghcr.io/<owner>/priorauth-agent-ui, tags `main` and `sha-<commit>`.
+# The published images are then pulled, started and smoke-tested. deploy/k8s/base refers to them.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: images-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: ${{ matrix.image }} -> GHCR
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        include:
+          - image: priorauth-agent-api
+            dockerfile: docker/api.Dockerfile
+          - image: priorauth-agent-ui
+            dockerfile: docker/ui.Dockerfile
+    env:
+      SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SHA }}
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ${{ matrix.dockerfile }}
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}:main
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}:sha-${{ env.SHA }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ env.SHA }}
+          cache-from: type=gha,scope=${{ matrix.image }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.image }}
+      - name: Record the digest
+        env:
+          REF: ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}@${{ steps.build.outputs.digest }}
+        run: echo "- \`$REF\` (commit \`$SHA\`)" >> "$GITHUB_STEP_SUMMARY"
+
+  verify:
+    name: pull the published images and smoke-test them
+    needs: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      packages: read
+    env: # the commit tag: written once per commit, by the publish job above
+      API_IMAGE: ghcr.io/${{ github.repository_owner }}/priorauth-agent-api:sha-${{ github.event.workflow_run.head_sha || github.sha }}
+      UI_IMAGE: ghcr.io/${{ github.repository_owner }}/priorauth-agent-ui:sha-${{ github.event.workflow_run.head_sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Start the published images
+        run: |
+          docker network create demo
+          docker run -d --name api --network demo -p 127.0.0.1:8000:8000 "$API_IMAGE"
+          docker run -d --name ui --network demo -p 127.0.0.1:3000:3000 -e PRIORAUTH_API_URL=http://api:8000 "$UI_IMAGE"
+          docker image inspect --format '{{index .RepoDigests 0}}' "$API_IMAGE" "$UI_IMAGE"
+          for _ in $(seq 1 60); do
+            curl -sf http://127.0.0.1:8000/healthz > /dev/null && curl -sf http://127.0.0.1:3000/login > /dev/null && exit 0
+            sleep 2
+          done
+          docker logs api; docker logs ui; exit 1
+      - name: Smoke test
+        run: make smoke-demo URL=http://127.0.0.1:8000 UI_URL=http://127.0.0.1:3000
