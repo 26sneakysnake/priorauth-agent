@@ -30,15 +30,23 @@ test("a reviewer follows a citation to its page and flags an agent error", async
   await page.getByTestId("queue-row").first().getByRole("link").click();
   await expect(page.getByText("Engine decision:")).toContainText("PEND");
 
-  // A citation link scrolls to its highlight, which then stands out; the highlight is the quoted text.
-  const card = page.getByRole("article").first();
-  const citation = card.getByRole("link", { name: /^page \d+$/ }).first();
+  // A citation link scrolls to its highlight, which then stands out; the highlight is the quoted text (compared
+  // after the verifier's normalization: Unicode form, quotes, dashes, case, whitespace, edge punctuation).
+  const citation = page.getByRole("article").getByRole("link", { name: /^page \d+$/ }).first();
   const quote = (await citation.locator("xpath=following-sibling::q[1]").textContent()) ?? "";
   await citation.click();
   const active = page.locator("mark.bg-yellow-300");
   await expect(active.first()).toBeVisible();
   const highlighted = (await active.allTextContents()).join("");
-  const squash = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/^[\s"'.,;:]+|[\s"'.,;:]+$/g, "");
+  const squash = (s: string) =>
+    s
+      .normalize("NFKC")
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201c\u201d]/g, '"')
+      .replace(/[\u2013\u2014\u2212]/g, "-")
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .replace(/^(\.\.\.|[\s"'.,;:\u2026])+|(\.\.\.|[\s"'.,;:\u2026])+$/g, "");
   expect(squash(highlighted)).toBe(squash(quote));
 
   await page.getByLabel("Flag an agent error").check();

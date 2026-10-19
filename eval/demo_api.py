@@ -1,13 +1,17 @@
-"""Demo API for the reviewer UI, with a SIMULATED model: the real app, its auth, encryption and audit, but the model is
-the scripted oracle of priorauth.llm.fake (it replays gold labels; it is not a model and measures nothing about one).
+"""Demo API for the reviewer UI: the real app (auth, encryption, audit, review routes) deciding synthetic dev cases
+with REAL model responses, replayed.
 
     uv run python -m eval.demo_api --port 8000 --per-trap 2
 
-On start it seeds synthetic dev cases through POST /cases as demo-system and waits for their decisions, so the
-review queue has pended cases with reasons and located evidence. Every case says `extracted_by:
-scripted-oracle-not-a-model+protected` in its review view. Defaults: a fresh SQLite file in a temporary directory, an
-ephemeral field key, random JWT and audit secrets; demo users demo-system, demo-reviewer and demo-admin with the
-password from PRIORAUTH_DEMO_PASSWORD (a random one is printed if it is unset).
+The system is the API's production one (agent@v2 on claude-haiku-5-5 behind the model view), with a replay-only
+client: every model response comes from eval/cassettes/agent_v2_haiku_pipeline/dev.jsonl, recorded from the real API
+by eval/pipeline.py. No network call is made and no key is needed; a case that was not recorded stops the demo
+instead of being decided by anything else. The scripted oracle (priorauth.llm.fake) is used by tests only.
+
+On start the demo seeds dev cases through POST /cases as demo-system and waits for their decisions, then opens its
+port. Defaults: a fresh SQLite file in a temporary directory, an ephemeral field key, random JWT and audit secrets;
+demo users demo-system, demo-reviewer and demo-admin with the password from PRIORAUTH_DEMO_PASSWORD (a random one is
+printed if it is unset).
 """
 
 import argparse
@@ -19,6 +23,7 @@ from pathlib import Path
 
 import httpx
 import uvicorn
+from sqlalchemy import func, select
 
 from eval.run import load_split
 from priorauth.agent.loop import AgentSystem
@@ -26,14 +31,16 @@ from priorauth.api.app import Settings, create_app
 from priorauth.api.fhir import case_to_bundle
 from priorauth.api.review import DEFAULT_FEEDBACK_PATH
 from priorauth.data.schema import Case, Gold, Trap
-from priorauth.llm.fake import fake_client, protected_oracle
+from priorauth.jobs.db import JobRow
+from priorauth.llm.cassette import CassetteStore
+from priorauth.llm.client import LLMClient, LLMMode
 from priorauth.llm.pricing import HAIKU
 from priorauth.pipeline import System
 from priorauth.security.crypto import ENV as FIELD_KEY_ENV
 from priorauth.security.crypto import new_key
 from priorauth.security.model_view import ProtectedSystem
 
-SYSTEM_NAME = "scripted-oracle-not-a-model"
+SYSTEM_NAME = "agent_v2_haiku+protected (replayed claude-haiku-5-5 responses)"
 
 
 def seed_cases(data: Path, per_trap: int) -> list[tuple[Case, Gold]]:
@@ -47,10 +54,10 @@ def seed_cases(data: Path, per_trap: int) -> list[tuple[Case, Gold]]:
 
 async def serve(port: int, per_trap: int, data: Path, database_url: str | None, feedback: str | None) -> None:
     pairs = seed_cases(data, per_trap)
-    oracle = protected_oracle(load_split(data, "dev"))
+    replay = LLMClient(LLMMode.REPLAY, CassetteStore())  # never the network, whatever LLM_MODE says
 
     def system() -> System:
-        return ProtectedSystem(AgentSystem(SYSTEM_NAME, HAIKU, "agent@v2", 0.10, llm=fake_client(oracle)))
+        return ProtectedSystem(AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", 0.10, llm=replay), name=SYSTEM_NAME)
 
     os.environ.setdefault(FIELD_KEY_ENV, new_key())
     password = os.environ.get("PRIORAUTH_DEMO_PASSWORD") or secrets.token_urlsafe(12)
@@ -84,10 +91,19 @@ async def serve(port: int, per_trap: int, data: Path, database_url: str | None, 
                         "failed",
                     ):
                         await asyncio.sleep(0.05)
+            async with app.state.sessions() as s:
+                missing = (await s.execute(select(func.count()).where(JobRow.error == "CassetteMiss"))).scalar_one()
+            if missing:
+                raise SystemExit(
+                    f"{missing} seeded case(s) have no recorded model response; run eval/pipeline.py on dev"
+                )
             server = uvicorn.Server(
                 uvicorn.Config(app, host="127.0.0.1", port=port, log_level="warning", lifespan="off")
             )
-            print(f"demo API on http://127.0.0.1:{port}: {len(ids)} synthetic cases (simulated model)", flush=True)
+            print(
+                f"demo API on http://127.0.0.1:{port}: {len(ids)} synthetic cases decided by replayed real responses",
+                flush=True,
+            )
             await server.serve()
 
 
