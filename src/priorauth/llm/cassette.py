@@ -79,6 +79,12 @@ class CassetteStore:
             raise ValueError(f"invalid cassette scope {scope!r}")
         return self.root / f"{scope}.jsonl"
 
+    def scope_interactions(self, prefix: str) -> list[Interaction]:
+        """Every interaction recorded under eval/cassettes/<prefix>... (for cost estimates and audits)."""
+        base = self.root / prefix
+        paths = sorted(base.rglob("*.jsonl")) if base.is_dir() else []
+        return [i for path in paths for i in read_file(path)]
+
     def compact(self) -> None:
         """Rewrite every file written during this session: one line per key, sorted by (label, step, key)."""
         for scope in sorted(self._touched):

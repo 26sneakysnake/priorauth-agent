@@ -15,10 +15,9 @@ OFFLINE_RESULTS = (
 )
 
 
-def test_offline_results_are_committed_for_both_splits() -> None:
+def test_offline_results_are_committed_for_their_splits() -> None:
     names = {p.name for p in OFFLINE_RESULTS}
-    for system in OFFLINE:
-        assert {f"{system}_dev.json", f"{system}_test.json"} <= names
+    assert names == {f"{system}_{split}.json" for system, splits in OFFLINE.items() for split in splits}
 
 
 @pytest.mark.parametrize("path", OFFLINE_RESULTS, ids=lambda p: p.stem)

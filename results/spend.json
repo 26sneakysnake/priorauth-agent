@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "description": "Every real API call of phase P3, priced from the usage returned by the API. Written by priorauth.llm.client after each call; never edited by hand.",
+  "prices_source": "https://platform.claude.com/docs/en/about-claude/pricing (read 2026-10-19)",
+  "cap_usd": 10.0,
+  "total": {
+    "calls": 20,
+    "input_tokens": 60,
+    "cache_write_tokens": 37021,
+    "cache_read_tokens": 34208,
+    "output_tokens": 23115,
+    "cost_usd": 0.0165332
+  },
+  "by_scope": {
+    "_scratch/agent_v1_haiku/dev": {
+      "claude-haiku-5-5": {
+        "calls": 20,
+        "input_tokens": 60,
+        "cache_write_tokens": 37021,
+        "cache_read_tokens": 34208,
+        "output_tokens": 23115,
+        "cost_usd": 0.0165332
+      }
+    }
+  }
+}

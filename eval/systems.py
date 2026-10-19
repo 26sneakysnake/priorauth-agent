@@ -3,14 +3,27 @@
 from collections.abc import Callable
 
 from eval.baselines.rules import RulesBaseline
+from priorauth.agent.loop import AgentSystem
+from priorauth.llm.pricing import HAIKU
 from priorauth.pipeline import System
+
+# Per-case hard caps (USD). Far above what a normal case costs; they stop a runaway loop, not a normal one.
+HAIKU_CASE_CAP_USD = 0.10
+SONNET_CASE_CAP_USD = 1.00
 
 SYSTEMS: dict[str, Callable[[], System]] = {
     "rules_baseline": RulesBaseline,
+    "agent_v1_haiku": lambda: AgentSystem("agent_v1_haiku", HAIKU, "agent@v1", HAIKU_CASE_CAP_USD),
 }
 
-# Systems whose results can be regenerated with no network and no API key (checked in CI).
-OFFLINE: frozenset[str] = frozenset({"rules_baseline"})
+# Systems whose results can be regenerated with no network and no API key (checked in CI), with the splits whose
+# results are committed. LLM systems replay their recorded cassettes.
+OFFLINE: dict[str, tuple[str, ...]] = {
+    "rules_baseline": ("dev", "test"),
+}
+
+# System whose recorded token usage serves as the prior when estimating the cost of a system's first recording.
+COST_PRIOR: dict[str, str] = {}
 
 
 def get_system(name: str) -> System:

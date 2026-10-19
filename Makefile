@@ -33,8 +33,5 @@ data-check: ## Fail if data/ differs byte for byte from a fresh generation
 data-pdf: ## Optional: export dev cases to build/pdf/dev/*.pdf (not committed)
 	$(UV) run python -m priorauth.data.pdf --split dev --out build/pdf
 
-OFFLINE_SYSTEMS := rules_baseline
-
-eval-offline: ## Evaluate offline systems (no API key) on dev and test; writes results/
-	@for system in $(OFFLINE_SYSTEMS); do for split in dev test; do \
-		$(UV) run python -m eval.run --system $$system --split $$split || exit 1; done; done
+eval-offline: ## Replay every committed result (rules + recorded LLM cassettes, no API key); writes results/
+	$(UV) run python -m eval.run --offline-all
