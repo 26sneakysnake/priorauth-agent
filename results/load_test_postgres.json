@@ -9,16 +9,16 @@
     "seed": 0
   },
   "machine": {
-    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
     "machine": "x86_64",
-    "cpu_count": 4,
-    "memory_gb": 15.7,
+    "cpu_count": 2,
+    "memory_gb": 7.8,
     "python": "3.12.3"
   },
   "settings": {
     "cases": 200,
     "workers": 32,
-    "database": "PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) (asyncpg), tables dropped and recreated before the run; SQLAlchemy default pool (5 connections + 10 overflow)",
+    "database": "PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) (asyncpg), tables dropped and recreated before the run; SQLAlchemy default pool (5 connections + 10 overflow)",
     "api": "in-process ASGI (httpx.ASGITransport): no network, no TLS, one process; bearer token",
     "code_path": "the API's production code: FHIR parsing, queue, workers, model view (minimum necessary + redaction), verifier, engine, encrypted record fields, audit log",
     "not_production": "simulated model, in-process HTTP, single process; not a deployment"
@@ -36,19 +36,19 @@
     "llm_calls": 400
   },
   "timing": {
-    "wall_s": 6.656,
-    "throughput_cases_per_s": 30.05,
+    "wall_s": 7.297,
+    "throughput_cases_per_s": 27.41,
     "submit_ms": {
       "n": 200,
-      "mean": 1480.375926,
-      "p50": 1511.38997,
-      "p95": 1840.107994
+      "mean": 1924.49545,
+      "p50": 1966.495674,
+      "p95": 2359.970224
     },
     "end_to_end_s": {
       "n": 200,
-      "mean": 3.364223,
-      "p50": 3.409563,
-      "p95": 5.288318
+      "mean": 3.691712,
+      "p50": 3.756224,
+      "p95": 5.485788
     },
     "peak_concurrent_llm_calls": 32
   }

@@ -329,3 +329,43 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
 - The fixture and the E2E journeys use cases decided by the scripted oracle, not by a model.
 - The UI lockfile was generated with npm 11: npm 10.9 crashes while resolving the peer dependencies
   (`Cannot read properties of null (reading 'edgesOut')`); `npm ci` from the lockfile works with npm 10.
+
+## P7bis — Real-model measurement of the pipeline, demo on real responses, reviewer decisions, Postgres load test
+
+**Done**
+- `eval/pipeline.py` (`make pipeline`): agent v2 on Haiku through the API's whole path, in-process: FHIR Bundle →
+  `POST /cases` → queue → worker → model view (minimum necessary + redaction) → agent → verifier on the original pages
+  → engine → encrypted result. The model now sees a case id derived from the redacted content (not the API's random
+  id), so the recorded responses replay. Recorded once per split with the real API, in this order: dev, test, robust;
+  no rule or prompt was changed at any point. `results/pipeline_<split>.json`, `results/pipeline_<split>_errors.jsonl`
+  and `results/pipeline_comparison.md` (`eval/pipeline_report.py`) are generated and replay byte for byte in tests.
+- Demo (`eval/demo_api.py`, `make demo`) and the UI's E2E journeys and fixture use those recorded real responses
+  (replay-only client; a case without a recording stops the demo). The scripted oracle is used by tests only.
+- A reviewer's approval is the case's final decision: `POST /cases/{id}/reviews` with `approve` stores the review,
+  sets the job's reviewer decision and queues a signed `case.reviewed` webhook in one transaction
+  (`JobQueue.record_review`); `GET /cases/{id}` returns the final outcome with the engine's and the reviewer's; the
+  ClaimResponse is certified (A1) by the reviewer and keeps the engine's PEND and reasons in its process notes; the
+  stored CaseRun is never rewritten; the audit entry `review.approve` carries the new outcome. The UI shows both.
+- Load test: `--database-url` (with `--reset-database`), `make load-test-postgres`; CI runs it on SQLite and on its
+  Postgres 16 service, checks the deterministic part against the committed files and uploads the results.
+
+**Measured**
+- Real model through the pipeline (`results/pipeline_comparison.md`), against the same agent on whole records:
+  dangerous approvals 0/65, 0/39, 0/28 on dev, test, robust (unchanged); criterion accuracy dev 0.9815 (whole record
+  0.9908; 2 unjustified PENDs appear), test 0.9884 (0.9806), robust 0.9831 (0.9831); pages sent 62.1 %, 61.0 %,
+  100 %; cost 0.157, 0.092, 0.068 USD (whole record 0.165, 0.100, 0.069). The dev drop is in `docs/LIMITS.md` §9.
+- No patient identifier in the recorded responses (scan of the three cassette files).
+- Reviewer approval: ClaimResponse, signed webhook, both decisions, audit entry, closed case, two simultaneous
+  approvals giving one 201 and one 409 (`tests/test_review.py`, `tests/test_fhir.py`).
+- Load test, simulated model, 200 cases, 32 workers, same GitHub runner (2 CPUs), CI run #19 (`6d1e9fe`): SQLite
+  26.0 cases/s, PostgreSQL 16.15 27.41 cases/s, 200/200 done and matching gold on both. `results/load_test.json` and
+  `results/load_test_postgres.json` are that run's artifact (`load-test-results`, zip sha256 `098a8e25…`), copied
+  unchanged. The earlier SQLite figures of P5 and P6 came from this container, not from a runner.
+- API spend of P7bis: 0.31719566 USD (ledger scopes `agent_v2_haiku_pipeline/<split>`), under the 1 USD cap; ledger
+  total 6.53820259 USD.
+
+**Left**
+- One recorded run per arm: the dev, test and robust differences are within run-to-run variation (§9 of LIMITS).
+- The pipeline and the load test run in-process; neither is a deployment (no network, no TLS, one process).
+- A reviewer can approve a pended case but cannot pend an approved one; "request more information" does not change
+  the ClaimResponse.

@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
-      LLM_MODE: replay # the demo API's model is the scripted oracle; nothing calls a model
+      LLM_MODE: replay # the demo API replays recorded real responses (eval/cassettes); nothing calls a model
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -84,7 +84,7 @@ jobs:
       - name: Install Chromium for Playwright
         working-directory: ui
         run: npx playwright install --with-deps chromium
-      - name: End-to-end journeys (demo API with a simulated model)
+      - name: End-to-end journeys (demo API replaying recorded real model responses)
         run: make ui-e2e
 
   secrets:
