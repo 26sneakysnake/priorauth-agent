@@ -87,6 +87,23 @@ jobs:
       - name: End-to-end journeys (demo API replaying recorded real model responses)
         run: make ui-e2e
 
+  demo-images:
+    name: demo images (build, run, smoke test)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Build the API and UI images and start them
+        run: make demo-up
+      - name: Smoke test against the containers (API directly, then through the UI proxy)
+        run: make smoke-demo URL=http://127.0.0.1:8000 UI_URL=http://127.0.0.1:3000
+      - name: Container logs
+        if: failure()
+        run: docker compose -f docker-compose.demo.yml logs
+
   secrets:
     name: secret scan (gitleaks, full history)
     runs-on: ubuntu-24.04

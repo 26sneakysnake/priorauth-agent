@@ -369,3 +369,44 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
 - The pipeline and the load test run in-process; neither is a deployment (no network, no TLS, one process).
 - A reviewer can approve a pended case but cannot pend an approved one; "request more information" does not change
   the ClaimResponse.
+
+## Step A (P8) — Online demo
+
+**Done**
+- `priorauth.demo` (`python -m priorauth.demo`, replaces `eval/demo_api.py`): the API with its workers in-process on a
+  SQLite file in a temporary directory, seeded at start with ten labelled synthetic dev examples (`demo/examples.py`:
+  clean records to approve and to pend, dose x4, left/right inverted, inconsistent dates, hidden instruction,
+  contradiction, missing evidence, paraphrases), each chosen among the cases agent v2 got entirely right through the
+  pipeline. Decisions come from replayed real responses; a missing recording stops the server. State resets on every
+  restart (said by `/demo/info`, the UI banner, the README and `docs/DEPLOY.md`).
+- Routes: `GET /demo/info`, `GET /demo/examples` (public), `POST /demo/examples/{id}/run` (reviewer: a new
+  submission through the queue), `POST /demo/live` (reviewer; **off** unless `DEMO_LIVE_ENABLED=true`; daily spend
+  cap, per-IP rate limit, size limit, fail-closed, nothing stored); `/healthz`; `/docs`. Only the reviewer account is
+  public (`demo-reviewer` / `synthetic-demo-only`); the submitting account has a random password; no admin account.
+- UI: permanent banner "Demonstration on synthetic data…", demo account shown on the login page (one click), `/try`
+  page with "Run the agent": decision, PEND reasons, cited text highlighted, link to the full review page; live-mode
+  form with its "synthetic data only" warning when enabled.
+- `docker/api.Dockerfile`, `docker/ui.Dockerfile` (base images from the public ECR mirror, pinned by digest),
+  `docker-compose.demo.yml`, `make demo-up`, `make smoke-demo URL=… [UI_URL=…]` (`priorauth.demo.smoke`).
+- CI job `demo-images`: builds both images, starts them, runs the smoke test through the UI proxy.
+- `.github/workflows/deploy.yml` (API → Azure Container Apps with OIDC, UI → Vercel CLI, then the smoke test; nightly
+  smoke test at 04:17 UTC; skipped with a notice while unconfigured), checked with actionlint 1.7.7.
+  `docs/DEPLOY.md`: every manual step.
+
+**Measured**
+- `make smoke-demo URL=http://127.0.0.1:8000 UI_URL=http://127.0.0.1:3000` passed here against the two images run
+  by `docker compose` (built with this environment's proxy CA passed as an optional build secret; CI builds them
+  without it): healthz, docs, demo routes, `/login` and `/try`, sign-in through the UI proxy, the clean example
+  APPROVED with a located citation, the hidden-instruction example PENDED with `INJECTION_DETECTED`.
+- Tests: `tests/test_demo.py` (every example decided as its gold label says, through the queue; public vs reviewer
+  routes; only the reviewer account usable; live mode off by default, 413, 429, 502, 503 and no row stored; the demo
+  refuses to start without recordings; the smoke test passes and catches an approved hidden instruction), Vitest
+  `DecisionView`, Playwright journey on the Try page (3 journeys in total).
+- Live mode run once with the real model on a short synthetic MRI record: 2 calls, 0.00168177 USD (printed by the
+  run; the live mode's ledger is in memory and not part of `results/spend.json`).
+
+**Left**
+- Not deployed: no access to Azure or Vercel from here. `deploy.yml` has never run; the commands of `docs/DEPLOY.md`
+  have not been executed.
+- One replica only (state per container); the live mode's counters reset on restart; the live mode cannot redact
+  names from free text (no structured header), hence the "synthetic data only" warning.

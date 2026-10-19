@@ -1,0 +1,109 @@
+# Deploys the public demo (API on Azure Container Apps, UI on Vercel), then smoke-tests it; smoke-tests it every
+# night too. Every step is described in docs/DEPLOY.md, with the resources, secrets and variables it needs. Until
+# they exist, the deploy jobs are skipped (the workflow says so) and the nightly smoke test is skipped.
+name: Deploy demo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * *" # nightly smoke test of the live demo (04:17 UTC)
+
+permissions:
+  contents: read
+  id-token: write # Azure login with OpenID Connect (no long-lived Azure secret)
+
+concurrency:
+  group: deploy-demo
+  cancel-in-progress: false
+
+jobs:
+  config:
+    name: what is configured
+    runs-on: ubuntu-24.04
+    outputs:
+      azure: ${{ steps.check.outputs.azure }}
+      vercel: ${{ steps.check.outputs.vercel }}
+      urls: ${{ steps.check.outputs.urls }}
+    steps:
+      - id: check
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_ACR_NAME: ${{ vars.AZURE_ACR_NAME }}
+          AZURE_CONTAINERAPP_NAME: ${{ vars.AZURE_CONTAINERAPP_NAME }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          DEMO_API_URL: ${{ vars.DEMO_API_URL }}
+          DEMO_UI_URL: ${{ vars.DEMO_UI_URL }}
+        run: |
+          azure=false; vercel=false; urls=false
+          [ -n "$AZURE_CLIENT_ID" ] && [ -n "$AZURE_ACR_NAME" ] && [ -n "$AZURE_CONTAINERAPP_NAME" ] && azure=true
+          [ -n "$VERCEL_TOKEN" ] && [ -n "$VERCEL_PROJECT_ID" ] && vercel=true
+          [ -n "$DEMO_API_URL" ] && [ -n "$DEMO_UI_URL" ] && urls=true
+          echo "azure=$azure" >> "$GITHUB_OUTPUT"; echo "vercel=$vercel" >> "$GITHUB_OUTPUT"; echo "urls=$urls" >> "$GITHUB_OUTPUT"
+          [ "$azure" = true ] || echo "::notice::Azure is not configured (docs/DEPLOY.md): the API is not deployed"
+          [ "$vercel" = true ] || echo "::notice::Vercel is not configured (docs/DEPLOY.md): the UI is not deployed"
+          [ "$urls" = true ] || echo "::notice::DEMO_API_URL / DEMO_UI_URL are not set: no smoke test of a live demo"
+
+  api:
+    name: API -> Azure Container Apps
+    needs: config
+    if: github.event_name != 'schedule' && needs.config.outputs.azure == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Build the API image in the registry
+        run: |
+          az acr build --registry "${{ vars.AZURE_ACR_NAME }}" --image "priorauth-api:${{ github.sha }}" \
+            --file docker/api.Dockerfile .
+      - name: Point the container app at the new image
+        run: |
+          az containerapp update --name "${{ vars.AZURE_CONTAINERAPP_NAME }}" \
+            --resource-group "${{ vars.AZURE_RESOURCE_GROUP }}" \
+            --image "${{ vars.AZURE_ACR_NAME }}.azurecr.io/priorauth-api:${{ github.sha }}"
+
+  ui:
+    name: UI -> Vercel
+    needs: config
+    if: github.event_name != 'schedule' && needs.config.outputs.vercel == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build and deploy (production)
+        run: |
+          npm install --global vercel@62.2.0
+          vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+          vercel build --prod --token="${{ secrets.VERCEL_TOKEN }}"
+          vercel deploy --prebuilt --prod --token="${{ secrets.VERCEL_TOKEN }}"
+
+  smoke:
+    name: smoke test of the live demo
+    needs: [config, api, ui]
+    # After a deployment (when one ran and none failed), and every night; never when nothing is configured.
+    if: >-
+      always() && needs.config.outputs.urls == 'true' && !contains(needs.*.result, 'failure') &&
+      !contains(needs.*.result, 'cancelled')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Wait for the new API revision (cold start and seeding)
+        if: github.event_name != 'schedule'
+        run: for i in $(seq 1 40); do curl -sf "${{ vars.DEMO_API_URL }}/healthz" > /dev/null && exit 0; sleep 6; done; exit 1
+      - name: make smoke-demo
+        run: make smoke-demo URL="${{ vars.DEMO_API_URL }}" UI_URL="${{ vars.DEMO_UI_URL }}"

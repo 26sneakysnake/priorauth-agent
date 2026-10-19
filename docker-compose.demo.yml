@@ -1,0 +1,22 @@
+# The public demo, locally: make demo-up, then http://localhost:3000 (UI) and http://localhost:8000/docs (API).
+# Synthetic data only; every restart resets the state. make smoke-demo URL=http://localhost:8000 UI_URL=http://localhost:3000
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    image: priorauth-api:local
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      DEMO_LIVE_ENABLED: "false"
+  ui:
+    build:
+      context: .
+      dockerfile: docker/ui.Dockerfile
+    image: priorauth-ui:local
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      PRIORAUTH_API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy

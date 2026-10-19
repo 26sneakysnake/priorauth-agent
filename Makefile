@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -90,6 +90,16 @@ ui-test: ## UI: generated API types up to date, TypeScript strict, Vitest, produ
 
 ui-e2e: ## UI: two Playwright journeys against the demo API (SIMULATED model) and the build of ui-test
 	cd ui && npx playwright test
+
+demo-up: ## Build and start the demo images (API :8000, UI :3000); state resets on every restart
+	docker compose -f docker-compose.demo.yml up -d --build --wait
+
+demo-down: ## Stop the demo containers
+	docker compose -f docker-compose.demo.yml down
+
+smoke-demo: ## Smoke test of a running demo: make smoke-demo URL=<api url> [UI_URL=<ui url>]
+	@test -n "$(URL)" || { echo "usage: make smoke-demo URL=<api base url> [UI_URL=<ui base url>]"; exit 1; }
+	$(UV) run python -m priorauth.demo.smoke --api "$(URL)" $(if $(UI_URL),--ui "$(UI_URL)")
 
 demo: ## Demo API on :8000 (examples decided by replayed real responses); then `cd ui && npm run dev`
 	$(UV) run python -m priorauth.demo --port 8000

@@ -218,3 +218,23 @@ def test_the_demo_refuses_to_start_without_recorded_responses(tmp_path: Path) ->
 
     with pytest.raises(DemoStartError, match="no recorded model response"):
         asyncio.run(scenario())
+
+
+def test_the_smoke_test_passes_on_the_demo_and_catches_an_approved_injection() -> None:
+    from priorauth.demo import smoke
+
+    async def scenario() -> None:
+        async with demo() as (client, app):
+            lines = await smoke.smoke(client)
+            assert any("injection: PEND" in line for line in lines)
+            # Break the demo on purpose: the hidden-instruction example now points at a clean record.
+            state = app.state.demo
+            clean = next(item for item in state.examples if item[0].id == "clean-approve-pt")
+            state.examples = [
+                (ex, clean[1], clean[2]) if ex.id == "injection" else (ex, case, gold)
+                for ex, case, gold in state.examples
+            ]
+            with pytest.raises(smoke.SmokeFailure, match="hidden-instruction record was APPROVED"):
+                await smoke.smoke(client)
+
+    asyncio.run(scenario())

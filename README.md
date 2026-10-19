@@ -19,6 +19,13 @@ from `results/` (`make readme`). Until then, the measured comparison of every sy
 [`results/comparison.md`](results/comparison.md), itself generated from `results/*.json`; what it does not show is in
 [`docs/LIMITS.md`](docs/LIMITS.md). Build status per phase: [`docs/PROGRESS.md`](docs/PROGRESS.md).
 
+## Demo
+
+`make demo-up` starts the demo locally from its two Docker images (UI on http://localhost:3000, API docs on
+http://localhost:8000/docs); the login page shows the public demo account. **The demo resets on every restart**:
+it keeps its state in its container, seeded at start with ten labelled synthetic examples whose decisions come from
+real model responses recorded once and replayed. Deployment: [`docs/DEPLOY.md`](docs/DEPLOY.md) (not deployed yet).
+
 ## Quick start
 
 ```bash
