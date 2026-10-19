@@ -83,6 +83,20 @@ def test_record_then_replay_returns_the_same_call_without_network(tmp_path: Path
     )
 
 
+def test_recording_copies_calls_found_under_another_scope(tmp_path: Path) -> None:
+    scratch = make(tmp_path, llm.LLMMode.RECORD)
+    scratch.begin_run("_scratch/agent/dev", cap_usd=1.0)
+    call(scratch)
+    scratch.end_run()
+    transport = FakeTransport()
+    client = make(tmp_path, llm.LLMMode.RECORD, transport)
+    client.begin_run("agent/dev", cap_usd=1.0)
+    assert call(client).replayed and transport.calls == []
+    client.end_run()
+    (tmp_path / "cassettes/_scratch/agent/dev.jsonl").unlink()  # scratch recordings are not committed
+    assert call(make(tmp_path, llm.LLMMode.REPLAY)).replayed
+
+
 def test_replay_miss_is_an_error(tmp_path: Path) -> None:
     with pytest.raises(llm.CassetteMiss, match="LLM_MODE=record"):
         call(make(tmp_path, llm.LLMMode.REPLAY))

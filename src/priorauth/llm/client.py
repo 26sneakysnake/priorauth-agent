@@ -253,6 +253,8 @@ class LLMClient:
             )
         key = request_key(request)
         if self.mode is not LLMMode.LIVE and (hit := self.cassettes.get(key)) is not None:
+            if self.mode is LLMMode.RECORD:
+                self.cassettes.ensure_in(self.scope, hit)
             meter.spent_usd += hit.cost_usd
             return LLMCall(
                 response=hit.response, usage=hit.usage, cost_usd=hit.cost_usd, latency_ms=hit.latency_ms, replayed=True

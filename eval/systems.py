@@ -22,6 +22,7 @@ SYSTEMS: dict[str, Callable[[], System]] = {
 # results are committed. LLM systems replay their recorded cassettes.
 OFFLINE: dict[str, tuple[str, ...]] = {
     "rules_baseline": ("dev", "test"),
+    "agent_v1_haiku": ("dev",),
 }
 
 # System whose recorded token usage serves as the prior when estimating the cost of a system's first recording.

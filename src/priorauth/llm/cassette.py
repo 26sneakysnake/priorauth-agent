@@ -50,11 +50,14 @@ class CassetteStore:
     def __init__(self, root: Path = DEFAULT_ROOT) -> None:
         self.root = root
         self._by_key: dict[str, Interaction] = {}
+        self._scopes: dict[str, set[str]] = {}  # key -> scopes whose file holds it
         self._touched: set[str] = set()
         self.used: set[str] = set()
         for path in sorted(root.rglob("*.jsonl")) if root.exists() else []:
+            scope = path.relative_to(root).with_suffix("").as_posix()
             for interaction in read_file(path):
                 self._by_key.setdefault(interaction.key, interaction)
+                self._scopes.setdefault(interaction.key, set()).add(scope)
 
     def __len__(self) -> int:
         return len(self._by_key)
@@ -71,8 +74,14 @@ class CassetteStore:
         with path.open("a", encoding="utf-8") as f:
             f.write(canonical_json(interaction.model_dump(mode="json")) + "\n")
         self._by_key.setdefault(interaction.key, interaction)
+        self._scopes.setdefault(interaction.key, set()).add(scope)
         self.used.add(interaction.key)
         self._touched.add(scope)
+
+    def ensure_in(self, scope: str, interaction: Interaction) -> None:
+        """Copy an interaction recorded under another scope into `scope`, so each committed scope replays alone."""
+        if scope not in self._scopes.get(interaction.key, set()):
+            self.put(scope, interaction)
 
     def path(self, scope: str) -> Path:
         if not scope or scope.startswith("/") or ".." in scope.split("/"):
