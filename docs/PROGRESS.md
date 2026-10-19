@@ -460,20 +460,23 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
   - checks that `data/test.sha256` and `data/robust.sha256` each have a single commit in the history;
   - runs gitleaks 8.28.0 (checksum verified) on every commit and on the working tree.
 
-**Measured** (one run, `https://github.com/26sneakysnake/priorauth-agent` at `9233215`, Linux, with the Postgres
-and Jaeger test services of CI available locally)
+**Measured** (clones of `https://github.com/26sneakysnake/priorauth-agent`, Linux; first run at `9233215`, with
+the Postgres and Jaeger test services of CI available locally)
 - `make setup lint test eval-offline gate`:
   - ruff and mypy --strict clean;
-  - 295 tests passed, none skipped. Without `PRIORAUTH_TEST_POSTGRES_URL` and `PRIORAUTH_TEST_JAEGER_URL`, the
-    Postgres and Jaeger tests are skipped;
+  - 295 tests passed, none skipped;
   - all 17 committed runs replayed, the rules baseline among them;
   - gate PASS (agent v2 Haiku on dev: 0/65 dangerous approvals, criterion accuracy 0.9908, equal to the reference).
 - Working tree clean afterwards. `results/` (spend ledger included) and `README.md` are byte-identical to the commit.
 - `data is reproducible`, `robust data is reproducible`. The digest files were committed once each, in `0c83b29`
   (test) and `9bf9eb7` (robust), and never changed since.
 - gitleaks: 56 commits scanned, no leaks found; working tree, no leaks found.
+- Second run, `make audit AUDIT_REF=c549099`, without the test services, as on a reader's machine: same result,
+  except the tests: 277 passed and 2 skipped (the Jaeger test and the Postgres load test); the Postgres variants of
+  the queue tests are not collected.
 - The committed cassettes and results hold no key and no authentication header
   (`tests/test_llm_client.py::test_committed_cassettes_and_results_hold_no_credentials`, part of the 295).
+- CI run #25 (`c549099`) green on its four jobs.
 
 **Not verified**
 - **Deployment.** Nothing is deployed:
