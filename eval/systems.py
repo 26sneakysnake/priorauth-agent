@@ -23,6 +23,7 @@ SYSTEMS: dict[str, Callable[[], System]] = {
 # results are committed. LLM systems replay their recorded cassettes.
 OFFLINE: dict[str, tuple[str, ...]] = {
     "rules_baseline": ("dev", "test"),
+    "llm_single_haiku": ("dev",),
     "agent_v1_haiku": ("dev",),
     "agent_v2_haiku": ("dev",),
 }
