@@ -10,6 +10,7 @@ Every route but /health and /auth/token needs a bearer JWT from POST /auth/token
 
     POST /cases                      system, admin         (a system user only sees the cases it submitted)
     GET  /cases/{id}, .../result     system, reviewer, admin
+    GET  /review/queue, /cases/{id}/review, POST /cases/{id}/reviews   reviewer, admin (priorauth.api.review)
     GET  /costs/daily, /audit, /audit/verify               admin
 
 Accesses, refusals and decisions are written to the hash-chained audit log (priorauth.security.audit). Record
@@ -20,7 +21,6 @@ import asyncio
 import json
 import logging
 import os
-import re
 import secrets
 import uuid
 from collections.abc import AsyncIterator, Callable
@@ -30,13 +30,15 @@ from datetime import datetime, timedelta
 from typing import Annotated, Any
 
 import httpx
-from fastapi import Body, Depends, FastAPI, Header, HTTPException, Request, Response
+from fastapi import Body, FastAPI, Header, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
-from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel
 from sqlalchemy import select
 
+from priorauth.api import review
+from priorauth.api.deps import ADMIN, READER, SUBMITTER, UUID_SHAPE
 from priorauth.api.fhir import BundleError, claim_response, parse_bundle
+from priorauth.api.review import DEFAULT_FEEDBACK_PATH, FeedbackSink
 from priorauth.jobs.db import CaseRow, JobRow, create_schema, make_engine, sessions, utcnow
 from priorauth.jobs.queue import IdempotencyConflict, JobQueue, body_digest, daily_costs
 from priorauth.jobs.webhooks import WebhookSender
@@ -65,6 +67,7 @@ class Settings:
     jwt_secret: str = ""  # empty: a random per-process secret (tokens die with the process)
     audit_key: str = ""  # empty: unkeyed audit hashes, reported as keyed: false
     demo_password: str | None = None  # set: seed demo-system, demo-reviewer and demo-admin with this password
+    review_feedback_path: str | None = DEFAULT_FEEDBACK_PATH  # one JSON line per review; None: not written
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -82,6 +85,7 @@ class Settings:
             jwt_secret=env("PRIORAUTH_JWT_SECRET", ""),
             audit_key=env("PRIORAUTH_AUDIT_KEY", ""),
             demo_password=env("PRIORAUTH_DEMO_PASSWORD") or None,
+            review_feedback_path=env("PRIORAUTH_REVIEW_FEEDBACK_PATH", DEFAULT_FEEDBACK_PATH) or None,
         )
 
 
@@ -147,42 +151,6 @@ class Me(BaseModel):
     role: Role
 
 
-UUID_SHAPE = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-bearer = HTTPBearer(auto_error=False, description="JWT from POST /auth/token")
-
-
-def require(*roles: Role) -> Callable[..., Any]:
-    """Dependency: the caller's Principal if its token is valid and its role is one of `roles`; else 401 or 403,
-    both written to the audit log with the route template (never the path, which holds ids)."""
-
-    async def dependency(
-        request: Request, credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)]
-    ) -> Principal:
-        users: Users = request.app.state.users
-        audit: AuditLog = request.app.state.audit
-        route = getattr(request.scope.get("route"), "path", "unknown")
-        try:
-            if credentials is None:
-                raise AuthError(401, "no_token")
-            principal = await users.principal(request.app.state.tokens.subject(credentials.credentials))
-        except AuthError as e:
-            await audit.record("anonymous", "none", "access.denied", route, status=401, reason=e.reason)
-            raise HTTPException(
-                status_code=401, detail="a valid bearer token is required", headers={"WWW-Authenticate": "Bearer"}
-            ) from None
-        if principal.role not in roles:
-            await audit.record(principal.user_id, principal.role, "access.denied", route, status=403, reason="role")
-            raise HTTPException(status_code=403, detail=f"role {principal.role!r} may not use this route")
-        return principal
-
-    return dependency
-
-
-SUBMITTER = Depends(require("system", "admin"))
-READER = Depends(require("system", "reviewer", "admin"))
-ADMIN = Depends(require("admin"))
-
-
 def default_system(case_cap_usd: float = 0.10) -> System:
     """Production configuration: the gated agent (agent@v2 on Haiku), LLM mode from LLM_MODE, behind the model view
     (minimum necessary pages, redacted identifiers; priorauth.security.model_view)."""
@@ -226,6 +194,7 @@ def create_app(
             log.warning("PRIORAUTH_JWT_SECRET is not set: tokens are signed with a random per-process secret")
         app.state.tokens = TokenIssuer(settings.jwt_secret.encode() or secrets.token_bytes(32))
         app.state.users, app.state.audit = users, audit
+        app.state.feedback = FeedbackSink(settings.review_feedback_path)
         if settings.demo_password:
             for username, role in DEMO_USERS:
                 await users.ensure(username, settings.demo_password, role)
@@ -425,6 +394,7 @@ def create_app(
         )
         return report
 
+    app.include_router(review.router)
     return app
 
 

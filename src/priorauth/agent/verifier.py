@@ -45,6 +45,39 @@ def normalize_quote(quote: str) -> str:
     return q.strip(_EDGE)
 
 
+def _normalized_with_offsets(text: str) -> tuple[str, list[int]]:
+    """`normalize(text)` built one character at a time, with the index in `text` of every output character."""
+    out: list[str] = []
+    offsets: list[int] = []
+    for i, ch in enumerate(text):
+        for c in unicodedata.normalize("NFKC", ch).translate(_TRANSLATE).lower():
+            if _WS.fullmatch(c):
+                if out and out[-1] != " ":
+                    out.append(" ")
+                    offsets.append(i)
+            else:
+                out.append(c)
+                offsets.append(i)
+    if out and out[-1] == " ":
+        out.pop()
+        offsets.pop()
+    return "".join(out), offsets
+
+
+def locate(text: str, quote: str) -> tuple[int, int] | None:
+    """Where the verifier finds `quote` in `text`: [start, end) offsets into the ORIGINAL text of its first match, so
+    that a reviewer sees exactly the characters the quote was checked against. None if it is not found (or if
+    character-by-character normalization differs from the verifier's, e.g. on combining accents)."""
+    q = normalize_quote(quote)
+    if not q:
+        return None
+    normalized, offsets = _normalized_with_offsets(text)
+    pos = normalized.find(q)
+    if pos < 0:
+        return None
+    return offsets[pos], offsets[pos + len(q) - 1] + 1
+
+
 InvalidReason = Literal["page_out_of_range", "too_short", "not_found"]
 
 

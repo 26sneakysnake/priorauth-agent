@@ -62,6 +62,7 @@ class JobRow(Base):
     available_at: Mapped[datetime] = mapped_column(default=utcnow)  # retry backoff: not claimable before this
     cost_usd: Mapped[float] = mapped_column(default=0.0)  # LLM cost of the attempt that produced the result
     llm_calls: Mapped[int] = mapped_column(Integer, default=0)
+    system_name: Mapped[str | None] = mapped_column(String(100))  # the system under test that produced the result
     outcome: Mapped[str | None] = mapped_column(String(10))
     result_json: Mapped[str | None] = mapped_column(EncryptedText)  # findings with their quotes
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
@@ -90,6 +91,22 @@ class WebhookDeliveryRow(Base):
     last_error: Mapped[str | None] = mapped_column(String(200))
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
     delivered_at: Mapped[datetime | None]
+
+
+class ReviewRow(Base):
+    """One human review of a case: approve, request more information, or flag an agent error on one criterion."""
+
+    __tablename__ = "reviews"
+    __table_args__ = (Index("ix_reviews_case_created", "case_id", "created_at"),)
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    case_id: Mapped[str] = mapped_column(ForeignKey("cases.id"))
+    reviewer_id: Mapped[str] = mapped_column(String(36))
+    action: Mapped[str] = mapped_column(String(20))  # approve | request_info | flag_error
+    criterion_id: Mapped[str | None] = mapped_column(String(100))
+    corrected_status: Mapped[str | None] = mapped_column(String(20))
+    comment: Mapped[str | None] = mapped_column(EncryptedText)  # free text: may describe the record
+    created_at: Mapped[datetime] = mapped_column(default=utcnow)
 
 
 def make_engine(url: str) -> AsyncEngine:

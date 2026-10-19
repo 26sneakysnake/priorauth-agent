@@ -23,6 +23,7 @@ class Trap(StrEnum):
     CONTRADICTION = "contradiction"
     MISSING_EVIDENCE = "missing_evidence"
     INJECTION = "injection"
+    FROM_REVIEW = "from_review"  # not generated: a case labelled by a human reviewer (eval/review_to_cases.py)
 
 
 ExpectedDecision = Literal["APPROVE", "PEND"]

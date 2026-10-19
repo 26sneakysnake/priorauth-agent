@@ -229,7 +229,7 @@ class JobQueue:
 
     # -- completion ---------------------------------------------------------------------------------------------
 
-    async def complete(self, job_id: str, worker_id: str, run: CaseRun) -> bool:
+    async def complete(self, job_id: str, worker_id: str, run: CaseRun, system_name: str | None = None) -> bool:
         """Store the result and queue the webhook, atomically; only while holding the lease."""
         now = self.clock()
         async with self.sessions.begin() as s:
@@ -243,6 +243,7 @@ class JobQueue:
                     result_json=run.model_dump_json(),
                     cost_usd=run.usage.cost_usd,
                     llm_calls=run.usage.llm_calls,
+                    system_name=system_name,
                     error=run.error.split(":", 1)[0][:200] if run.error else None,
                     locked_by=None,
                     lease_expires_at=None,

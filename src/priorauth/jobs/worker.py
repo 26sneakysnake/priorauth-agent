@@ -139,7 +139,7 @@ class WorkerPool:
                     await self.queue.release(job.job_id, self.worker_id, kind or "transient", delay_s=delay)
                     log.warning("job requeued", extra={"job_id": job.job_id, "error_kind": kind})
                     return
-                stored = await self.queue.complete(job.job_id, self.worker_id, run)
+                stored = await self.queue.complete(job.job_id, self.worker_id, run, system_name=self.system.name)
             log.info(
                 "job finished",
                 extra={

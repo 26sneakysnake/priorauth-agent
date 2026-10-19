@@ -124,6 +124,133 @@
         "title": "CaseAccepted",
         "type": "object"
       },
+      "CaseReview": {
+        "properties": {
+          "case_id": {
+            "title": "Case Id",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/CriterionView"
+            },
+            "title": "Criteria",
+            "type": "array"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "extracted_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extracted By"
+          },
+          "injection_detected": {
+            "title": "Injection Detected",
+            "type": "boolean"
+          },
+          "injection_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceView"
+            },
+            "title": "Injection Evidence",
+            "type": "array"
+          },
+          "job_status": {
+            "title": "Job Status",
+            "type": "string"
+          },
+          "outcome": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/PageView"
+            },
+            "title": "Pages",
+            "type": "array"
+          },
+          "procedure_code": {
+            "title": "Procedure Code",
+            "type": "string"
+          },
+          "procedure_name": {
+            "title": "Procedure Name",
+            "type": "string"
+          },
+          "reasons": {
+            "items": {
+              "$ref": "#/components/schemas/ReasonView"
+            },
+            "title": "Reasons",
+            "type": "array"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/ReviewView"
+            },
+            "title": "Reviews",
+            "type": "array"
+          },
+          "submitter_case_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Submitter Case Id"
+          }
+        },
+        "required": [
+          "case_id",
+          "submitter_case_id",
+          "procedure_code",
+          "procedure_name",
+          "created_at",
+          "job_status",
+          "outcome",
+          "extracted_by",
+          "error",
+          "pages",
+          "criteria",
+          "reasons",
+          "injection_detected",
+          "injection_evidence",
+          "reviews"
+        ],
+        "title": "CaseReview",
+        "type": "object"
+      },
       "CaseView": {
         "properties": {
           "case_id": {
@@ -227,6 +354,67 @@
         "title": "Credentials",
         "type": "object"
       },
+      "CriterionView": {
+        "properties": {
+          "claimed_status": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "conflict": {
+            "title": "Conflict",
+            "type": "boolean"
+          },
+          "criterion_id": {
+            "title": "Criterion Id",
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceView"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "note": {
+            "title": "Note",
+            "type": "string"
+          },
+          "requirement": {
+            "title": "Requirement",
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "verified": {
+            "title": "Verified",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "criterion_id",
+          "title",
+          "requirement",
+          "status",
+          "claimed_status",
+          "verified",
+          "conflict",
+          "note",
+          "evidence"
+        ],
+        "title": "CriterionView",
+        "type": "object"
+      },
       "DailyCost": {
         "properties": {
           "cost_usd": {
@@ -253,6 +441,53 @@
           "cost_usd"
         ],
         "title": "DailyCost",
+        "type": "object"
+      },
+      "EvidenceView": {
+        "properties": {
+          "end": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End"
+          },
+          "page": {
+            "title": "Page",
+            "type": "integer"
+          },
+          "quote": {
+            "title": "Quote",
+            "type": "string"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start"
+          },
+          "valid": {
+            "title": "Valid",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "page",
+          "quote",
+          "valid",
+          "start",
+          "end"
+        ],
+        "title": "EvidenceView",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -356,6 +591,24 @@
         "title": "Me",
         "type": "object"
       },
+      "PageView": {
+        "properties": {
+          "number": {
+            "title": "Number",
+            "type": "integer"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "number",
+          "text"
+        ],
+        "title": "PageView",
+        "type": "object"
+      },
       "Problem": {
         "properties": {
           "detail": {
@@ -367,6 +620,262 @@
         ],
         "title": "Problem",
         "type": "object"
+      },
+      "QueueItem": {
+        "properties": {
+          "age_seconds": {
+            "title": "Age Seconds",
+            "type": "integer"
+          },
+          "case_id": {
+            "title": "Case Id",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "procedure_code": {
+            "title": "Procedure Code",
+            "type": "string"
+          },
+          "reasons": {
+            "items": {
+              "$ref": "#/components/schemas/ReasonView"
+            },
+            "title": "Reasons",
+            "type": "array"
+          },
+          "review_status": {
+            "anyOf": [
+              {
+                "enum": [
+                  "approve",
+                  "request_info",
+                  "flag_error"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Review Status"
+          },
+          "submitter_case_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Submitter Case Id"
+          }
+        },
+        "required": [
+          "case_id",
+          "submitter_case_id",
+          "procedure_code",
+          "created_at",
+          "finished_at",
+          "age_seconds",
+          "reasons",
+          "review_status"
+        ],
+        "title": "QueueItem",
+        "type": "object"
+      },
+      "ReasonView": {
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "criterion_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Criterion Id"
+          },
+          "detail": {
+            "title": "Detail",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "criterion_id",
+          "detail"
+        ],
+        "title": "ReasonView",
+        "type": "object"
+      },
+      "ReviewIn": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "approve",
+              "request_info",
+              "flag_error"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "maxLength": 2000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "flag_error: why (approve: optional)",
+            "title": "Comment"
+          },
+          "corrected_status": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "flag_error: the right status"
+          },
+          "criterion_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "flag_error: the criterion the agent got wrong",
+            "title": "Criterion Id"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "maxLength": 2000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "request_info: what is missing",
+            "title": "Reason"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "title": "ReviewIn",
+        "type": "object"
+      },
+      "ReviewView": {
+        "properties": {
+          "action": {
+            "enum": [
+              "approve",
+              "request_info",
+              "flag_error"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comment"
+          },
+          "corrected_status": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "criterion_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Criterion Id"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "reviewer_id": {
+            "title": "Reviewer Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "action",
+          "criterion_id",
+          "corrected_status",
+          "comment",
+          "reviewer_id",
+          "created_at"
+        ],
+        "title": "ReviewView",
+        "type": "object"
+      },
+      "Status": {
+        "description": "Status of one policy criterion for one case.\n\nMET: the record shows the criterion is satisfied.\nNOT_MET: the record shows the criterion is not satisfied.\nINSUFFICIENT: the record is silent on the criterion, or contradicts itself about it.",
+        "enum": [
+          "MET",
+          "NOT_MET",
+          "INSUFFICIENT"
+        ],
+        "title": "Status",
+        "type": "string"
       },
       "TokenResponse": {
         "properties": {
@@ -810,6 +1319,119 @@
         "summary": "Get Result"
       }
     },
+    "/cases/{case_id}/review": {
+      "get": {
+        "operationId": "case_review_cases__case_id__review_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "case_id",
+            "required": true,
+            "schema": {
+              "title": "Case Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CaseReview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "description": "unknown case"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "One case for review: pages, criteria, evidence with offsets",
+        "tags": [
+          "review"
+        ]
+      }
+    },
+    "/cases/{case_id}/reviews": {
+      "post": {
+        "operationId": "add_review_cases__case_id__reviews_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "case_id",
+            "required": true,
+            "schema": {
+              "title": "Case Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "description": "unknown case"
+          },
+          "409": {
+            "description": "the case is not pended"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Record a review: approve, request more information, or flag an agent error",
+        "tags": [
+          "review"
+        ]
+      }
+    },
     "/costs/daily": {
       "get": {
         "operationId": "costs_costs_daily_get",
@@ -875,6 +1497,74 @@
           }
         },
         "summary": "Health"
+      }
+    },
+    "/review/queue": {
+      "get": {
+        "operationId": "queue_review_queue_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "procedure",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Procedure"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 200,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/QueueItem"
+                  },
+                  "title": "Response Queue Review Queue Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Pended cases waiting for a reviewer",
+        "tags": [
+          "review"
+        ]
       }
     }
   }

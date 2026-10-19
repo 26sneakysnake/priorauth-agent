@@ -17,6 +17,7 @@ from priorauth.security.auth import AuthError, TokenIssuer, UserRow, Users, chec
 from tests.test_api import DEMO_PASSWORD, DEV, JWT_SECRET, api, login, post, wait_done
 
 SECRET = JWT_SECRET.encode()
+PENDED = next(case for case, gold in DEV if gold.expected_decision == "PEND")  # reviewable
 
 
 def user(role: str = "reviewer") -> UserRow:
@@ -105,10 +106,14 @@ MATRIX: list[tuple[str, str, set[str | None]]] = [
     ("GET", f"/cases/{CASE}", {"system", "reviewer", "admin"}),
     ("GET", f"/cases/{CASE}/result", {"system", "reviewer", "admin"}),
     ("GET", "/auth/me", {"system", "reviewer", "admin"}),
+    ("GET", "/review/queue", {"reviewer", "admin"}),
+    ("GET", f"/cases/{CASE}/review", {"reviewer", "admin"}),
+    ("POST", f"/cases/{CASE}/reviews", {"reviewer", "admin"}),
     ("GET", "/costs/daily", {"admin"}),
     ("GET", "/audit", {"admin"}),
     ("GET", "/audit/verify", {"admin"}),
 ]
+REVIEW_BODY = {"action": "request_info", "reason": "matrix test"}
 ROLES: list[str | None] = [None, "system", "reviewer", "admin"]
 
 
@@ -120,7 +125,7 @@ def test_every_route_enforces_its_roles(tmp_path: Path) -> None:
             tokens = {r: await login(client, f"demo-{r}") for r in ("system", "reviewer", "admin")}
             submitted = await client.post(
                 "/cases",
-                json=case_to_bundle(DEV[0][0]),
+                json=case_to_bundle(PENDED),
                 headers={"Idempotency-Key": "matrix", "Authorization": f"Bearer {tokens['system']}"},
             )
             case_id = submitted.json()["case_id"]
@@ -132,9 +137,10 @@ def test_every_route_enforces_its_roles(tmp_path: Path) -> None:
                     if role is not None:
                         headers["Authorization"] = f"Bearer {tokens[role]}"
                     url = template.format(case_id=case_id)
-                    r = await client.request(method, url, headers=headers, json=bundle if method == "POST" else None)
+                    body = None if method == "GET" else REVIEW_BODY if url.endswith("/reviews") else bundle
+                    r = await client.request(method, url, headers=headers, json=body)
                     if role in allowed:
-                        assert r.status_code in (200, 202), (method, url, role, r.text)
+                        assert r.status_code in (200, 201, 202), (method, url, role, r.text)
                     elif role is None:
                         assert r.status_code == 401, (method, url)
                         assert r.headers["www-authenticate"] == "Bearer"

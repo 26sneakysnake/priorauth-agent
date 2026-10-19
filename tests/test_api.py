@@ -70,6 +70,7 @@ async def api(
         "jwt_secret": JWT_SECRET,
         "audit_key": AUDIT_KEY,
         "demo_password": DEMO_PASSWORD,
+        "review_feedback_path": str(tmp_path / "cases_from_review.jsonl"),
     } | settings
     app = create_app(Settings(**config), system_factory=system_factory, webhook_client=hooks)
     async with app.router.lifespan_context(app):
