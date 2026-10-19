@@ -231,3 +231,53 @@ generated from `results/*.json` and checked by `tests/test_eval_run.py`)
 - The load test measures the API, queue and SQLite under concurrency, not a model; on Postgres or with real model
   latency the numbers would differ. Not run against Postgres.
 - One process-wide circuit breaker per transport; no per-model rate limiter; no metrics endpoint (traces only).
+
+## P6 — Security aligned with the HIPAA Security Rule (no compliance claimed)
+
+Aligned with the principles of the HIPAA Security Rule, synthetic data, no claim of compliance or certification, no
+BAA. The control matrix is [`docs/HIPAA_ALIGNMENT.md`](HIPAA_ALIGNMENT.md): each covered row names its code and
+tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` runs them); the others say not covered.
+
+**Done**
+- Model view (`src/priorauth/security/model_view.py`), wrapped around the API's production system: only the pages
+  that minimum necessary selects, renumbered, with identifiers redacted; the model's citations are mapped back to the
+  original pages and restored before the verifier checks them against the original text.
+  - De-identification (`security/redaction.py`): name and each part of it, MRN, member id, date of birth in four
+    spellings, phone numbers → `[PATIENT]`, `[MRN]`, `[DOB_2]`... one placeholder per spelling, exactly reversible.
+  - Minimum necessary (`security/minimum_necessary.py`): a deny-list; a page is withheld only if its heading is an
+    administrative type (fax cover, scheduling note, eligibility, intake questionnaire, refill request), it has no
+    term of the procedure's vocabulary and no instruction-like text. Unknown types are sent. Written from dev only.
+- RBAC (`security/auth.py`): users with a UUID, a unique username, one role (`system`, `reviewer`, `admin`) and a
+  scrypt hash; HS256 JWT of 15 minutes (`sub`, `role`, `iat`, `exp`, `jti`, `iss`), user re-read on every request;
+  401 + `WWW-Authenticate` / 403; a `system` user only sees its own cases. `POST /auth/token`, `GET /auth/me`; demo
+  users seeded from `PRIORAUTH_DEMO_PASSWORD`.
+- Field encryption (`security/crypto.py`): Fernet/MultiFernet on the record, conditions, member id and result;
+  key from `PRIORAUTH_FIELD_KEY` (`make field-key`); the app refuses to start without it.
+- Audit (`security/audit.py`): HMAC-SHA256 chain (`PRIORAUTH_AUDIT_KEY`) over logins, failed logins, refusals,
+  submissions, reads, decisions and fail-closed failures; `GET /audit`, `GET /audit/verify` (admin).
+- `make minimum-necessary` → `results/minimum_necessary.json`; `make hipaa-tests` (also a CI step) runs exactly the
+  tests named by the covered rows.
+
+**Measured** (no API call in P6; `results/spend.json` unchanged)
+- Pages sent to the model (`results/minimum_necessary.json`): dev 62.1 %, test 61.0 %, robust 100 % (the rule does
+  not know robust's document headings, so it withholds nothing there). Every gold evidence page and every injection
+  page is sent on all three splits (dev evidence pages 275/275, Wilson 95 % [0.986, 1]).
+- No known identifier of the patient in any request sent to the model, for the 100 dev cases through the production
+  wiring with the scripted oracle; every decision still matches gold and every restored quote verifies on the
+  original page; the same scan without the model view finds the identifiers
+  (`tests/test_redaction.py::test_no_identifier_and_no_withheld_page_reaches_the_model` and its control).
+- Route × caller matrix, 8 routes × (no token, system, reviewer, admin); forged, re-signed, `alg=none`, foreign and
+  expired tokens refused (`tests/test_auth.py`).
+- A scan of every cell of the raw SQLite file after a full run finds no identifier, no page line and no quote; the
+  same scan over the decrypted cells finds them (`tests/test_encryption.py`).
+- Six kinds of tampering detected (modified entry, entry re-hashed without the key, deleted middle or last entry,
+  relinked entry, rewound head) and 60 concurrent appends from two writers stay one chain, on SQLite and Postgres 16
+  (`tests/test_audit.py`).
+- `make load-test` re-run with the production wiring (token, model view, encryption, audit): 200/200 done and
+  matching gold; timings in `results/load_test.json` (the model is still simulated).
+
+**Left**
+- The effect of redaction and page selection on a real model's accuracy is **not measured**: no API call was made,
+  and the P3 results (`results/comparison.md`) were recorded on whole, unredacted records.
+- TLS, MFA, login lockout, token revocation, key management (KMS), audit export and retention: not covered (see the
+  matrix and `docs/LIMITS.md` §7).

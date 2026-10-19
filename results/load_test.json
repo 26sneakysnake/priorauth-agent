@@ -18,8 +18,9 @@
   "settings": {
     "cases": 200,
     "workers": 32,
-    "database": "SQLite file (aiosqlite)",
-    "api": "in-process ASGI (httpx.ASGITransport), no network"
+    "database": "SQLite file (aiosqlite), encrypted record fields, audit log",
+    "api": "in-process ASGI (httpx.ASGITransport), no network, bearer token",
+    "system": "agent@v2 behind the model view (minimum necessary + redaction)"
   },
   "deterministic": {
     "cases": 200,
@@ -34,19 +35,19 @@
     "llm_calls": 400
   },
   "timing": {
-    "wall_s": 7.357,
-    "throughput_cases_per_s": 27.19,
+    "wall_s": 8.383,
+    "throughput_cases_per_s": 23.86,
     "submit_ms": {
       "n": 200,
-      "mean": 989.188801,
-      "p50": 957.136118,
-      "p95": 1576.305784
+      "mean": 2518.300243,
+      "p50": 2462.878735,
+      "p95": 3173.178253
     },
     "end_to_end_s": {
       "n": 200,
-      "mean": 3.969248,
-      "p50": 4.014072,
-      "p95": 5.834253
+      "mean": 4.758794,
+      "p50": 4.924382,
+      "p95": 6.777787
     },
     "peak_concurrent_llm_calls": 32
   }

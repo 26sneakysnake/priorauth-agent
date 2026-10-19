@@ -79,11 +79,36 @@ From the `*_errors.jsonl` files of the systems on test and robust (never used to
 
 ## 6. Not done in P3
 
-- No page selection or de-identification before the model call (planned for P4 and P6): the agent reads whole
-  synthetic records, names included.
-- No OpenTelemetry traces, audit log, API or job queue (P4, P5).
+- The evaluated systems read whole synthetic records, names included: page selection and de-identification came in
+  P6 and only wrap the API's production system (§7); every number in `results/comparison.md` is without them.
+- No OpenTelemetry traces, audit log, API or job queue in P3 (added in P4 to P6).
 - `eval-live.yml` has **never run**, on GitHub or anywhere else: its secret check, cost-cap check and artifact
   upload are untested and must not be read as validated. It needs the repository secret `ANTHROPIC_API_KEY`. All
   recorded results came from local `LLM_MODE=record` runs.
 - The gate runs on dev only; test and robust are reported, never gated.
 - No agreement study between the gold labels and a clinician; no shoulder cases in the robust PT templates.
+
+## 7. Security controls (P6)
+
+Aligned with the principles of the HIPAA Security Rule, synthetic data, no claim of compliance or certification, no
+BAA with anyone. What each control does not do:
+
+- **Model view, not measured with a model.** Redaction and page selection were checked with the scripted oracle
+  only (`tests/test_redaction.py`); how a real model's accuracy changes with them is unknown. No API call was made.
+- **Page selection** is a keyword deny-list written from dev headings. Test shares dev's generator, so its 100 %
+  evidence recall says little about real records; on robust, whose headings it does not know, it withholds nothing
+  (`results/minimum_necessary.json`). It cannot read scanned images, only text.
+- **De-identification** removes only the identifiers the structured header announces (and phone numbers): a
+  misspelled or OCR-damaged name, an address, a relative's name, provider names, NPIs and service dates stay. The
+  residual check in `results/minimum_necessary.json` looks for the same identifiers, so its zero is by construction;
+  a fuzzy search for near-misses of patient names in the text sent found none on the three splits (two false
+  positives, a clinician's name and an ordinary word). This is not Safe Harbor.
+- **Authentication**: no MFA, no lockout or rate limit on failed logins, no revocation list (15-minute tokens, user
+  re-read on each request), no user-management API (users are created in code; demo users from an env password).
+  Without `PRIORAUTH_JWT_SECRET` the secret is random per process.
+- **Encryption at rest**: key in an environment variable, no KMS or HSM, no automatic re-encryption after a key
+  rotation, no disk, database or backup encryption. The Bundle hash used for idempotency is stored in clear.
+- **Audit log**: written after the action commits (a crash in between loses that entry); append-only by code only (no
+  WORM storage, no external anchor); anyone holding both the HMAC key and write access to the database can rewrite
+  it; without `PRIORAUTH_AUDIT_KEY` it is unkeyed (reported as `keyed: false`). `verify` reads the whole chain.
+- **Transmission**: no TLS in the application; webhook URLs are not forced to HTTPS.

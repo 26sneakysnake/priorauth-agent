@@ -46,6 +46,8 @@ jobs:
         run: for i in $(seq 1 30); do curl -sf http://localhost:16686/ > /dev/null && exit 0; sleep 2; done; exit 1
       - name: Tests
         run: make test
+      - name: Tests named by the covered rows of docs/HIPAA_ALIGNMENT.md
+        run: make hipaa-tests
       - name: Regression gate (replayed cassettes)
         run: make gate
 

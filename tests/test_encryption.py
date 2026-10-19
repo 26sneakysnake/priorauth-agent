@@ -14,7 +14,9 @@ from priorauth.api.fhir import case_to_bundle
 from priorauth.jobs.db import CaseRow, JobRow
 from priorauth.pipeline import CaseRun
 from priorauth.security import crypto
-from tests.test_api import api, one_per_trap, post, wait_done
+from tests.test_api import DEV, api, one_per_trap, post, wait_done
+
+DEV_CASE = DEV[0][0]
 
 
 def record_strings(cases: list) -> set[str]:  # type: ignore[type-arg]
@@ -97,3 +99,23 @@ def test_key_rotation_reads_old_rows_and_wrong_keys_fail_without_echo(monkeypatc
         crypto.cipher().decrypt(token)
     assert "EHP-SYN" not in str(e.value) and token not in str(e.value)
     assert os.environ[crypto.ENV] == new
+
+
+def test_a_tampered_ciphertext_is_rejected_not_misread(tmp_path: Path) -> None:
+    """Fernet authenticates each field (HMAC-SHA256): a stored value changed in the database is an error on read."""
+
+    async def scenario() -> None:
+        async with api(tmp_path, run_workers=False) as (client, _):
+            case_id = (await post(client, case_to_bundle(DEV_CASE), key="tamper")).json()["case_id"]
+            con = sqlite3.connect(tmp_path / "api.db")
+            (token,) = con.execute("SELECT member_id FROM cases").fetchone()
+            flipped = token[:-6] + ("A" if token[-6] != "A" else "B") + token[-5:]
+            con.execute("UPDATE cases SET member_id = ?", (flipped,))
+            con.commit()
+            con.close()
+            app_sessions = client._transport.app.state.sessions  # type: ignore[attr-defined]
+            with pytest.raises(InvalidToken):
+                async with app_sessions() as s:
+                    await s.get(CaseRow, case_id)
+
+    asyncio.run(scenario())
