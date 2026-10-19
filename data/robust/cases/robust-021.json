@@ -1,0 +1,43 @@
+{
+  "case_id": "robust-021",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-10-20",
+  "patient": {
+    "name": "Cyrus Nakamura",
+    "birth_date": "1983-10-02",
+    "sex": "male",
+    "mrn": "SYN-6129649",
+    "member_id": "EHP-SYN-66310751"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Mapleton Arthritis Center\nPAGES: 7 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Granite State Diagnostics\nCUMULATIVE LAB REPORT\nPt: Cyrus Nakamura | DOB 10-02-1983\nOrdered by: Dr. Ravi Holloway, MD, Rheumatology\n\nSpecimen collected: 07-06-2025\n\nInfectious disease:\nIGRA (QuantiFERON-TB Gold Plus) ...... POS\nHBsAg ...... NONREACTIVE\nAnti-HBc total ...... NONREACTIVE\n\nChemistry:\nAST ...... 30 U/L\neGFR ...... 100 mL/min/1.73m2\n\n[fax p.2/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Cyrus Nakamura\nID EHP-SYN-66310751 | Group 27202\nRx BIN 999999 | PCN SYNTH\n\n[fax p.3/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (SPECIALTY DRUG)\nHealth plan: Example Health Plan (fictional)\nPt name: Cyrus Nakamura   Plan member #: EHP-SYN-66310751   D.O.B. 10-02-1983\nOrdering clinician: Dr. Ravi Holloway, MD, Rheumatology (NPI: 9055872205)\nSubmitted: 10-20-2025\n\nDrug: fictimab (fictional TNF inhibitor) prefilled syringe\nDose requested: forty milligrams subcutaneously every seven days\nDx: M06.9 RA, unspecified\n\n[fax p.4/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Mapleton Arthritis Center -- Rheum Return Visit\nPt: Cyrus Nakamura | DOB 10-02-1983 | Acct SYN-6129649\nDOS 10-12-2025 | Provider: Dr. Ravi Holloway, MD, Rheumatology\n\nHPI:\n42 y/o w/ RA dx 2024, here to discuss escalation.\n\nAssessment:\nA: seropositive RA, high activity, CDAI 33.\nPre-biologic labs: IGRA and HBV serologies negative.\n\nTx hx:\nMTX 20 mg PO qwk x 21 wks w/ inadequate response.\n\nPlan:\nPlan: initiate fictimab 40 mg SQ q7d.\n\n[fax p.5/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Copperfield Internal Medicine -- Patient Portal Message\nPt: Cyrus Nakamura | DOB October 2, 1983 | Acct SYN-6129649\nDOS October 12, 2025 | Provider: MyChart\n\nPt asks whether parking validation is avallable for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.6/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Copperfield Internal Medicine -- Work Status Note\nPt: Cyrus Nakamura | DOB October 2, 1983 | Acct SYN-6129649\nDOS October 12, 2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.7/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

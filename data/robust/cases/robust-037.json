@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-037",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-25",
+  "patient": {
+    "name": "Bastien Delacroix",
+    "birth_date": "1981-11-12",
+    "sex": "male",
+    "mrn": "SYN-6768231",
+    "member_id": "EHP-SYN-24419427"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Granite State Diagnostics\nCUMULATIVE LAB REPORT\nPt: Bastien Delacroix | DOB 1981-11-12\nOrdered by: Dr. Sanne Kestrel, MD, Rheumatology\n\nSpecimen collected: 2025-06-15\n\nInfectious disease:\nIGRA (QuantiFERON-TB Gold Plus) ...... NEG\nHBsAg ...... NONREACTIVE\nAnti-HBc total ...... NONREACTIVE\n\nChemistry:\nAST ...... 29 U/L\neGFR ...... 70 mL/min/1.73m2\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Mapleton Arthritis Center -- Medication Reconciliation\nPt: Bastien Delacroix | DOB 1981-11-12 | Acct SYN-6768231\nDOS 2025-09-20 | Provider: Dr. Sanne Kestrel, MD, Rheumatology\n\nCurrent meds:\nMethotrexate 15 mg PO weekly (started 2025-02-06)\nFolic acid 1 mg PO daily\nAmlodipine 5 mg PO daily\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (SPECIALTY DRUG)\nHealth plan: Example Health Plan (fictional)\nPt name: Bastien Delacroix   Plan member #: EHP-SYN-24419427   D.O.B. 1981-11-12\nOrdering clinician: Dr. Sanne Kestrel, MD, Rheumatology (NPI: 9255493042)\nSubmitted: 2025-09-25\n\nDrug: fictimab (fictional TNF inhibitor) prefilled syringe\nDose requested: forty milligrams subcutaneously every seven days\nDx: M06.9 RA, unspecified\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Mapleton Arthritis Center -- Rheum Return Visit\nPt: Bastien Delacroix | DOB 1981-11-12 | Acct SYN-6768231\nDOS 2025-09-20 | Provider: Dr. Sanne Kestrel, MD, Rheumatology\n\nHPI:\n43 y/o w/ RA dx 2023, here to discuss escalation.\n\nAssessment:\nA: seropositive RA, on tx.\n\nTx hx:\nMTX 15 mg PO qwk x 32 wks w/ inadequate response.\n\nPlan:\nPlan: initiate fictimab 40 mg SQ q7d.\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

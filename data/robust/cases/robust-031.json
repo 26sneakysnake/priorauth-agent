@@ -1,0 +1,39 @@
+{
+  "case_id": "robust-031",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-06-07",
+  "patient": {
+    "name": "Vera Nakamura",
+    "birth_date": "1962-08-17",
+    "sex": "female",
+    "mrn": "SYN-7890177",
+    "member_id": "EHP-SYN-75381735"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Vera Nakamura   Plan member #: EHP-SYN-75381735   D.O.B. 08-17-1962\nOrdering clinician: Celine Jessop, PT, DPT (NPI: 9074595185)\nSubmitted: 06-07-2025\n\nService: PT continuation, 11 visits\nICD-10: M17.11 (primary OA, right knee)\nBody region: Right knee\n\n[fax p.1/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Granite State Diagnostics\nLIPID PANEL\nPt: Vera Nakamura\n\nTotal cholesterol ...... 200 mg/dL\nLDL-C ...... 159 mg/dL\n\n[fax p.2/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Kestrel Movement Clinic -- PT Progress Re-Assessment\nPt: Vera Nakamura | DOB 08-17-1962 | Acct SYN-7890177\nDOS 05-28-2025 | Provider: Celine Jessop, PT, DPT\n\nAssessment:\nImpression: R knee OA, M17.11.\n\nPlan:\nPOC: 3x/wk x 6 wks, 05-06-2025 through 06-17-2025.\n\nObjective:\nObjective: knee flex 86->97 deg since IE; KOOS 44->66.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.3/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Elmwood Family Practice -- Ortho Recheck\nPt: Vera Nakamura | DOB 08-17-1962 | Acct SYN-7890177\nDOS 06-01-2025 | Provider: Dr. Marek Fenwick, MD\n\nRecheck R knee OA during PT.\nPer pt, no functional improvement w/ PT to date.\n\n[fax p.4/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Vera Nakamura\nID EHP-SYN-75381735 | Group 75859\nRx BIN 999999 | PCN SYNTH\n\n[fax p.5/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Kestrel Movement Clinic\nPAGES: 6 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.6/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

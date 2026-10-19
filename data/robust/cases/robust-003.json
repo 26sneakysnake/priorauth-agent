@@ -1,0 +1,39 @@
+{
+  "case_id": "robust-003",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-07",
+  "patient": {
+    "name": "Selma Nakamura",
+    "birth_date": "1963-04-13",
+    "sex": "female",
+    "mrn": "SYN-3707961",
+    "member_id": "EHP-SYN-37122463"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Selma Nakamura   Plan member #: EHP-SYN-37122463   D.O.B. 04-13-1963\nOrdering clinician: Ravi Holloway, PT, DPT (NPI: 9848947180)\nSubmitted: 08-07-2025\n\nService: PT continuation, 16 visits\nICD-10: M16.11 (primary OA, right hip)\nBody region: Right hip\n\n[fax p.1/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Lakeshore Community Health to release records to Example Health Plan (fictional) for utilization review.\nSigned: Selma Nakamura | Date: July 24, 2025\n\n[fax p.2/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeshore Community Health -- Work Status Note\nPt: Selma Nakamura | DOB April 13, 1963 | Acct SYN-3707961\nDOS August 3, 2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.3/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Selma Nakamura\n\nTotal cholesterol ...... 238 mg/dL\nLDL-C ...... 118 mg/dL\n\n[fax p.4/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Lakeshore Community Health -- Patient Portal Message\nPt: Selma Nakamura | DOB April 13, 1963 | Acct SYN-3707961\nDOS August 3, 2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.5/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Bayside Rehab and Performance -- PT Progress Re-Assessment\nPt: Selma Nakamura | DOB 04-13-1963 | Acct SYN-3707961\nDOS 08-03-2025 | Provider: Ravi Holloway, PT, DPT\n\nAssessment:\nImpression: R hip OA, M16.11.\n\nPlan:\nPOC: 3x/wk x 8 wks, 07-10-2025 through 11-13-2025.\n\nObjective:\nObjective: hip flex 85->106 deg since IE; HOOS 38->54.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.6/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

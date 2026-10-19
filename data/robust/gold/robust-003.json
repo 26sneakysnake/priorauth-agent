@@ -1,0 +1,68 @@
+{
+  "case_id": "robust-003",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "date_conflict",
+  "target_criterion": "PT_EXTENSION.plan_of_care",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "ICD-10: M16.11 (primary OA, right hip)"
+        },
+        {
+          "page": 6,
+          "quote": "Impression: R hip OA, M16.11."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "POC: 3x/wk x 8 wks, 07-10-2025 through 11-13-2025."
+        }
+      ],
+      "rationale": "8 weeks stated, dates span 18"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Objective: hip flex 85->106 deg since IE; HOOS 38->54."
+        }
+      ],
+      "rationale": "ROM and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Body region: Right hip"
+        },
+        {
+          "page": 6,
+          "quote": "Impression: R hip OA, M16.11."
+        }
+      ],
+      "rationale": "right hip on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "release_form",
+    "work_note",
+    "lab_report",
+    "patient_message",
+    "therapy_note"
+  ]
+}

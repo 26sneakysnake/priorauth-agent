@@ -1,0 +1,73 @@
+{
+  "case_id": "robust-001",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "clean_pend",
+  "target_criterion": "BIOLOGIC_RA.diagnosis",
+  "expected_decision": "PEND",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "A: seropositive RA, low activity, CDAI 6."
+        }
+      ],
+      "rationale": "CDAI 6"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "MTX 20 mg PO qwk x 32 wks w/ inadequatc response."
+        }
+      ],
+      "rationale": "32 weeks of methotrexate"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Dose requested: forty milligrams subcutaneously every fourteen days"
+        },
+        {
+          "page": 3,
+          "quote": "Plan: initiate fictimab 40 mg SQ q14d."
+        }
+      ],
+      "rationale": "40 mg"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Specimen collected: July 11, 2025"
+        },
+        {
+          "page": 2,
+          "quote": "IGRA (QuantiFERON-TB Gold Plus) ...... NEG"
+        },
+        {
+          "page": 2,
+          "quote": "HBsAg ...... NONREACTIVE"
+        }
+      ],
+      "rationale": "both screens negative"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "lab_report",
+    "specialist_note",
+    "work_note",
+    "lab_report",
+    "patient_message",
+    "release_form"
+  ]
+}

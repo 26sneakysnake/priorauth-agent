@@ -1,0 +1,43 @@
+{
+  "case_id": "robust-024",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-08-22",
+  "patient": {
+    "name": "Kira Abernethy",
+    "birth_date": "1992-04-07",
+    "sex": "female",
+    "mrn": "SYN-5303832",
+    "member_id": "EHP-SYN-95426942"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Elmwood Family Practice -- Patient Portal Message\nPt: Kira Abernethy | DOB April 7, 1992 | Acct SYN-5303832\nDOS August 12, 2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the fr0nt desk; garage 1evel 2.\n\n[fax p.1/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Bayside Rehab and Performance -- PT Progress Re-Assessment\nPt: Kira Abernethy | DOB 1992-04-07 | Acct SYN-5303832\nDOS 2025-08-12 | Provider: Ravi Oakhurst, PT, DPT\n\nAssessment:\nImpression: R knee OA, M17.11.\n\nPlan:\nPOC: 3x/wk x 8 wks, 2025-07-20 through 2025-09-14.\n\nObjective:\nObjective: no change since IE - knee flex 95 deg, KOOS 39.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.2/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Kira Abernethy\n\nTotal cholesterol ...... 173 mg/dL\nLDL-C ...... 103 mg/dL\n\n[fax p.3/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Kira Abernethy\nID EHP-SYN-95426942 | Group 17689\nRx BIN 999999 | PCN SYNTH\n\n[fax p.4/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Elmwood Family Practice to release records to Example Health Plan (fictional) for utilization review.\nSigned: Kira Abernethy | Date: August 15, 2025\n\n[fax p.5/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Kira Abernethy   Plan member #: EHP-SYN-95426942   D.O.B. 1992-04-07\nOrdering clinician: Ravi Oakhurst, PT, DPT (NPI: 9871844208)\nSubmitted: 2025-08-22\n\nService: PT continuation, 8 visits\nICD-10: M17.11 (primary OA, right knee)\nBody region: Right knee\n\n[fax p.6/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Elmwood Family Practice -- Work Status Note\nPt: Kira Abernethy | DOB April 7, 1992 | Acct SYN-5303832\nDOS August 12, 2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.7/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

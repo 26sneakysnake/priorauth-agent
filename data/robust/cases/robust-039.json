@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-039",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-05-17",
+  "patient": {
+    "name": "Mateo Quintero",
+    "birth_date": "1963-09-10",
+    "sex": "male",
+    "mrn": "SYN-1291721",
+    "member_id": "EHP-SYN-99597066"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Mateo Quintero   Plan member #: EHP-SYN-99597066   D.O.B. 09-10-1963\nOrdering clinician: Dr. Felix Penrose, MD (NPI: 9095331385)\nSubmitted: 05-17-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right S1 radiculopathy (M54.16)\nSx onset: 02-03-2025\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Elmwood Family Practice -- Progress Note\nPt: Mateo Quintero | DOB 09-10-1963 | Acct SYN-1291721\nDOS 05-12-2025 | Provider: Dr. Felix Penrose, MD\n\nHPI:\n61M c/o LBP w/ radiation to R LE x 14 wks.\n\nTx to date:\ns/p 6 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nROS: (-) CP, (-) SOB.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) R at 40 deg.\nNeuro: R PF 4/5, R Achilles 1+, decreased LT lateral R foot.\n\nA/P:\nA/P: R S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeshore Community Health -- Patient Portal Message\nPt: Mateo Quintero | DOB September 10, 1963 | Acct SYN-1291721\nDOS May 12, 2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Osprey Physical Therapy -- PT Discharge Summary\nPt: Mateo Quintero | DOB 09-10-1963 | Acct SYN-1291721\nDOS 05-12-2025 | Provider: Jasper Penrose, DPT\n\nReferral dx: LBP w/ R radicular sx.\nInitial evaluation: 03-26-2025\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referring MD.\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

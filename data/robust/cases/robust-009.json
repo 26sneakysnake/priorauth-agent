@@ -1,0 +1,43 @@
+{
+  "case_id": "robust-009",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-01-30",
+  "patient": {
+    "name": "Brielle Nakamura",
+    "birth_date": "1951-06-16",
+    "sex": "female",
+    "mrn": "SYN-8517515",
+    "member_id": "EHP-SYN-83508677"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Brielle Nakamura\nID EHP-SYN-83508677 | Group 53250\nRx BIN 999999 | PCN SYNTH\n\n[fax p.1/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Brielle Nakamura\n\nTotal cholesterol ...... 160 mg/dL\nLDL-C ...... 87 mg/dL\n\n[fax p.2/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Brielle Nakamura   Plan member #: EHP-SYN-83508677   D.O.B. 06-16-1951\nOrdering clinician: Dr. Ylva Cordero, MD (NPI: 9994959182)\nSubmitted: 01-30-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right S1 radiculopathy (M54.16)\nSx onset: 11-04-2024\n\n[fax p.3/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeshore Community Health -- Patient Portal Message\nPt: Brielle Nakamura | DOB 06-16-1951 | Acct SYN-8517515\nDOS 01-20-2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.4/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Lakeshore Community Health to release records to Example Health Plan (fictional) for utilization review.\nSigned: Brielle Nakamura | Date: 01-26-2025\n\n[fax p.5/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Copperfield Internal Medicine -- Progress Note\nPt: Brielle Nakamura | DOB 06-16-1951 | Acct SYN-8517515\nDOS 01-20-2025 | Provider: Dr. Ylva Cordero, MD\n\nHPI:\n73F c/o LBP w/ radiati0n to L LE x 11 wks.\n\nTx to date:\ns/p 7 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nShe has had no change in bladder or bowel control, no numbness between the legs, no fevers or nlght sweats and no weight loss, and she has never been treated for cancer.\n\nPE:\nBack: TTP lower 1umbar paraspinals; SLR (+) L at 45 deg.\nNeuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot.\n\nA/P:\nA/P: L S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.6/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Copperfield Internal Medicine\nPAGES: 7 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.7/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

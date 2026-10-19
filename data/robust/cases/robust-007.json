@@ -1,0 +1,47 @@
+{
+  "case_id": "robust-007",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-06-20",
+  "patient": {
+    "name": "Kira Esposito",
+    "birth_date": "1997-09-19",
+    "sex": "female",
+    "mrn": "SYN-7544016",
+    "member_id": "EHP-SYN-19925925"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Lakeshore Community Health\nPAGES: 8 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Kira Esposito\n\nTotal cholesterol ...... 210 mg/dL\nLDL-C ...... 97 mg/dL\n\n[fax p.2/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Copperfield Internal Medicine -- Patient Portal Message\nPt: Kira Esposito | DOB 09-19-1997 | Acct SYN-7544016\nDOS 06-18-2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.3/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Kira Esposito   Plan member #: EHP-SYN-19925925   D.O.B. September 19, 1997\nOrdering clinician: Dr. Sanne Oakhurst, MD (NPI: 9815565908)\nSubmitted: June 20, 2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left L5 radiculopathy (M54.16)\nSx onset: April 8, 2025\n\n[fax p.4/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Kira Esposito\nID EHP-SYN-19925925 | Group 40906\nRx BIN 999999 | PCN SYNTH\n\n[fax p.5/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Bayside Rehab and Performance -- PT Discharge Summary\nPt: Kira Esposito | DOB September 19, 1997 | Acct SYN-7544016\nDOS June 18, 2025 | Provider: Elif Oakhurst, DPT\n\nReferral dx: LBP w/ L radicular sx.\nInitial evaluation: June 6, 2025\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referring MD.\n\n[fax p.6/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Lakeshore Community Health -- Progress Note\nPt: Kira Esposito | DOB September 19, 1997 | Acct SYN-7544016\nDOS June 18, 2025 | Provider: Dr. Sanne Oakhurst, MD\n\nHPI:\n27F c/o LBP w/ radiation to L LE x 10 wks.\n\nTx to date:\ns/p 7 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 45 deg.\nNeuro: L EHL/ankle DF 4/5, DTRs 2+ symmetric, decreased LT over L dorsal foot.\n\nA/P:\nA/P: L L5 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.7/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Copperfield Internal Medicine to release records to Example Health Plan (fictional) for utilization review.\nSigned: Kira Esposito | Date: 06-10-2025\n\n[fax p.8/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

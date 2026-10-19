@@ -1,0 +1,69 @@
+{
+  "case_id": "robust-026",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "ICD-10: M17.11 (primary OA, right knee)"
+        },
+        {
+          "page": 2,
+          "quote": "Impression: ongoing therapy for degenerative arthritis of the right knee, coded M17.11 on the referral."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "He will continue three times a week for a total of ten weeks, from May 25, 2025 until August 3, 2025."
+        }
+      ],
+      "rationale": "10 weeks, narrative"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Objective: knee flex 84->96 deg since IE; KOOS 34->48."
+        }
+      ],
+      "rationale": "ROM and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Body region: Right knee"
+        },
+        {
+          "page": 2,
+          "quote": "Impression: ongoing therapy for degenerative arthritis of the right knee, coded M17.11 on the referral."
+        }
+      ],
+      "rationale": "right knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "PT_EXTENSION.diagnosis",
+    "PT_EXTENSION.plan_of_care"
+  ],
+  "page_kinds": [
+    "fax_cover",
+    "therapy_note",
+    "lab_report",
+    "request_form"
+  ]
+}

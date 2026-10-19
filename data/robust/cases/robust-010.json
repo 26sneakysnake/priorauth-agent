@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-010",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-11-21",
+  "patient": {
+    "name": "Omar Szabo",
+    "birth_date": "1973-11-09",
+    "sex": "male",
+    "mrn": "SYN-5255073",
+    "member_id": "EHP-SYN-22877205"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (SPECIALTY DRUG)\nHealth plan: Example Health Plan (fictional)\nPt name: Omar Szabo   Plan member #: EHP-SYN-22877205   D.O.B. 11-09-1973\nOrdering clinician: Dr. Petra Cordero, MD, Rheumatology (NPI: 9750578848)\nSubmitted: 11-21-2025\n\nDrug: fictimab (fictional TNF inhibitor) prefilled syringe\nDose requested: forty milligrams subcutaneously every seven days\nDx: M06.9 RA, unspecified\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Riverstone Laboratory Services\nCUMULATIVE LAB REPORT\nPt: Omar Szabo | DOB 11-09-1973\nOrdered by: Dr. Petra Cordero, MD, Rheumatology\n\nSpecimen collected: 09-24-2025\n\nInfectious disease:\nIGRA (QuantiFERON-TB Gold Plus) ...... NEG\nHBsAg ...... NONREACTIVE\nAnti-HBc total ...... NONREACTIVE\n\nChemistry:\nAST ...... 19 U/L\neGFR ...... 82 mL/min/1.73m2\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Silverbrook Rheumatology Associates -- Rheum Return Visit\nPt: Omar Szabo | DOB 11-09-1973 | Acct SYN-5255073\nDOS 11-17-2025 | Provider: Dr. Petra Cordero, MD, Rheumatology\n\nHPI:\n52 y/o w/ RA dx 2022, here to discuss escalation.\n\nAssessment:\nA: seropositive RA, high actlvity, CDAI 27.\n\nTx hx:\nMTX 25 mg PO qwk x 29 wks w/ inadcquate resp0nse.\n\nPlan:\nPlan: initiate flctimab 40 mg SQ q7d.\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Silverbrook Rheumatology Associates -- Medication Reconciliation\nPt: Omar Szabo | DOB 11-09-1973 | Acct SYN-5255073\nDOS 11-17-2025 | Provider: Dr. Petra Cordero, MD, Rheumatology\n\nCurrent meds:\nMethotrexate 25 mg PO weekly (started 04-26-2025)\nFolic acid 1 mg PO daily\nAmlodipine 5 mg PO dai1y\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

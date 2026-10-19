@@ -1,0 +1,39 @@
+{
+  "case_id": "robust-032",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-07-08",
+  "patient": {
+    "name": "Talia Okonkwo",
+    "birth_date": "1976-04-14",
+    "sex": "female",
+    "mrn": "SYN-3369952",
+    "member_id": "EHP-SYN-24979433"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Granite State Diagnostics\nCUMULATIVE LAB REPORT\nPt: Talia Okonkwo | DOB 1976-04-14\nOrdered by: Dr. Celine Merriweather, MD, Rheumatology\n\nSpecimen collected: 2025-03-17\n\nInfectious disease:\nIGRA (QuantiFERON-TB Gold Plus) ...... NEG\nHBsAg ...... NONREACTIVE\nAnti-HBc total ...... NONREACTIVE\n\nChemistry:\nAST ...... 25 U/L\neGFR ...... 98 mL/min/1.73m2\n\n[fax p.1/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Mapleton Arthritis Center -- Rheum Return Visit\nPt: Talia Okonkwo | DOB 1976-04-14 | Acct SYN-3369952\nDOS 2025-07-04 | Provider: Dr. Celine Merriweather, MD, Rheumatology\n\nHPI:\n49 y/o w/ RA dx 2021, here to discuss escalation.\n\nAssessment:\nA: seropositive RA, moderate activity, CDAI 22.\n\nTx hx:\nMTX 15 mg PO qwk x 30 wks w/ inadequate response.\n\nPlan:\nPlan: initiate fictimab 40 mg SQ q14d.\n\n[fax p.2/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Talia Okonkwo\nID EHP-SYN-24979433 | Group 51965\nRx BIN 999999 | PCN SYNTH\n\n[fax p.3/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (SPECIALTY DRUG)\nHealth plan: Example Health Plan (fictional)\nPt name: Talia Okonkwo   Plan member #: EHP-SYN-24979433   D.O.B. 1976-04-14\nOrdering clinician: Dr. Celine Merriweather, MD, Rheumatology (NPI: 9483140422)\nSubmitted: 2025-07-08\n\nDrug: fictimab (fictional TNF inhibitor) prefilled syringe\nDose requested: forty milligrams subcutaneously every fourteen days\nDx: M06.9 RA, unspecified\n\n[fax p.4/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Mapleton Arthritis Center -- Medication Reconciliation\nPt: Talia Okonkwo | DOB 1976-04-14 | Acct SYN-3369952\nDOS 2025-07-04 | Provider: Dr. Celine Merriweather, MD, Rheumatology\n\nCurrent meds:\nMethotrexate 15 mg PO weekly (started 2025-06-07)\nFolic acid 1 mg PO daily\nSertraline 50 mg PO daily\n\n[fax p.5/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Elmwood Family Practice -- Work Status Note\nPt: Talia Okonkwo | DOB 04-14-1976 | Acct SYN-3369952\nDOS 07-04-2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.6/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

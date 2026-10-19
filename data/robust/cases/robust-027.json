@@ -1,0 +1,27 @@
+{
+  "case_id": "robust-027",
+  "synthetic": true,
+  "procedure_code": "BIOLOGIC_RA",
+  "submitted_on": "2025-09-18",
+  "patient": {
+    "name": "Emil Haddad",
+    "birth_date": "1971-02-24",
+    "sex": "male",
+    "mrn": "SYN-1498471",
+    "member_id": "EHP-SYN-76295259"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Mapleton Arthritis Center -- Rheum Return Visit\nPt: Emil Haddad | DOB 1971-02-24 | Acct SYN-1498471\nDOS 2025-09-15 | Provider: Dr. Bram Holloway, MD, Rheumatology\n\nHPI:\n54 y/o w/ RA dx 2019, here to discuss escalation.\n\nAssessment:\nA: seropositive RA, high activity, CDAI 34.\n\nTx hx:\nMTX 15 mg qwk stopped after 6 wks d/t persistent transaminitis (intolerance).\n\nPlan:\nPlan: initiate fictimab 40 mg SQ q14d.\n\n[fax p.1/3] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (SPECIALTY DRUG)\nHealth plan: Example Health Plan (fictional)\nPt name: Emil Haddad   Plan member #: EHP-SYN-76295259   D.O.B. 1971-02-24\nOrdering clinician: Dr. Bram Holloway, MD, Rheumatology (NPI: 9295430987)\nSubmitted: 2025-09-18\n\nDrug: fictimab (fictional TNF inhibitor) prefilled syringe\nDose requested: forty milligrams subcutaneously every fourteen days\nDx: M06.9 RA, unspecified\n\n[fax p.2/3] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverstone Laboratory Services\nCUMULATIVE LAB REPORT\nPt: Emil Haddad | DOB 1971-02-24\nOrdered by: Dr. Bram Holloway, MD, Rheumatology\n\nSpecimen collected: 2025-06-08\n\nInfectious disease:\nIGRA (QuantiFERON-TB Gold Plus) ...... NEG\nHBsAg ...... NONREACTIVE\nAnti-HBc total ...... NONREACTIVE\n\nChemistry:\nAST ...... 23 U/L\neGFR ...... 72 mL/min/1.73m2\n\n[fax p.3/3] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

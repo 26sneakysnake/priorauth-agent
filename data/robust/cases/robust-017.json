@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-017",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-11-29",
+  "patient": {
+    "name": "Viktor Rasmussen",
+    "birth_date": "1997-04-10",
+    "sex": "male",
+    "mrn": "SYN-6864032",
+    "member_id": "EHP-SYN-13603772"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Elmwood Family Practice -- Patient Portal Message\nPt: Viktor Rasmussen | DOB 04-10-1997 | Acct SYN-6864032\nDOS 11-28-2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the fr0nt desk; garage level 2.\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Osprey Physical Therapy -- PT Progress Re-Assessment\nPt: Viktor Rasmussen | DOB 1997-04-10 | Acct SYN-6864032\nDOS 2025-11-28 | Provider: Isla Penrose, PT, DPT\n\nAssessment:\nImpression: R hip OA, M16.11.\n\nPlan:\nPOC: 2x/wk x 10 wks, 2025-11-05 through 2026-01-14.\n\nObjective:\nObjective: hip flex 88->113 deg since IE; HOOS 50->65.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Viktor Rasmussen   Plan member #: EHP-SYN-13603772   D.O.B. 1997-04-10\nOrdering clinician: Isla Penrose, PT, DPT (NPI: 9879443793)\nSubmitted: 2025-11-29\n\nService: PT continuation, 13 visits\nICD-10: M16.11 (primary OA, right hip)\nBody region: Right hip\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Viktor Rasmussen\n\nTotal cholesterol ...... 228 mg/dL\nLDL-C ...... 125 mg/dL\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

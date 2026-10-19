@@ -13,6 +13,8 @@ import argparse
 import json
 import shutil
 import sys
+from collections.abc import Callable, Mapping
+from dataclasses import dataclass
 from datetime import date, timedelta
 from pathlib import Path
 from random import Random
@@ -121,8 +123,8 @@ def make_specs(split: str) -> list[CaseSpec]:
     return specs
 
 
-def make_ctx(split: str, case_id: str) -> Ctx:
-    rng = Random(f"{SEED}:{split}:{case_id}")
+def make_ctx(split: str, case_id: str, seed: int = SEED) -> Ctx:
+    rng = Random(f"{seed}:{split}:{case_id}")
     sex: Literal["female", "male"] = rng.choice(("female", "male"))
     first = rng.choice(names.FEMALE_FIRST if sex == "female" else names.MALE_FIRST)
     last = rng.choice(names.LAST)
@@ -174,12 +176,25 @@ def _assemble(ctx: Ctx, procedure_code: str, draft: Draft) -> list[Doc]:
     return ordered
 
 
-def generate_case(split: str, case_id: str, spec: CaseSpec) -> tuple[Case, Gold]:
-    ctx = make_ctx(split, case_id)
+@dataclass(frozen=True)
+class Kit:
+    """Seed and templates of a split family. dev and test use STANDARD; data/robust has its own (data/robust.py)."""
+
+    seed: int
+    builders: Mapping[str, Callable[[Ctx, CaseSpec], Draft]]
+    inject: Callable[[Ctx, Draft], tuple[str, str]]
+    assemble: Callable[[Ctx, str, Draft], list[Doc]]
+
+
+STANDARD = Kit(seed=SEED, builders=BUILDERS, inject=_inject, assemble=_assemble)
+
+
+def generate_case(split: str, case_id: str, spec: CaseSpec, kit: Kit = STANDARD) -> tuple[Case, Gold]:
+    ctx = make_ctx(split, case_id, kit.seed)
     procedure = get_procedure(spec.procedure_code)
-    draft = BUILDERS[spec.procedure_code](ctx, spec)
-    injected = _inject(ctx, draft) if spec.trap is Trap.INJECTION else None
-    docs = _assemble(ctx, spec.procedure_code, draft)
+    draft = kit.builders[spec.procedure_code](ctx, spec)
+    injected = kit.inject(ctx, draft) if spec.trap is Trap.INJECTION else None
+    docs = kit.assemble(ctx, spec.procedure_code, draft)
 
     page_of = {d.key: i for i, d in enumerate(docs, start=1)}
     pages = tuple(Page(number=i, text=d.render(i, len(docs))) for i, d in enumerate(docs, start=1))

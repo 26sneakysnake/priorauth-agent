@@ -1,0 +1,27 @@
+{
+  "case_id": "robust-035",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-23",
+  "patient": {
+    "name": "Odile Baptiste",
+    "birth_date": "1982-07-10",
+    "sex": "female",
+    "mrn": "SYN-2609460",
+    "member_id": "EHP-SYN-33672140"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Copperfield Internal Medicine -- Work Status Note\nPt: Odile Baptiste | DOB 1982-07-10 | Acct SYN-2609460\nDOS 2025-07-15 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.1/3] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Osprey Physical Therapy -- PT Progress Re-Assessment\nPt: Odile Baptiste | DOB 1982-07-10 | Acct SYN-2609460\nDOS 2025-07-15 | Provider: Teodor Ashgrove, PT, DPT\n\nAssessment:\nImpression: L knee OA, M17.12.\n\nPlan:\nPOC: 3x/wk x 9 wks, 2025-06-24 through 2025-08-26.\n\nObjective:\nObjective: knee flex 94->111 deg since IE; KOOS 31->48.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.2/3] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Odile Baptiste   Plan member #: EHP-SYN-33672140   D.O.B. 1982-07-10\nOrdering clinician: Teodor Ashgrove, PT, DPT (NPI: 9673758278)\nSubmitted: 2025-07-23\n\nService: PT continuation, 14 visits\nICD-10: M17.12 (primary OA, left knee)\nBody region: Left knee\n\n[fax p.3/3] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

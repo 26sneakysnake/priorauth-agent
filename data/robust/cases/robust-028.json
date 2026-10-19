@@ -1,0 +1,35 @@
+{
+  "case_id": "robust-028",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-10-28",
+  "patient": {
+    "name": "Alma Kowalczyk",
+    "birth_date": "1969-11-15",
+    "sex": "female",
+    "mrn": "SYN-3838383",
+    "member_id": "EHP-SYN-30581810"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Lakeshore Community Health to release records to Example Health Plan (fictional) for utilization review.\nSigned: Alma Kowalczyk | Date: 2025-10-23\n\n[fax p.1/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Lakeshore Community Health -- Work Status Note\nPt: Alma Kowalczyk | DOB 1969-11-15 | Acct SYN-3838383\nDOS 2025-10-21 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.2/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Bayside Rehab and Performance -- PT Progress Re-Assessment\nPt: Alma Kowalczyk | DOB 11-15-1969 | Acct SYN-3838383\nDOS 10-21-2025 | Provider: Noor Bellamy, PT, DPT\n\nAssessment:\nImpression: R knee paln.\n\nPlan:\nPOC: 3x/wk x 7 wks, 09-15-2025 through 11-03-2025.\n\nObjective:\nObjective: knee flex 85->105 deg slnce IE; KOOS 44->58.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.3/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Alma Kowalczyk\nID EHP-SYN-30581810 | Group 13427\nRx BIN 999999 | PCN SYNTH\n\n[fax p.4/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Alma Kowalczyk   Plan member #: EHP-SYN-30581810   D.O.B. 11-15-1969\nOrdering clinician: Noor Bellamy, PT, DPT (NPI: 9979450731)\nSubmitted: 10-28-2025\n\nService: PT continuation, 8 visits\nICD-10: (not listed)\nBody region: Right knee\n\n[fax p.5/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

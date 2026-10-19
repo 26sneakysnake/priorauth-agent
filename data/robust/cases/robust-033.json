@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-033",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-03-11",
+  "patient": {
+    "name": "Selma Esposito",
+    "birth_date": "1972-06-20",
+    "sex": "female",
+    "mrn": "SYN-8130546",
+    "member_id": "EHP-SYN-63290772"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Lakeshore Community Health -- Progress Note\nPt: Selma Esposito | DOB 06-20-1972 | Acct SYN-8130546\nDOS 03-04-2025 | Provider: Dr. Henrik Jessop, MD\n\nHPI:\n52F c/o LBP w/ radiation to R LE x 14 wks.\n\nTx to date:\ns/p 9 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) R at 35 deg.\nNeuro: R EHL/ankle DF 4/5, DTRs 2+ symmetric, dccreased LT over R dorsa1 foot.\n\nA/P:\nA/P: R L5 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Selma Esposito   Plan member #: EHP-SYN-63290772   D.O.B. 06-20-1972\nOrdering clinician: Dr. Henrik Jessop, MD (NPI: 9279440743)\nSubmitted: 03-11-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right L5 radiculopathy (M54.16)\nSx onset: 11-26-2024\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Selma Esposito\nID EHP-SYN-63290772 | Group 51770\nRx BIN 999999 | PCN SYNTH\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Kestrel Movement Clinic -- PT Discharge Summary\nPt: Selma Esposito | DOB 06-20-1972 | Acct SYN-8130546\nDOS 03-04-2025 | Provider: Gwen Grantham, DPT\n\nReferral dx: LBP w/ R radicular sx.\nInitlal evaluation: 12-28-2024\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referring MD.\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

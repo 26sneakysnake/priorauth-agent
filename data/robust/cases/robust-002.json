@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-002",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-07-21",
+  "patient": {
+    "name": "Rafael Okonkwo",
+    "birth_date": "1957-02-17",
+    "sex": "male",
+    "mrn": "SYN-5555625",
+    "member_id": "EHP-SYN-35402580"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Elmwood Family Practice\nPAGES: 4 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Tamarack Neuro-Musculoskeletal Clinic -- Spine Consult\nPt: Rafael Okonkwo | DOB 1957-02-17 | Acct SYN-5555625\nDOS 2025-07-19 | Provider: Dr. Sanne Northcott, MD\n\nCC:\nLBP w/ L LE sx; referred by PCP.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 35 deg.\nNeuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot.\n\nA/P:\nA/P: L S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Rafael Okonkwo   Plan member #: EHP-SYN-35402580   D.O.B. 1957-02-17\nOrdering clinician: Dr. Sanne Northcott, MD (NPI: 9881927490)\nSubmitted: 2025-07-21\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left S1 radiculopathy (M54.16)\nSx onset: 2025-05-03\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Elmwood Family Practice -- Progress Note\nPt: Rafael Okonkwo | DOB 1957-02-17 | Acct SYN-5555625\nDOS 2025-07-19 | Provider: Dr. Sanne Northcott, MD\n\nHPI:\n68M c/o LBP w/ radiation to L LE x 11 wks.\n\nTx to date:\nNo formal PT or NSAID trial to date - pt prefers to proceed w/ imaging.\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

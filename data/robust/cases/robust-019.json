@@ -1,0 +1,35 @@
+{
+  "case_id": "robust-019",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-04-08",
+  "patient": {
+    "name": "Farah Quintero",
+    "birth_date": "1961-06-21",
+    "sex": "female",
+    "mrn": "SYN-2011106",
+    "member_id": "EHP-SYN-16559669"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Farah Quintero\n\nTotal cholesterol ...... 236 mg/dL\nLDL-C ...... 125 mg/dL\n\n[fax p.1/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Elmwood Family Practice -- Work Status Note\nPt: Farah Quintero | DOB 06-21-1961 | Acct SYN-2011106\nDOS 04-06-2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.2/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Farah Quintero\nID EHP-SYN-16559669 | Group 27162\nRx BIN 999999 | PCN SYNTH\n\n[fax p.3/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Farah Quintero   Plan member #: EHP-SYN-16559669   D.O.B. 1961-06-21\nOrdering clinician: Dr. Petra Draycott, MD (NPI: 9544904917)\nSubmitted: 2025-04-08\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left S1 radiculopathy (M54.16)\nSx onset: 2024-12-12\n\n[fax p.4/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Copperfield Internal Medicine -- Progress Note\nPt: Farah Quintero | DOB 1961-06-21 | Acct SYN-2011106\nDOS 2025-04-06 | Provider: Dr. Petra Draycott, MD\n\nHPI:\nThe patient is a 63-year-old woman whose low back pain started roughly four months ago, after a game of pickup basketball, and has since spread down the back of the left leg to the calf.\n\nTx to date:\nOver the past six weeks she has done formal physical therapy twice a week and taken naproxen twice daily, and the leg pain has not meaningfully improved.\n\nROS:\nShe has had no change in bladder or bowel control, no numbness between the legs, no fevers or night sweats and no weight loss, and she has never been treated for cancer.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 35 deg.\nNeuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot.\n\nA/P:\nA/P: L S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.5/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

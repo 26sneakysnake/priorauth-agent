@@ -1,0 +1,86 @@
+{
+  "case_id": "robust-036",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "laterality_swap",
+  "target_criterion": "MRI_LUMBAR.laterality",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "The paticnt is a 72-year-old woman wbose low back pain started roughly four montbs ago, after a game of pickup basketball, and has since spread down the back of the left leg to the calf."
+        },
+        {
+          "page": 5,
+          "quote": "Sx onset: 10-02-2024"
+        }
+      ],
+      "rationale": "about 4 months of symptoms"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "s/p 6 wks PT + naproxen 500 mg BID, minimal relief."
+        },
+        {
+          "page": 2,
+          "quote": "Initial evaluation: 12-12-2024"
+        }
+      ],
+      "rationale": "6 weeks of PT and NSAID"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "ROS: (-) b0wel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentiona1 wt loss, (-) hx malignancy."
+        }
+      ],
+      "rationale": "negative red-flag screen"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Neuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Indication: Right S1 radiculopathy (M54.16)"
+        },
+        {
+          "page": 4,
+          "quote": "The paticnt is a 72-year-old woman wbose low back pain started roughly four montbs ago, after a game of pickup basketball, and has since spread down the back of the left leg to the calf."
+        }
+      ],
+      "rationale": "request right, notes left"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "MRI_LUMBAR.symptom_duration"
+  ],
+  "page_kinds": [
+    "insurance_card",
+    "therapy_note",
+    "lab_report",
+    "clinic_note",
+    "request_form",
+    "patient_message",
+    "work_note",
+    "fax_cover"
+  ]
+}

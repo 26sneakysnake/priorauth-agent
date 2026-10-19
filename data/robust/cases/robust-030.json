@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-030",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-07-27",
+  "patient": {
+    "name": "Greta Nakamura",
+    "birth_date": "1974-01-23",
+    "sex": "female",
+    "mrn": "SYN-2853301",
+    "member_id": "EHP-SYN-88200759"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Elmwood Family Practice to release records to Example Health Plan (fictional) for utilization review.\nSigned: Greta Nakamura | Date: July 10, 2025\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Lakeshore Community Health -- Progress Note\nPt: Greta Nakamura | DOB 01-23-1974 | Acct SYN-2853301\nDOS 07-25-2025 | Provider: Dr. Henrik Oakhurst, MD\n\nHPI:\n51F c/o LBP w/ radiation to L LE x 17 wks.\n\nTx to date:\ns/p 7 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nROS: (-) b0wel/bladder dysfxn, (-) sadd1e anesthesia, (-) fever/chills, (-) unintentional wt l0ss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 40 deg.\nNeuro: L EHL/ank1e DF 4/5, DTRs 2+ syrnmetric, decreased LT over L dorsa1 foot.\n\nA/P:\nA/P: L L5 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Osprey Physical Therapy -- PT Discharge Summary\nPt: Greta Nakamura | DOB 01-23-1974 | Acct SYN-2853301\nDOS 07-25-2025 | Provider: Teodor Grantham, DPT\n\nReferral dx: LBP w/ L radicular sx.\nInitial evaluation: 07-09-2025\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referring MD.\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Greta Nakamura   Plan member #: EHP-SYN-88200759   D.O.B. 01-23-1974\nOrdering clinician: Dr. Henrik Oakhurst, MD (NPI: 9832909506)\nSubmitted: 07-27-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left L5 radiculopathy (M54.16)\nSx onset: 03-27-2025\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

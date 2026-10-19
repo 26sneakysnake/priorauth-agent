@@ -1,0 +1,70 @@
+{
+  "case_id": "robust-013",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "laterality_swap",
+  "target_criterion": "PT_EXTENSION.laterality",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "ICD-10: M16.11 (primary OA, right hip)"
+        },
+        {
+          "page": 3,
+          "quote": "Impression: L hip OA, M16.12."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "POC: 3x/wk x 12 wks, 05-22-2025 through 08-14-2025."
+        }
+      ],
+      "rationale": "12 weeks, dates consistent"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "She now walks the length of the grocery store and back to the car without stopping, which she could not do at the initial evaluation."
+        }
+      ],
+      "rationale": "functional milestone, narrative"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Body region: Right hip"
+        },
+        {
+          "page": 3,
+          "quote": "Impression: L hip OA, M16.12."
+        }
+      ],
+      "rationale": "request right, notes left"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "PT_EXTENSION.progress"
+  ],
+  "page_kinds": [
+    "request_form",
+    "work_note",
+    "therapy_note",
+    "patient_message",
+    "insurance_card",
+    "fax_cover"
+  ]
+}

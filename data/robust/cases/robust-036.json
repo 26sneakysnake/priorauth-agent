@@ -1,0 +1,47 @@
+{
+  "case_id": "robust-036",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-01-28",
+  "patient": {
+    "name": "Mirela Rasmussen",
+    "birth_date": "1952-12-19",
+    "sex": "female",
+    "mrn": "SYN-0364931",
+    "member_id": "EHP-SYN-86742663"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Mirela Rasmussen\nID EHP-SYN-86742663 | Group 01917\nRx BIN 999999 | PCN SYNTH\n\n[fax p.1/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Bayside Rehab and Performance -- PT Discharge Summary\nPt: Mirela Rasmussen | DOB 12-19-1952 | Acct SYN-0364931\nDOS 01-26-2025 | Provider: Noor Grantham, DPT\n\nReferral dx: LBP w/ L radicular sx.\nInitial evaluation: 12-12-2024\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referrlng MD.\n\n[fax p.2/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Granite State Diagnostics\nLIPID PANEL\nPt: Mirela Rasmussen\n\nTotal cholesterol ...... 218 mg/dL\nLDL-C ...... 86 mg/dL\n\n[fax p.3/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeshore Community Health -- Progress Note\nPt: Mirela Rasmussen | DOB 12-19-1952 | Acct SYN-0364931\nDOS 01-26-2025 | Provider: Dr. Elif Oakhurst, MD\n\nHPI:\nThe paticnt is a 72-year-old woman wbose low back pain started roughly four montbs ago, after a game of pickup basketball, and has since spread down the back of the left leg to the calf.\n\nTx to date:\ns/p 6 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nROS: (-) b0wel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentiona1 wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 40 deg.\nNeuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot.\n\nA/P:\nA/P: L S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.4/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Mirela Rasmussen   Plan member #: EHP-SYN-86742663   D.O.B. 12-19-1952\nOrdering clinician: Dr. Elif Oakhurst, MD (NPI: 9209044461)\nSubmitted: 01-28-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right S1 radiculopathy (M54.16)\nSx onset: 10-02-2024\n\n[fax p.5/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Copperfield Internal Medicine -- Patient Portal Message\nPt: Mirela Rasmussen | DOB December 19, 1952 | Acct SYN-0364931\nDOS January 26, 2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.6/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Copperfield Internal Medicine -- Work Status Note\nPt: Mirela Rasmussen | DOB December 19, 1952 | Acct SYN-0364931\nDOS January 26, 2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.7/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Lakeshore Community Health\nPAGES: 8 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.8/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

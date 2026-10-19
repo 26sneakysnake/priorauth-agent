@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-004",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-03-15",
+  "patient": {
+    "name": "Pavel Zielinski",
+    "birth_date": "1973-04-24",
+    "sex": "male",
+    "mrn": "SYN-9595071",
+    "member_id": "EHP-SYN-40040191"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Kestrel Movement Clinic\nPAGES: 4 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Pavel Zielinski   Plan member #: EHP-SYN-40040191   D.O.B. 04-24-1973\nOrdering clinician: Lucia Ashgrove, PT, DPT (NPI: 9802069997)\nSubmitted: 03-15-2025\n\nService: PT continuation, 14 visits\nICD-10: M16.11 (primary OA, right hip)\nBody region: Right hip\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Elmwood Family Practice -- Work Status Note\nPt: Pavel Zielinski | DOB 1973-04-24 | Acct SYN-9595071\nDOS 2025-03-13 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Kestrel Movement Clinic -- PT Progress Re-Assessment\nPt: Pavel Zielinski | DOB 04-24-1973 | Acct SYN-9595071\nDOS 03-13-2025 | Provider: Lucia Ashgrove, PT, DPT\n\nAssessment:\nImpression: L hip OA, M16.12.\n\nPlan:\nHe will continue twice a week for a total of seven weeks, from 02-13-2025 until 04-03-2025.\n\nObjective:\nObjective: hip flex 77->96 deg since IE; HOOS 46->62.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

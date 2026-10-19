@@ -1,0 +1,58 @@
+{
+  "case_id": "robust-028",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "missing_evidence",
+  "target_criterion": "PT_EXTENSION.diagnosis",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "INSUFFICIENT",
+      "evidence": [],
+      "rationale": "no diagnosis code"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "POC: 3x/wk x 7 wks, 09-15-2025 through 11-03-2025."
+        }
+      ],
+      "rationale": "7 weeks, dates consistent"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Objective: knee flex 85->105 deg slnce IE; KOOS 44->58."
+        }
+      ],
+      "rationale": "ROM and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Body region: Right knee"
+        },
+        {
+          "page": 3,
+          "quote": "Impression: R knee paln."
+        }
+      ],
+      "rationale": "right knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "release_form",
+    "work_note",
+    "therapy_note",
+    "insurance_card",
+    "request_form"
+  ]
+}

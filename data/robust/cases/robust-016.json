@@ -1,0 +1,47 @@
+{
+  "case_id": "robust-016",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-02-13",
+  "patient": {
+    "name": "Bastien Whitlock",
+    "birth_date": "1962-01-07",
+    "sex": "male",
+    "mrn": "SYN-3574124",
+    "member_id": "EHP-SYN-91795101"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Elmwood Family Practice\nPAGES: 8 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Elmwood Family Practice -- Progress Note\nPt: Bastien Whitlock | DOB 1962-01-07 | Acct SYN-3574124\nDOS 2025-02-10 | Provider: Dr. Dmitri Iverson, MD\n\nHPI:\n63M c/o LBP w/ radiation to R LE x 18 wks.\n\nTx to date:\ns/p 8 wks PT + naproxen 500 mg BID, minimal relief.\n\n[fax p.2/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Granite State Diagnostics\nLIPID PANEL\nPt: Bastien Whitlock\n\nTotal cholesterol ...... 178 mg/dL\nLDL-C ...... 124 mg/dL\n\n[fax p.3/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Tamarack Neuro-Musculoskeletal Clinic -- Spine Consult\nPt: Bastien Whitlock | DOB 1962-01-07 | Acct SYN-3574124\nDOS 2025-02-10 | Provider: Dr. Dmitri Iverson, MD\n\nCC:\nLBP w/ R LE sx; referred by PCP.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) R at 40 deg.\nNeuro: R EHL/ankle DF 4/5, DTRs 2+ symmetric, decreased LT over R dorsal foot.\n\nA/P:\nA/P: R L5 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.4/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Copperfield Internal Medicine -- Work Status Note\nPt: Bastien Whitlock | DOB January 7, 1962 | Acct SYN-3574124\nDOS February 10, 2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.5/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Copperfield Internal Medicine -- Patient Portal Message\nPt: Bastien Whitlock | DOB January 7, 1962 | Acct SYN-3574124\nDOS February 10, 2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.6/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Copperfield Internal Medicine to release records to Example Health Plan (fictional) for utilization review.\nSigned: Bastien Whitlock | Date: February 7, 2025\n\n[fax p.7/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Bastien Whitlock   Plan member #: EHP-SYN-91795101   D.O.B. 1962-01-07\nOrdering clinician: Dr. Dmitri Iverson, MD (NPI: 9611194657)\nSubmitted: 2025-02-13\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right L5 radiculopathy (M54.16)\nSx onset: 2024-10-05\n\n[fax p.8/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

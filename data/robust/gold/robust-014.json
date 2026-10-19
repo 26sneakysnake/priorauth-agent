@@ -1,0 +1,84 @@
+{
+  "case_id": "robust-014",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "The patient is a 72-year-old man whose low back pain started roughly three months ago, after a long-haul flight, and has since spread down the back of the right leg to the calf."
+        },
+        {
+          "page": 4,
+          "quote": "Sx onset: 08-24-2025"
+        }
+      ],
+      "rationale": "about 3 months of symptoms"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Over the past nine weeks he has done formal physical therapy twice a week and taken naproxen twice daily, and the leg pain has not meaningfully improved."
+        }
+      ],
+      "rationale": "9 weeks of PT and NSAID, narrative"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "He has had no change in bladder or bowel control, no numbness between the legs, no fevers or night sweats and no weight loss, and he has never been treated for cancer."
+        }
+      ],
+      "rationale": "negative red-flag screen, narrative"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Neuro: R PF 4/5, R Achilles 1+, decreascd LT 1ateral R foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Indication: Right S1 radiculopathy (M54.16)"
+        },
+        {
+          "page": 2,
+          "quote": "The patient is a 72-year-old man whose low back pain started roughly three months ago, after a long-haul flight, and has since spread down the back of the right leg to the calf."
+        }
+      ],
+      "rationale": "right on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "MRI_LUMBAR.symptom_duration",
+    "MRI_LUMBAR.conservative_therapy",
+    "MRI_LUMBAR.red_flags"
+  ],
+  "page_kinds": [
+    "fax_cover",
+    "clinic_note",
+    "patient_message",
+    "request_form",
+    "lab_report",
+    "specialist_note",
+    "insurance_card",
+    "work_note"
+  ]
+}

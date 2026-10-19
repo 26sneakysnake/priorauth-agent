@@ -1,0 +1,43 @@
+{
+  "case_id": "robust-018",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-01-21",
+  "patient": {
+    "name": "Hugo Marchetti",
+    "birth_date": "1963-06-22",
+    "sex": "male",
+    "mrn": "SYN-7202982",
+    "member_id": "EHP-SYN-80392671"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Hugo Marchetti   Plan member #: EHP-SYN-80392671   D.O.B. 06-22-1963\nOrdering clinician: Dr. Bram Ashgrove, MD (NPI: 9367286647)\nSubmitted: 01-21-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left L5 radiculopathy (M54.16)\nSx onset: 09-25-2024\n\n[fax p.1/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Copperfield Internal Medicine to release records to Example Health Plan (fictional) for utilization review.\nSigned: Hugo Marchetti | Date: January 15, 2025\n\n[fax p.2/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeshore Community Health -- Nurse Phone Note\nPt: Hugo Marchetti | DOB 06-22-1963 | Acct SYN-7202982\nDOS 01-19-2025 | Provider: D. Ferreira, RN\n\nPt reports new onset urinary incontinence x 2 days; instructed to go to the ED.\n\n[fax p.3/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Lakeshore Community Health -- Progress Note\nPt: Hugo Marchetti | DOB 06-22-1963 | Acct SYN-7202982\nDOS 01-11-2025 | Provider: Dr. Bram Ashgrove, MD\n\nHPI:\n61M c/o LBP w/ radiation to L LE x 15 wks.\n\nTx to date:\ns/p 9 wks PT + naproxen 500 mg BID, minimal relief.\n\n[fax p.4/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Bayside Rehab and Performance -- PT Discharge Summary\nPt: Hugo Marchetti | DOB 06-22-1963 | Acct SYN-7202982\nDOS 01-11-2025 | Provider: Kaveh Northcott, DPT\n\nReferral dx: LBP w/ L radicular sx.\nInitial evaluation: 11-05-2024\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referring MD.\n\n[fax p.5/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Tamarack Neuro-Musculoskeletal Clinic -- Spine Consult\nPt: Hugo Marchetti | DOB 06-22-1963 | Acct SYN-7202982\nDOS 01-11-2025 | Provider: Dr. Bram Ashgrove, MD\n\nCC:\nLBP w/ L LE sx; referred by PCP.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 35 deg.\nNeuro: L EHL/ankle DF 4/5, DTRs 2+ symmetric, decreased LT over L dorsal foot.\n\nA/P:\nA/P: L L5 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.6/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Lakeshore Community Health\nPAGES: 7 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.7/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

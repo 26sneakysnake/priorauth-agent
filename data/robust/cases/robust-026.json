@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-026",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-07-02",
+  "patient": {
+    "name": "Dario Szabo",
+    "birth_date": "1975-04-14",
+    "sex": "male",
+    "mrn": "SYN-6095668",
+    "member_id": "EHP-SYN-54227651"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Bayside Rehab and Performance\nPAGES: 4 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Bayside Rehab and Performance -- PT Progress Re-Assessment\nPt: Dario Szabo | DOB April 14, 1975 | Acct SYN-6095668\nDOS June 24, 2025 | Provider: Bram Holloway, PT, DPT\n\nAssessment:\nImpression: ongoing therapy for degenerative arthritis of the right knee, coded M17.11 on the referral.\n\nPlan:\nHe will continue three times a week for a total of ten weeks, from May 25, 2025 until August 3, 2025.\n\nObjective:\nObjective: knee flex 84->96 deg since IE; KOOS 34->48.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Dario Szabo\n\nTotal cholesterol ...... 165 mg/dL\nLDL-C ...... 102 mg/dL\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Dario Szabo   Plan member #: EHP-SYN-54227651   D.O.B. April 14, 1975\nOrdering clinician: Bram Holloway, PT, DPT (NPI: 9860128549)\nSubmitted: July 2, 2025\n\nService: PT continuation, 15 visits\nICD-10: M17.11 (primary OA, right knee)\nBody region: Right knee\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

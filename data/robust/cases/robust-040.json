@@ -1,0 +1,43 @@
+{
+  "case_id": "robust-040",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-03-27",
+  "patient": {
+    "name": "Mateo Delacroix",
+    "birth_date": "1969-04-19",
+    "sex": "male",
+    "mrn": "SYN-1183084",
+    "member_id": "EHP-SYN-20762271"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Copperfield Internal Medicine\nPAGES: 7 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Copperfield Internal Medicine -- Work Status Note\nPt: Mateo Delacroix | DOB April 19, 1969 | Acct SYN-1183084\nDOS March 26, 2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.2/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Mateo Delacroix   Plan member #: EHP-SYN-20762271   D.O.B. April 19, 1969\nOrdering clinician: Dr. Adele Bellamy, MD (NPI: 9307663819)\nSubmitted: March 27, 2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right L5 radiculopathy (M54.16)\nSx onset: December 28, 2024\n\n[fax p.3/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Copperfield Internal Medicine to release records to Example Health Plan (fictional) for utilization review.\nSigned: Mateo Delacroix | Date: March 17, 2025\n\n[fax p.4/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Mateo Delacroix\nID EHP-SYN-20762271 | Group 38340\nRx BIN 999999 | PCN SYNTH\n\n[fax p.5/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Tamarack Neuro-Musculoskeletal Clinic -- Spine Consult\nPt: Mateo Delacroix | DOB April 19, 1969 | Acct SYN-1183084\nDOS March 26, 2025 | Provider: Dr. Adele Bellamy, MD\n\nCC:\nLBP w/ R LE sx; referred by PCP.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) R at 35 deg.\nNeuro: R EHL/ankle DF 4/5, DTRs 2+ symmetric, decreased LT over R dorsal foot.\n\nA/P:\nA/P: R L5 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.6/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "Copperfield Internal Medicine -- Progress Note\nPt: Mateo Delacroix | DOB April 19, 1969 | Acct SYN-1183084\nDOS March 26, 2025 | Provider: Dr. Adele Bellamy, MD\n\nHPI:\nThe patient is a 55-year-old man whose low back pain started roughly three months ago, after shoveling snow, and has since spread down the back of the right leg to the calf.\n\n[fax p.7/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

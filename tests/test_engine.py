@@ -102,7 +102,7 @@ def test_agreeing_duplicates_are_accepted() -> None:
 
 def test_engine_on_gold_labels_reproduces_every_expected_decision() -> None:
     golds = sorted((ROOT / "data").glob("*/gold/*.json"))
-    assert len(golds) == 160
+    assert len(golds) == 200  # dev 100, test 60, robust 40
     for path in golds:
         gold = Gold.model_validate_json(path.read_bytes())
         findings = tuple(

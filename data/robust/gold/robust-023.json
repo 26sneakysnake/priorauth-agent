@@ -1,0 +1,68 @@
+{
+  "case_id": "robust-023",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "clean_pend",
+  "target_criterion": "PT_EXTENSION.plan_of_care",
+  "expected_decision": "PEND",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "ICD-10: M17.11 (primary OA, right knee)"
+        },
+        {
+          "page": 5,
+          "quote": "Impression: R knee OA, M17.11."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "NOT_MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "POC: 3x/wk x 23 wks, 08-22-2025 through 01-30-2026."
+        }
+      ],
+      "rationale": "23 weeks planned"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Objective: knee flex 95->105 deg since IE; KOOS 46->68."
+        }
+      ],
+      "rationale": "ROM and score gains"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Body region: Right knee"
+        },
+        {
+          "page": 5,
+          "quote": "Impression: R knee OA, M17.11."
+        }
+      ],
+      "rationale": "right knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "lab_report",
+    "request_form",
+    "patient_message",
+    "insurance_card",
+    "therapy_note",
+    "fax_cover"
+  ]
+}

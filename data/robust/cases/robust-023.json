@@ -1,0 +1,39 @@
+{
+  "case_id": "robust-023",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-10-05",
+  "patient": {
+    "name": "Kenji Pellegrini",
+    "birth_date": "1995-08-18",
+    "sex": "male",
+    "mrn": "SYN-4300773",
+    "member_id": "EHP-SYN-22647187"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Granite State Diagnostics\nLIPID PANEL\nPt: Kenji Pellegrini\n\nTotal cholesterol ...... 220 mg/dL\nLDL-C ...... 139 mg/dL\n\n[fax p.1/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Kenji Pellegrini   Plan member #: EHP-SYN-22647187   D.O.B. 08-18-1995\nOrdering clinician: Elif Ashgrove, PT, DPT (NPI: 9164437844)\nSubmitted: 10-05-2025\n\nService: PT continuation, 10 visits\nICD-10: M17.11 (primary OA, right knee)\nBody region: Right knee\n\n[fax p.2/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Lakeshore Community Health -- Patient Portal Message\nPt: Kenji Pellegrini | DOB 08-18-1995 | Acct SYN-4300773\nDOS 09-28-2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.3/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Kenji Pellegrini\nID EHP-SYN-22647187 | Group 23470\nRx BIN 999999 | PCN SYNTH\n\n[fax p.4/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Bayside Rehab and Performance -- PT Progress Re-Assessment\nPt: Kenji Pellegrini | DOB 08-18-1995 | Acct SYN-4300773\nDOS 09-28-2025 | Provider: Elif Ashgrove, PT, DPT\n\nAssessment:\nImpression: R knee OA, M17.11.\n\nPlan:\nPOC: 3x/wk x 23 wks, 08-22-2025 through 01-30-2026.\n\nObjective:\nObjective: knee flex 95->105 deg since IE; KOOS 46->68.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.5/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Bayside Rehab and Performance\nPAGES: 6 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.6/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

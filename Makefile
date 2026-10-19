@@ -24,11 +24,13 @@ fmt: ## Auto-fix lint issues and format
 test: ## Run the test suite
 	$(UV) run pytest
 
-data: ## Regenerate data/dev and data/test (refuses to change the frozen test split)
+data: ## Regenerate data/dev, data/test and data/robust (refuses to change the frozen test and robust splits)
 	$(UV) run python -m priorauth.data.generator --out data
+	$(UV) run python -m priorauth.data.robust --out data
 
 data-check: ## Fail if data/ differs byte for byte from a fresh generation
 	$(UV) run python -m priorauth.data.generator --out data --check
+	$(UV) run python -m priorauth.data.robust --out data --check
 
 data-pdf: ## Optional: export dev cases to build/pdf/dev/*.pdf (not committed)
 	$(UV) run python -m priorauth.data.pdf --split dev --out build/pdf

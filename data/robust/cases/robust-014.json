@@ -1,0 +1,47 @@
+{
+  "case_id": "robust-014",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-11-24",
+  "patient": {
+    "name": "Luca Galloway",
+    "birth_date": "1952-11-22",
+    "sex": "male",
+    "mrn": "SYN-1751571",
+    "member_id": "EHP-SYN-02578950"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Lakeshore Community Health\nPAGES: 8 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Lakeshore Community Health -- Progress Note\nPt: Luca Galloway | DOB 11-22-1952 | Acct SYN-1751571\nDOS 11-19-2025 | Provider: Dr. Felix Grantham, MD\n\nHPI:\nThe patient is a 72-year-old man whose low back pain started roughly three months ago, after a long-haul flight, and has since spread down the back of the right leg to the calf.\n\nTx to date:\nOver the past nine weeks he has done formal physical therapy twice a week and taken naproxen twice daily, and the leg pain has not meaningfully improved.\n\n[fax p.2/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Elmwood Family Practice -- Patient Portal Message\nPt: Luca Galloway | DOB 11-22-1952 | Acct SYN-1751571\nDOS 11-19-2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.3/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Luca Galloway   Plan member #: EHP-SYN-02578950   D.O.B. 11-22-1952\nOrdering clinician: Dr. Felix Grantham, MD (NPI: 9691877854)\nSubmitted: 11-24-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Right S1 radiculopathy (M54.16)\nSx onset: 08-24-2025\n\n[fax p.4/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "Granite State Diagnostics\nLIPID PANEL\nPt: Luca Galloway\n\nTotal cholesterol ...... 192 mg/dL\nLDL-C ...... 159 mg/dL\n\n[fax p.5/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Tamarack Neuro-Musculoskeletal Clinic -- Spine Consult\nPt: Luca Galloway | DOB 11-22-1952 | Acct SYN-1751571\nDOS 11-19-2025 | Provider: Dr. Felix Grantham, MD\n\nCC:\nLBP w/ R LE sx; referred by PCP.\n\nROS:\nHe has had no change in bladder or bowel control, no numbness between the legs, no fevers or night sweats and no weight loss, and he has never been treated for cancer.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) R at 40 deg.\nNeuro: R PF 4/5, R Achilles 1+, decreascd LT 1ateral R foot.\n\nA/P:\nA/P: R S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.6/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Luca Galloway\nID EHP-SYN-02578950 | Group 55323\nRx BIN 999999 | PCN SYNTH\n\n[fax p.7/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 8,
+      "text": "Elmwood Family Practice -- Work Status Note\nPt: Luca Galloway | DOB 11-22-1952 | Acct SYN-1751571\nDOS 11-19-2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.8/8] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

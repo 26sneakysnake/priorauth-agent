@@ -1,0 +1,39 @@
+{
+  "case_id": "robust-013",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-06-29",
+  "patient": {
+    "name": "Carmen Okonkwo",
+    "birth_date": "1954-07-09",
+    "sex": "female",
+    "mrn": "SYN-9796110",
+    "member_id": "EHP-SYN-59067847"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Carmen Okonkwo   Plan member #: EHP-SYN-59067847   D.O.B. 07-09-1954\nOrdering clinician: Henrik Ellery, PT, DPT (NPI: 9142336014)\nSubmitted: 06-29-2025\n\nService: PT continuation, 16 visits\nICD-10: M16.11 (primary OA, right hip)\nBody region: Right hip\n\n[fax p.1/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Elmwood Family Practice -- Work Status Note\nPt: Carmen Okonkwo | DOB 1954-07-09 | Acct SYN-9796110\nDOS 2025-06-22 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.2/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Bayside Rehab and Performance -- PT Progress Re-Assessment\nPt: Carmen Okonkwo | DOB 07-09-1954 | Acct SYN-9796110\nDOS 06-22-2025 | Provider: Henrik Ellery, PT, DPT\n\nAssessment:\nImpression: L hip OA, M16.12.\n\nPlan:\nPOC: 3x/wk x 12 wks, 05-22-2025 through 08-14-2025.\n\nObjective:\nShe now walks the length of the grocery store and back to the car without stopping, which she could not do at the initial evaluation.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.3/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Elmwood Family Practice -- Patient Portal Message\nPt: Carmen Okonkwo | DOB 1954-07-09 | Acct SYN-9796110\nDOS 2025-06-22 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validatlon at the fr0nt desk; garagc leve1 2.\n\n[fax p.4/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "COPY OF MEMBER ID CARD (FRONT/BACK)\n\nExample Health Plan (fictional) | Member: Carmen Okonkwo\nID EHP-SYN-59067847 | Group 67760\nRx BIN 999999 | PCN SYNTH\n\n[fax p.5/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Bayside Rehab and Performance\nPAGES: 6 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.6/6] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

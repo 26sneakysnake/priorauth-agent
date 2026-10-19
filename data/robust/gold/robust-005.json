@@ -1,0 +1,73 @@
+{
+  "case_id": "robust-005",
+  "procedure_code": "PT_EXTENSION",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "PT_EXTENSION.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "ICD-10: M17.12 (primary OA, left knee)"
+        },
+        {
+          "page": 4,
+          "quote": "Impression: ongoing therapy for degenerative arthritis of the left knee, coded M17.12 on the referral."
+        }
+      ],
+      "rationale": "coded MSK diagnosis"
+    },
+    "PT_EXTENSION.plan_of_care": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "She will continue twice a week for a total of twelve weeks, from 03-19-2025 until 06-11-2025."
+        }
+      ],
+      "rationale": "12 weeks, narrative"
+    },
+    "PT_EXTENSION.progress": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "She now climbs a full flight of stairs step over step without the rail and can kneel to garden again, neither of which she could do at the initial evaluation."
+        }
+      ],
+      "rationale": "functional milestone, narrative"
+    },
+    "PT_EXTENSION.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Body region: Left knee"
+        },
+        {
+          "page": 4,
+          "quote": "Impression: ongoing therapy for degenerative arthritis of the left knee, coded M17.12 on the referral."
+        }
+      ],
+      "rationale": "left knee on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "PT_EXTENSION.diagnosis",
+    "PT_EXTENSION.plan_of_care",
+    "PT_EXTENSION.progress"
+  ],
+  "page_kinds": [
+    "fax_cover",
+    "work_note",
+    "lab_report",
+    "therapy_note",
+    "request_form",
+    "patient_message",
+    "release_form"
+  ]
+}

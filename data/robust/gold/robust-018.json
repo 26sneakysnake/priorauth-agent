@@ -1,0 +1,87 @@
+{
+  "case_id": "robust-018",
+  "procedure_code": "MRI_LUMBAR",
+  "trap": "contradiction",
+  "target_criterion": "MRI_LUMBAR.red_flags",
+  "expected_decision": "PEND",
+  "criteria": {
+    "MRI_LUMBAR.symptom_duration": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "61M c/o LBP w/ radiation to L LE x 15 wks."
+        },
+        {
+          "page": 1,
+          "quote": "Sx onset: 09-25-2024"
+        }
+      ],
+      "rationale": "15 weeks of symptoms"
+    },
+    "MRI_LUMBAR.conservative_therapy": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "s/p 9 wks PT + naproxen 500 mg BID, minimal relief."
+        },
+        {
+          "page": 5,
+          "quote": "Initial evaluation: 11-05-2024"
+        }
+      ],
+      "rationale": "9 weeks of PT and NSAID"
+    },
+    "MRI_LUMBAR.red_flags": {
+      "status": "INSUFFICIENT",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "ROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy."
+        },
+        {
+          "page": 3,
+          "quote": "Pt reports new onset urinary incontinence x 2 days; instructed to go to the ED."
+        }
+      ],
+      "rationale": "negative screen, then new incontinence"
+    },
+    "MRI_LUMBAR.neuro_exam": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Neuro: L EHL/ankle DF 4/5, DTRs 2+ symmetric, decreased LT over L dorsal foot."
+        }
+      ],
+      "rationale": "motor, reflex and sensory findings"
+    },
+    "MRI_LUMBAR.laterality": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Indication: Left L5 radiculopathy (M54.16)"
+        },
+        {
+          "page": 4,
+          "quote": "61M c/o LBP w/ radiation to L LE x 15 wks."
+        }
+      ],
+      "rationale": "left on the request and in the notes"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [],
+  "page_kinds": [
+    "request_form",
+    "release_form",
+    "triage_note",
+    "clinic_note",
+    "therapy_note",
+    "specialist_note",
+    "fax_cover"
+  ]
+}

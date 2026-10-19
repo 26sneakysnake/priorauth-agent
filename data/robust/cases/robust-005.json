@@ -1,0 +1,43 @@
+{
+  "case_id": "robust-005",
+  "synthetic": true,
+  "procedure_code": "PT_EXTENSION",
+  "submitted_on": "2025-04-21",
+  "patient": {
+    "name": "Kira Yilmaz",
+    "birth_date": "1983-11-27",
+    "sex": "female",
+    "mrn": "SYN-3282388",
+    "member_id": "EHP-SYN-48773490"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Osprey Physical Therapy\nPAGES: 7 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Copperfield Internal Medicine -- Work Status Note\nPt: Kira Yilmaz | DOB 11-27-1983 | Acct SYN-3282388\nDOS 04-11-2025 | Provider: Front desk\n\nMay return to work with restrictions: no lifting over 20 lb for two weeks.\n\n[fax p.2/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Riverstone Laboratory Services\nLIPID PANEL\nPt: Kira Yilmaz\n\nTotal cholesterol ...... 221 mg/dL\nLDL-C ...... 106 mg/dL\n\n[fax p.3/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Osprey Physical Therapy -- PT Progress Re-Assessment\nPt: Kira Yilmaz | DOB 11-27-1983 | Acct SYN-3282388\nDOS 04-11-2025 | Provider: Bram Ellery, PT, DPT\n\nAssessment:\nImpression: ongoing therapy for degenerative arthritis of the left knee, coded M17.12 on the referral.\n\nPlan:\nShe will continue twice a week for a total of twelve weeks, from 03-19-2025 until 06-11-2025.\n\nObjective:\nShe now climbs a full flight of stairs step over step without the rail and can kneel to garden again, neither of which she could do at the initial evaluation.\n\nTx:\nTherEx, manual tx, NMR; HEP progressed.\n\n[fax p.4/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (OUTPATIENT REHAB)\nHealth plan: Example Health Plan (fictional)\nPt name: Kira Yilmaz   Plan member #: EHP-SYN-48773490   D.O.B. 11-27-1983\nOrdering clinician: Bram Ellery, PT, DPT (NPI: 9533394567)\nSubmitted: 04-21-2025\n\nService: PT continuation, 16 visits\nICD-10: M17.12 (primary OA, left knee)\nBody region: Left knee\n\n[fax p.5/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 6,
+      "text": "Copperfield Internal Medicine -- Patient Portal Message\nPt: Kira Yilmaz | DOB 11-27-1983 | Acct SYN-3282388\nDOS 04-11-2025 | Provider: MyChart\n\nPt asks whether parking validation is available for the imaging center.\nReply sent: validation at the front desk; garage level 2.\n\n[fax p.6/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 7,
+      "text": "AUTHORIZATION TO RELEASE HEALTH INFORMATION\n\nI authorize Copperfield Internal Medicine to release records to Example Health Plan (fictional) for utilization review.\nSigned: Kira Yilmaz | Date: 04-02-2025\n\n[fax p.7/7] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "robust-034",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-08-28",
+  "patient": {
+    "name": "Carmen Delacroix",
+    "birth_date": "1950-10-15",
+    "sex": "female",
+    "mrn": "SYN-5785565",
+    "member_id": "EHP-SYN-31947194"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "Elmwood Family Practice -- Progress Note\nPt: Carmen Delacroix | DOB 10-15-1950 | Acct SYN-5785565\nDOS 08-26-2025 | Provider: Dr. Elif Langley, MD\n\nHPI:\n74F c/o LBP w/ radiation to L LE x 13 wks.\n\nTx to date:\ns/p 9 wks PT + naproxen 500 mg BID, minimal relief.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 40 deg.\nNeuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot.\n\nA/P:\nA/P: L S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.1/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Carmen Delacroix   Plan member #: EHP-SYN-31947194   D.O.B. 10-15-1950\nOrdering clinician: Dr. Elif Langley, MD (NPI: 9455763572)\nSubmitted: 08-28-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left S1 radiculopathy (M54.16)\nSx onset: 05-25-2025\n\n[fax p.2/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "Elmwood Family Practice -- Nurse Phone Note\nPt: Carmen Delacroix | DOB 10-15-1950 | Acct SYN-5785565\nDOS 08-27-2025 | Provider: D. Ferreira, RN\n\nPt reports new onset urinary incontinence x 2 days; instructed to go to the ED.\n\n[fax p.3/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Kestrel Movement Clinic -- PT Discharge Summary\nPt: Carmen Delacroix | DOB 10-15-1950 | Acct SYN-5785565\nDOS 08-26-2025 | Provider: Lucia Holloway, DPT\n\nReferral dx: LBP w/ L radicular sx.\nInitial evaluation: 06-21-2025\nInterventions: McKenzie protocol, core stabilization, manual tx.\nOutcome: persistent sx; returned to referring MD.\n\n[fax p.4/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 5,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Elmwood Family Practice\nPAGES: 5 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.5/5] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}

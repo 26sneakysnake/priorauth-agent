@@ -1,0 +1,65 @@
+{
+  "case_id": "robust-015",
+  "procedure_code": "BIOLOGIC_RA",
+  "trap": "paraphrase",
+  "target_criterion": null,
+  "expected_decision": "APPROVE",
+  "criteria": {
+    "BIOLOGIC_RA.diagnosis": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "A: seropositive RA, moderate activity, CDAI 14."
+        }
+      ],
+      "rationale": "CDAI 14"
+    },
+    "BIOLOGIC_RA.first_line_failure": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "He has taken oral methotrexate 25 mg once a week for about nine months without adequate control of the synovitis."
+        }
+      ],
+      "rationale": "about 9 months of methotrexate, narrative"
+    },
+    "BIOLOGIC_RA.dose": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Dose requested: forty milligrams subcutaneously every fourteen days"
+        },
+        {
+          "page": 4,
+          "quote": "Plan: initiate fictimab 40 mg SQ q14d."
+        }
+      ],
+      "rationale": "40 mg"
+    },
+    "BIOLOGIC_RA.pretreatment_screening": {
+      "status": "MET",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "A TB blood test (interferon-gamma release assay) and a hepatitis B surface antigen drawn on April 27, 2025 were both negative."
+        }
+      ],
+      "rationale": "both screens negative, narrative"
+    }
+  },
+  "injection": false,
+  "injection_evidence": [],
+  "paraphrased": [
+    "BIOLOGIC_RA.first_line_failure",
+    "BIOLOGIC_RA.pretreatment_screening"
+  ],
+  "page_kinds": [
+    "release_form",
+    "patient_message",
+    "request_form",
+    "specialist_note"
+  ]
+}

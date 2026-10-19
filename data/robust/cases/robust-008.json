@@ -1,0 +1,31 @@
+{
+  "case_id": "robust-008",
+  "synthetic": true,
+  "procedure_code": "MRI_LUMBAR",
+  "submitted_on": "2025-05-25",
+  "patient": {
+    "name": "Emil Jaramillo",
+    "birth_date": "1984-12-23",
+    "sex": "male",
+    "mrn": "SYN-8123168",
+    "member_id": "EHP-SYN-10242950"
+  },
+  "pages": [
+    {
+      "number": 1,
+      "text": "*** FACSIMILE TRANSMITTAL ***\n\nTO: UM Dept, Example Health Plan (fictional)\nFROM: Copperfield Internal Medicine\nPAGES: 4 incl. cover\nThis transmission may contain confidential health information.\n\n[fax p.1/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 2,
+      "text": "Granite State Diagnostics\nLIPID PANEL\nPt: Emil Jaramillo\n\nTotal cholesterol ...... 174 mg/dL\nLDL-C ...... 125 mg/dL\n\n[fax p.2/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 3,
+      "text": "UTILIZATION MANAGEMENT - REQUEST FOR PRIOR AUTH (ADVANCED IMAGING)\nHealth plan: Example Health Plan (fictional)\nPt name: Emil Jaramillo   Plan member #: EHP-SYN-10242950   D.O.B. 12-23-1984\nOrdering clinician: Dr. Dmitri Ashgrove, MD (NPI: 9743038916)\nSubmitted: 05-25-2025\n\nService: MRI L-spine w/o contrast (CPT 72148)\nIndication: Left S1 radiculopathy (M54.16)\nSx onset: 04-27-2025\n\n[fax p.3/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    },
+    {
+      "number": 4,
+      "text": "Copperfield Internal Medicine -- Progress Note\nPt: Emil Jaramillo | DOB 12-23-1984 | Acct SYN-8123168\nDOS 05-21-2025 | Provider: Dr. Dmitri Ashgrove, MD\n\nHPI:\n40M c/o LBP w/ radiation to L LE x 3 wks.\n\nTx to date:\nBegan PT 2 wk(s) ago; too early to assess response.\n\nROS:\nROS: (-) bowel/bladder dysfxn, (-) saddle anesthesia, (-) fever/chills, (-) unintentional wt loss, (-) hx malignancy.\n\nPE:\nBack: TTP lower lumbar paraspinals; SLR (+) L at 40 deg.\nNcuro: L PF 4/5, L Achilles 1+, decreased LT lateral L foot.\n\nA/P:\nA/P: L S1 radiculopathy - MRI L-spine w/o contrast; cont HEP.\n\n[fax p.4/4] SYNTHETIC RECORD - generated for software testing, not a real patient\n"
+    }
+  ]
+}
