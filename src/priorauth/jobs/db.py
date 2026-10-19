@@ -3,11 +3,17 @@
 Timestamps are naive UTC everywhere (SQLite has no time zones; one convention avoids mixing them).
 """
 
+import logging
 from datetime import UTC, datetime
 
 from sqlalchemy import ForeignKey, Index, Integer, String, Text, UniqueConstraint
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+
+# The database drivers log every statement *with its parameters* (record content) at DEBUG. An explicit level on
+# their loggers wins over a DEBUG root logger, so turning on debug logging elsewhere cannot leak records.
+for _driver_logger in ("aiosqlite", "asyncpg", "sqlalchemy.engine", "sqlalchemy.pool"):
+    logging.getLogger(_driver_logger).setLevel(logging.WARNING)
 
 
 def utcnow() -> datetime:
@@ -48,6 +54,9 @@ class JobRow(Base):
     locked_by: Mapped[str | None] = mapped_column(String(100))
     lease_expires_at: Mapped[datetime | None]
     error: Mapped[str | None] = mapped_column(String(200))  # an error kind, never record content
+    available_at: Mapped[datetime] = mapped_column(default=utcnow)  # retry backoff: not claimable before this
+    cost_usd: Mapped[float] = mapped_column(default=0.0)  # LLM cost of the attempt that produced the result
+    llm_calls: Mapped[int] = mapped_column(Integer, default=0)
     outcome: Mapped[str | None] = mapped_column(String(10))
     result_json: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
@@ -79,10 +88,11 @@ class WebhookDeliveryRow(Base):
 
 
 def make_engine(url: str) -> AsyncEngine:
+    """hide_parameters: SQL parameters (record content) never appear in SQLAlchemy logs or exception messages."""
     if url.startswith("sqlite"):
         # Writers queue behind each other instead of failing at once with "database is locked".
-        return create_async_engine(url, connect_args={"timeout": 30})
-    return create_async_engine(url, pool_pre_ping=True)
+        return create_async_engine(url, connect_args={"timeout": 30}, hide_parameters=True)
+    return create_async_engine(url, pool_pre_ping=True, hide_parameters=True)
 
 
 def sessions(engine: AsyncEngine) -> async_sessionmaker[AsyncSession]:

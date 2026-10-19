@@ -39,7 +39,7 @@ DEFAULT_BASE_URL = "https://api.anthropic.com"
 API_KEY_VAR = "PRIORAUTH_ANTHROPIC_API_KEY"
 BASE_URL_VAR = "PRIORAUTH_ANTHROPIC_BASE_URL"
 REQUEST_TIMEOUT_S = 120.0
-MAX_RETRIES = 3  # SDK retries on 408/409/429/5xx and connection errors, with backoff
+SDK_MAX_RETRIES = 0  # retries are done by priorauth.llm.resilience (backoff, jitter, circuit breaker)
 CHARS_PER_TOKEN_LOW = 3  # conservative: real prompts here average about 4 characters per token
 
 
@@ -191,7 +191,7 @@ class AnthropicTransport:
             api_key=api_key,
             base_url=os.environ.get(BASE_URL_VAR) or DEFAULT_BASE_URL,
             timeout=REQUEST_TIMEOUT_S,
-            max_retries=MAX_RETRIES,
+            max_retries=SDK_MAX_RETRIES,
         )
 
     async def send(self, request: dict[str, Any]) -> dict[str, Any]:
@@ -234,7 +234,11 @@ class LLMClient:
         cassettes = CassetteStore()
         if mode is LLMMode.REPLAY:
             return cls(mode, cassettes)
-        return cls(mode, cassettes, SpendLedger(), AnthropicTransport())
+        from priorauth.llm.resilience import ResilientTransport
+
+        ledger_path = os.environ.get("PRIORAUTH_LEDGER_PATH")
+        ledger = SpendLedger(Path(ledger_path)) if ledger_path else SpendLedger()
+        return cls(mode, cassettes, ledger, ResilientTransport(AnthropicTransport(), timeout_s=REQUEST_TIMEOUT_S))
 
     def begin_run(self, scope: str, cap_usd: float | None) -> None:
         """Name the run (cassette file and ledger entry) and set its cap; resets the run counters."""

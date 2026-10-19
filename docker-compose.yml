@@ -1,0 +1,26 @@
+# Local dependencies of the API: Postgres (jobs) and Jaeger (traces over OTLP). The API image itself comes in P8;
+# until then run it on the host against these services:
+#   make up
+#   PRIORAUTH_DATABASE_URL=postgresql+asyncpg://priorauth:priorauth@localhost:5432/priorauth \
+#   OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 make run
+#   open http://localhost:16686  (service "priorauth-agent")
+# Local development only: the password below is not a secret, nothing here is meant to face a network.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: priorauth
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-priorauth}
+      POSTGRES_DB: priorauth
+    ports: ["127.0.0.1:5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U priorauth"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  jaeger:
+    image: jaegertracing/jaeger:2.11.0
+    ports:
+      - "127.0.0.1:16686:16686" # UI and query API
+      - "127.0.0.1:4317:4317" # OTLP gRPC
+      - "127.0.0.1:4318:4318" # OTLP HTTP (used by the API, see priorauth.obs.tracing)

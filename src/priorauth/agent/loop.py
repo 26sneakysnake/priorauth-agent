@@ -18,8 +18,10 @@ from priorauth.data.schema import Case
 from priorauth.llm.cassette import canonical_json
 from priorauth.llm.client import CaseMeter, LLMCall, LLMClient, default_client
 from priorauth.llm.pricing import TokenUsage
+from priorauth.obs.tracing import record_call, set_attrs, span
 from priorauth.pipeline import Extraction, ExtractionFailed, Usage
 
+TOOL_NAMES = frozenset(t["name"] for t in TOOL_SPECS)
 MAX_STEPS = 12
 MAX_IDLE_STEPS = 2  # consecutive steps without progress before giving up
 NUDGE = "You stopped without calling a tool. Record any missing findings with record_finding, then call finish."
@@ -76,12 +78,16 @@ class _Tally:
         )
 
 
-def _run_tools(state: AgentState, tool_uses: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], bool]:
+def _run_tools(state: AgentState, tool_uses: list[dict[str, Any]], step: int) -> tuple[list[dict[str, Any]], bool]:
     """Execute a step's tool calls, finish last; results keep the order of the calls."""
     order = sorted(range(len(tool_uses)), key=lambda i: tool_uses[i]["name"] == "finish")
     outcomes: dict[int, ToolOutcome] = {}
     for i in order:
-        outcomes[i] = state.execute(tool_uses[i]["name"], tool_uses[i].get("input"))
+        name = tool_uses[i]["name"]
+        known = name if name in TOOL_NAMES else "unknown"  # a model-chosen string never reaches a span as is
+        with span("tool.call", step=step, tool__name=known) as s:
+            outcomes[i] = state.execute(name, tool_uses[i].get("input"))
+            set_attrs(s, tool__is_error=outcomes[i].is_error, tool__progress=outcomes[i].progress)
     results = []
     for i, block in enumerate(tool_uses):
         result: dict[str, Any] = {"type": "tool_result", "tool_use_id": block["id"], "content": outcomes[i].content}
@@ -105,7 +111,11 @@ async def run_agent(
 
     for step in range(max_steps):
         try:
-            call = await llm.create(build_request(model, prompt, messages), meter=meter, label=case.case_id, step=step)
+            with span("llm.call", step=step, llm__model=model) as s:
+                call = await llm.create(
+                    build_request(model, prompt, messages), meter=meter, label=case.case_id, step=step
+                )
+                record_call(s, call)
         except Exception as e:
             raise stop(type(e).__name__, str(e)) from e
         tally.add(call)
@@ -116,7 +126,7 @@ async def run_agent(
         messages.append({"role": "assistant", "content": content})
         tool_uses = [b for b in content if b.get("type") == "tool_use"]
         if tool_uses:
-            results, progress = _run_tools(state, tool_uses)
+            results, progress = _run_tools(state, tool_uses, step)
             if state.finished:
                 return Extraction(findings=state.case_findings(), usage=tally.usage)
             messages.append({"role": "user", "content": results})

@@ -26,9 +26,13 @@ jobs:
         ports: ["5432:5432"]
         options: >-
           --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+      jaeger: # tests/test_jaeger.py exports spans over OTLP/HTTP and reads them back from the query API
+        image: jaegertracing/jaeger:2.11.0
+        ports: ["16686:16686", "4318:4318"]
     env:
       LLM_MODE: replay # every model call comes from eval/cassettes; no API key exists in this job
       PRIORAUTH_TEST_POSTGRES_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/priorauth_test
+      PRIORAUTH_TEST_JAEGER_URL: http://localhost:16686
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -38,6 +42,8 @@ jobs:
         run: make setup
       - name: Lint (ruff) and types (mypy --strict)
         run: make lint
+      - name: Wait for Jaeger
+        run: for i in $(seq 1 30); do curl -sf http://localhost:16686/ > /dev/null && exit 0; sleep 2; done; exit 1
       - name: Tests
         run: make test
       - name: Regression gate (replayed cassettes)

@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run openapi
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run openapi load-test up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -60,3 +60,12 @@ run: ## API + workers on SQLite (LLM_MODE as set; replay misses on new cases, se
 
 openapi: ## Export the API schema to docs/openapi.json
 	$(UV) run python -m priorauth.api.openapi
+
+load-test: ## 200 cases at once against the API with a SIMULATED model; writes results/load_test.json
+	$(UV) run python -m eval.load_test
+
+up: ## Postgres + Jaeger (docker compose); then e.g. OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 make run
+	docker compose up -d
+
+down: ## Stop the compose services
+	docker compose down

@@ -15,7 +15,7 @@ import uuid
 from collections.abc import AsyncIterator, Callable
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Annotated, Any
 
 import httpx
@@ -25,10 +25,10 @@ from pydantic import BaseModel
 from sqlalchemy import select
 
 from priorauth.api.fhir import BundleError, claim_response, parse_bundle
-from priorauth.jobs.db import CaseRow, JobRow, create_schema, make_engine, sessions
-from priorauth.jobs.queue import IdempotencyConflict, JobQueue, body_digest
+from priorauth.jobs.db import CaseRow, JobRow, create_schema, make_engine, sessions, utcnow
+from priorauth.jobs.queue import IdempotencyConflict, JobQueue, body_digest, daily_costs
 from priorauth.jobs.webhooks import WebhookSender
-from priorauth.jobs.worker import WorkerPool
+from priorauth.jobs.worker import DailyBudget, WorkerPool
 from priorauth.pipeline import CaseRun, System
 from priorauth.policy.engine import Decision, decide
 from priorauth.policy.models import CaseFindings
@@ -45,6 +45,8 @@ class Settings:
     max_attempts: int = 3
     webhook_url: str | None = None
     webhook_secret: str = ""
+    daily_cost_cap_usd: float | None = None
+    case_cost_cap_usd: float = 0.10
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -57,6 +59,8 @@ class Settings:
             max_attempts=int(env("PRIORAUTH_MAX_ATTEMPTS", str(cls.max_attempts))),
             webhook_url=env("PRIORAUTH_WEBHOOK_URL") or None,
             webhook_secret=env("PRIORAUTH_WEBHOOK_SECRET", ""),
+            daily_cost_cap_usd=float(cap) if (cap := env("PRIORAUTH_DAILY_COST_CAP_USD")) else None,
+            case_cost_cap_usd=float(env("PRIORAUTH_CASE_COST_CAP_USD", str(cls.case_cost_cap_usd))),
         )
 
 
@@ -91,12 +95,25 @@ class Problem(BaseModel):
     detail: Any
 
 
-def default_system() -> System:
+class DailyCost(BaseModel):
+    day: str
+    jobs: int
+    llm_calls: int
+    cost_usd: float
+
+
+class CostReport(BaseModel):
+    daily_cap_usd: float | None
+    case_cap_usd: float
+    days: list[DailyCost]
+
+
+def default_system(case_cap_usd: float = 0.10) -> System:
     """Production configuration: the gated agent (agent@v2 on Haiku), LLM mode from LLM_MODE."""
     from priorauth.agent.loop import AgentSystem
     from priorauth.llm.pricing import HAIKU
 
-    return AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", case_cap_usd=0.10)
+    return AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", case_cap_usd=case_cap_usd)
 
 
 def decision_of(job: JobRow, case: CaseRow) -> Decision:
@@ -108,10 +125,14 @@ def decision_of(job: JobRow, case: CaseRow) -> Decision:
 
 def create_app(
     settings: Settings | None = None,
-    system_factory: Callable[[], System] = default_system,
+    system_factory: Callable[[], System] | None = None,
     webhook_client: httpx.AsyncClient | None = None,
 ) -> FastAPI:
     settings = settings or Settings.from_env()
+    cfg = settings
+
+    def make_system() -> System:
+        return system_factory() if system_factory is not None else default_system(cfg.case_cost_cap_usd)
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -130,7 +151,12 @@ def create_app(
         background: list[asyncio.Task[None]] = []
         client = webhook_client or httpx.AsyncClient()
         if settings.run_workers:
-            app.state.pool = WorkerPool(queue, system_factory(), concurrency=settings.workers)
+            budget = (
+                DailyBudget(settings.daily_cost_cap_usd, settings.case_cost_cap_usd)
+                if settings.daily_cost_cap_usd is not None
+                else None
+            )
+            app.state.pool = WorkerPool(queue, make_system(), concurrency=settings.workers, budget=budget)
             background.append(asyncio.create_task(app.state.pool.run(stop)))
             if settings.webhook_url:
                 sender = WebhookSender(session_maker, settings.webhook_secret.encode(), client)
@@ -155,6 +181,16 @@ def create_app(
     @app.get("/health")
     async def health() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/costs/daily", response_model=CostReport, summary="LLM cost of finished jobs per UTC day")
+    async def costs(request: Request, days: int = 7) -> CostReport:
+        since = utcnow() - timedelta(days=max(1, min(days, 90)))
+        rows = await daily_costs(request.app.state.sessions, since)
+        return CostReport(
+            daily_cap_usd=settings.daily_cost_cap_usd,
+            case_cap_usd=settings.case_cost_cap_usd,
+            days=[DailyCost(day=r.day, jobs=r.jobs, llm_calls=r.llm_calls, cost_usd=r.cost_usd) for r in rows],
+        )
 
     @app.post(
         "/cases",
@@ -248,5 +284,9 @@ def create_app(
 
 def __getattr__(name: str) -> Any:  # `uvicorn priorauth.api.app:app` builds the app lazily from the environment
     if name == "app":
+        from priorauth.obs import logs, tracing
+
+        logs.configure()
+        tracing.configure()
         return create_app()
     raise AttributeError(name)

@@ -15,6 +15,7 @@ from priorauth.agent.prompts import load_prompt
 from priorauth.data.schema import Case
 from priorauth.llm.client import CaseMeter, LLMClient, default_client
 from priorauth.llm.pricing import TokenUsage
+from priorauth.obs.tracing import record_call, span
 from priorauth.pipeline import Extraction, ExtractionFailed, Usage
 from priorauth.policy.criteria import get_procedure
 from priorauth.policy.models import CaseFindings, Evidence, Finding, Status
@@ -93,9 +94,11 @@ class SingleCallBaseline:
         }
 
     async def extract(self, case: Case) -> Extraction:
-        call = await self.client.create(
-            self.request(case), meter=CaseMeter(self.case_cap_usd), label=case.case_id, step=0
-        )
+        with span("llm.call", step=0, llm__model=self.model) as s:
+            call = await self.client.create(
+                self.request(case), meter=CaseMeter(self.case_cap_usd), label=case.case_id, step=0
+            )
+            record_call(s, call)
         c = call.usage
         usage = Usage(
             llm_calls=1,

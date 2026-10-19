@@ -86,6 +86,67 @@
         "title": "CaseView",
         "type": "object"
       },
+      "CostReport": {
+        "properties": {
+          "case_cap_usd": {
+            "title": "Case Cap Usd",
+            "type": "number"
+          },
+          "daily_cap_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Daily Cap Usd"
+          },
+          "days": {
+            "items": {
+              "$ref": "#/components/schemas/DailyCost"
+            },
+            "title": "Days",
+            "type": "array"
+          }
+        },
+        "required": [
+          "daily_cap_usd",
+          "case_cap_usd",
+          "days"
+        ],
+        "title": "CostReport",
+        "type": "object"
+      },
+      "DailyCost": {
+        "properties": {
+          "cost_usd": {
+            "title": "Cost Usd",
+            "type": "number"
+          },
+          "day": {
+            "title": "Day",
+            "type": "string"
+          },
+          "jobs": {
+            "title": "Jobs",
+            "type": "integer"
+          },
+          "llm_calls": {
+            "title": "Llm Calls",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "day",
+          "jobs",
+          "llm_calls",
+          "cost_usd"
+        ],
+        "title": "DailyCost",
+        "type": "object"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -403,6 +464,46 @@
           }
         },
         "summary": "Get Result"
+      }
+    },
+    "/costs/daily": {
+      "get": {
+        "operationId": "costs_costs_daily_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "schema": {
+              "default": 7,
+              "title": "Days",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CostReport"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "LLM cost of finished jobs per UTC day"
       }
     },
     "/health": {

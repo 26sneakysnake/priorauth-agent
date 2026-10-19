@@ -62,7 +62,12 @@ def claimable(now: datetime) -> Select[str, str, str, int, int]:
     """The oldest queued job or running job whose lease expired, locked with SKIP LOCKED where supported."""
     return (
         select(JobRow.id, JobRow.case_id, JobRow.status, JobRow.attempts, JobRow.version)
-        .where(or_(JobRow.status == "queued", and_(JobRow.status == "running", JobRow.lease_expires_at < now)))
+        .where(
+            or_(
+                and_(JobRow.status == "queued", JobRow.available_at <= now),
+                and_(JobRow.status == "running", JobRow.lease_expires_at < now),
+            )
+        )
         .order_by(JobRow.created_at, JobRow.id)
         .limit(1)
         .with_for_update(skip_locked=True)
@@ -109,7 +114,16 @@ class JobQueue:
                     )
                 )
                 await s.flush()
-                s.add(JobRow(id=job_id, case_id=case.case_id, status="queued", created_at=now, updated_at=now))
+                s.add(
+                    JobRow(
+                        id=job_id,
+                        case_id=case.case_id,
+                        status="queued",
+                        created_at=now,
+                        updated_at=now,
+                        available_at=now,
+                    )
+                )
         except IntegrityError:  # a concurrent request with the same key won the insert
             existing = await self._by_key(idempotency_key, digest)
             if existing is None:
@@ -206,6 +220,8 @@ class JobQueue:
                     status="done",
                     outcome=run.decision.outcome.value,
                     result_json=run.model_dump_json(),
+                    cost_usd=run.usage.cost_usd,
+                    llm_calls=run.usage.llm_calls,
                     error=run.error.split(":", 1)[0][:200] if run.error else None,
                     locked_by=None,
                     lease_expires_at=None,
@@ -219,8 +235,9 @@ class JobQueue:
             self._enqueue_webhook(s, job_id, run.case_id, run.decision.outcome.value, now)
         return True
 
-    async def release(self, job_id: str, worker_id: str, error_kind: str) -> None:
-        """Give a job back after an infrastructure error; it is retried until max_attempts, then failed."""
+    async def release(self, job_id: str, worker_id: str, error_kind: str, delay_s: float = 0.0) -> None:
+        """Give a job back after an infrastructure error; it is retried after `delay_s` until max_attempts, then
+        failed (fail-closed PEND)."""
         now = self.clock()
         async with self.sessions.begin() as s:
             job = (
@@ -230,6 +247,7 @@ class JobQueue:
                 return
             final = job.attempts >= self.max_attempts
             job.status = "failed" if final else "queued"
+            job.available_at = now + timedelta(seconds=delay_s)
             job.error = error_kind[:200]
             job.locked_by, job.lease_expires_at = None, None
             job.version += 1
@@ -261,3 +279,39 @@ class JobQueue:
                 created_at=now,
             )
         )
+
+
+@dataclass(frozen=True)
+class DayCost:
+    day: str
+    jobs: int
+    llm_calls: int
+    cost_usd: float
+
+
+async def daily_costs(sessions: async_sessionmaker[AsyncSession], since: datetime) -> list[DayCost]:
+    """LLM cost of finished jobs per UTC day since `since` (grouped in Python: same code on SQLite and Postgres)."""
+    async with sessions() as s:
+        rows = (
+            await s.execute(
+                select(JobRow.finished_at, JobRow.cost_usd, JobRow.llm_calls).where(
+                    JobRow.finished_at.is_not(None), JobRow.finished_at >= since
+                )
+            )
+        ).all()
+    days: dict[str, list[float]] = {}
+    for finished, cost, calls in rows:
+        if finished is None:  # excluded by the query; keeps the type checker informed
+            continue
+        acc = days.setdefault(finished.date().isoformat(), [0, 0, 0.0])
+        acc[0] += 1
+        acc[1] += calls
+        acc[2] += cost
+    return [
+        DayCost(day=d, jobs=int(a[0]), llm_calls=int(a[1]), cost_usd=round(a[2], 6)) for d, a in sorted(days.items())
+    ]
+
+
+async def spent_today(sessions: async_sessionmaker[AsyncSession], now: datetime) -> float:
+    today = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    return sum(d.cost_usd for d in await daily_costs(sessions, today))
