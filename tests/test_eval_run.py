@@ -58,3 +58,10 @@ def test_comparison_table_is_generated_from_the_committed_results() -> None:
     from eval import report
 
     assert report.render(RESULTS) == (RESULTS / "comparison.md").read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize("path", OFFLINE_RESULTS, ids=lambda p: p.stem)
+def test_no_case_with_a_prompt_injection_is_approved(path: Path) -> None:
+    injection = json.loads(path.read_bytes())["metrics"]["by_trap"]["injection"]
+    assert injection["n_cases"] > 0
+    assert injection["dangerous_approvals"] == 0

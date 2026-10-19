@@ -92,3 +92,54 @@ command or file that proves it) and what is left. Nothing here is a claim withou
   one run on `test`, `eval/gate.py` in CI, `docs/LIMITS.md` from the `*_errors.jsonl` files.
 - The verifier's "invalid citations before verification" rate is computed, but is only informative once an LLM
   produces the citations (baseline 1 quotes the page verbatim, so it is 100 % by construction).
+
+## P3 — Agent loop, verifier, comparison, gate
+
+**Done**
+- `src/priorauth/llm/`: `pricing.py` (published prices of claude-haiku-5-5 and claude-sonnet-5-5, read 2026-10-19),
+  `cassette.py` (one JSON line per call, keyed by the sha256 of the canonical request; no request, no header
+  stored), `client.py` (`LLM_MODE=live|record|replay`, default replay; key and base URL passed explicitly from
+  `PRIORAUTH_ANTHROPIC_API_KEY` / `PRIORAUTH_ANTHROPIC_BASE_URL`, never from `ANTHROPIC_*`; ledger
+  `results/spend.json` written after every real call; phase cap 10 USD, run cap, per-case cap checked before a
+  call is sent). No temperature is sent: both models reject non-default sampling values.
+- `src/priorauth/agent/`: `tools.py` (`list_pages`, `read_page`, `search_policy`, `record_finding`, `finish`,
+  strict Pydantic validation, errors returned to the model), `loop.py` (manual tool-use loop, `max_steps=12`, stops
+  and pends on two idle steps, the step limit, a refusal or a cap; append-only; system + tools cached).
+  Prompts in `prompts/`: `agent@v1`, `agent@v2` (written from the v1 errors on dev only), `single@v1` (baseline 2),
+  `agent@lenient` (probe) and `agent@degraded` (gate fixture).
+- Baseline 2, `eval/baselines/llm_single.py`: one Haiku call, whole record and policy in the prompt,
+  schema-constrained JSON output, same verifier and engine.
+- `data/robust/`: 40 cases, separate seed and templates, frozen by `data/robust.sha256`, written after agent@v2 and
+  baseline 1 were frozen (`src/priorauth/data/robust.py`, `tests/test_robust.py`).
+- `eval/`: `run.py` (robust split, cost estimate before a paid run via `budget.py`, nothing written when a cap
+  stops a run), `gate.py` + `results/baseline_gate.json` + `make gate`, `report.py` → `results/comparison.md`.
+- CI (`.github/workflows/ci.yml`): replay with `LLM_MODE=replay` and no key, `make gate`, gitleaks 8.28.0 over every
+  commit. `.github/workflows/eval-live.yml`: manual, refuses to start without the `ANTHROPIC_API_KEY` secret,
+  run cap of at most 2 USD on top of the phase cap.
+- `docs/LIMITS.md`.
+
+**Measured** (full table with Wilson intervals, cost and latency: [`results/comparison.md`](../results/comparison.md),
+generated from `results/*.json` and checked by `tests/test_eval_run.py`)
+- Acceptance: `make eval-offline` replays every result without a key and `tests/test_eval_run.py` regenerates
+  `results/` byte for byte; `make gate` passes (CI run #9, `8990d08`); `tests/test_gate.py` shows the gate failing
+  on `agent@degraded` (replayed); no case with an injection is approved in any committed result
+  (`tests/test_eval_run.py::test_no_case_with_a_prompt_injection_is_approved`); gitleaks finds nothing in the
+  history or the tree (CI job `secrets`, `make secrets`).
+- Agent v2 (Haiku), the gated configuration: 0 dangerous approvals on dev, test and robust; decisions 100/100,
+  59/60, 40/40 (`results/agent_v2_haiku_*.json`). Agent v2 (Sonnet): 100/100, 60/60, 40/40 at about 15 times the
+  cost per case (`results/agent_v2_sonnet_*.json`).
+- Like-for-like (first prompts, written before any run): baseline 2 and agent v1 are close on every split; agent
+  v2's gain over v1 comes from one round of error analysis on dev (`results/comparison.md`, `docs/LIMITS.md` §4).
+- Baseline 1 collapses on robust (pends every approvable case, flags no injection): the frozen rules only know
+  the dev/test templates (`results/rules_baseline_robust.json`).
+- Prompt sensitivity: the lenient prompt does not degrade Haiku on dev; the degraded prompt (stale policy
+  thresholds) gives 10/65 dangerous approvals with valid citations, which the gate catches
+  (`results/agent_lenient_haiku_dev.json`, `results/agent_degraded_haiku_dev.json`).
+- Spend: 6.2210 USD of the 10 USD phase cap, every real call included except the first key check
+  (`results/spend.json`, `docs/LIMITS.md` §5).
+
+**Left**
+- `eval-live.yml` not yet run on GitHub (needs the repository secret `ANTHROPIC_API_KEY`).
+- Side mismatches recorded as NOT_MET plus conflict (criterion status INSUFFICIENT, decision still PEND): seen on
+  dev only after test and robust were run, so no v3 prompt was written (`docs/LIMITS.md` §3).
+- Citation checks prove a quote exists, not that it supports the status (`docs/LIMITS.md` §4).

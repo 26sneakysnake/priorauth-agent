@@ -14,15 +14,18 @@ A prior-authorization agent for synthetic clinical records. An LLM agent extract
 (page + exact quote); a **deterministic** policy engine decides `APPROVE` or `PEND`. The code has no `DENY` outcome:
 anything that is not fully met, verified and conflict-free goes to a human reviewer.
 
-This README is hand-written while the project is being built. It contains no measured numbers yet; once evaluation
-results exist it is generated from `results/` (`make readme`). Build status per phase: [`docs/PROGRESS.md`](docs/PROGRESS.md).
+This README is hand-written while the project is being built and contains no measured numbers; it will be generated
+from `results/` (`make readme`). Until then, the measured comparison of every system is
+[`results/comparison.md`](results/comparison.md), itself generated from `results/*.json`; what it does not show is in
+[`docs/LIMITS.md`](docs/LIMITS.md). Build status per phase: [`docs/PROGRESS.md`](docs/PROGRESS.md).
 
 ## Quick start
 
 ```bash
 make setup   # uv sync --locked + pre-commit hook
 make lint    # ruff + mypy --strict
-make test    # pytest
+make test    # pytest (every LLM call is replayed from eval/cassettes: no API key needed)
+make gate    # regression gate on the replayed production agent
 ```
 
 License: MIT.
