@@ -110,8 +110,8 @@ async def through_api(
                 ).all()
     runs: dict[str, CaseRun] = {}
     for submitter_id, procedure_code, result_json, error in rows:
-        if result_json:
-            runs[submitter_id] = CaseRun.model_validate_json(result_json)
+        if result_json:  # the stored run carries the API's case id; the gold labels use the submitter's
+            runs[submitter_id] = CaseRun.model_validate_json(result_json).model_copy(update={"case_id": submitter_id})
         else:  # failed after every attempt: the fail-closed decision the API serves
             empty = CaseFindings(procedure_code=procedure_code, findings=())
             runs[submitter_id] = CaseRun(

@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "description": "Every real API call of phase P3, priced from the usage returned by the API. Written by priorauth.llm.client after each call; never edited by hand.",
+  "description": "Every real API call of the project (P3 evaluation runs, P7bis pipeline runs, by scope), priced from the usage returned by the API. Written by priorauth.llm.client after each call; never edited by hand.",
   "prices_source": "https://platform.claude.com/docs/en/about-claude/pricing (read 2026-10-19)",
   "cap_usd": 10.0,
   "total": {
-    "calls": 2029,
-    "input_tokens": 489879,
-    "cache_write_tokens": 3066190,
-    "cache_read_tokens": 4253124,
-    "output_tokens": 2071820,
-    "cost_usd": 6.22100693
+    "calls": 2434,
+    "input_tokens": 491089,
+    "cache_write_tokens": 3701549,
+    "cache_read_tokens": 5137335,
+    "output_tokens": 2529446,
+    "cost_usd": 6.53820259
   },
   "by_scope": {
     "_scratch/agent_degraded_haiku/dev": {
@@ -120,6 +120,36 @@
         "cache_read_tokens": 245956,
         "output_tokens": 135956,
         "cost_usd": 0.09972165
+      }
+    },
+    "agent_v2_haiku_pipeline/dev": {
+      "claude-haiku-5-5": {
+        "calls": 204,
+        "input_tokens": 608,
+        "cache_write_tokens": 317637,
+        "cache_read_tokens": 441165,
+        "output_tokens": 225634,
+        "cost_usd": 0.15699386
+      }
+    },
+    "agent_v2_haiku_pipeline/robust": {
+      "claude-haiku-5-5": {
+        "calls": 80,
+        "input_tokens": 240,
+        "cache_write_tokens": 136662,
+        "cache_read_tokens": 175258,
+        "output_tokens": 98756,
+        "cost_usd": 0.06823731
+      }
+    },
+    "agent_v2_haiku_pipeline/test": {
+      "claude-haiku-5-5": {
+        "calls": 121,
+        "input_tokens": 362,
+        "cache_write_tokens": 181060,
+        "cache_read_tokens": 267788,
+        "output_tokens": 133236,
+        "cost_usd": 0.09196449
       }
     },
     "agent_v2_sonnet/dev": {

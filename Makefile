@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test minimum-necessary hipaa-tests ui-setup ui-test ui-e2e demo up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -67,6 +67,10 @@ openapi: ## Export the API schema to docs/openapi.json
 
 load-test: ## 200 cases at once against the API with a SIMULATED model; writes results/load_test.json
 	$(UV) run python -m eval.load_test
+
+pipeline: ## Replay agent v2 through the API pipeline on every split (real-model cassettes) + results/pipeline_comparison.md
+	for s in dev test robust; do $(UV) run python -m eval.pipeline --split $$s || exit 1; done
+	$(UV) run python -m eval.pipeline_report
 
 hipaa-tests: ## Run exactly the tests named by the "covered" rows of docs/HIPAA_ALIGNMENT.md
 	$(UV) run pytest -q $$($(UV) run python -c "from tests.test_hipaa_alignment import covered_test_ids; print(' '.join(covered_test_ids()))")
