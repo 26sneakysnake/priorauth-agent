@@ -80,7 +80,9 @@ class UsageSummary(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid")
 
     llm_calls: int
-    input_tokens: int
+    input_tokens: int  # uncached prompt tokens
+    cache_write_tokens: int
+    cache_read_tokens: int
     output_tokens: int
     total_cost_usd: float
     cost_usd_per_case: Distribution
@@ -180,6 +182,8 @@ def compute(pairs: Sequence[tuple[Gold, CaseRun]]) -> Metrics:
         usage=UsageSummary(
             llm_calls=sum(r.usage.llm_calls for _, r in pairs),
             input_tokens=sum(r.usage.input_tokens for _, r in pairs),
+            cache_write_tokens=sum(r.usage.cache_write_tokens for _, r in pairs),
+            cache_read_tokens=sum(r.usage.cache_read_tokens for _, r in pairs),
             output_tokens=sum(r.usage.output_tokens for _, r in pairs),
             total_cost_usd=round(sum(r.usage.cost_usd for _, r in pairs), 6),
             cost_usd_per_case=distribution([r.usage.cost_usd for _, r in pairs]),
