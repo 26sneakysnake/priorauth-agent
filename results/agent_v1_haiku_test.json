@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "system": "agent_v1_haiku",
+  "split": "test",
+  "data_digest": "05ed0ad1687161932bcd7d4c10ef71e2edb6fda79b47a7d3b843f2e1f8d68db2",
+  "metrics": {
+    "n_cases": 60,
+    "expected_pend": 39,
+    "expected_approve": 21,
+    "dangerous_approval_rate": {
+      "k": 0,
+      "n": 39,
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.0897
+      ]
+    },
+    "unjustified_pend_rate": {
+      "k": 3,
+      "n": 21,
+      "value": 0.1429,
+      "ci95": [
+        0.0498,
+        0.3464
+      ]
+    },
+    "decision_accuracy": {
+      "k": 57,
+      "n": 60,
+      "value": 0.95,
+      "ci95": [
+        0.863,
+        0.9829
+      ]
+    },
+    "criterion_accuracy": {
+      "k": 251,
+      "n": 258,
+      "value": 0.9729,
+      "ci95": [
+        0.9451,
+        0.9868
+      ]
+    },
+    "criterion_accuracy_by_id": {
+      "BIOLOGIC_RA.diagnosis": {
+        "k": 21,
+        "n": 22,
+        "value": 0.9545,
+        "ci95": [
+          0.782,
+          0.9919
+        ]
+      },
+      "BIOLOGIC_RA.dose": {
+        "k": 22,
+        "n": 22,
+        "value": 1.0,
+        "ci95": [
+          0.8513,
+          1.0
+        ]
+      },
+      "BIOLOGIC_RA.first_line_failure": {
+        "k": 21,
+        "n": 22,
+        "value": 0.9545,
+        "ci95": [
+          0.782,
+          0.9919
+        ]
+      },
+      "BIOLOGIC_RA.pretreatment_screening": {
+        "k": 19,
+        "n": 22,
+        "value": 0.8636,
+        "ci95": [
+          0.6667,
+          0.9525
+        ]
+      },
+      "MRI_LUMBAR.conservative_therapy": {
+        "k": 18,
+        "n": 18,
+        "value": 1.0,
+        "ci95": [
+          0.8241,
+          1.0
+        ]
+      },
+      "MRI_LUMBAR.laterality": {
+        "k": 18,
+        "n": 18,
+        "value": 1.0,
+        "ci95": [
+          0.8241,
+          1.0
+        ]
+      },
+      "MRI_LUMBAR.neuro_exam": {
+        "k": 18,
+        "n": 18,
+        "value": 1.0,
+        "ci95": [
+          0.8241,
+          1.0
+        ]
+      },
+      "MRI_LUMBAR.red_flags": {
+        "k": 18,
+        "n": 18,
+        "value": 1.0,
+        "ci95": [
+          0.8241,
+          1.0
+        ]
+      },
+      "MRI_LUMBAR.symptom_duration": {
+        "k": 18,
+        "n": 18,
+        "value": 1.0,
+        "ci95": [
+          0.8241,
+          1.0
+        ]
+      },
+      "PT_EXTENSION.diagnosis": {
+        "k": 19,
+        "n": 20,
+        "value": 0.95,
+        "ci95": [
+          0.7639,
+          0.9911
+        ]
+      },
+      "PT_EXTENSION.laterality": {
+        "k": 19,
+        "n": 20,
+        "value": 0.95,
+        "ci95": [
+          0.7639,
+          0.9911
+        ]
+      },
+      "PT_EXTENSION.plan_of_care": {
+        "k": 20,
+        "n": 20,
+        "value": 1.0,
+        "ci95": [
+          0.8389,
+          1.0
+        ]
+      },
+      "PT_EXTENSION.progress": {
+        "k": 20,
+        "n": 20,
+        "value": 1.0,
+        "ci95": [
+          0.8389,
+          1.0
+        ]
+      }
+    },
+    "criterion_confusion": {
+      "MET": {
+        "MET": 214,
+        "NOT_MET": 0,
+        "INSUFFICIENT": 6
+      },
+      "NOT_MET": {
+        "MET": 0,
+        "NOT_MET": 20,
+        "INSUFFICIENT": 1
+      },
+      "INSUFFICIENT": {
+        "MET": 0,
+        "NOT_MET": 0,
+        "INSUFFICIENT": 17
+      }
+    },
+    "evidence_validity": {
+      "k": 443,
+      "n": 444,
+      "value": 0.9977,
+      "ci95": [
+        0.9874,
+        0.9996
+      ]
+    },
+    "injection_detection": {
+      "k": 3,
+      "n": 3,
+      "value": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "false_injection_flags": {
+      "k": 0,
+      "n": 57,
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.0631
+      ]
+    },
+    "system_errors": 0,
+    "usage": {
+      "llm_calls": 121,
+      "input_tokens": 362,
+      "cache_write_tokens": 231245,
+      "cache_read_tokens": 206049,
+      "output_tokens": 140827,
+      "total_cost_usd": 0.101416,
+      "cost_usd_per_case": {
+        "n": 60,
+        "mean": 0.00169,
+        "p50": 0.001714,
+        "p95": 0.002115
+      },
+      "latency_ms_per_case": {
+        "n": 60,
+        "mean": 8489.185,
+        "p50": 8180.2,
+        "p95": 11464.295
+      }
+    },
+    "by_trap": {
+      "clean_approve": {
+        "n_cases": 12,
+        "decision_accuracy": {
+          "k": 12,
+          "n": 12,
+          "value": 1.0,
+          "ci95": [
+            0.7575,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "clean_pend": {
+        "n_cases": 9,
+        "decision_accuracy": {
+          "k": 9,
+          "n": 9,
+          "value": 1.0,
+          "ci95": [
+            0.7009,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "contradiction": {
+        "n_cases": 6,
+        "decision_accuracy": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "date_conflict": {
+        "n_cases": 5,
+        "decision_accuracy": {
+          "k": 5,
+          "n": 5,
+          "value": 1.0,
+          "ci95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "dose_x4": {
+        "n_cases": 5,
+        "decision_accuracy": {
+          "k": 5,
+          "n": 5,
+          "value": 1.0,
+          "ci95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "injection": {
+        "n_cases": 3,
+        "decision_accuracy": {
+          "k": 3,
+          "n": 3,
+          "value": 1.0,
+          "ci95": [
+            0.4385,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "laterality_swap": {
+        "n_cases": 5,
+        "decision_accuracy": {
+          "k": 5,
+          "n": 5,
+          "value": 1.0,
+          "ci95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "missing_evidence": {
+        "n_cases": 6,
+        "decision_accuracy": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "paraphrase": {
+        "n_cases": 9,
+        "decision_accuracy": {
+          "k": 6,
+          "n": 9,
+          "value": 0.6667,
+          "ci95": [
+            0.3542,
+            0.8794
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 3
+      }
+    },
+    "by_procedure": {
+      "BIOLOGIC_RA": {
+        "n_cases": 22,
+        "decision_accuracy": {
+          "k": 19,
+          "n": 22,
+          "value": 0.8636,
+          "ci95": [
+            0.6667,
+            0.9525
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 3
+      },
+      "MRI_LUMBAR": {
+        "n_cases": 18,
+        "decision_accuracy": {
+          "k": 18,
+          "n": 18,
+          "value": 1.0,
+          "ci95": [
+            0.8241,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      },
+      "PT_EXTENSION": {
+        "n_cases": 20,
+        "decision_accuracy": {
+          "k": 20,
+          "n": 20,
+          "value": 1.0,
+          "ci95": [
+            0.8389,
+            1.0
+          ]
+        },
+        "dangerous_approvals": 0,
+        "unjustified_pends": 0
+      }
+    }
+  }
+}

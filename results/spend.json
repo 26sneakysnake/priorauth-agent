@@ -4,12 +4,12 @@
   "prices_source": "https://platform.claude.com/docs/en/about-claude/pricing (read 2026-10-19)",
   "cap_usd": 10.0,
   "total": {
-    "calls": 1071,
-    "input_tokens": 258500,
-    "cache_write_tokens": 1568512,
-    "cache_read_tokens": 2206396,
-    "output_tokens": 1139388,
-    "cost_usd": 0.81367243
+    "calls": 1572,
+    "input_tokens": 488565,
+    "cache_write_tokens": 2318248,
+    "cache_read_tokens": 3084294,
+    "output_tokens": 1774320,
+    "cost_usd": 1.25664093
   },
   "by_scope": {
     "_scratch/agent_degraded_haiku/dev": {
@@ -62,6 +62,26 @@
         "cost_usd": 0.15005395
       }
     },
+    "agent_v1_haiku/robust": {
+      "claude-haiku-5-5": {
+        "calls": 80,
+        "input_tokens": 240,
+        "cache_write_tokens": 137194,
+        "cache_read_tokens": 143710,
+        "output_tokens": 103928,
+        "cost_usd": 0.07057441
+      }
+    },
+    "agent_v1_haiku/test": {
+      "claude-haiku-5-5": {
+        "calls": 121,
+        "input_tokens": 362,
+        "cache_write_tokens": 231245,
+        "cache_read_tokens": 206049,
+        "output_tokens": 140827,
+        "cost_usd": 0.10141586
+      }
+    },
     "agent_v2_haiku/dev": {
       "claude-haiku-5-5": {
         "calls": 202,
@@ -72,6 +92,26 @@
         "cost_usd": 0.16515798
       }
     },
+    "agent_v2_haiku/robust": {
+      "claude-haiku-5-5": {
+        "calls": 80,
+        "input_tokens": 240,
+        "cache_write_tokens": 137941,
+        "cache_read_tokens": 174910,
+        "output_tokens": 100173,
+        "cost_usd": 0.06910216
+      }
+    },
+    "agent_v2_haiku/test": {
+      "claude-haiku-5-5": {
+        "calls": 120,
+        "input_tokens": 360,
+        "cache_write_tokens": 233985,
+        "cache_read_tokens": 245956,
+        "output_tokens": 135956,
+        "cost_usd": 0.09972165
+      }
+    },
     "llm_single_haiku/dev": {
       "claude-haiku-5-5": {
         "calls": 100,
@@ -80,6 +120,26 @@
         "cache_read_tokens": 107241,
         "output_tokens": 153708,
         "cost_usd": 0.10255036
+      }
+    },
+    "llm_single_haiku/robust": {
+      "claude-haiku-5-5": {
+        "calls": 40,
+        "input_tokens": 83477,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 46716,
+        "output_tokens": 64437,
+        "cost_usd": 0.04103336
+      }
+    },
+    "llm_single_haiku/test": {
+      "claude-haiku-5-5": {
+        "calls": 60,
+        "input_tokens": 145386,
+        "cache_write_tokens": 9371,
+        "cache_read_tokens": 60557,
+        "output_tokens": 89611,
+        "cost_usd": 0.06112106
       }
     }
   }

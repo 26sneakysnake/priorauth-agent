@@ -26,10 +26,10 @@ SYSTEMS: dict[str, Callable[[], System]] = {
 # Systems whose results can be regenerated with no network and no API key (checked in CI), with the splits whose
 # results are committed. LLM systems replay their recorded cassettes.
 OFFLINE: dict[str, tuple[str, ...]] = {
-    "rules_baseline": ("dev", "test"),
-    "llm_single_haiku": ("dev",),
-    "agent_v1_haiku": ("dev",),
-    "agent_v2_haiku": ("dev",),
+    "rules_baseline": ("dev", "test", "robust"),
+    "llm_single_haiku": ("dev", "test", "robust"),
+    "agent_v1_haiku": ("dev", "test", "robust"),
+    "agent_v2_haiku": ("dev", "test", "robust"),
     "agent_lenient_haiku": ("dev",),
     "agent_degraded_haiku": ("dev",),
 }
