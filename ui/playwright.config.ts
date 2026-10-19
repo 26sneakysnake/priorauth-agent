@@ -1,5 +1,6 @@
-// Two end-to-end journeys against the real API (eval/demo_api.py: real routes, auth, encryption and audit, with a
-// SIMULATED model, the scripted oracle) and the production build of the UI (npm run build first).
+// End-to-end journeys against the demo API (python -m priorauth.demo: real routes, auth, encryption and audit; the
+// model's responses are real ones recorded by eval/pipeline.py and replayed) and the production build of the UI
+// (npm run build first).
 import { randomBytes } from "node:crypto";
 
 import { defineConfig, devices } from "@playwright/test";
@@ -18,9 +19,9 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: [
     {
-      command: `cd .. && uv run python -m eval.demo_api --port ${API_PORT} --per-trap 2 --feedback ""`,
-      url: `http://127.0.0.1:${API_PORT}/health`,
-      env: { PRIORAUTH_DEMO_PASSWORD: process.env.E2E_DEMO_PASSWORD },
+      command: `cd .. && uv run python -m priorauth.demo --port ${API_PORT}`,
+      url: `http://127.0.0.1:${API_PORT}/healthz`,
+      env: { PRIORAUTH_DEMO_REVIEWER_PASSWORD: process.env.E2E_DEMO_PASSWORD },
       timeout: 120_000,
       reuseExistingServer: false,
     },

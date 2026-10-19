@@ -15,6 +15,9 @@ export type ReasonView = Schemas["ReasonView"];
 export type ReviewIn = Schemas["ReviewIn"];
 export type ReviewView = Schemas["ReviewView"];
 export type Status = Schemas["Status"];
+export type DemoInfo = Schemas["DemoInfo"];
+export type ExampleView = Schemas["ExampleView"];
+export type LiveResult = Schemas["LiveResult"];
 
 export const STATUSES: readonly Status[] = ["MET", "NOT_MET", "INSUFFICIENT"];
 

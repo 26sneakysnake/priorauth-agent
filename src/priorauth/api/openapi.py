@@ -15,7 +15,11 @@ OUTPUT = Path("docs/openapi.json")
 
 
 def render() -> str:
+    """The API's schema, plus the /demo routes (tag "demo"), which only the demo server (priorauth.demo) mounts."""
+    from priorauth.demo.routes import router as demo_router
+
     app = create_app(Settings(run_workers=False))
+    app.include_router(demo_router)
     return json.dumps(app.openapi(), indent=2, sort_keys=True) + "\n"
 
 

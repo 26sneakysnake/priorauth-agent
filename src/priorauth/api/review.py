@@ -153,6 +153,42 @@ def _evidence(case: Case, ev: Evidence, valid: bool) -> EvidenceView:
     return EvidenceView(page=ev.page, quote=ev.quote, valid=valid, start=start, end=end)
 
 
+def criterion_views(case: Case, decision: Decision, run: CaseRun | None) -> list[CriterionView]:
+    """Every criterion of the case's procedure: retained status, the agent's claim, evidence with offsets."""
+    procedure = PROCEDURES.get(case.procedure_code)
+    findings = {f.criterion_id: f for f in run.verified.findings} if run else {}
+    claimed = {f.criterion_id: f.status for f in run.raw.findings} if run else {}
+    invalid = {(i.criterion_id, i.evidence) for i in run.verification.invalid} if run else set()
+    views = []
+    for c in procedure.criteria if procedure else ():
+        f = findings.get(c.id)
+        views.append(
+            CriterionView(
+                criterion_id=c.id,
+                title=c.title,
+                requirement=c.requirement,
+                status=decision.criteria.get(c.id, Status.INSUFFICIENT),
+                claimed_status=claimed.get(c.id),
+                verified=bool(f and f.verified),
+                conflict=bool(f and f.conflict),
+                note=f.note if f else "",
+                evidence=[_evidence(case, ev, (c.id, ev) not in invalid) for ev in (f.evidence if f else ())],
+            )
+        )
+    return views
+
+
+def injection_views(case: Case, run: CaseRun | None) -> list[EvidenceView]:
+    if run is None:
+        return []
+    invalid = {(i.criterion_id, i.evidence) for i in run.verification.invalid}
+    return [_evidence(case, ev, (None, ev) not in invalid) for ev in run.verified.injection_evidence]
+
+
+def reason_views(decision: Decision) -> list[ReasonView]:
+    return _reasons(decision)
+
+
 class FeedbackSink:
     """Appends one JSON line per review; lines hold identifiers and labels, never free text."""
 
@@ -251,26 +287,7 @@ async def case_review(request: Request, case_id: str, principal: Annotated[Princ
     case = Case.model_validate_json(row.case_json)
     procedure = PROCEDURES.get(row.procedure_code)
     decision, run = _decision(job, row)
-    findings = {f.criterion_id: f for f in run.verified.findings} if run else {}
-    claimed = {f.criterion_id: f.status for f in run.raw.findings} if run else {}
-    invalid = {(i.criterion_id, i.evidence) for i in run.verification.invalid} if run else set()
-    criteria = []
-    for c in procedure.criteria if procedure else ():
-        f = findings.get(c.id)
-        criteria.append(
-            CriterionView(
-                criterion_id=c.id,
-                title=c.title,
-                requirement=c.requirement,
-                status=decision.criteria.get(c.id, Status.INSUFFICIENT),
-                claimed_status=claimed.get(c.id),
-                verified=bool(f and f.verified),
-                conflict=bool(f and f.conflict),
-                note=f.note if f else "",
-                evidence=[_evidence(case, ev, (c.id, ev) not in invalid) for ev in (f.evidence if f else ())],
-            )
-        )
-    injection = run.verified.injection_evidence if run else ()
+    criteria = criterion_views(case, decision, run)
     await audit.record(principal.user_id, principal.role, "review.read", case_id, status=200)
     return CaseReview(
         case_id=row.id,
@@ -287,7 +304,7 @@ async def case_review(request: Request, case_id: str, principal: Annotated[Princ
         criteria=criteria,
         reasons=_reasons(decision),
         injection_detected=bool(run and run.verified.injection_detected),
-        injection_evidence=[_evidence(case, ev, (None, ev) not in invalid) for ev in injection],
+        injection_evidence=injection_views(case, run),
         reviews=[
             ReviewView(
                 id=r.id,

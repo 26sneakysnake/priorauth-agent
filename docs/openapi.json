@@ -491,6 +491,49 @@
         "title": "DailyCost",
         "type": "object"
       },
+      "DemoInfo": {
+        "properties": {
+          "extracted_by": {
+            "title": "Extracted By",
+            "type": "string"
+          },
+          "live_enabled": {
+            "title": "Live Enabled",
+            "type": "boolean"
+          },
+          "live_max_chars": {
+            "title": "Live Max Chars",
+            "type": "integer"
+          },
+          "notice": {
+            "title": "Notice",
+            "type": "string"
+          },
+          "resets_on_restart": {
+            "default": true,
+            "title": "Resets On Restart",
+            "type": "boolean"
+          },
+          "reviewer_password": {
+            "title": "Reviewer Password",
+            "type": "string"
+          },
+          "reviewer_username": {
+            "title": "Reviewer Username",
+            "type": "string"
+          }
+        },
+        "required": [
+          "notice",
+          "reviewer_username",
+          "reviewer_password",
+          "extracted_by",
+          "live_enabled",
+          "live_max_chars"
+        ],
+        "title": "DemoInfo",
+        "type": "object"
+      },
       "EvidenceView": {
         "properties": {
           "end": {
@@ -536,6 +579,61 @@
           "end"
         ],
         "title": "EvidenceView",
+        "type": "object"
+      },
+      "ExampleView": {
+        "properties": {
+          "expected_decision": {
+            "title": "Expected Decision",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "look_for": {
+            "title": "Look For",
+            "type": "string"
+          },
+          "procedure_code": {
+            "title": "Procedure Code",
+            "type": "string"
+          },
+          "procedure_name": {
+            "title": "Procedure Name",
+            "type": "string"
+          },
+          "seeded_case_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seeded Case Id"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "label",
+          "look_for",
+          "procedure_code",
+          "procedure_name",
+          "expected_decision",
+          "seeded_case_id"
+        ],
+        "title": "ExampleView",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -609,6 +707,95 @@
           "error"
         ],
         "title": "JobView",
+        "type": "object"
+      },
+      "LiveIn": {
+        "properties": {
+          "procedure_code": {
+            "title": "Procedure Code",
+            "type": "string"
+          },
+          "record_text": {
+            "description": "Synthetic record text; pages separated by form feeds. Never real data.",
+            "title": "Record Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "procedure_code",
+          "record_text"
+        ],
+        "title": "LiveIn",
+        "type": "object"
+      },
+      "LiveResult": {
+        "properties": {
+          "cost_usd": {
+            "title": "Cost Usd",
+            "type": "number"
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/CriterionView"
+            },
+            "title": "Criteria",
+            "type": "array"
+          },
+          "injection_detected": {
+            "title": "Injection Detected",
+            "type": "boolean"
+          },
+          "injection_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceView"
+            },
+            "title": "Injection Evidence",
+            "type": "array"
+          },
+          "llm_calls": {
+            "title": "Llm Calls",
+            "type": "integer"
+          },
+          "notice": {
+            "default": "Not stored: this result exists only in this response.",
+            "title": "Notice",
+            "type": "string"
+          },
+          "outcome": {
+            "title": "Outcome",
+            "type": "string"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/PageView"
+            },
+            "title": "Pages",
+            "type": "array"
+          },
+          "procedure_code": {
+            "title": "Procedure Code",
+            "type": "string"
+          },
+          "reasons": {
+            "items": {
+              "$ref": "#/components/schemas/ReasonView"
+            },
+            "title": "Reasons",
+            "type": "array"
+          }
+        },
+        "required": [
+          "outcome",
+          "procedure_code",
+          "reasons",
+          "criteria",
+          "pages",
+          "injection_detected",
+          "injection_evidence",
+          "cost_usd",
+          "llm_calls"
+        ],
+        "title": "LiveResult",
         "type": "object"
       },
       "Me": {
@@ -913,6 +1100,24 @@
           "created_at"
         ],
         "title": "ReviewView",
+        "type": "object"
+      },
+      "RunAccepted": {
+        "properties": {
+          "case_id": {
+            "title": "Case Id",
+            "type": "string"
+          },
+          "example_id": {
+            "title": "Example Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "example_id",
+          "case_id"
+        ],
+        "title": "RunAccepted",
         "type": "object"
       },
       "Status": {
@@ -1525,6 +1730,166 @@
         "summary": "LLM cost of finished jobs per UTC day"
       }
     },
+    "/demo/examples": {
+      "get": {
+        "operationId": "examples_demo_examples_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ExampleView"
+                  },
+                  "title": "Response Examples Demo Examples Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Example cases (public)",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
+    "/demo/examples/{example_id}/run": {
+      "post": {
+        "operationId": "run_example_demo_examples__example_id__run_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "example_id",
+            "required": true,
+            "schema": {
+              "title": "Example Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunAccepted"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "description": "unknown example"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "description": "the demo database is full"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Run the agent on an example (a new submission, decided from recorded responses)",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
+    "/demo/info": {
+      "get": {
+        "operationId": "info_demo_info_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemoInfo"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Demo account and settings (public)",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
+    "/demo/live": {
+      "post": {
+        "operationId": "live_demo_live_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LiveIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "description": "live mode is disabled (the default)"
+          },
+          "413": {
+            "description": "text too long"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "429": {
+            "description": "rate limited"
+          },
+          "502": {
+            "description": "model run failed (no decision)"
+          },
+          "503": {
+            "description": "daily budget spent"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Run the real model on your own SYNTHETIC record (off unless DEMO_LIVE_ENABLED=true)",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
     "/health": {
       "get": {
         "operationId": "health_health_get",
@@ -1545,6 +1910,28 @@
           }
         },
         "summary": "Health"
+      }
+    },
+    "/healthz": {
+      "get": {
+        "operationId": "healthz_healthz_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "Response Healthz Healthz Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Liveness: the process serves requests (the demo opens its port once seeded)"
       }
     },
     "/review/queue": {

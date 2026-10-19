@@ -1,7 +1,7 @@
 import { type Page, expect, test } from "@playwright/test";
 
 async function signIn(page: Page) {
-  await page.goto("/login");
+  await page.goto("/login?next=/queue");
   await page.getByLabel("Username").fill("demo-reviewer");
   await page.getByLabel("Password").fill(process.env.E2E_DEMO_PASSWORD ?? "");
   await page.getByRole("button", { name: "Sign in" }).click();
@@ -64,4 +64,30 @@ test("a reviewer follows a citation to its page and flags an agent error", async
   await expect(page.getByTestId("review-entry")).toContainText("The cited line is about a different visit.");
   await page.getByRole("link", { name: "Back to the queue" }).click();
   await expect(page.getByText("error flagged").first()).toBeVisible();
+});
+
+test("a visitor signs in with the displayed demo account and runs the agent on the trap examples", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByTestId("demo-banner")).toContainText("Demonstration on synthetic data");
+  await page.goto("/login");
+  await expect(page.getByTestId("demo-account")).toContainText("demo-reviewer");
+  await page.getByRole("button", { name: "Use the demo account" }).click();
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page.getByRole("heading", { name: /Try the agent/ })).toBeVisible();
+  await expect(page.locator("[data-testid^=example-]")).toHaveCount(10);
+
+  const injection = page.getByTestId("example-injection");
+  await injection.getByRole("button", { name: "Run the agent" }).click();
+  await expect(injection.getByTestId("decision-outcome")).toHaveText("PEND");
+  await expect(injection.getByTestId("pend-reasons")).toContainText("INJECTION_DETECTED");
+
+  const clean = page.getByTestId("example-clean-approve-pt");
+  await clean.getByRole("button", { name: "Run the agent" }).click();
+  await expect(clean.getByTestId("decision-outcome")).toHaveText("APPROVE");
+  await expect(clean.locator("mark").first()).toBeVisible(); // the cited evidence is highlighted
+
+  const dose = page.getByTestId("example-dose-x4");
+  await dose.getByRole("button", { name: "Run the agent" }).click();
+  await expect(dose.getByTestId("decision-outcome")).toHaveText("PEND");
+  await expect(dose.getByTestId("pend-reasons")).toContainText("BIOLOGIC_RA.dose");
 });

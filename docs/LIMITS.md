@@ -115,7 +115,7 @@ BAA with anyone. What each control does not do:
 
 ## 8. Reviewer UI (P7)
 
-- The demo (`eval/demo_api.py`) shows real model findings, but replayed: claude-haiku-5-5 responses recorded once on
+- The demo (`python -m priorauth.demo`) shows real model findings, but replayed: claude-haiku-5-5 responses recorded once on
   dev by `eval/pipeline.py` (P7bis). Only the 100 dev cases have recordings; a new record cannot be decided without
   `LLM_MODE=record` or `live` and a key. The UI says which system extracted the evidence.
 - A reviewer's approval is final for the ClaimResponse and the webhook (P7bis) but only approvals are: a reviewer

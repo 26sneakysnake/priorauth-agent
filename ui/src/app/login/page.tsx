@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-import { api, errorText } from "@/lib/api";
+import { type DemoInfo, api, errorText } from "@/lib/api";
 import { setToken } from "@/lib/auth";
 
 function LoginForm() {
@@ -12,6 +12,11 @@ function LoginForm() {
   const [username, setUsername] = useState("demo-reviewer");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [demo, setDemo] = useState<DemoInfo | null>(null);
+
+  useEffect(() => {
+    void api.GET("/demo/info").then(({ data }) => setDemo(data ?? null));
+  }, []);
 
   async function submit(event: React.FormEvent) {
     event.preventDefault();
@@ -26,12 +31,32 @@ function LoginForm() {
       return;
     }
     setToken(data.access_token);
-    router.push(next && next.startsWith("/") && !next.startsWith("//") ? next : "/queue");
+    router.push(next && next.startsWith("/") && !next.startsWith("//") ? next : "/try");
   }
 
   return (
     <form onSubmit={submit} aria-label="Sign in" className="mx-auto mt-12 max-w-sm space-y-4 rounded border border-slate-200 bg-white p-6">
       <h1 className="text-lg font-semibold">Reviewer sign-in</h1>
+      {demo ? (
+        <div data-testid="demo-account" className="rounded bg-indigo-50 p-3 text-sm text-indigo-950">
+          <p className="font-semibold">Public demo account (reviewer role, synthetic data only)</p>
+          <p>
+            Username: <code>{demo.reviewer_username}</code>
+            <br />
+            Password: <code>{demo.reviewer_password}</code>
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              setUsername(demo.reviewer_username);
+              setPassword(demo.reviewer_password);
+            }}
+            className="mt-2 rounded bg-indigo-700 px-2 py-1 text-xs font-semibold text-white"
+          >
+            Use the demo account
+          </button>
+        </div>
+      ) : null}
       <label className="block text-sm">
         Username
         <input
@@ -59,7 +84,6 @@ function LoginForm() {
           {error}
         </p>
       ) : null}
-      <p className="text-xs text-slate-500">Demo account: demo-reviewer (password set when the demo API starts).</p>
     </form>
   );
 }

@@ -31,6 +31,7 @@ from typing import Annotated, Any
 
 import httpx
 from fastapi import Body, FastAPI, Header, HTTPException, Request, Response
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from sqlalchemy import select
@@ -68,6 +69,7 @@ class Settings:
     audit_key: str = ""  # empty: unkeyed audit hashes, reported as keyed: false
     demo_password: str | None = None  # set: seed demo-system, demo-reviewer and demo-admin with this password
     review_feedback_path: str | None = DEFAULT_FEEDBACK_PATH  # one JSON line per review; None: not written
+    cors_origins: tuple[str, ...] = ()  # browser origins allowed to call the API directly (the UI proxies instead)
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -86,6 +88,7 @@ class Settings:
             audit_key=env("PRIORAUTH_AUDIT_KEY", ""),
             demo_password=env("PRIORAUTH_DEMO_PASSWORD") or None,
             review_feedback_path=env("PRIORAUTH_REVIEW_FEEDBACK_PATH", DEFAULT_FEEDBACK_PATH) or None,
+            cors_origins=tuple(o.strip() for o in env("PRIORAUTH_CORS_ORIGINS", "").split(",") if o.strip()),
         )
 
 
@@ -241,8 +244,20 @@ def create_app(
         lifespan=lifespan,
     )
 
+    if settings.cors_origins:
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=list(settings.cors_origins),
+            allow_methods=["GET", "POST"],
+            allow_headers=["Authorization", "Content-Type", "Idempotency-Key"],
+        )
+
     @app.get("/health")
     async def health() -> dict[str, str]:
+        return {"status": "ok"}
+
+    @app.get("/healthz", summary="Liveness: the process serves requests (the demo opens its port once seeded)")
+    async def healthz() -> dict[str, str]:
         return {"status": "ok"}
 
     @app.post(

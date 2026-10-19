@@ -91,8 +91,8 @@ ui-test: ## UI: generated API types up to date, TypeScript strict, Vitest, produ
 ui-e2e: ## UI: two Playwright journeys against the demo API (SIMULATED model) and the build of ui-test
 	cd ui && npx playwright test
 
-demo: ## Demo API on :8000 (SIMULATED model, synthetic cases); then `cd ui && npm run dev`
-	$(UV) run python -m eval.demo_api --port 8000
+demo: ## Demo API on :8000 (examples decided by replayed real responses); then `cd ui && npm run dev`
+	$(UV) run python -m priorauth.demo --port 8000
 
 up: ## Postgres + Jaeger (docker compose); then e.g. OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 make run
 	docker compose up -d

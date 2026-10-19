@@ -1,8 +1,10 @@
 // Forwards /api/* to the FastAPI server (PRIORAUTH_API_URL, read at request time), so the browser talks to one
-// origin and the API needs no CORS. Only the headers the API uses are forwarded, in both directions.
+// origin and the API needs no CORS. Only the headers the API uses are forwarded, in both directions; x-forwarded-for
+// as set by the platform in front of this server (Vercel sets it to the client address) feeds the demo's per-IP
+// rate limit.
 export const dynamic = "force-dynamic";
 
-const REQUEST_HEADERS = ["authorization", "content-type", "accept", "idempotency-key"];
+const REQUEST_HEADERS = ["authorization", "content-type", "accept", "idempotency-key", "x-forwarded-for"];
 const RESPONSE_HEADERS = ["content-type", "www-authenticate", "location"];
 
 async function forward(request: Request, context: { params: Promise<{ path: string[] }> }): Promise<Response> {

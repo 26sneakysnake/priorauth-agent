@@ -174,6 +174,74 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/demo/examples": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Example cases (public) */
+        get: operations["examples_demo_examples_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/demo/examples/{example_id}/run": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Run the agent on an example (a new submission, decided from recorded responses) */
+        post: operations["run_example_demo_examples__example_id__run_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/demo/info": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Demo account and settings (public) */
+        get: operations["info_demo_info_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/demo/live": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Run the real model on your own SYNTHETIC record (off unless DEMO_LIVE_ENABLED=true) */
+        post: operations["live_demo_live_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health": {
         parameters: {
             query?: never;
@@ -183,6 +251,23 @@ export interface paths {
         };
         /** Health */
         get: operations["health_health_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/healthz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Liveness: the process serves requests (the demo opens its port once seeded) */
+        get: operations["healthz_healthz_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -367,6 +452,26 @@ export interface components {
             /** Llm Calls */
             llm_calls: number;
         };
+        /** DemoInfo */
+        DemoInfo: {
+            /** Extracted By */
+            extracted_by: string;
+            /** Live Enabled */
+            live_enabled: boolean;
+            /** Live Max Chars */
+            live_max_chars: number;
+            /** Notice */
+            notice: string;
+            /**
+             * Resets On Restart
+             * @default true
+             */
+            resets_on_restart: boolean;
+            /** Reviewer Password */
+            reviewer_password: string;
+            /** Reviewer Username */
+            reviewer_username: string;
+        };
         /** EvidenceView */
         EvidenceView: {
             /** End */
@@ -379,6 +484,25 @@ export interface components {
             start: number | null;
             /** Valid */
             valid: boolean;
+        };
+        /** ExampleView */
+        ExampleView: {
+            /** Expected Decision */
+            expected_decision: string;
+            /** Id */
+            id: string;
+            /** Label */
+            label: string;
+            /** Look For */
+            look_for: string;
+            /** Procedure Code */
+            procedure_code: string;
+            /** Procedure Name */
+            procedure_name: string;
+            /** Seeded Case Id */
+            seeded_case_id: string | null;
+            /** Title */
+            title: string;
         };
         /** HTTPValidationError */
         HTTPValidationError: {
@@ -407,6 +531,42 @@ export interface components {
              * Format: date-time
              */
             updated_at: string;
+        };
+        /** LiveIn */
+        LiveIn: {
+            /** Procedure Code */
+            procedure_code: string;
+            /**
+             * Record Text
+             * @description Synthetic record text; pages separated by form feeds. Never real data.
+             */
+            record_text: string;
+        };
+        /** LiveResult */
+        LiveResult: {
+            /** Cost Usd */
+            cost_usd: number;
+            /** Criteria */
+            criteria: components["schemas"]["CriterionView"][];
+            /** Injection Detected */
+            injection_detected: boolean;
+            /** Injection Evidence */
+            injection_evidence: components["schemas"]["EvidenceView"][];
+            /** Llm Calls */
+            llm_calls: number;
+            /**
+             * Notice
+             * @default Not stored: this result exists only in this response.
+             */
+            notice: string;
+            /** Outcome */
+            outcome: string;
+            /** Pages */
+            pages: components["schemas"]["PageView"][];
+            /** Procedure Code */
+            procedure_code: string;
+            /** Reasons */
+            reasons: components["schemas"]["ReasonView"][];
         };
         /** Me */
         Me: {
@@ -509,6 +669,13 @@ export interface components {
             id: string;
             /** Reviewer Id */
             reviewer_id: string;
+        };
+        /** RunAccepted */
+        RunAccepted: {
+            /** Case Id */
+            case_id: string;
+            /** Example Id */
+            example_id: string;
         };
         /**
          * Status
@@ -935,7 +1102,182 @@ export interface operations {
             };
         };
     };
+    examples_demo_examples_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExampleView"][];
+                };
+            };
+        };
+    };
+    run_example_demo_examples__example_id__run_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                example_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RunAccepted"];
+                };
+            };
+            /** @description unknown example */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+            /** @description the demo database is full */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    info_demo_info_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DemoInfo"];
+                };
+            };
+        };
+    };
+    live_demo_live_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["LiveIn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LiveResult"];
+                };
+            };
+            /** @description live mode is disabled (the default) */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description text too long */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+            /** @description rate limited */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description model run failed (no decision) */
+            502: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description daily budget spent */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
     health_health_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: string;
+                    };
+                };
+            };
+        };
+    };
+    healthz_healthz_get: {
         parameters: {
             query?: never;
             header?: never;
