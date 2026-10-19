@@ -129,8 +129,8 @@ class LedgerFile(BaseModel):
 
     schema_version: int = 1
     description: str = (
-        "Every real API call of phase P3, priced from the usage returned by the API. Written by "
-        "priorauth.llm.client after each call; never edited by hand."
+        "Every real API call of the project (P3 evaluation runs, P7bis pipeline runs, by scope), priced from the "
+        "usage returned by the API. Written by priorauth.llm.client after each call; never edited by hand."
     )
     prices_source: str = PRICES_SOURCE
     cap_usd: float = PHASE_CAP_USD
@@ -145,6 +145,7 @@ class SpendLedger:
         self.path = path
         self.data = LedgerFile.model_validate_json(path.read_bytes()) if path and path.exists() else LedgerFile()
         self.data.cap_usd = cap_usd
+        self.data.description = LedgerFile().description
 
     @property
     def total_usd(self) -> float:

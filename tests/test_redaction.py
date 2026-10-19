@@ -161,3 +161,13 @@ def test_the_unprotected_oracle_would_have_leaked() -> None:
 
 def test_the_production_system_is_protected() -> None:
     assert isinstance(default_system(), ProtectedSystem)
+
+
+def test_the_model_sees_an_opaque_case_id_that_is_stable_across_submissions() -> None:
+    case, _ = SPLITS["dev"][0]
+    view = model_view(case).case
+    resubmitted = model_view(case.model_copy(update={"case_id": "3f1c0d5e-0000-4000-8000-000000000000"})).case
+    assert view.case_id == resubmitted.case_id and view.case_id.startswith("case-")
+    assert case.case_id not in view.model_dump_json()
+    other, _ = SPLITS["dev"][1]
+    assert model_view(other).case.case_id != view.case_id

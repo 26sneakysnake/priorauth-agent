@@ -2,7 +2,9 @@
 
 `model_view(case)` keeps only the pages that minimum necessary selects, renumbers them 1..k (the agent's tools
 expect contiguous pages) and redacts every page. The structured patient header is replaced by placeholders too; the
-prompts never send it, but a system that did would get nothing identifying from it.
+prompts never send it, but a system that did would get nothing identifying from it. The case id the model sees is
+derived from the view's own content: it carries neither the submitter's id nor the API's, and the same record always
+gets the same id, so recorded model responses replay whatever id the API assigned to a submission.
 
 `ModelView.restore(findings)` maps the model's citations back to the original record: page numbers to the original
 pages, placeholders in quotes and notes to the original spellings. The deterministic verifier then checks every quote
@@ -12,6 +14,8 @@ against the ORIGINAL page, so redaction cannot make an unverifiable quote pass.
 evaluation systems of P3 are not (their recorded cassettes hold the unredacted prompts they were measured with).
 """
 
+import hashlib
+import json
 from dataclasses import dataclass, field
 from datetime import date
 
@@ -53,6 +57,11 @@ class ModelView:
         )
 
 
+def view_case_id(procedure_code: str, submitted_on: date, pages: tuple[Page, ...]) -> str:
+    content = json.dumps([procedure_code, submitted_on.isoformat(), [p.text for p in pages]], ensure_ascii=False)
+    return "case-" + hashlib.sha256(content.encode()).hexdigest()[:16]
+
+
 def model_view(case: Case) -> ModelView:
     redactor = Redactor(case.patient)
     selected = select_pages(case)
@@ -65,7 +74,7 @@ def model_view(case: Case) -> ModelView:
         member_id="[MEMBER_ID]",
     )
     view = Case(
-        case_id=case.case_id,
+        case_id=view_case_id(case.procedure_code, case.submitted_on, pages),
         procedure_code=case.procedure_code,
         submitted_on=case.submitted_on,
         patient=patient,
