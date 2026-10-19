@@ -114,8 +114,11 @@ command or file that proves it) and what is left. Nothing here is a claim withou
 - `eval/`: `run.py` (robust split, cost estimate before a paid run via `budget.py`, nothing written when a cap
   stops a run), `gate.py` + `results/baseline_gate.json` + `make gate`, `report.py` → `results/comparison.md`.
 - CI (`.github/workflows/ci.yml`): replay with `LLM_MODE=replay` and no key, `make gate`, gitleaks 8.28.0 over every
-  commit. `.github/workflows/eval-live.yml`: manual, refuses to start without the `ANTHROPIC_API_KEY` secret,
-  run cap of at most 2 USD on top of the phase cap.
+  commit.
+- `.github/workflows/eval-live.yml` is **written but has never run** (not on GitHub, not locally): it is unvalidated.
+  As written, it is manual only, should refuse to start without the `ANTHROPIC_API_KEY` secret and caps a run at
+  2 USD on top of the phase cap; none of this has been observed working. Every number above comes from local
+  record runs, then replay.
 - `docs/LIMITS.md`.
 
 **Measured** (full table with Wilson intervals, cost and latency: [`results/comparison.md`](../results/comparison.md),
@@ -139,7 +142,7 @@ generated from `results/*.json` and checked by `tests/test_eval_run.py`)
   (`results/spend.json`, `docs/LIMITS.md` §5).
 
 **Left**
-- `eval-live.yml` not yet run on GitHub (needs the repository secret `ANTHROPIC_API_KEY`).
+- `eval-live.yml` has never run, so it is not validated (it needs the repository secret `ANTHROPIC_API_KEY`).
 - Side mismatches recorded as NOT_MET plus conflict (criterion status INSUFFICIENT, decision still PEND): seen on
   dev only after test and robust were run, so no v3 prompt was written (`docs/LIMITS.md` §3).
 - Citation checks prove a quote exists, not that it supports the status (`docs/LIMITS.md` §4).

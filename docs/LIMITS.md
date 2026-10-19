@@ -82,6 +82,8 @@ From the `*_errors.jsonl` files of the systems on test and robust (never used to
 - No page selection or de-identification before the model call (planned for P4 and P6): the agent reads whole
   synthetic records, names included.
 - No OpenTelemetry traces, audit log, API or job queue (P4, P5).
-- `eval-live.yml` has not been run on GitHub yet: it needs the repository secret `ANTHROPIC_API_KEY`.
+- `eval-live.yml` has **never run**, on GitHub or anywhere else: its secret check, cost-cap check and artifact
+  upload are untested and must not be read as validated. It needs the repository secret `ANTHROPIC_API_KEY`. All
+  recorded results came from local `LLM_MODE=record` runs.
 - The gate runs on dev only; test and robust are reported, never gated.
 - No agreement study between the gold labels and a clinician; no shoulder cases in the robust PT templates.

@@ -3,6 +3,7 @@ name: Live evaluation (manual, paid)
 # Calls the real Anthropic API. Never runs on push: only by hand, with a hard cost cap per run on top of the
 # phase cap enforced by the code from the committed ledger (results/spend.json). Results and the updated ledger are
 # uploaded as artifacts; nothing is committed back.
+# Status: written in P3 but NEVER RUN (no repository secret yet), so unvalidated; see docs/LIMITS.md.
 
 on:
   workflow_dispatch:
