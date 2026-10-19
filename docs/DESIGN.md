@@ -79,8 +79,8 @@ checks and the hash-chained audit log are ordinary application code with tests
   reviewer; citations then carry coordinates, not only text offsets. Page selection becomes a classifier
   evaluated on real records, not a keyword list.
 - **Policies.** The criteria are already data: a YAML file validated when it is loaded
-  (`src/priorauth/policy/policies.yaml`). At scale they become versioned policy documents with an editor and tests
-  per policy, and decisions record the policy version.
+  (`src/priorauth/policy/policies.yaml`, `priorauth policies check`). At scale they become versioned policy
+  documents with an editor and tests per policy, and decisions record the policy version.
 - **Evaluation.** De-identified real records labelled by clinicians, with inter-rater agreement, a frozen test set
   per policy version, repeated runs to separate model variance from real differences, and drift monitoring on
   production traffic (agreement with reviewers, PEND rate, citation failures).

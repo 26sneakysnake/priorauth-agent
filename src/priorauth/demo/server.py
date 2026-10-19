@@ -81,16 +81,22 @@ async def _wait_decided(app: FastAPI, job_ids: list[str]) -> list[JobRow]:
         await asyncio.sleep(0.05)
 
 
+def replay_system(cassettes_dir: Path) -> Callable[[], System]:
+    """The production system (agent v2 Haiku behind the model view), answering only from recorded responses."""
+    replay = LLMClient(LLMMode.REPLAY, CassetteStore(cassettes_dir))  # never the network
+
+    def system() -> System:
+        return ProtectedSystem(AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", 0.10, llm=replay), name=SYSTEM_NAME)
+
+    return system
+
+
 @asynccontextmanager
 async def demo_app(config: DemoConfig) -> AsyncIterator[FastAPI]:
     """The demo app with its lifespan entered, users created and examples decided."""
     os.environ.setdefault(FIELD_KEY_ENV, new_key())
     examples = load_examples(config.data_dir)
-    replay = LLMClient(LLMMode.REPLAY, CassetteStore(config.cassettes_dir))  # never the network
-
-    def system() -> System:
-        return ProtectedSystem(AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", 0.10, llm=replay), name=SYSTEM_NAME)
-
+    system = replay_system(config.cassettes_dir)
     with tempfile.TemporaryDirectory() as tmp:
         settings = Settings(
             database_url=config.database_url or f"sqlite+aiosqlite:///{Path(tmp) / 'demo.db'}",

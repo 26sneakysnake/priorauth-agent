@@ -25,6 +25,9 @@ dependencies = [
     "uvicorn>=0.54.0",
 ]
 
+[project.scripts]
+priorauth = "priorauth.cli:main"
+
 [dependency-groups]
 dev = [
     "fpdf2>=2.8.9",

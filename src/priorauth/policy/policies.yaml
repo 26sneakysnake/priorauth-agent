@@ -7,7 +7,7 @@
 # Every number is a parameter: the policy text refers to it as {NAME}, and the data generator and the baselines read
 # the same value, so they can never disagree about a number. {NAME} may also name a fragment, a sentence shared by
 # several criteria. Loading fails on an unknown placeholder, an unused parameter or fragment, a duplicate code or id,
-# or an unknown field.
+# or an unknown field. Check a file with: priorauth policies check FILE
 payer: Example Health Plan (fictional)
 
 parameters:
