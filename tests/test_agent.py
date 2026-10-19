@@ -187,7 +187,8 @@ def test_case_budget_pends_before_the_call(tmp_path: Path) -> None:
 def test_finish_with_missing_findings_is_refused_once(tmp_path: Path) -> None:
     case, gold = first_case(Trap.CLEAN_APPROVE)
     partial = gold_findings(gold)[:2]
-    script = Script([[*partial, ("finish", {"injection_detected": False})], [("finish", {"injection_detected": False})]])
+    finish = ("finish", {"injection_detected": False})
+    script = Script([[*partial, finish], [finish]])
     result = run(tmp_path, case, script)
     first_results = script.requests[1]["messages"][2]["content"]
     assert first_results[-1]["is_error"] and "no finding recorded yet" in first_results[-1]["content"]
