@@ -112,3 +112,18 @@ BAA with anyone. What each control does not do:
   WORM storage, no external anchor); anyone holding both the HMAC key and write access to the database can rewrite
   it; without `PRIORAUTH_AUDIT_KEY` it is unkeyed (reported as `keyed: false`). `verify` reads the whole chain.
 - **Transmission**: no TLS in the application; webhook URLs are not forced to HTTPS.
+
+## 8. Reviewer UI (P7)
+
+- Demonstrated only with the scripted oracle (`eval/demo_api.py`): the review pages have never shown a real model's
+  findings. The UI says which system extracted the evidence.
+- A human approval does not propagate: the ClaimResponse and the webhook still carry the engine's PEND.
+- Reviewers see whole records with identifiers (no field masking for people); the review comment is free text,
+  encrypted at rest but shown to every reviewer and admin.
+- The queue is computed in memory from every pended job (no pagination in the database).
+- A highlight marks the first place where the quote occurs on its page; a quote repeated on the same page is marked
+  once. A quote that the verifier accepted but whose normalization differs character by character (combining
+  accents) is shown as "not located" rather than highlighted wrongly.
+- Feedback cases from reviews keep the agent's evidence only where the reviewer did not change the status; a
+  corrected criterion has no evidence in its gold label.
+- No accessibility audit, no internationalisation, desktop layout first.

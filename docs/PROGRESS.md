@@ -283,3 +283,48 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
   and the P3 results (`results/comparison.md`) were recorded on whole, unredacted records.
 - TLS, MFA, login lockout, token revocation, key management (KMS), audit export and retention: not covered (see the
   matrix and `docs/LIMITS.md` §7).
+
+## P7 — Reviewer UI
+
+**Done**
+- Review API (`src/priorauth/api/review.py`, roles reviewer and admin): `GET /review/queue` (pended cases not yet
+  approved by a reviewer: reasons, age, procedure filter), `GET /cases/{id}/review` (original pages, every criterion
+  with its status, the agent's claim, verification and evidence with `[start, end)` offsets), `POST
+  /cases/{id}/reviews` (approve; request_info with a reason; flag_error with criterion, corrected status and comment).
+  Comments are encrypted; every action is audited. Offsets come from `agent/verifier.locate()`, i.e. the verifier's
+  own normalization mapped back to the original characters.
+- Feedback loop: each review appends one line (case, action, criterion, corrected status; ids and labels only, never
+  the comment) to `eval/cases_from_review.jsonl`; `eval/review_to_cases.py` turns the reviewed cases into dev
+  evaluation cases under `data/dev_review/` (trap `from_review`; data/dev, test and robust untouched).
+- `ui/`: Next.js 16 (App Router), TypeScript strict, Tailwind 4; types generated from `docs/openapi.json` by
+  openapi-typescript, client openapi-fetch, `/api/*` forwarded to FastAPI by a route handler. Pages `/login`
+  (demo reviewer account), `/queue`, `/cases/[id]` (pages with highlights on the left, criteria and actions on the
+  right).
+- `eval/demo_api.py` (`make demo`): the real API with a **simulated model** (the scripted oracle), seeded with
+  synthetic dev cases; the UI shows `scripted-oracle-not-a-model+protected` as the extractor.
+- `make ui-setup`, `make ui-test` (API types up to date, `tsc --noEmit`, Vitest, `next build`), `make ui-e2e`
+  (Playwright); a `ui` job in CI runs all of them.
+
+**Measured** (no API call in P7; `results/spend.json` unchanged)
+- Highlighting: every verified gold quote of the three splits is located and its span normalizes to the quote
+  (`tests/test_review.py::test_every_verified_gold_quote_is_located_exactly`); on a real API response
+  (`ui/tests/fixtures/case_review.json`, whose offsets a pytest checks against `locate()`), each highlight is exactly
+  `page[start:end]` and every page renders its text character for character (`ui/tests/unit/HighlightedPage.test.tsx`);
+  segmentation gives back the text for 500 random span sets, overlaps and astral characters included
+  (`ui/tests/unit/highlight.test.ts`).
+- Review rules, queue updates, encrypted comments, feedback lines and their conversion to dev cases:
+  `tests/test_review.py`; review routes in the role matrix (`tests/test_auth.py`).
+- Two Playwright journeys pass locally on Chromium 1194 (`@playwright/test` 1.56.1): approve a pended case, which
+  leaves the queue; follow a citation to its highlight, flag an agent error, reload, see it stored
+  (`ui/tests/e2e/review.spec.ts`).
+- Production build without type errors (`next build` runs the TypeScript check).
+- CI run #17 (`f0be52c`) green: the `ui` job ran `make ui-test` (API types up to date, `tsc`, 20 Vitest tests,
+  `next build`) and `make ui-e2e` (2 Playwright journeys passed on the runner's Chromium), next to the Python job and
+  the secret scan.
+
+**Left**
+- A reviewer's approval is recorded beside the engine's decision; it does not change the ClaimResponse or send a
+  webhook. No assignment of cases to reviewers, no second-reviewer rule.
+- The fixture and the E2E journeys use cases decided by the scripted oracle, not by a model.
+- The UI lockfile was generated with npm 11: npm 10.9 crashes while resolving the peer dependencies
+  (`Cannot read properties of null (reading 'edgesOut')`); `npm ci` from the lockfile works with npm 10.
