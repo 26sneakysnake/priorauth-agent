@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "description": "Load test of the API, queue and workers with a SIMULATED model (eval/load_test.py). No model was called: latency and answers come from a scripted oracle. Generated, never edited by hand.",
+  "llm": {
+    "simulated": true,
+    "transport": "priorauth.llm.fake.OracleTransport (replays gold labels; not a model)",
+    "latency_s_per_call": 0.25,
+    "jitter_s_per_call": 0.25,
+    "seed": 0
+  },
+  "machine": {
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 4,
+    "memory_gb": 15.7,
+    "python": "3.12.3"
+  },
+  "settings": {
+    "cases": 200,
+    "workers": 32,
+    "database": "SQLite file (aiosqlite)",
+    "api": "in-process ASGI (httpx.ASGITransport), no network"
+  },
+  "deterministic": {
+    "cases": 200,
+    "statuses": {
+      "done": 200
+    },
+    "outcomes": {
+      "APPROVE": 68,
+      "PEND": 132
+    },
+    "matches_expected_decision": 200,
+    "llm_calls": 400
+  },
+  "timing": {
+    "wall_s": 7.357,
+    "throughput_cases_per_s": 27.19,
+    "submit_ms": {
+      "n": 200,
+      "mean": 989.188801,
+      "p50": 957.136118,
+      "p95": 1576.305784
+    },
+    "end_to_end_s": {
+      "n": 200,
+      "mean": 3.969248,
+      "p50": 4.014072,
+      "p95": 5.834253
+    },
+    "peak_concurrent_llm_calls": 32
+  }
+}
