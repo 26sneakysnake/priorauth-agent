@@ -406,6 +406,11 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
 - Live mode run once with the real model on a short synthetic MRI record: 2 calls, 0.00168177 USD (printed by the
   run; the live mode's ledger is in memory and not part of `results/spend.json`).
 
+- CI run #22 (`b6ad685`) green on its four jobs; the `demo-images` job built both images on the runner (Docker Hub
+  base images, pinned digests), started them and passed the smoke test, directly and through the UI proxy. The first
+  try (run #21) failed: the public ECR mirror rate-limited the runner (429), hence `BASE_REGISTRY`. `Deploy demo` run
+  #1 ran its configuration check and skipped every deploy and smoke job, as expected while nothing is configured.
+
 **Left**
 - Not deployed: no access to Azure or Vercel from here. `deploy.yml` has never run; the commands of `docs/DEPLOY.md`
   have not been executed.
