@@ -2,6 +2,7 @@
 
 import asyncio
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -119,7 +120,7 @@ def test_cassette_holds_no_credentials(tmp_path: Path, monkeypatch: pytest.Monke
     assert secret not in text
     assert "x-api-key" not in text.lower() and "authorization" not in text.lower()
     assert set(json.loads(text.splitlines()[0])) == {
-        "key",
+        "request_sha256",
         "label",
         "step",
         "model",
@@ -204,3 +205,15 @@ def test_mode_comes_from_the_environment(monkeypatch: pytest.MonkeyPatch) -> Non
         llm.LLMClient.from_env()
     monkeypatch.delenv("LLM_MODE")
     assert llm.LLMClient.from_env().mode is llm.LLMMode.REPLAY
+
+
+def test_committed_cassettes_and_results_hold_no_credentials() -> None:
+    root = Path(__file__).resolve().parents[1]
+    files = [*root.glob("eval/cassettes/**/*.jsonl"), *root.glob("results/*")]
+    assert files
+    # Key material and HTTP auth headers, not the word "authorization" (prior authorization is the domain).
+    pattern = re.compile(
+        r'sk-ant-[A-Za-z0-9_-]{10,}|"x-api-key"|"authorization"\s*:|bearer\s+[A-Za-z0-9._-]{10,}', re.IGNORECASE
+    )
+    hits = [p.relative_to(root).as_posix() for p in files if pattern.search(p.read_text(encoding="utf-8"))]
+    assert hits == []  # file names only: a failure must not print what matched

@@ -295,7 +295,7 @@ class LLMClient:
             self.cassettes.put(
                 self.scope,
                 Interaction(
-                    key=key,
+                    request_sha256=key,
                     label=label,
                     step=step,
                     model=model,

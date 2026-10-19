@@ -32,3 +32,25 @@ jobs:
         run: make test
       - name: Regression gate (replayed cassettes)
         run: make gate
+
+  secrets:
+    name: secret scan (gitleaks, full history)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install gitleaks 8.28.0 (checksum verified)
+        working-directory: ${{ runner.temp }}
+        run: |
+          v=8.28.0
+          base=https://github.com/gitleaks/gitleaks/releases/download/v$v
+          curl -sSfLO "$base/gitleaks_${v}_linux_x64.tar.gz"
+          curl -sSfLO "$base/gitleaks_${v}_checksums.txt"
+          sha256sum --check --ignore-missing "gitleaks_${v}_checksums.txt"
+          tar -xzf "gitleaks_${v}_linux_x64.tar.gz" gitleaks
+      - name: Scan every commit and the working tree
+        run: |
+          "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 .
+          "$RUNNER_TEMP/gitleaks" dir --redact --no-banner --exit-code 1 .

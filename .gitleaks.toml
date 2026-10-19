@@ -1,0 +1,13 @@
+# Secret scanning with gitleaks (>= 8.28, which has an anthropic-api-key rule), locally (make secrets) and in CI.
+# gitleaks loads this file automatically from the repository root. Default rules, plus one narrow exception.
+title = "priorauth-agent"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = """Cassette lookup keys in commits made before the field was renamed request_sha256: the sha256 of the
+request (64 hex digits) stored under "key". Only that exact match is ignored; any other finding on the same line,
+such as an Anthropic key, is still reported (checked with planted fake keys)."""
+regexTarget = "match"
+regexes = ['''^key":"[0-9a-f]{64}"?$''']

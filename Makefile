@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -50,3 +50,7 @@ eval-live: ## Paid live run (needs PRIORAUTH_ANTHROPIC_API_KEY): make eval-live 
 
 gate: ## Regression gate: replay the production agent on dev, compare with results/baseline_gate.json
 	$(UV) run python -m eval.gate
+
+secrets: ## Secret scan of every commit and of the working tree (needs gitleaks >= 8.28 on PATH, as in CI)
+	gitleaks git --redact --no-banner --exit-code 1 .
+	gitleaks dir --redact --no-banner --exit-code 1 .

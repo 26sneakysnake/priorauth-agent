@@ -33,7 +33,7 @@ class Interaction(BaseModel):
 
     model_config = ConfigDict(frozen=True, extra="forbid")
 
-    key: str
+    request_sha256: str  # the lookup key: sha256 of the canonical request
     label: str
     step: int
     model: str
@@ -56,8 +56,8 @@ class CassetteStore:
         for path in sorted(root.rglob("*.jsonl")) if root.exists() else []:
             scope = path.relative_to(root).with_suffix("").as_posix()
             for interaction in read_file(path):
-                self._by_key.setdefault(interaction.key, interaction)
-                self._scopes.setdefault(interaction.key, set()).add(scope)
+                self._by_key.setdefault(interaction.request_sha256, interaction)
+                self._scopes.setdefault(interaction.request_sha256, set()).add(scope)
 
     def __len__(self) -> int:
         return len(self._by_key)
@@ -73,14 +73,14 @@ class CassetteStore:
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("a", encoding="utf-8") as f:
             f.write(canonical_json(interaction.model_dump(mode="json")) + "\n")
-        self._by_key.setdefault(interaction.key, interaction)
-        self._scopes.setdefault(interaction.key, set()).add(scope)
-        self.used.add(interaction.key)
+        self._by_key.setdefault(interaction.request_sha256, interaction)
+        self._scopes.setdefault(interaction.request_sha256, set()).add(scope)
+        self.used.add(interaction.request_sha256)
         self._touched.add(scope)
 
     def ensure_in(self, scope: str, interaction: Interaction) -> None:
         """Copy an interaction recorded under another scope into `scope`, so each committed scope replays alone."""
-        if scope not in self._scopes.get(interaction.key, set()):
+        if scope not in self._scopes.get(interaction.request_sha256, set()):
             self.put(scope, interaction)
 
     def path(self, scope: str) -> Path:
@@ -98,8 +98,8 @@ class CassetteStore:
         """Rewrite every file written during this session: one line per key, sorted by (label, step, key)."""
         for scope in sorted(self._touched):
             path = self.path(scope)
-            unique = {i.key: i for i in read_file(path)}
-            ordered = sorted(unique.values(), key=lambda i: (i.label, i.step, i.key))
+            unique = {i.request_sha256: i for i in read_file(path)}
+            ordered = sorted(unique.values(), key=lambda i: (i.label, i.step, i.request_sha256))
             path.write_text("".join(canonical_json(i.model_dump(mode="json")) + "\n" for i in ordered), "utf-8")
         self._touched.clear()
 
