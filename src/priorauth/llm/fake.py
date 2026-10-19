@@ -2,8 +2,9 @@
 
 `OracleTransport` plays the agent's tool protocol: step 0 lists and reads every page and fetches the policy, step 1
 records the gold findings of the case (looked up by the text of its pages) and finishes. Usage numbers are fixed and
-latency can be simulated. `fake_client` wraps it in an LLMClient whose ledger is in memory, so fake calls can never
-reach results/spend.json.
+latency can be simulated. `protected_oracle` builds it for a ProtectedSystem: the gold labels are translated into the
+model view (selected pages renumbered, quotes redacted). `fake_client` wraps it in an LLMClient whose ledger is in
+memory, so fake calls can never reach results/spend.json.
 """
 
 import asyncio
@@ -16,6 +17,7 @@ from typing import Any
 from priorauth.data.schema import Case, Gold
 from priorauth.llm.cassette import CassetteStore
 from priorauth.llm.client import LLMClient, LLMMode, SpendLedger
+from priorauth.policy.models import Evidence
 
 NO_CASSETTES = Path("/nonexistent/priorauth-fake-cassettes")
 FAKE_USAGE = {"input_tokens": 400, "cache_read_input_tokens": 2000, "cache_creation_input_tokens": 800}
@@ -91,6 +93,28 @@ class OracleTransport:
             "injection_evidence": [{"page": e.page, "quote": e.quote} for e in gold.injection_evidence],
         }
         return [*calls, ("finish", finish)]
+
+
+def protected_oracle(cases: Iterable[tuple[Case, Gold]], **kwargs: Any) -> OracleTransport:
+    """The oracle as seen through priorauth.security.model_view: it can only cite pages that were sent."""
+    from priorauth.security.model_view import model_view
+
+    def translate(view_pages: tuple[int, ...], apply: Any, evidence: tuple[Evidence, ...]) -> tuple[Evidence, ...]:
+        return tuple(
+            Evidence(page=view_pages.index(e.page) + 1, quote=apply(e.quote)) for e in evidence if e.page in view_pages
+        )
+
+    viewed = []
+    for case, gold in cases:
+        view = model_view(case)
+        pm, apply = view.page_map, view.redactor.apply
+        criteria = {
+            cid: gc.model_copy(update={"evidence": translate(pm, apply, gc.evidence)})
+            for cid, gc in gold.criteria.items()
+        }
+        injection = translate(pm, apply, gold.injection_evidence)
+        viewed.append((view.case, gold.model_copy(update={"criteria": criteria, "injection_evidence": injection})))
+    return OracleTransport(viewed, **kwargs)
 
 
 def fake_client(transport: OracleTransport) -> LLMClient:

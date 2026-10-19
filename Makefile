@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run openapi load-test up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run openapi load-test minimum-necessary up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -63,6 +63,9 @@ openapi: ## Export the API schema to docs/openapi.json
 
 load-test: ## 200 cases at once against the API with a SIMULATED model; writes results/load_test.json
 	$(UV) run python -m eval.load_test
+
+minimum-necessary: ## Pages sent to the model and identifiers redacted, per split; writes results/minimum_necessary.json
+	$(UV) run python -m eval.minimum_necessary
 
 up: ## Postgres + Jaeger (docker compose); then e.g. OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 make run
 	docker compose up -d

@@ -18,9 +18,10 @@ from priorauth.api.fhir import case_to_bundle
 from priorauth.data.schema import Case, Gold, Trap
 from priorauth.jobs import webhooks
 from priorauth.jobs.db import JobRow
-from priorauth.llm.fake import OracleTransport, fake_client
+from priorauth.llm.fake import fake_client, protected_oracle
 from priorauth.llm.pricing import HAIKU
 from priorauth.pipeline import System
+from priorauth.security.model_view import ProtectedSystem
 from tests.test_data import load
 from tests.test_jobs import Blocking
 
@@ -37,7 +38,8 @@ def one_per_trap() -> list[tuple[Case, Gold]]:
 
 
 def oracle_system() -> System:
-    return AgentSystem("agent_fake", HAIKU, "agent@v2", 0.10, llm=fake_client(OracleTransport(DEV)))
+    """The production wiring (agent behind the model view) with the scripted oracle in place of the model."""
+    return ProtectedSystem(AgentSystem("agent_fake", HAIKU, "agent@v2", 0.10, llm=fake_client(protected_oracle(DEV))))
 
 
 @asynccontextmanager

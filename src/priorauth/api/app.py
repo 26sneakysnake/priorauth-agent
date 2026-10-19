@@ -109,11 +109,13 @@ class CostReport(BaseModel):
 
 
 def default_system(case_cap_usd: float = 0.10) -> System:
-    """Production configuration: the gated agent (agent@v2 on Haiku), LLM mode from LLM_MODE."""
+    """Production configuration: the gated agent (agent@v2 on Haiku), LLM mode from LLM_MODE, behind the model view
+    (minimum necessary pages, redacted identifiers; priorauth.security.model_view)."""
     from priorauth.agent.loop import AgentSystem
     from priorauth.llm.pricing import HAIKU
+    from priorauth.security.model_view import ProtectedSystem
 
-    return AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", case_cap_usd=case_cap_usd)
+    return ProtectedSystem(AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", case_cap_usd=case_cap_usd))
 
 
 def decision_of(job: JobRow, case: CaseRow) -> Decision:

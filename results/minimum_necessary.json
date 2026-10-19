@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "description": "Model view of every synthetic case (eval/minimum_necessary.py): pages selected by priorauth.security.minimum_necessary, identifiers replaced by priorauth.security.redaction. Rates carry 95% Wilson intervals. The page rule was written from dev only. Generated, never edited by hand.",
+  "splits": {
+    "dev": {
+      "cases": 100,
+      "pages": 525,
+      "pages_sent": 326,
+      "share_of_pages_sent": 0.621,
+      "evidence_pages_sent": {
+        "k": 275,
+        "n": 275,
+        "value": 1.0,
+        "ci95": [
+          0.9862,
+          1.0
+        ]
+      },
+      "injection_pages_sent": {
+        "k": 8,
+        "n": 8,
+        "value": 1.0,
+        "ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "cases_with_every_evidence_page_sent": {
+        "k": 100,
+        "n": 100,
+        "value": 1.0,
+        "ci95": [
+          0.963,
+          1.0
+        ]
+      },
+      "identifiers_replaced": {
+        "DOB": 326,
+        "MEMBER_ID": 100,
+        "MRN": 226,
+        "PATIENT": 326
+      },
+      "known_identifiers_left_in_text_sent": 0
+    },
+    "test": {
+      "cases": 60,
+      "pages": 336,
+      "pages_sent": 205,
+      "share_of_pages_sent": 0.6101,
+      "evidence_pages_sent": {
+        "k": 163,
+        "n": 163,
+        "value": 1.0,
+        "ci95": [
+          0.977,
+          1.0
+        ]
+      },
+      "injection_pages_sent": {
+        "k": 3,
+        "n": 3,
+        "value": 1.0,
+        "ci95": [
+          0.4385,
+          1.0
+        ]
+      },
+      "cases_with_every_evidence_page_sent": {
+        "k": 60,
+        "n": 60,
+        "value": 1.0,
+        "ci95": [
+          0.9398,
+          1.0
+        ]
+      },
+      "identifiers_replaced": {
+        "DOB": 205,
+        "MEMBER_ID": 60,
+        "MRN": 145,
+        "PATIENT": 205
+      },
+      "known_identifiers_left_in_text_sent": 0
+    },
+    "robust": {
+      "cases": 40,
+      "pages": 224,
+      "pages_sent": 224,
+      "share_of_pages_sent": 1.0,
+      "evidence_pages_sent": {
+        "k": 109,
+        "n": 109,
+        "value": 1.0,
+        "ci95": [
+          0.966,
+          1.0
+        ]
+      },
+      "injection_pages_sent": {
+        "k": 4,
+        "n": 4,
+        "value": 1.0,
+        "ci95": [
+          0.5101,
+          1.0
+        ]
+      },
+      "cases_with_every_evidence_page_sent": {
+        "k": 40,
+        "n": 40,
+        "value": 1.0,
+        "ci95": [
+          0.9124,
+          1.0
+        ]
+      },
+      "identifiers_replaced": {
+        "DOB": 150,
+        "MEMBER_ID": 57,
+        "MRN": 101,
+        "PATIENT": 202
+      },
+      "known_identifiers_left_in_text_sent": 0
+    }
+  }
+}
