@@ -188,3 +188,46 @@ generated from `results/*.json` and checked by `tests/test_eval_run.py`)
   new cases need `LLM_MODE=live` or `record` and a key.
 - Schema created with `create_all` (no migrations); one global webhook URL; one webhook sender per deployment is
   assumed (deliveries are leased while in flight, receivers should still drop duplicates by delivery id).
+
+## P5 — Reliability and observability
+
+**Done**
+- Tracing (`src/priorauth/obs/tracing.py`): OpenTelemetry SDK, OTLP/HTTP export when
+  `OTEL_EXPORTER_OTLP_ENDPOINT` is set. One `job.process` span per job (job and case UUIDs, attempt, outcome,
+  error kind, LLM calls, tokens, cost); one `llm.call` child per model call (`tokens_in`, `tokens_out`, `cost_usd`,
+  `step`, model, replayed, latency, stop reason); one `tool.call` child per tool call (tool name, step, error,
+  progress). Attributes pass an allowlist; exceptions are recorded by type only. FastAPI 0.146 also emits its own
+  HTTP spans (method, route, status, path): kept, and covered by the leak test.
+- Logs (`src/priorauth/obs/logs.py`): JSON, allowlisted fields only, exception type without message. The database
+  drivers' loggers are pinned to WARNING and SQLAlchemy hides SQL parameters (`src/priorauth/jobs/db.py`).
+- Cost: cost and LLM calls stored per job, `GET /costs/daily`, per-case cap (`PRIORAUTH_CASE_COST_CAP_USD`, from P3)
+  and a daily cap (`PRIORAUTH_DAILY_COST_CAP_USD`): workers stop claiming, queued jobs wait, nothing is decided.
+  The cap is checked before a claim, so the overshoot is bounded by the jobs in flight times the per-case cap.
+- Resilience (`src/priorauth/llm/resilience.py`): retries on 408/409/429/5xx/529, connection errors and timeouts with
+  exponential backoff, full jitter and `retry-after`; per-attempt timeout; circuit breaker (closed, open,
+  half-open). SDK retries are off. A transient failure (`RetriesExhausted`, `CircuitOpen`) requeues the job with a
+  delay instead of pending it, up to `max_attempts`.
+- `docker-compose.yml`: Postgres 16 and Jaeger 2.11 (`make up`). `make load-test` (`eval/load_test.py`).
+
+**Measured**
+- No record content in logs or spans: `tests/test_observability.py::test_no_record_content_in_logs_or_spans`
+  (root logger at DEBUG, a full API run with webhooks, a 422 with record text in a field, malformed JSON with record
+  text, a system whose exception message quotes the record; scans messages, every record attribute, the JSON
+  output, span names, attributes, events, status and resource). **It failed on its first run**: aiosqlite logged
+  every SQL statement with its parameters at DEBUG; fixed by pinning the driver loggers.
+- Spans reach a real Jaeger over OTLP and are read back from its query API (`tests/test_jaeger.py`; locally with
+  `docker compose up jaeger`, in CI with a `jaegertracing/jaeger:2.11.0` service). CI run #13 (`e98ac34`) green
+  with the Postgres and Jaeger services; the Jaeger test cannot skip when `PRIORAUTH_TEST_JAEGER_URL` is set.
+- Retries, jitter, `retry-after`, timeouts, breaker, transient requeue and the daily cap: `tests/test_resilience.py`.
+- Load test, **simulated model** (scripted oracle, 0.25 s + up to 0.25 s per call, seed 0), 200 cases at once, 32
+  workers, in-process API on SQLite: every case done and matching its expected decision; wall time, throughput,
+  submission and end-to-end latency in `results/load_test.json` with the machine used. The deterministic part is
+  checked by `tests/test_load_test.py`; timings depend on the machine.
+- No API call in P5 (`results/spend.json` unchanged).
+
+**Left**
+- `docker compose up` was run here for Jaeger only: pulling `postgres:16` hit Docker Hub's rate limit (429), so the
+  compose Postgres service is unverified in this environment (Postgres itself is tested locally and in CI).
+- The load test measures the API, queue and SQLite under concurrency, not a model; on Postgres or with real model
+  latency the numbers would differ. Not run against Postgres.
+- One process-wide circuit breaker per transport; no per-model rate limiter; no metrics endpoint (traces only).
