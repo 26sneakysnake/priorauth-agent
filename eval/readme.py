@@ -289,6 +289,9 @@ def done_and_not() -> list[str]:
         "- Demo images, smoke-tested on every push in CI; deployment workflow with a smoke test after each deployment "
         f"and every night ({link('src/priorauth/demo/smoke.py')}, {link('.github/workflows/ci.yml')}, "
         f"{link('.github/workflows/deploy.yml')}).",
+        "- Audit from a fresh clone: lint, tests, offline replay that must leave `results/` unchanged, gate, data "
+        f"checks, secret scan of every commit ({link('scripts/audit.sh')}, run recorded in "
+        f"{link('docs/PROGRESS.md')}).",
         "",
         "## What is not done",
         "",

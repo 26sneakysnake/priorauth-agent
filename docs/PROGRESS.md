@@ -443,7 +443,60 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
     exists;
   - no sentence of README.md or `docs/*.md` contains compliant, compliance, certified, certification or conformant
     without a negation.
+- CI run #24 (`9233215`) green on its four jobs.
 
 **Left**
 - The demo URL line will change once `docs/demo_url.txt` holds the deployed URL (then `make readme`).
 - The screenshot is a still image, not a GIF.
+
+## Step C (P10) — Audit from a fresh clone
+
+**Done**
+- `scripts/audit.sh` (`make audit`), checked with shellcheck 0.10.0. It runs these steps:
+  - clones the repository with its full history and runs `make setup lint test eval-offline gate` with no API key in
+    the environment;
+  - fails if the targets changed any tracked file, so `results/` must replay byte for byte;
+  - runs `make data-check`;
+  - checks that `data/test.sha256` and `data/robust.sha256` each have a single commit in the history;
+  - runs gitleaks 8.28.0 (checksum verified) on every commit and on the working tree.
+
+**Measured** (one run, `https://github.com/26sneakysnake/priorauth-agent` at `9233215`, Linux, with the Postgres
+and Jaeger test services of CI available locally)
+- `make setup lint test eval-offline gate`:
+  - ruff and mypy --strict clean;
+  - 295 tests passed, none skipped. Without `PRIORAUTH_TEST_POSTGRES_URL` and `PRIORAUTH_TEST_JAEGER_URL`, the
+    Postgres and Jaeger tests are skipped;
+  - all 17 committed runs replayed, the rules baseline among them;
+  - gate PASS (agent v2 Haiku on dev: 0/65 dangerous approvals, criterion accuracy 0.9908, equal to the reference).
+- Working tree clean afterwards. `results/` (spend ledger included) and `README.md` are byte-identical to the commit.
+- `data is reproducible`, `robust data is reproducible`. The digest files were committed once each, in `0c83b29`
+  (test) and `9bf9eb7` (robust), and never changed since.
+- gitleaks: 56 commits scanned, no leaks found; working tree, no leaks found.
+- The committed cassettes and results hold no key and no authentication header
+  (`tests/test_llm_client.py::test_committed_cassettes_and_results_hold_no_credentials`, part of the 295).
+
+**Not verified**
+- **Deployment.** Nothing is deployed:
+  - `deploy.yml` has only run its configuration check;
+  - the commands of `docs/DEPLOY.md` have not been executed;
+  - the nightly smoke test has nothing to test yet.
+- **Live runs.** `eval-live.yml` has never run (0 runs on GitHub). The demo's live mode was run once by hand, not in
+  a deployed container.
+- **The audit itself:**
+  - it ran once, on Linux only;
+  - a stranger's machine (macOS, Windows/WSL, another Docker version) was not tried;
+  - the UI and Docker targets (`make ui-setup ui-test ui-e2e demo-up smoke-demo`) are not part of it; they run in the
+    `ui` and `demo-images` CI jobs.
+- **Secret scanning.** gitleaks matches known secret formats; a secret in an unknown format would not be found.
+- **Measurement.** No result says anything about real records. Each system was recorded once (`docs/LIMITS.md`).
+
+**Left (manual, for the repository owner)**
+- **Visibility.** The repository is private. Make it public, or invite the reader, before sending the link; the
+  README's clone command assumes a public repository.
+- **Deployment.** Deploy the demo with `docs/DEPLOY.md` (Azure resources and OIDC, Vercel project, GitHub secrets
+  and variables). Then run **Deploy demo** and check that its smoke job is green.
+- **Demo link.** Only after that smoke job is green: put the UI URL in `docs/demo_url.txt`, run `make readme` and
+  commit. Optionally retake the screenshot on the deployed demo.
+- **Paid live runs (optional).** Add the `ANTHROPIC_API_KEY` secret for `eval-live.yml`, or leave it absent: CI
+  needs no key.
+- **Key hygiene.** Revoke or rotate the API key used for the recordings once no more recordings are planned.

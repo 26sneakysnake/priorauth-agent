@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate readme report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate readme report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests audit ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -57,6 +57,11 @@ gate: ## Regression gate: replay the production agent on dev, compare with resul
 secrets: ## Secret scan of every commit and of the working tree (needs gitleaks >= 8.28 on PATH, as in CI)
 	gitleaks git --redact --no-banner --exit-code 1 .
 	gitleaks dir --redact --no-banner --exit-code 1 .
+
+AUDIT_REPO ?= $(shell git remote get-url origin)
+AUDIT_REF ?= main
+audit: ## Fresh clone (AUDIT_REPO, AUDIT_REF=main): setup lint test eval-offline gate, clean tree, data checks, gitleaks on every commit
+	scripts/audit.sh $(AUDIT_REPO) $(AUDIT_REF)
 
 run: ## API + workers on SQLite; needs PRIORAUTH_FIELD_KEY (make field-key), see priorauth.api.app for the rest
 	@test -n "$$PRIORAUTH_FIELD_KEY" || { echo "PRIORAUTH_FIELD_KEY is not set: export PRIORAUTH_FIELD_KEY=\$$(make -s field-key)"; exit 1; }

@@ -83,6 +83,7 @@ Requirements: uv, Docker, and Node 22 for the UI tests ([Makefile](Makefile), [d
 - Reviewer UI with exact highlights; reviewer approvals change the ClaimResponse and send a webhook; review feedback becomes dev evaluation cases ([ui/tests/e2e/review.spec.ts](ui/tests/e2e/review.spec.ts), [eval/review_to_cases.py](eval/review_to_cases.py)).
 - Load test on SQLite and Postgres with a simulated model ([results/load_test.json](results/load_test.json), [results/load_test_postgres.json](results/load_test_postgres.json)).
 - Demo images, smoke-tested on every push in CI; deployment workflow with a smoke test after each deployment and every night ([src/priorauth/demo/smoke.py](src/priorauth/demo/smoke.py), [.github/workflows/ci.yml](.github/workflows/ci.yml), [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
+- Audit from a fresh clone: lint, tests, offline replay that must leave `results/` unchanged, gate, data checks, secret scan of every commit ([scripts/audit.sh](scripts/audit.sh), run recorded in [docs/PROGRESS.md](docs/PROGRESS.md)).
 
 ## What is not done
 
