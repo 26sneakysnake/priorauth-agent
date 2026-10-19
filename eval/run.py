@@ -75,7 +75,7 @@ def error_record(gold: Gold, run: CaseRun) -> dict[str, Any] | None:
         retained = run.decision.criteria.get(cid, Status.INSUFFICIENT)
         if retained is not gc.status:
             claimed = [
-                f.model_dump(mode="json", include={"status", "evidence", "note"})
+                f.model_dump(mode="json", include={"status", "evidence", "conflict", "note"})
                 for f in run.raw.findings
                 if f.criterion_id == cid
             ]

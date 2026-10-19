@@ -16,6 +16,7 @@ SYSTEMS: dict[str, Callable[[], System]] = {
     "rules_baseline": RulesBaseline,
     "llm_single_haiku": lambda: SingleCallBaseline("llm_single_haiku", HAIKU, "single@v1", HAIKU_CASE_CAP_USD),
     "agent_v1_haiku": lambda: AgentSystem("agent_v1_haiku", HAIKU, "agent@v1", HAIKU_CASE_CAP_USD),
+    "agent_v2_haiku": lambda: AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", HAIKU_CASE_CAP_USD),
 }
 
 # Systems whose results can be regenerated with no network and no API key (checked in CI), with the splits whose
@@ -23,10 +24,11 @@ SYSTEMS: dict[str, Callable[[], System]] = {
 OFFLINE: dict[str, tuple[str, ...]] = {
     "rules_baseline": ("dev", "test"),
     "agent_v1_haiku": ("dev",),
+    "agent_v2_haiku": ("dev",),
 }
 
 # System whose recorded token usage serves as the prior when estimating the cost of a system's first recording.
-COST_PRIOR: dict[str, str] = {}
+COST_PRIOR: dict[str, str] = {"agent_v2_haiku": "agent_v1_haiku"}
 
 
 def get_system(name: str) -> System:
