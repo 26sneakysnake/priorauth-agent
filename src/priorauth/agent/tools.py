@@ -11,6 +11,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
+from priorauth.agent.prompts import criterion_text
 from priorauth.data.schema import Case
 from priorauth.policy.criteria import Procedure, get_procedure
 from priorauth.policy.models import CaseFindings, Evidence, Finding, Status
@@ -229,17 +230,9 @@ class AgentState:
     def _search_policy(self, args: SearchPolicyArgs) -> ToolOutcome:
         if args.criterion_id not in self.procedure.criterion_ids:
             return _error(f"unknown criterion {args.criterion_id!r}; valid: {', '.join(self.procedure.criterion_ids)}")
-        c = self.procedure.criterion(args.criterion_id)
-        new = c.id not in self.policies_read
-        self.policies_read.add(c.id)
-        text = (
-            f"{c.id} - {c.title} ({self.procedure.policy_id})\n"
-            f"Requirement: {c.requirement}\n"
-            f"MET when: {c.met_when}\n"
-            f"NOT_MET when: {c.not_met_when}\n"
-            f"INSUFFICIENT when: {c.insufficient_when}"
-        )
-        return ToolOutcome(content=text, progress=new)
+        new = args.criterion_id not in self.policies_read
+        self.policies_read.add(args.criterion_id)
+        return ToolOutcome(content=criterion_text(self.procedure, args.criterion_id), progress=new)
 
     def _record_finding(self, args: RecordFindingArgs) -> ToolOutcome:
         if args.criterion_id not in self.procedure.criterion_ids:

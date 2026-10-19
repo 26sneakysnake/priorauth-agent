@@ -4,12 +4,12 @@
   "prices_source": "https://platform.claude.com/docs/en/about-claude/pricing (read 2026-10-19)",
   "cap_usd": 10.0,
   "total": {
-    "calls": 20,
-    "input_tokens": 60,
-    "cache_write_tokens": 37021,
-    "cache_read_tokens": 34208,
-    "output_tokens": 23115,
-    "cost_usd": 0.0165332
+    "calls": 29,
+    "input_tokens": 21254,
+    "cache_write_tokens": 46321,
+    "cache_read_tokens": 35389,
+    "output_tokens": 36800,
+    "cost_usd": 0.02666941
   },
   "by_scope": {
     "_scratch/agent_v1_haiku/dev": {
@@ -20,6 +20,16 @@
         "cache_read_tokens": 34208,
         "output_tokens": 23115,
         "cost_usd": 0.0165332
+      }
+    },
+    "_scratch/llm_single_haiku/dev": {
+      "claude-haiku-5-5": {
+        "calls": 9,
+        "input_tokens": 21194,
+        "cache_write_tokens": 9300,
+        "cache_read_tokens": 1181,
+        "output_tokens": 13685,
+        "cost_usd": 0.01013621
       }
     }
   }

@@ -2,6 +2,7 @@
 
 from collections.abc import Callable
 
+from eval.baselines.llm_single import SingleCallBaseline
 from eval.baselines.rules import RulesBaseline
 from priorauth.agent.loop import AgentSystem
 from priorauth.llm.pricing import HAIKU
@@ -13,6 +14,7 @@ SONNET_CASE_CAP_USD = 1.00
 
 SYSTEMS: dict[str, Callable[[], System]] = {
     "rules_baseline": RulesBaseline,
+    "llm_single_haiku": lambda: SingleCallBaseline("llm_single_haiku", HAIKU, "single@v1", HAIKU_CASE_CAP_USD),
     "agent_v1_haiku": lambda: AgentSystem("agent_v1_haiku", HAIKU, "agent@v1", HAIKU_CASE_CAP_USD),
 }
 
