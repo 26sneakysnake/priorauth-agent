@@ -139,9 +139,11 @@ class LedgerFile(BaseModel):
 
 
 class SpendLedger:
-    def __init__(self, path: Path = DEFAULT_LEDGER, cap_usd: float = PHASE_CAP_USD) -> None:
+    """`path=None` keeps the ledger in memory (scripted fake models only: their spend is not real)."""
+
+    def __init__(self, path: Path | None = DEFAULT_LEDGER, cap_usd: float = PHASE_CAP_USD) -> None:
         self.path = path
-        self.data = LedgerFile.model_validate_json(path.read_bytes()) if path.exists() else LedgerFile()
+        self.data = LedgerFile.model_validate_json(path.read_bytes()) if path and path.exists() else LedgerFile()
         self.data.cap_usd = cap_usd
 
     @property
@@ -156,6 +158,8 @@ class SpendLedger:
         self.data.total.add(usage, cost)
         self.data.by_scope.setdefault(scope, {}).setdefault(model, Spend()).add(usage, cost)
         self.data.by_scope = dict(sorted(self.data.by_scope.items()))
+        if self.path is None:
+            return
         self.path.parent.mkdir(parents=True, exist_ok=True)
         tmp = self.path.with_suffix(".tmp")
         tmp.write_text(json.dumps(self.data.model_dump(mode="json"), indent=2) + "\n", "utf-8")
