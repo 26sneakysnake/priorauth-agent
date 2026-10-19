@@ -149,3 +149,19 @@ same agent through the API pipeline (minimum-necessary pages, redacted identifie
 - Nothing was changed after looking at test or robust; nothing was changed after dev either (the dev errors above
   were analysed, not fixed).
 - The pipeline ran in-process on SQLite (the same code as the API, not a deployment).
+
+## 10. The public demo (step A)
+
+- **The examples are chosen, not sampled.** The ten examples of the Try page are dev cases that agent v2 got
+  entirely right through the pipeline (`src/priorauth/demo/examples.py`, chosen from
+  `results/pipeline_dev_errors.jsonl`). They show what each trap looks like and how the system handles it; they do
+  not show its error rate, which is in `results/`.
+- **Replayed, not live.** Their decisions are recorded responses replayed. Running the same record live could give a
+  different answer: the model cannot be made deterministic.
+- **Live mode.** It is off by default. When on, it cannot redact names from free text (no structured header), so
+  the UI forbids real data but cannot enforce it. Its spend counter and rate limiter are in memory and reset on
+  restart; the per-IP limit trusts `X-Forwarded-For` only when told to (`DEMO_LIVE_TRUST_FORWARDED_FOR`).
+- **Single replica, public account.** One replica only, because state lives in the container. The reviewer account
+  is public: anyone can approve or flag the demo's cases until the next restart.
+- **Not deployed from here.** `.github/workflows/deploy.yml` and `docs/DEPLOY.md` have not run against Azure or
+  Vercel; the images and the smoke test are verified in CI only.

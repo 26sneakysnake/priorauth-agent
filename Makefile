@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate readme report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -38,6 +38,9 @@ data-pdf: ## Optional: export dev cases to build/pdf/dev/*.pdf (not committed)
 eval-offline: ## Replay every committed result (rules + recorded LLM cassettes, no API key); writes results/
 	$(UV) run python -m eval.run --offline-all
 	$(UV) run python -m eval.report
+
+readme: ## Regenerate README.md from results/ (never edit README.md by hand)
+	$(UV) run python -m eval.readme
 
 report: ## Regenerate results/comparison.md from results/*.json
 	$(UV) run python -m eval.report
