@@ -52,3 +52,9 @@ def test_main_writes_results_and_errors(tmp_path: Path) -> None:
     for line in errors.read_text().splitlines():
         rec = json.loads(line)
         assert rec["predicted"] != rec["expected"] or rec["criteria"] or rec["invalid_evidence"] or rec["error"]
+
+
+def test_comparison_table_is_generated_from_the_committed_results() -> None:
+    from eval import report
+
+    assert report.render(RESULTS) == (RESULTS / "comparison.md").read_text(encoding="utf-8")

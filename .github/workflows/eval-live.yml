@@ -1,0 +1,80 @@
+name: Live evaluation (manual, paid)
+
+# Calls the real Anthropic API. Never runs on push: only by hand, with a hard cost cap per run on top of the
+# phase cap enforced by the code from the committed ledger (results/spend.json). Results and the updated ledger are
+# uploaded as artifacts; nothing is committed back.
+
+on:
+  workflow_dispatch:
+    inputs:
+      system:
+        description: System to evaluate
+        type: choice
+        default: agent_v2_haiku
+        options: [agent_v2_haiku, agent_v1_haiku, llm_single_haiku, agent_v2_sonnet]
+      split:
+        description: Split
+        type: choice
+        default: dev
+        options: [dev, test, robust]
+      max_cost_usd:
+        description: Hard cap on API spend for this run, in USD (at most 2.00)
+        type: string
+        default: "0.50"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eval-live # one paid run at a time, so the ledger caps cannot be raced
+  cancel-in-progress: false
+
+jobs:
+  live:
+    name: live run with cost cap
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Refuse to start without the API key secret
+        env:
+          HAS_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+        run: |
+          if [ "$HAS_KEY" != "true" ]; then
+            echo "::error::repository secret ANTHROPIC_API_KEY is not set; refusing to start"
+            exit 1
+          fi
+      - name: Check the cost cap
+        env:
+          MAX_COST_USD: ${{ inputs.max_cost_usd }}
+        run: |
+          python3 -c '
+          import os, sys
+          try:
+              cap = float(os.environ["MAX_COST_USD"])
+          except ValueError:
+              sys.exit("max_cost_usd must be a number")
+          if not 0 < cap <= 2.0:
+              sys.exit(f"max_cost_usd must be in (0, 2.00], got {cap}")
+          print(f"run cap: {cap} USD")
+          '
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Setup (locked environment)
+        run: make setup
+      - name: Live run
+        env:
+          LLM_MODE: live
+          PRIORAUTH_ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SYSTEM: ${{ inputs.system }}
+          SPLIT: ${{ inputs.split }}
+          MAX_COST_USD: ${{ inputs.max_cost_usd }}
+        run: uv run python -m eval.run --system "$SYSTEM" --split "$SPLIT" --max-cost-usd "$MAX_COST_USD" --out live-results
+      - name: Upload results and ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-${{ inputs.system }}-${{ inputs.split }}-${{ github.run_id }}
+          path: |
+            live-results/
+            results/spend.json
+          if-no-files-found: ignore
