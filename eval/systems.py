@@ -5,7 +5,7 @@ from collections.abc import Callable
 from eval.baselines.llm_single import SingleCallBaseline
 from eval.baselines.rules import RulesBaseline
 from priorauth.agent.loop import AgentSystem
-from priorauth.llm.pricing import HAIKU
+from priorauth.llm.pricing import HAIKU, SONNET
 from priorauth.pipeline import System
 
 # Per-case hard caps (USD). Far above what a normal case costs; they stop a runaway loop, not a normal one.
@@ -17,6 +17,7 @@ SYSTEMS: dict[str, Callable[[], System]] = {
     "llm_single_haiku": lambda: SingleCallBaseline("llm_single_haiku", HAIKU, "single@v1", HAIKU_CASE_CAP_USD),
     "agent_v1_haiku": lambda: AgentSystem("agent_v1_haiku", HAIKU, "agent@v1", HAIKU_CASE_CAP_USD),
     "agent_v2_haiku": lambda: AgentSystem("agent_v2_haiku", HAIKU, "agent@v2", HAIKU_CASE_CAP_USD),
+    "agent_v2_sonnet": lambda: AgentSystem("agent_v2_sonnet", SONNET, "agent@v2", SONNET_CASE_CAP_USD),
     # Prompt-sensitivity probe: a sloppy "lean toward MET" prompt (dev only).
     "agent_lenient_haiku": lambda: AgentSystem("agent_lenient_haiku", HAIKU, "agent@lenient", HAIKU_CASE_CAP_USD),
     # Test fixture for the gate (tests/test_gate.py): a deliberately broken prompt, replayed on dev only.
@@ -30,12 +31,17 @@ OFFLINE: dict[str, tuple[str, ...]] = {
     "llm_single_haiku": ("dev", "test", "robust"),
     "agent_v1_haiku": ("dev", "test", "robust"),
     "agent_v2_haiku": ("dev", "test", "robust"),
+    "agent_v2_sonnet": ("dev", "test", "robust"),
     "agent_lenient_haiku": ("dev",),
     "agent_degraded_haiku": ("dev",),
 }
 
 # System whose recorded token usage serves as the prior when estimating the cost of a system's first recording.
-COST_PRIOR: dict[str, str] = {"agent_v2_haiku": "agent_v1_haiku", "agent_degraded_haiku": "agent_v1_haiku"}
+COST_PRIOR: dict[str, str] = {
+    "agent_v2_haiku": "agent_v1_haiku",
+    "agent_degraded_haiku": "agent_v1_haiku",
+    "agent_v2_sonnet": "agent_v2_haiku",
+}
 
 
 def get_system(name: str) -> System:

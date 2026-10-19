@@ -4,12 +4,12 @@
   "prices_source": "https://platform.claude.com/docs/en/about-claude/pricing (read 2026-10-19)",
   "cap_usd": 10.0,
   "total": {
-    "calls": 1572,
-    "input_tokens": 488565,
-    "cache_write_tokens": 2318248,
-    "cache_read_tokens": 3084294,
-    "output_tokens": 1774320,
-    "cost_usd": 1.25664093
+    "calls": 2029,
+    "input_tokens": 489879,
+    "cache_write_tokens": 3066190,
+    "cache_read_tokens": 4253124,
+    "output_tokens": 2071820,
+    "cost_usd": 6.22100693
   },
   "by_scope": {
     "_scratch/agent_degraded_haiku/dev": {
@@ -30,6 +30,16 @@
         "cache_read_tokens": 34208,
         "output_tokens": 23115,
         "cost_usd": 0.0165332
+      }
+    },
+    "_scratch/agent_v2_sonnet/test": {
+      "claude-sonnet-5-5": {
+        "calls": 7,
+        "input_tokens": 20,
+        "cache_write_tokens": 19610,
+        "cache_read_tokens": 13034,
+        "output_tokens": 4680,
+        "cost_usd": 0.0971684
       }
     },
     "_scratch/llm_single_haiku/dev": {
@@ -110,6 +120,36 @@
         "cache_read_tokens": 245956,
         "output_tokens": 135956,
         "cost_usd": 0.09972165
+      }
+    },
+    "agent_v2_sonnet/dev": {
+      "claude-sonnet-5-5": {
+        "calls": 229,
+        "input_tokens": 658,
+        "cache_write_tokens": 368954,
+        "cache_read_tokens": 591079,
+        "output_tokens": 147845,
+        "cost_usd": 2.4612589
+      }
+    },
+    "agent_v2_sonnet/robust": {
+      "claude-sonnet-5-5": {
+        "calls": 94,
+        "input_tokens": 268,
+        "cache_write_tokens": 147684,
+        "cache_read_tokens": 246737,
+        "output_tokens": 60402,
+        "cost_usd": 0.9984397
+      }
+    },
+    "agent_v2_sonnet/test": {
+      "claude-sonnet-5-5": {
+        "calls": 127,
+        "input_tokens": 368,
+        "cache_write_tokens": 211694,
+        "cache_read_tokens": 317980,
+        "output_tokens": 84573,
+        "cost_usd": 1.407499
       }
     },
     "llm_single_haiku/dev": {
