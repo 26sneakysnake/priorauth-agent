@@ -28,6 +28,9 @@ from tests.test_jobs import Blocking
 DEV = load("dev")
 SECRET = "hook-secret"
 HOOK_URL = "https://receiver.example/priorauth"
+JWT_SECRET = "jwt-secret-for-tests-only-0123456789"
+AUDIT_KEY = "audit-key-for-tests-only"
+DEMO_PASSWORD = "demo-password-for-tests"
 
 
 def one_per_trap() -> list[tuple[Case, Gold]]:
@@ -42,10 +45,18 @@ def oracle_system() -> System:
     return ProtectedSystem(AgentSystem("agent_fake", HAIKU, "agent@v2", 0.10, llm=fake_client(protected_oracle(DEV))))
 
 
+async def login(client: httpx.AsyncClient, username: str, password: str = DEMO_PASSWORD) -> str:
+    r = await client.post("/auth/token", json={"username": username, "password": password})
+    assert r.status_code == 200, r.text
+    token: str = r.json()["access_token"]
+    return token
+
+
 @asynccontextmanager
 async def api(
-    tmp_path: Path, system_factory: Callable[[], System] = oracle_system, **settings: Any
+    tmp_path: Path, system_factory: Callable[[], System] = oracle_system, role: str | None = "admin", **settings: Any
 ) -> AsyncIterator[tuple[httpx.AsyncClient, list[httpx.Request]]]:
+    """The app with the demo users; the client carries a token of `role` (None: no token)."""
     received: list[httpx.Request] = []
 
     def receiver(request: httpx.Request) -> httpx.Response:
@@ -53,11 +64,19 @@ async def api(
         return httpx.Response(204)
 
     hooks = httpx.AsyncClient(transport=httpx.MockTransport(receiver))
-    config: dict[str, Any] = {"database_url": f"sqlite+aiosqlite:///{tmp_path / 'api.db'}", "workers": 3} | settings
+    config: dict[str, Any] = {
+        "database_url": f"sqlite+aiosqlite:///{tmp_path / 'api.db'}",
+        "workers": 3,
+        "jwt_secret": JWT_SECRET,
+        "audit_key": AUDIT_KEY,
+        "demo_password": DEMO_PASSWORD,
+    } | settings
     app = create_app(Settings(**config), system_factory=system_factory, webhook_client=hooks)
     async with app.router.lifespan_context(app):
         transport = httpx.ASGITransport(app=app)
         async with httpx.AsyncClient(transport=transport, base_url="http://api") as client:
+            if role is not None:
+                client.headers["Authorization"] = f"Bearer {await login(client, f'demo-{role}')}"
             yield client, received
     await hooks.aclose()
 
@@ -67,10 +86,12 @@ async def post(client: httpx.AsyncClient, body: Any, key: str | None = "key-1") 
     return await client.post("/cases", json=body, headers=headers)
 
 
-async def wait_done(client: httpx.AsyncClient, case_id: str, timeout: float = 15.0) -> dict[str, Any]:
+async def wait_done(
+    client: httpx.AsyncClient, case_id: str, timeout: float = 15.0, headers: dict[str, str] | None = None
+) -> dict[str, Any]:
     deadline = asyncio.get_running_loop().time() + timeout
     while True:
-        view: dict[str, Any] = (await client.get(f"/cases/{case_id}")).json()
+        view: dict[str, Any] = (await client.get(f"/cases/{case_id}", headers=headers)).json()
         if view["job"]["status"] in ("done", "failed"):
             return view
         assert asyncio.get_running_loop().time() < deadline, view

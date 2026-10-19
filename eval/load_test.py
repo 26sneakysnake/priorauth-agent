@@ -4,7 +4,9 @@
 
 No model is called. The "model" is priorauth.llm.fake.OracleTransport, a scripted oracle that replays the gold
 labels with a seeded, simulated latency: this measures the API, the queue, the workers and the database under
-concurrency, not a model. The API runs in-process (httpx.ASGITransport, no network) on a fresh SQLite file.
+concurrency, not a model. The API runs in-process (httpx.ASGITransport, no network) on a fresh SQLite file, with the
+production wiring otherwise: bearer token (demo `system` user), model view (minimum necessary + redaction), field
+encryption (an ephemeral key unless PRIORAUTH_FIELD_KEY is set) and the audit log.
 
 Output: results/load_test.json. Its `deterministic` section (counts, outcomes, agreement with gold) is identical
 from run to run; its `timing` section depends on the machine, which is described in `machine`.
@@ -15,6 +17,7 @@ import asyncio
 import json
 import os
 import platform
+import secrets
 import sys
 import tempfile
 import time
@@ -31,8 +34,12 @@ from priorauth.agent.loop import AgentSystem
 from priorauth.api.app import Settings, create_app
 from priorauth.api.fhir import case_to_bundle
 from priorauth.jobs.db import CaseRow, JobRow
-from priorauth.llm.fake import OracleTransport, fake_client
+from priorauth.llm.fake import fake_client, protected_oracle
 from priorauth.llm.pricing import HAIKU
+from priorauth.pipeline import System
+from priorauth.security.crypto import ENV as FIELD_KEY_ENV
+from priorauth.security.crypto import new_key
+from priorauth.security.model_view import ProtectedSystem
 
 OUTPUT = Path("results/load_test.json")
 
@@ -56,7 +63,8 @@ def machine() -> dict[str, Any]:
 async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, seed: int, data: Path) -> dict[str, Any]:
     pairs = [p for split in ("dev", "test", "robust") for p in load_split(data, split)][:n_cases]
     golds = {case.case_id: gold for case, gold in pairs}
-    transport = OracleTransport(pairs, latency_s=latency_s, jitter_s=jitter_s, seed=seed)
+    transport = protected_oracle(pairs, latency_s=latency_s, jitter_s=jitter_s, seed=seed)
+    os.environ.setdefault(FIELD_KEY_ENV, new_key())
     in_flight, peak = 0, 0
     inner = transport.send
 
@@ -71,17 +79,27 @@ async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, see
 
     transport.send = counted  # type: ignore[method-assign]
 
-    def system() -> AgentSystem:
-        return AgentSystem("agent_v2_fake", HAIKU, "agent@v2", 0.10, llm=fake_client(transport))
+    def system() -> System:
+        return ProtectedSystem(AgentSystem("agent_v2_fake", HAIKU, "agent@v2", 0.10, llm=fake_client(transport)))
 
+    password = secrets.token_urlsafe(16)
     with tempfile.TemporaryDirectory() as tmp:
-        settings = Settings(database_url=f"sqlite+aiosqlite:///{Path(tmp) / 'load.db'}", workers=workers)
+        settings = Settings(
+            database_url=f"sqlite+aiosqlite:///{Path(tmp) / 'load.db'}",
+            workers=workers,
+            jwt_secret=secrets.token_urlsafe(32),
+            audit_key=secrets.token_urlsafe(32),
+            demo_password=password,
+        )
         app = create_app(settings, system_factory=system)
         transport_ = httpx.ASGITransport(app=app)
         async with (
             app.router.lifespan_context(app),
             httpx.AsyncClient(transport=transport_, base_url="http://api") as client,
         ):
+            r = await client.post("/auth/token", json={"username": "demo-system", "password": password})
+            r.raise_for_status()
+            client.headers["Authorization"] = f"Bearer {r.json()['access_token']}"
 
             async def submit(case_id: str, bundle: dict[str, Any]) -> float:
                 t = time.perf_counter()
@@ -135,8 +153,9 @@ async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, see
         "settings": {
             "cases": len(pairs),
             "workers": workers,
-            "database": "SQLite file (aiosqlite)",
-            "api": "in-process ASGI (httpx.ASGITransport), no network",
+            "database": "SQLite file (aiosqlite), encrypted record fields, audit log",
+            "api": "in-process ASGI (httpx.ASGITransport), no network, bearer token",
+            "system": "agent@v2 behind the model view (minimum necessary + redaction)",
         },
         "deterministic": {
             "cases": len(rows),

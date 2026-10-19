@@ -1,6 +1,8 @@
 """Database schema and engine. SQLite (aiosqlite) in tests and local runs, Postgres (asyncpg) in compose and cluster.
 
-Timestamps are naive UTC everywhere (SQLite has no time zones; one convention avoids mixing them).
+Timestamps are naive UTC everywhere (SQLite has no time zones; one convention avoids mixing them). Columns that hold
+record content or identifiers are `EncryptedText` (Fernet, priorauth.security.crypto): the database only ever sees
+ciphertext for them.
 """
 
 import logging
@@ -9,6 +11,8 @@ from datetime import UTC, datetime
 from sqlalchemy import ForeignKey, Index, Integer, String, Text, UniqueConstraint
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+
+from priorauth.security.crypto import EncryptedText
 
 # The database drivers log every statement *with its parameters* (record content) at DEBUG. An explicit level on
 # their loggers wins over a DEBUG root logger, so turning on debug logging elsewhere cannot leak records.
@@ -25,7 +29,7 @@ class Base(DeclarativeBase):
 
 
 class CaseRow(Base):
-    """One submitted Bundle. `case_json` holds the Case (patient and pages) as received."""
+    """One submitted Bundle. `case_json` holds the Case (patient and pages) as received, encrypted."""
 
     __tablename__ = "cases"
 
@@ -33,10 +37,11 @@ class CaseRow(Base):
     idempotency_key: Mapped[str] = mapped_column(String(200), unique=True)
     body_sha256: Mapped[str] = mapped_column(String(64))
     submitter_case_id: Mapped[str | None] = mapped_column(String(200))
+    submitted_by: Mapped[str | None] = mapped_column(String(36))  # user id; a `system` user only sees its own cases
     procedure_code: Mapped[str] = mapped_column(String(50))
-    member_id: Mapped[str] = mapped_column(String(100))
-    case_json: Mapped[str] = mapped_column(Text)
-    conditions_json: Mapped[str] = mapped_column(Text, default="[]")
+    member_id: Mapped[str] = mapped_column(EncryptedText)
+    case_json: Mapped[str] = mapped_column(EncryptedText)
+    conditions_json: Mapped[str] = mapped_column(EncryptedText, default="[]")
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
 
 
@@ -58,7 +63,7 @@ class JobRow(Base):
     cost_usd: Mapped[float] = mapped_column(default=0.0)  # LLM cost of the attempt that produced the result
     llm_calls: Mapped[int] = mapped_column(Integer, default=0)
     outcome: Mapped[str | None] = mapped_column(String(10))
-    result_json: Mapped[str | None] = mapped_column(Text)
+    result_json: Mapped[str | None] = mapped_column(EncryptedText)  # findings with their quotes
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
     updated_at: Mapped[datetime] = mapped_column(default=utcnow)
     finished_at: Mapped[datetime | None]

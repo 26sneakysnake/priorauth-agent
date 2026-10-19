@@ -1,8 +1,12 @@
-"""Tests never spend money: every LLM call is replayed from the committed cassettes."""
+"""Tests never spend money: every LLM call is replayed from the committed cassettes. Stored record fields are
+encrypted with a key generated for this test run only."""
 
 import os
 
+from cryptography.fernet import Fernet
+
 os.environ["LLM_MODE"] = "replay"
+os.environ["PRIORAUTH_FIELD_KEY"] = Fernet.generate_key().decode()
 
 from collections.abc import Iterator
 

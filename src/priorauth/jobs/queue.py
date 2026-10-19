@@ -9,6 +9,9 @@ Leases. A running job holds a lease that its worker renews (heartbeat). If the w
 another worker reclaims the job; after `max_attempts` claims the job fails, and its decision is the fail-closed PEND.
 Writing a result requires still holding the lease, so a worker that was presumed dead cannot overwrite the work of
 the worker that took over.
+
+Audit. With an AuditLog, every decision (job.decide) and every fail-closed failure (job.failed) is appended to the
+hash-chained audit log once its transaction has committed.
 """
 
 import hashlib
@@ -26,6 +29,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 from priorauth.api.fhir import ParsedBundle
 from priorauth.jobs.db import CaseRow, JobRow, WebhookDeliveryRow, utcnow
 from priorauth.pipeline import CaseRun
+from priorauth.security.audit import AuditLog
 
 EVENT_DECIDED = "case.decided"
 
@@ -83,8 +87,10 @@ class JobQueue:
         max_attempts: int = 3,
         webhook_url: str | None = None,
         clock: Callable[[], datetime] = utcnow,
+        audit: AuditLog | None = None,
     ) -> None:
         self.sessions = sessions
+        self.audit = audit
         self.lease = timedelta(seconds=lease_seconds)
         self.max_attempts = max_attempts
         self.webhook_url = webhook_url
@@ -92,7 +98,13 @@ class JobQueue:
 
     # -- submission ---------------------------------------------------------------------------------------------
 
-    async def submit(self, parsed: ParsedBundle, idempotency_key: str, digest: str) -> Submitted:
+    async def _audit(self, actor: str, action: str, case_id: str, **detail: Any) -> None:
+        if self.audit is not None:
+            await self.audit.record(actor, "system", action, case_id, **detail)
+
+    async def submit(
+        self, parsed: ParsedBundle, idempotency_key: str, digest: str, submitted_by: str | None = None
+    ) -> Submitted:
         existing = await self._by_key(idempotency_key, digest)
         if existing is not None:
             return existing
@@ -106,6 +118,7 @@ class JobQueue:
                         idempotency_key=idempotency_key,
                         body_sha256=digest,
                         submitter_case_id=parsed.submitter_case_id,
+                        submitted_by=submitted_by,
                         procedure_code=case.procedure_code,
                         member_id=case.patient.member_id,
                         case_json=case.model_dump_json(),
@@ -153,13 +166,15 @@ class JobQueue:
         """Claim the oldest claimable job, or return None. Jobs out of attempts are failed on the way."""
         while True:
             now = self.clock()
+            failed, claimed = False, 0
             async with self.sessions.begin() as s:
                 row = (await s.execute(claimable(now))).first()
                 if row is None:
                     return None
                 job_id, case_id, status, attempts, version = row
                 guard = and_(JobRow.id == job_id, JobRow.version == version)
-                if status == "running" and attempts >= self.max_attempts:
+                failed = status == "running" and attempts >= self.max_attempts
+                if failed:
                     await s.execute(
                         update(JobRow)
                         .where(guard)
@@ -175,23 +190,29 @@ class JobQueue:
                         )
                     )
                     self._enqueue_webhook(s, job_id, case_id, "PEND", now)
-                    continue
-                claimed = await _count(
-                    s,
-                    update(JobRow)
-                    .where(guard)
-                    .values(
-                        status="running",
-                        locked_by=worker_id,
-                        lease_expires_at=now + self.lease,
-                        attempts=attempts + 1,
-                        version=version + 1,
-                        updated_at=now,
-                    ),
-                )
-                if claimed != 1:  # SQLite only: another worker updated the row first; look again
-                    continue
-                case_json = (await s.execute(select(CaseRow.case_json).where(CaseRow.id == case_id))).scalar_one()
+                else:
+                    claimed = await _count(
+                        s,
+                        update(JobRow)
+                        .where(guard)
+                        .values(
+                            status="running",
+                            locked_by=worker_id,
+                            lease_expires_at=now + self.lease,
+                            attempts=attempts + 1,
+                            version=version + 1,
+                            updated_at=now,
+                        ),
+                    )
+                    if claimed == 1:
+                        case_json = (
+                            await s.execute(select(CaseRow.case_json).where(CaseRow.id == case_id))
+                        ).scalar_one()
+            if failed:
+                await self._audit("queue", "job.failed", case_id, job_id=job_id, error_kind="max_attempts")
+                continue
+            if claimed != 1:  # SQLite only: another worker updated the row first; look again
+                continue
             return ClaimedJob(job_id=job_id, case_id=case_id, attempts=attempts + 1, case_json=case_json)
 
     async def heartbeat(self, job_id: str, worker_id: str) -> bool:
@@ -233,6 +254,9 @@ class JobQueue:
             if stored != 1:
                 return False
             self._enqueue_webhook(s, job_id, run.case_id, run.decision.outcome.value, now)
+        await self._audit(
+            f"worker:{worker_id}", "job.decide", run.case_id, job_id=job_id, outcome=run.decision.outcome.value
+        )
         return True
 
     async def release(self, job_id: str, worker_id: str, error_kind: str, delay_s: float = 0.0) -> None:
@@ -255,6 +279,10 @@ class JobQueue:
             if final:
                 job.outcome, job.finished_at = "PEND", now
                 self._enqueue_webhook(s, job_id, job.case_id, "PEND", now)
+        if final:
+            await self._audit(
+                f"worker:{worker_id}", "job.failed", job.case_id, job_id=job_id, error_kind=error_kind[:80]
+            )
 
     def _enqueue_webhook(self, s: AsyncSession, job_id: str, case_id: str, outcome: str, now: datetime) -> None:
         if not self.webhook_url:

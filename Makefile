@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run openapi load-test minimum-necessary up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test minimum-necessary up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -55,8 +55,12 @@ secrets: ## Secret scan of every commit and of the working tree (needs gitleaks 
 	gitleaks git --redact --no-banner --exit-code 1 .
 	gitleaks dir --redact --no-banner --exit-code 1 .
 
-run: ## API + workers on SQLite (LLM_MODE as set; replay misses on new cases, see docs/PROGRESS.md P4)
+run: ## API + workers on SQLite; needs PRIORAUTH_FIELD_KEY (make field-key), see priorauth.api.app for the rest
+	@test -n "$$PRIORAUTH_FIELD_KEY" || { echo "PRIORAUTH_FIELD_KEY is not set: export PRIORAUTH_FIELD_KEY=\$$(make -s field-key)"; exit 1; }
 	$(UV) run uvicorn priorauth.api.app:app --host 127.0.0.1 --port 8000
+
+field-key: ## Print a new Fernet key for PRIORAUTH_FIELD_KEY (never commit it)
+	@$(UV) run python -m priorauth.security.crypto
 
 openapi: ## Export the API schema to docs/openapi.json
 	$(UV) run python -m priorauth.api.openapi
