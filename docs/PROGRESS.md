@@ -146,3 +146,45 @@ generated from `results/*.json` and checked by `tests/test_eval_run.py`)
 - Side mismatches recorded as NOT_MET plus conflict (criterion status INSUFFICIENT, decision still PEND): seen on
   dev only after test and robust were run, so no v3 prompt was written (`docs/LIMITS.md` §3).
 - Citation checks prove a quote exists, not that it supports the status (`docs/LIMITS.md` §4).
+
+## P4 — API, job queue, FHIR
+
+**Done**
+- `src/priorauth/api/fhir.py`: inbound Bundle (Patient, ServiceRequest or MedicationRequest, Condition,
+  DocumentReference with one `text/plain` attachment per page) → `Case`. Structure validated with the **R4B** models
+  of `fhir.resources` 8.3, then semantic rules (type `collection`, synthetic tag required, one patient with MRN and
+  member id, one coded request, readable text pages); every problem is returned as a 422 entry with its location.
+  Outbound: a simplified ClaimResponse *inspired by* Da Vinci PAS (APPROVE → X12 action A1, PEND → A4, outcome
+  `queued`); there is no denial. **R4B, not R4**: the R4 models exist only in the pydantic-v1 releases of
+  fhir.resources; only elements identical in R4 and R4B are used. Nothing is certified or PAS-conformant.
+- `src/priorauth/jobs/`: tables `cases`, `jobs`, `webhook_deliveries` (SQLAlchemy 2.1; SQLite/aiosqlite in tests,
+  Postgres/asyncpg otherwise). Claim with `FOR UPDATE SKIP LOCKED` on Postgres plus a version-guarded update
+  (portable to SQLite), lease renewed by a heartbeat, reclaim after the lease expires, results written only by the
+  lease holder, fail-closed PEND after `max_attempts`. Worker pool on `asyncio.Semaphore(N)`. Webhooks: outbox row
+  written with the result, `X-PriorAuth-Signature: t=..,v1=HMAC-SHA256(t.body)`, `verify()` with replay tolerance,
+  retries with exponential backoff and jitter, payload = identifiers and outcome only.
+- `src/priorauth/api/app.py`: `POST /cases` (Idempotency-Key required; 202 + job id; same key and body → same job;
+  other body → 409), `GET /cases/{id}`, `GET /cases/{id}/result` (409 until done). `docs/openapi.json` exported by
+  `make openapi` and checked by a test. `make run` starts the API and its workers.
+- `src/priorauth/llm/fake.py`: a scripted oracle that plays the agent's tool protocol from gold labels (it is not a
+  model), behind an LLMClient whose ledger stays in memory.
+
+**Measured** (tests; no API call was made in P4, `results/spend.json` unchanged)
+- All 200 synthetic cases round-trip Case → Bundle → Case exactly; invalid bundles give explicit 422s
+  (`tests/test_fhir.py`, `tests/test_api.py`).
+- End to end with the scripted fake model, one case per trap: Bundle → 202 → worker → ClaimResponse valid for the
+  R4B model with the expected outcome → webhook received, signature verified, no record text in the payload
+  (`tests/test_api.py::test_end_to_end_bundle_to_claim_response_and_signed_webhook`).
+- Idempotency, including five concurrent requests with one key (`tests/test_api.py`, `tests/test_jobs.py`).
+- Crash: a worker killed mid-job, its job reclaimed by a new process after the lease (attempts = 2); a worker that
+  lost its lease cannot overwrite the result; three crashes → failed, PEND (`tests/test_jobs.py`, `tests/test_api.py`).
+- 30 jobs claimed by 40 concurrent claims: each exactly once, on SQLite and on Postgres 16 (locally, and in CI with
+  a `postgres:16` service; `tests/test_jobs.py`). CI run #11 (`10214de`): 198 tests passed, the queue tests on both
+  backends.
+
+**Left**
+- No authentication yet (P6): every route is open.
+- In replay mode a new case misses the cassettes and is pended (`CassetteMiss`, fail-closed); real decisions on
+  new cases need `LLM_MODE=live` or `record` and a key.
+- Schema created with `create_all` (no migrations); one global webhook URL; one webhook sender per deployment is
+  assumed (deliveries are leased while in flight, receivers should still drop duplicates by delivery id).
