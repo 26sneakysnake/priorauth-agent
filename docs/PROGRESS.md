@@ -503,3 +503,57 @@ the Postgres and Jaeger test services of CI available locally)
 - **Paid live runs (optional).** Add the `ANTHROPIC_API_KEY` secret for `eval-live.yml`, or leave it absent: CI
   needs no key.
 - **Key hygiene.** Revoke or rotate the API key used for the recordings once no more recordings are planned.
+
+## Step D (bonus) — Kubernetes, published images, policies in YAML, command line
+
+**Done**
+- **Kubernetes.** `deploy/k8s/base` (kustomize):
+  - the API and the UI, one replica each (the state lives in the pod);
+  - numeric non-root users, read-only root filesystem with `emptyDir` scratch space, all capabilities dropped,
+    `RuntimeDefault` seccomp, no service-account token, no service links, probes on `/healthz` and `/login`;
+  - a namespace that enforces the "restricted" Pod Security Standard;
+  - `overlays/kind` swaps the GHCR images for locally built ones.
+  `scripts/k8s_smoke.sh` (`make k8s-smoke`) builds, loads into a throwaway kind cluster (kind 0.30.0, node
+  v1.34.0 pinned by digest), applies, waits for the rollouts and runs the smoke test through port-forwards. New CI
+  job `k8s`.
+- **Published images.** `.github/workflows/images.yml` runs after CI succeeds on `main`. It pushes
+  `ghcr.io/26sneakysnake/priorauth-agent-{api,ui}` (tags `main` and `sha-<commit>`), then pulls the commit tags
+  back, starts them and runs the smoke test.
+- **Policies in YAML.** `src/priorauth/policy/policies.yaml` holds the payer, the parameters, the shared
+  fragments and the three procedures. `criteria.py` loads and validates it and keeps its constants and objects, so
+  callers are unchanged.
+- **Command line.** `priorauth` (`[project.scripts]`, `src/priorauth/cli.py`):
+  - `policies list`, `policies check`;
+  - `decide FILE [--json]`: a case file or a FHIR Bundle, through the production path, from recordings only; exit
+    code 2 when the agent gave no reading;
+  - `demo`, `smoke`.
+- `docs/DEPLOY.md` §8 (Kubernetes); `docs/LIMITS.md` §11; README lines generated from `eval/readme.py`.
+
+**Measured**
+- CI run #27 (`d9fd958`): job `k8s` green, both pods `Running` with 0 restarts, smoke test passed (clean example
+  APPROVE, hidden-instruction example PEND). The images had also been run here under the pods' constraints (read
+  only, numeric users, no capabilities) and passed the smoke test. kind itself cannot run in this environment:
+  nested `runc` fails with "can't get final child's PID from pipe".
+- `Publish images` run #1 (`1ec7478`): both images pushed, pulled back from GHCR
+  (`priorauth-agent-api@sha256:f996bf4b…`, `priorauth-agent-ui@sha256:735934ea…`), smoke test passed. Run #2
+  (`df11a3f`) green too. An anonymous GHCR token request for the package answers "authentication required": the
+  packages are private, like the repository.
+- **Policies.** The loaded procedures and constants equal the previous Python ones field for field (a JSON snapshot
+  taken before the change, compared after). `make eval-offline` replayed the 17 committed runs and left `results/`
+  unchanged; gate PASS; data checks pass. 14 new tests in `tests/test_criteria.py`: every invalid file of the list is
+  refused with its reason.
+- **Command line.** 10 tests in `tests/test_cli.py`:
+  - a clean record is approved with one verified quote per criterion;
+  - dose x4 and the hidden instruction are pended with their reasons;
+  - a Bundle gives the same decision as its case file;
+  - an edited record (no recording) gives exit code 2 and `CassetteMiss`;
+  - an untagged Bundle and a non-case file are refused.
+  Run by hand: one test case and one robust case also replay.
+- 319 tests pass locally (with the Postgres and Jaeger services); CI runs #29 (`df11a3f`) and #30 (`924222f`)
+  green on their five jobs.
+
+**Left**
+- Kubernetes: no Ingress, TLS, NetworkPolicy or autoscaling; never run on a managed cluster; the base uses the
+  mutable `main` tag (`docs/LIMITS.md` §11).
+- Policies are not versioned and decisions do not record a policy version.
+- `priorauth decide` cannot run live; paid runs stay with `make eval-live`.

@@ -163,7 +163,24 @@ gh variable set DEMO_UI_URL --body "https://<project>.vercel.app" --repo "$REPO"
 - Open the UI: the login page shows the demo account; **Try it** runs the examples.
 - The nightly run (04:17 UTC) repeats the smoke test and fails if the demo is down or wrong.
 
-## 8. Teardown
+## 8. Optional: Kubernetes
+
+The same two images also run on Kubernetes (`deploy/k8s/`, kustomize). The manifests set one replica per
+Deployment, numeric non-root users, a read-only root filesystem with `emptyDir` scratch space, no capabilities,
+`RuntimeDefault` seccomp, no service-account token, probes on `/healthz` and `/login`, and a namespace that enforces
+the "restricted" Pod Security Standard.
+
+- **Locally or in CI, on kind:** `make k8s-smoke` (needs Docker, kind and kubectl). It builds the images, loads them
+  into a throwaway cluster, applies `deploy/k8s/overlays/kind`, waits for the rollouts and runs the smoke test
+  through port-forwards. The `k8s` job of `.github/workflows/ci.yml` runs it on every push.
+- **On a cluster with the published images:** `kubectl apply -k deploy/k8s/base` pulls
+  `ghcr.io/26sneakysnake/priorauth-agent-api` and `-ui`, tag `main`. `.github/workflows/images.yml` publishes them,
+  only for commits whose CI passed, and smoke-tests what it pushed. While the repository is private its packages are
+  private: create an image pull secret, or make the packages public in GitHub (**Packages → Package settings**).
+  No Ingress is included: expose `service/priorauth-ui` the way your cluster does (Ingress, Gateway or a load
+  balancer).
+
+## 9. Teardown
 
 ```bash
 az group delete --name "$RG" --yes

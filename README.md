@@ -73,6 +73,8 @@ make demo-up      # Docker: UI on http://localhost:3000, API docs on http://loca
 
 Requirements: uv, Docker, and Node 22 for the UI tests ([Makefile](Makefile), [docs/DEPLOY.md](docs/DEPLOY.md)).
 
+One decision from the command line, replayed from the recordings: `uv run priorauth decide data/dev/cases/dev-005.json` (dose four times the label: PEND, with the cited dose) ([src/priorauth/cli.py](src/priorauth/cli.py), [tests/test_cli.py](tests/test_cli.py)).
+
 ## What is done
 
 - Synthetic records and gold labels in three splits, test and robust frozen by sha256 ([src/priorauth/data/generator.py](src/priorauth/data/generator.py), [tests/test_data.py](tests/test_data.py)).
@@ -83,6 +85,9 @@ Requirements: uv, Docker, and Node 22 for the UI tests ([Makefile](Makefile), [d
 - Reviewer UI with exact highlights; reviewer approvals change the ClaimResponse and send a webhook; review feedback becomes dev evaluation cases ([ui/tests/e2e/review.spec.ts](ui/tests/e2e/review.spec.ts), [eval/review_to_cases.py](eval/review_to_cases.py)).
 - Load test on SQLite and Postgres with a simulated model ([results/load_test.json](results/load_test.json), [results/load_test_postgres.json](results/load_test_postgres.json)).
 - Demo images, smoke-tested on every push in CI; deployment workflow with a smoke test after each deployment and every night ([src/priorauth/demo/smoke.py](src/priorauth/demo/smoke.py), [.github/workflows/ci.yml](.github/workflows/ci.yml), [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
+- Kubernetes manifests (kustomize), applied to a kind cluster and smoke-tested on every push in CI ([deploy/k8s/base/kustomization.yaml](deploy/k8s/base/kustomization.yaml), [scripts/k8s_smoke.sh](scripts/k8s_smoke.sh), [.github/workflows/ci.yml](.github/workflows/ci.yml)).
+- Demo images published to GHCR only from commits whose CI passed, then pulled back and smoke-tested ([.github/workflows/images.yml](.github/workflows/images.yml)).
+- Payer policies in a YAML file validated when loaded; a `priorauth` command line lists and checks them and decides one record ([src/priorauth/policy/policies.yaml](src/priorauth/policy/policies.yaml), [tests/test_criteria.py](tests/test_criteria.py), [src/priorauth/cli.py](src/priorauth/cli.py)).
 - Audit from a fresh clone: lint, tests, offline replay that must leave `results/` unchanged, gate, data checks, secret scan of every commit ([scripts/audit.sh](scripts/audit.sh), run recorded in [docs/PROGRESS.md](docs/PROGRESS.md)).
 
 ## What is not done
@@ -91,7 +96,7 @@ Requirements: uv, Docker, and Node 22 for the UI tests ([Makefile](Makefile), [d
 - `eval-live.yml` has never run ([.github/workflows/eval-live.yml](.github/workflows/eval-live.yml), [docs/LIMITS.md](docs/LIMITS.md)).
 - No real or de-identified real data, no clinician agreement study, one recorded run per system ([docs/LIMITS.md](docs/LIMITS.md)).
 - No TLS in the application, no MFA, no key management service, no WORM audit storage ([docs/HIPAA_ALIGNMENT.md](docs/HIPAA_ALIGNMENT.md)).
-- No Kubernetes manifests or published images ([docs/PROGRESS.md](docs/PROGRESS.md)).
+- Kubernetes tested on kind only, without Ingress, TLS or network policies; the published images stay private as long as the repository is ([docs/LIMITS.md](docs/LIMITS.md)).
 
 ## Documentation
 
@@ -99,7 +104,7 @@ Requirements: uv, Docker, and Node 22 for the UI tests ([Makefile](Makefile), [d
 - [docs/MODEL_CARD.md](docs/MODEL_CARD.md): the model, its intended use and its evaluation.
 - [docs/LIMITS.md](docs/LIMITS.md): what fails and what the measurements do not isolate.
 - [docs/HIPAA_ALIGNMENT.md](docs/HIPAA_ALIGNMENT.md): control matrix, with the code and the test of each covered row.
-- [docs/DEPLOY.md](docs/DEPLOY.md): deploying the demo.
+- [docs/DEPLOY.md](docs/DEPLOY.md): deploying the demo (Azure Container Apps and Vercel, or Kubernetes).
 - [docs/PROGRESS.md](docs/PROGRESS.md): what was done, measured and left, phase by phase.
 
 License: MIT ([LICENSE](LICENSE)).

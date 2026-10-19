@@ -265,6 +265,10 @@ def quick_start() -> list[str]:
         "",
         f"Requirements: uv, Docker, and Node 22 for the UI tests ({link('Makefile')}, {link('docs/DEPLOY.md')}).",
         "",
+        "One decision from the command line, replayed from the recordings: "
+        "`uv run priorauth decide data/dev/cases/dev-005.json` (dose four times the label: PEND, with the cited "
+        f"dose) ({link('src/priorauth/cli.py')}, {link('tests/test_cli.py')}).",
+        "",
     ]
 
 
@@ -289,6 +293,14 @@ def done_and_not() -> list[str]:
         "- Demo images, smoke-tested on every push in CI; deployment workflow with a smoke test after each deployment "
         f"and every night ({link('src/priorauth/demo/smoke.py')}, {link('.github/workflows/ci.yml')}, "
         f"{link('.github/workflows/deploy.yml')}).",
+        "- Kubernetes manifests (kustomize), applied to a kind cluster and smoke-tested on every push in CI "
+        f"({link('deploy/k8s/base/kustomization.yaml')}, {link('scripts/k8s_smoke.sh')}, "
+        f"{link('.github/workflows/ci.yml')}).",
+        "- Demo images published to GHCR only from commits whose CI passed, then pulled back and smoke-tested "
+        f"({link('.github/workflows/images.yml')}).",
+        "- Payer policies in a YAML file validated when loaded; a `priorauth` command line lists and checks them and "
+        f"decides one record ({link('src/priorauth/policy/policies.yaml')}, {link('tests/test_criteria.py')}, "
+        f"{link('src/priorauth/cli.py')}).",
         "- Audit from a fresh clone: lint, tests, offline replay that must leave `results/` unchanged, gate, data "
         f"checks, secret scan of every commit ({link('scripts/audit.sh')}, run recorded in "
         f"{link('docs/PROGRESS.md')}).",
@@ -301,7 +313,8 @@ def done_and_not() -> list[str]:
         f"({link('docs/LIMITS.md')}).",
         "- No TLS in the application, no MFA, no key management service, no WORM audit storage "
         f"({link('docs/HIPAA_ALIGNMENT.md')}).",
-        f"- No Kubernetes manifests or published images ({link('docs/PROGRESS.md')}).",
+        "- Kubernetes tested on kind only, without Ingress, TLS or network policies; the published images stay "
+        f"private as long as the repository is ({link('docs/LIMITS.md')}).",
         "",
         "## Documentation",
         "",
@@ -309,7 +322,7 @@ def done_and_not() -> list[str]:
         f"- {link('docs/MODEL_CARD.md')}: the model, its intended use and its evaluation.",
         f"- {link('docs/LIMITS.md')}: what fails and what the measurements do not isolate.",
         f"- {link('docs/HIPAA_ALIGNMENT.md')}: control matrix, with the code and the test of each covered row.",
-        f"- {link('docs/DEPLOY.md')}: deploying the demo.",
+        f"- {link('docs/DEPLOY.md')}: deploying the demo (Azure Container Apps and Vercel, or Kubernetes).",
         f"- {link('docs/PROGRESS.md')}: what was done, measured and left, phase by phase.",
         "",
         f"License: MIT ({link('LICENSE')}).",

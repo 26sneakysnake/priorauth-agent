@@ -165,3 +165,20 @@ same agent through the API pipeline (minimum-necessary pages, redacted identifie
   is public: anyone can approve or flag the demo's cases until the next restart.
 - **Not deployed from here.** `.github/workflows/deploy.yml` and `docs/DEPLOY.md` have not run against Azure or
   Vercel; the images and the smoke test are verified in CI only.
+
+## 11. Kubernetes, published images, policies file, command line (step D)
+
+- **Tested on kind only.** `deploy/k8s/` is applied to a throwaway kind cluster in CI (job `k8s` of
+  `.github/workflows/ci.yml`), where both pods start and pass the demo smoke test through port-forwards. It has not
+  run on a managed cluster.
+- **What the manifests leave out.** No Ingress, no TLS, no NetworkPolicy, no autoscaling. One replica per
+  Deployment, for the same reason as the demo: the state lives in the pod.
+- **Image tags.** The base refers to the mutable `main` tag. For anything longer-lived than a demo, pin the
+  `sha-<commit>` tag or a digest (`.github/workflows/images.yml` writes both). While the repository is private, its
+  GHCR packages are private too: a cluster then needs an image pull secret.
+- **The policies file is validated, not versioned.** `src/priorauth/policy/policies.yaml` is checked when it is
+  loaded (placeholders, unused parameters, ids, unknown fields), but decisions do not record a policy version, and
+  any change to the policy text changes the model requests: the recorded responses then no longer replay, by design.
+- **`priorauth decide` replays only.** It decides a record only if the responses for that exact record were
+  recorded (the dev, test and robust cases). Any other record gets the engine's fail-closed PEND and exit code 2;
+  the command never calls a model.
