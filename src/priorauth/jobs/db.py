@@ -63,6 +63,11 @@ class JobRow(Base):
     cost_usd: Mapped[float] = mapped_column(default=0.0)  # LLM cost of the attempt that produced the result
     llm_calls: Mapped[int] = mapped_column(Integer, default=0)
     system_name: Mapped[str | None] = mapped_column(String(100))  # the system under test that produced the result
+    # A reviewer's decision, kept beside the engine's (`outcome` and `result_json` are never rewritten by a review).
+    review_outcome: Mapped[str | None] = mapped_column(String(10))
+    review_id: Mapped[str | None] = mapped_column(String(36))
+    reviewed_by: Mapped[str | None] = mapped_column(String(36))
+    reviewed_at: Mapped[datetime | None]
     outcome: Mapped[str | None] = mapped_column(String(10))
     result_json: Mapped[str | None] = mapped_column(EncryptedText)  # findings with their quotes
     created_at: Mapped[datetime] = mapped_column(default=utcnow)

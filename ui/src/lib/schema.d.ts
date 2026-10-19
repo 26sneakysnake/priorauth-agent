@@ -291,6 +291,8 @@ export interface components {
             procedure_name: string;
             /** Reasons */
             reasons: components["schemas"]["ReasonView"][];
+            /** Reviewer Outcome */
+            reviewer_outcome: string | null;
             /** Reviews */
             reviews: components["schemas"]["ReviewView"][];
             /** Submitter Case Id */
@@ -305,11 +307,17 @@ export interface components {
              * Format: date-time
              */
             created_at: string;
+            /** Decided By */
+            decided_by: string | null;
+            /** Engine Outcome */
+            engine_outcome: string | null;
             job: components["schemas"]["JobView"];
             /** Outcome */
             outcome: string | null;
             /** Procedure Code */
             procedure_code: string;
+            /** Reviewer Outcome */
+            reviewer_outcome: string | null;
             /** Submitter Case Id */
             submitter_case_id: string | null;
         };

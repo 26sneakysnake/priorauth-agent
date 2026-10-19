@@ -296,13 +296,30 @@ _ACTIONS = {
 }
 
 
-def claim_response(case_id: str, member_id: str, decision: Decision, created: datetime) -> dict[str, Any]:
-    """Simplified ClaimResponse inspired by Da Vinci PAS. There is no denial: PEND means human review."""
-    code, display, outcome = _ACTIONS[decision.outcome]
-    notes = [
-        {"number": n, "type": "display", "text": f"{r.code.value}" + (f" {r.criterion_id}" if r.criterion_id else "")}
-        for n, r in enumerate(decision.reasons, start=1)
-    ]
+@dataclass(frozen=True)
+class ReviewerDecision:
+    """A human reviewer's approval of a case the engine pended (priorauth.api.review)."""
+
+    review_id: str
+    reviewer_id: str
+    decided_at: datetime
+
+
+def claim_response(
+    case_id: str, member_id: str, decision: Decision, created: datetime, reviewer: ReviewerDecision | None = None
+) -> dict[str, Any]:
+    """Simplified ClaimResponse inspired by Da Vinci PAS. There is no denial: PEND means human review.
+
+    With a reviewer's approval the response is certified (A1) and says so: the disposition names the reviewer's
+    decision, and the process notes keep the engine's PEND and its reasons next to it."""
+    final = Outcome.APPROVE if reviewer else decision.outcome
+    code, display, outcome = _ACTIONS[final]
+    prefix = f"engine {decision.outcome.value}: " if reviewer else ""
+    texts = [prefix + r.code.value + (f" {r.criterion_id}" if r.criterion_id else "") for r in decision.reasons]
+    if reviewer:
+        texts.append(f"reviewer APPROVE: review {reviewer.review_id} by user {reviewer.reviewer_id}")
+        created = reviewer.decided_at
+    notes = [{"number": n, "type": "display", "text": t} for n, t in enumerate(texts, start=1)]
     body: dict[str, Any] = {
         "resourceType": "ClaimResponse",
         "id": case_id,
@@ -315,9 +332,13 @@ def claim_response(case_id: str, member_id: str, decision: Decision, created: da
         "created": (created if created.tzinfo else created.replace(tzinfo=UTC)).replace(microsecond=0).isoformat(),
         "insurer": {"display": PAYER_NAME},
         "outcome": outcome,
-        "disposition": "Approved: every criterion met with verified evidence"
-        if decision.outcome is Outcome.APPROVE
-        else f"Pended for clinical review ({len(decision.reasons)} reason(s))",
+        "disposition": (
+            f"Approved by a human reviewer; the automated engine had pended it ({len(decision.reasons)} reason(s))"
+            if reviewer
+            else "Approved: every criterion met with verified evidence"
+            if decision.outcome is Outcome.APPROVE
+            else f"Pended for clinical review ({len(decision.reasons)} reason(s))"
+        ),
         "extension": [
             {
                 "url": REVIEW_ACTION_URL,
@@ -325,7 +346,7 @@ def claim_response(case_id: str, member_id: str, decision: Decision, created: da
             }
         ],
     }
-    if decision.outcome is Outcome.APPROVE:
+    if final is Outcome.APPROVE:
         body["preAuthRef"] = case_id
     if notes:
         body["processNote"] = notes

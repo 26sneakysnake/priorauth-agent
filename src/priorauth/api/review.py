@@ -7,10 +7,13 @@
 Roles: reviewer and admin. Offsets come from priorauth.agent.verifier.locate, i.e. the same normalization that
 verified the quote, so a highlight shows exactly the characters a quote was checked against.
 
-A human approval is recorded next to the engine's decision; it does not rewrite the engine's decision, the
-ClaimResponse or the webhook (not done, see docs/LIMITS.md). Every review is audited and appended as one line of
-identifiers and labels (never the comment) to the feedback file, PRIORAUTH_REVIEW_FEEDBACK_PATH (default
-eval/cases_from_review.jsonl); eval/review_to_cases.py turns those lines into dev evaluation cases.
+A reviewer's approval becomes the case's final decision: GET /cases/{id} and the ClaimResponse say APPROVE (certified,
+A1, decided by the reviewer) and a signed `case.reviewed` webhook is queued in the same transaction as the review
+(priorauth.jobs.queue.JobQueue.record_review). The engine's decision is kept beside it: the stored CaseRun, the job's
+engine outcome and the ClaimResponse's process notes still say PEND with its reasons. After an approval the case is
+closed to further reviews (409). Every review is audited and appended as one line of identifiers and labels (never
+the comment) to the feedback file, PRIORAUTH_REVIEW_FEEDBACK_PATH (default eval/cases_from_review.jsonl);
+eval/review_to_cases.py turns those lines into dev evaluation cases.
 """
 
 import asyncio
@@ -100,7 +103,8 @@ class CaseReview(BaseModel):
     procedure_name: str
     created_at: datetime
     job_status: str
-    outcome: str | None
+    outcome: str | None  # the engine's decision
+    reviewer_outcome: str | None  # APPROVE once a reviewer approved the case
     extracted_by: str | None
     error: str | None
     pages: list[PageView]
@@ -276,6 +280,7 @@ async def case_review(request: Request, case_id: str, principal: Annotated[Princ
         created_at=row.created_at,
         job_status=job.status,
         outcome=job.outcome,
+        reviewer_outcome=job.review_outcome,
         extracted_by=job.system_name,
         error=job.error,
         pages=[PageView(number=p.number, text=p.text) for p in case.pages],
@@ -311,6 +316,8 @@ async def add_review(
     row, job, _ = await _load(request, case_id)
     if job.status not in ("done", "failed") or job.outcome != Outcome.PEND.value:
         raise HTTPException(status_code=409, detail="only a finished, pended case can be reviewed")
+    if job.review_outcome:
+        raise HTTPException(status_code=409, detail="a reviewer already approved this case")
     procedure = PROCEDURES.get(row.procedure_code)
     if body.criterion_id and (procedure is None or body.criterion_id not in procedure.criterion_ids):
         raise HTTPException(status_code=422, detail=f"{body.criterion_id!r} is not a criterion of this procedure")
@@ -324,11 +331,13 @@ async def add_review(
         comment=(body.reason if body.action == "request_info" else body.comment) or None,
         created_at=utcnow(),
     )
-    async with request.app.state.sessions.begin() as s:
-        s.add(review)
+    if not await request.app.state.queue.record_review(review):  # e.g. another reviewer approved it meanwhile
+        raise HTTPException(status_code=409, detail="the case changed; reload it")
     detail: dict[str, str] = {}
     if review.criterion_id:
         detail = {"criterion_id": review.criterion_id, "corrected_status": review.corrected_status or ""}
+    if body.action == "approve":
+        detail = {"outcome": "APPROVE", "job_id": job.id}  # the final decision changes: PEND (engine) -> APPROVE
     await _audit(request).record(principal.user_id, principal.role, f"review.{body.action}", case_id, **detail)
     sink: FeedbackSink = request.app.state.feedback
     await sink.write(

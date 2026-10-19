@@ -15,9 +15,10 @@ test("a reviewer approves a pended case and it leaves the queue", async ({ page 
   const caseName = (await link.textContent()) ?? "";
   await link.click();
   await expect(page.getByText("Engine decision:")).toContainText("PEND");
-  await expect(page.getByText("scripted-oracle-not-a-model+protected")).toBeVisible();
   await page.getByRole("button", { name: "Approve" }).click();
-  await expect(page.getByText("A reviewer approved this case.")).toBeVisible();
+  await expect(page.getByText("A reviewer approved this case: it is closed.")).toBeVisible();
+  await expect(page.getByText("Engine decision:")).toContainText("Reviewer decision: APPROVE");
+  await expect(page.getByText("Engine decision:")).toContainText("PEND");
   await expect(page.getByTestId("review-entry")).toContainText("approve");
   await page.getByRole("link", { name: "Back to the queue" }).click();
   await expect(page.getByTestId("queue-row").first()).toBeVisible();

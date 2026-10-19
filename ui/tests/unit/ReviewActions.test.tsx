@@ -47,8 +47,8 @@ describe("ReviewActions", () => {
   });
 
   it("explains why a case cannot be reviewed", () => {
-    render(<ReviewActions criteria={criteria} onSubmit={async () => null} disabled="A reviewer approved this case." />);
+    render(<ReviewActions criteria={criteria} onSubmit={async () => null} disabled="A reviewer approved this case: it is closed." />);
     expect(screen.queryByRole("button")).toBeNull();
-    expect(screen.getByText("A reviewer approved this case.")).toBeDefined();
+    expect(screen.getByText("A reviewer approved this case: it is closed.")).toBeDefined();
   });
 });

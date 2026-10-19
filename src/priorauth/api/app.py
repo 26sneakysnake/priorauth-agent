@@ -37,7 +37,7 @@ from sqlalchemy import select
 
 from priorauth.api import review
 from priorauth.api.deps import ADMIN, READER, SUBMITTER, UUID_SHAPE
-from priorauth.api.fhir import BundleError, claim_response, parse_bundle
+from priorauth.api.fhir import BundleError, ReviewerDecision, claim_response, parse_bundle
 from priorauth.api.review import DEFAULT_FEEDBACK_PATH, FeedbackSink
 from priorauth.jobs.db import CaseRow, JobRow, create_schema, make_engine, sessions, utcnow
 from priorauth.jobs.queue import IdempotencyConflict, JobQueue, body_digest, daily_costs
@@ -112,7 +112,10 @@ class CaseView(BaseModel):
     submitter_case_id: str | None
     procedure_code: str
     created_at: datetime
-    outcome: str | None
+    outcome: str | None  # the final decision: the reviewer's if a reviewer approved, else the engine's
+    engine_outcome: str | None  # what the policy engine decided (kept after a review)
+    reviewer_outcome: str | None  # APPROVE once a reviewer approved the pended case
+    decided_by: str | None  # "engine" or "reviewer"
     job: JobView
 
 
@@ -349,7 +352,10 @@ def create_app(
             submitter_case_id=case.submitter_case_id,
             procedure_code=case.procedure_code,
             created_at=case.created_at,
-            outcome=job.outcome,
+            outcome=job.review_outcome or job.outcome,
+            engine_outcome=job.outcome,
+            reviewer_outcome=job.review_outcome,
+            decided_by=("reviewer" if job.review_outcome else "engine") if job.outcome else None,
             job=JobView(
                 id=job.id,
                 status=job.status,
@@ -373,7 +379,14 @@ def create_app(
         case, job = await load(request, case_id, principal, "result.read")
         if job.status not in ("done", "failed"):
             return JSONResponse(status_code=409, content={"detail": f"job is {job.status}"})
-        body = claim_response(case.id, case.member_id, decision_of(job, case), job.finished_at or job.updated_at)
+        reviewer = (
+            ReviewerDecision(review_id=job.review_id, reviewer_id=job.reviewed_by, decided_at=job.reviewed_at)
+            if job.review_outcome == "APPROVE" and job.review_id and job.reviewed_by and job.reviewed_at
+            else None
+        )
+        body = claim_response(
+            case.id, case.member_id, decision_of(job, case), job.finished_at or job.updated_at, reviewer
+        )
         return JSONResponse(content=body, media_type="application/fhir+json")
 
     @app.get("/audit", response_model=list[AuditEntry], summary="Audit log entries after a sequence number")

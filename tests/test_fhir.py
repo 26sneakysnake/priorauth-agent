@@ -101,3 +101,18 @@ def test_claim_response_is_a_valid_r4b_resource_and_never_denies(index: int) -> 
     [action] = body["extension"]
     assert action["valueCodeableConcept"]["coding"][0]["code"] == "A4"  # pended, never A3 (not certified)
     assert case.patient.name not in json.dumps(body)
+
+
+def test_claim_response_after_a_reviewer_approval_keeps_the_engines_pend() -> None:
+    case, _ = ALL[0]
+    decision = decide(CaseFindings(procedure_code=case.procedure_code, findings=()))
+    reviewer = fhir.ReviewerDecision(review_id="r-1", reviewer_id="u-1", decided_at=datetime(2026, 1, 2, 3, 4, 5))
+    body = fhir.claim_response(case.case_id, case.patient.member_id, decision, datetime.now(UTC), reviewer)
+    ClaimResponse.model_validate(body)
+    assert body["outcome"] == "complete" and body["preAuthRef"] == case.case_id
+    assert body["extension"][0]["valueCodeableConcept"]["coding"][0]["code"] == "A1"
+    assert body["created"] == "2026-01-02T03:04:05+00:00"
+    notes = [n["text"] for n in body["processNote"]]
+    assert len(notes) == len(decision.reasons) + 1
+    assert all(t.startswith("engine PEND: ") for t in notes[:-1])
+    assert notes[-1] == "reviewer APPROVE: review r-1 by user u-1"

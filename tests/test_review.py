@@ -7,14 +7,16 @@ from pathlib import Path
 from typing import Any
 
 import httpx
+from fhir.resources.R4B.claimresponse import ClaimResponse
 
 from eval import review_to_cases
 from eval.run import load_split
 from priorauth.agent.verifier import locate, normalize, normalize_quote
 from priorauth.api.fhir import case_to_bundle
 from priorauth.data.schema import Case, Gold, Trap
+from priorauth.jobs import webhooks
 from priorauth.policy.models import Status
-from tests.test_api import api, login, one_per_trap, wait_done
+from tests.test_api import HOOK_URL, SECRET, api, login, one_per_trap, wait_done
 from tests.test_data import load
 
 SPLITS = {s: load(s) for s in ("dev", "test", "robust")}
@@ -191,3 +193,89 @@ def test_ui_fixture_offsets_are_the_verifiers() -> None:
     for ev in evidence:
         assert (ev["start"], ev["end"]) == locate(pages[ev["page"]], ev["quote"])
     assert len(evidence) > 5 and review["injection_detected"]
+
+
+def test_a_reviewer_approval_becomes_the_final_decision_and_keeps_the_engines(tmp_path: Path) -> None:
+    """Approval -> GET /cases/{id} and the ClaimResponse say APPROVE (A1, by the reviewer), a signed case.reviewed
+    webhook goes out, the engine's PEND and its reasons stay on record, and the audit log has the decision."""
+
+    async def scenario() -> None:
+        async with api(tmp_path, role="reviewer", webhook_url=HOOK_URL, webhook_secret=SECRET) as (client, received):
+            cases = await _review_setup(client)
+            case, _gold, case_id = next(v for v in cases.values() if v[1].expected_decision == "PEND")
+            system = {"Authorization": f"Bearer {await login(client, 'demo-system')}"}
+            before = (await client.get(f"/cases/{case_id}/result", headers=system)).json()
+            assert before["outcome"] == "queued"
+            engine_reasons = [n["text"] for n in before["processNote"]]
+
+            r = await client.post(f"/cases/{case_id}/reviews", json={"action": "approve", "comment": "Checked."})
+            assert r.status_code == 201
+            review_id = r.json()["id"]
+            me = (await client.get("/auth/me")).json()
+
+            view = (await client.get(f"/cases/{case_id}", headers=system)).json()
+            assert (view["outcome"], view["engine_outcome"], view["reviewer_outcome"], view["decided_by"]) == (
+                "APPROVE",
+                "PEND",
+                "APPROVE",
+                "reviewer",
+            )
+            claim = (await client.get(f"/cases/{case_id}/result", headers=system)).json()
+            ClaimResponse.model_validate(claim)
+            assert claim["outcome"] == "complete" and claim["preAuthRef"] == case_id
+            assert claim["extension"][0]["valueCodeableConcept"]["coding"][0]["code"] == "A1"
+            assert claim["disposition"].startswith("Approved by a human reviewer")
+            notes = [n["text"] for n in claim["processNote"]]
+            assert notes[:-1] == [f"engine PEND: {t}" for t in engine_reasons]  # the engine's decision is kept
+            assert notes[-1] == f"reviewer APPROVE: review {review_id} by user {me['user_id']}"
+            review_view = (await client.get(f"/cases/{case_id}/review")).json()
+            assert (review_view["outcome"], review_view["reviewer_outcome"]) == ("PEND", "APPROVE")
+
+            # Closed to further reviews.
+            assert (await client.post(f"/cases/{case_id}/reviews", json={"action": "approve"})).status_code == 409
+            again = await client.post(f"/cases/{case_id}/reviews", json={"action": "request_info", "reason": "x"})
+            assert again.status_code == 409
+
+            deadline = asyncio.get_running_loop().time() + 10
+            while not any(h.headers[webhooks.EVENT_HEADER] == "case.reviewed" for h in received):
+                assert asyncio.get_running_loop().time() < deadline
+                await asyncio.sleep(0.05)
+            admin = {"Authorization": f"Bearer {await login(client, 'demo-admin')}"}
+            entries = (await client.get("/audit", headers=admin, params={"limit": 1000})).json()
+            verified = (await client.get("/audit/verify", headers=admin)).json()
+
+        reviewed = [h for h in received if h.headers[webhooks.EVENT_HEADER] == "case.reviewed"]
+        assert len(reviewed) == 1
+        hook = reviewed[0]
+        assert webhooks.verify(SECRET.encode(), hook.headers[webhooks.SIGNATURE_HEADER], hook.content)
+        payload = json.loads(hook.content)
+        assert {k: payload[k] for k in ("event", "case_id", "outcome", "decided_by", "engine_outcome")} == {
+            "event": "case.reviewed",
+            "case_id": case_id,
+            "outcome": "APPROVE",
+            "decided_by": "reviewer",
+            "engine_outcome": "PEND",
+        }
+        assert case.patient.name not in hook.content.decode() and "Checked." not in hook.content.decode()
+        decided = [e for e in entries if e["action"] == "review.approve" and e["resource"] == case_id]
+        assert len(decided) == 1 and decided[0]["detail"]["outcome"] == "APPROVE"
+        assert decided[0]["actor_role"] == "reviewer" and verified["ok"]
+
+    asyncio.run(scenario())
+
+
+def test_two_reviewers_approving_at_once_make_one_decision(tmp_path: Path) -> None:
+    async def scenario() -> None:
+        async with api(tmp_path, role="reviewer") as (client, _):
+            cases = await _review_setup(client)
+            case_id = next(cid for _, g, cid in cases.values() if g.expected_decision == "PEND")
+            admin = {"Authorization": f"Bearer {await login(client, 'demo-admin')}"}
+            responses = await asyncio.gather(
+                client.post(f"/cases/{case_id}/reviews", json={"action": "approve"}),
+                client.post(f"/cases/{case_id}/reviews", json={"action": "approve"}, headers=admin),
+            )
+            assert sorted(r.status_code for r in responses) == [201, 409]
+            view = (await client.get(f"/cases/{case_id}/review")).json()
+            assert [r["action"] for r in view["reviews"]] == ["approve"]  # the losing review was rolled back
+
+    asyncio.run(scenario())

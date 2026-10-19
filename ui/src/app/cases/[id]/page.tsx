@@ -43,12 +43,12 @@ export default function CasePage() {
   if (error) return <p role="alert" className="text-red-700">{error}</p>;
   if (!review) return <p className="text-slate-600">Loading…</p>;
   const spans = pageSpans(review);
-  const approved = review.reviews.some((r) => r.action === "approve");
+  const approved = review.reviewer_outcome === "APPROVE";
   const disabled =
     review.outcome !== "PEND"
       ? "The engine approved this case: there is nothing to review."
       : approved
-        ? "A reviewer approved this case."
+        ? "A reviewer approved this case: it is closed."
         : null;
 
   return (
@@ -62,8 +62,15 @@ export default function CasePage() {
         </Link>
       </div>
       <p className="text-sm text-slate-600">
-        Engine decision: <strong>{review.outcome ?? "pending"}</strong>. Evidence extracted by{" "}
-        <span className="font-mono">{review.extracted_by ?? "unknown"}</span>
+        Engine decision: <strong>{review.outcome ?? "pending"}</strong>
+        {review.reviewer_outcome ? (
+          <>
+            {" "}
+            · Reviewer decision: <strong>{review.reviewer_outcome}</strong> (final: the ClaimResponse and the webhook
+            carry it; the engine&apos;s decision stays on record)
+          </>
+        ) : null}
+        . Evidence extracted by <span className="font-mono">{review.extracted_by ?? "unknown"}</span>
         {review.error ? <span> (error: {review.error})</span> : null}.
       </p>
       {review.injection_detected ? (

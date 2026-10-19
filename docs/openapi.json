@@ -212,6 +212,17 @@
             "title": "Reasons",
             "type": "array"
           },
+          "reviewer_outcome": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer Outcome"
+          },
           "reviews": {
             "items": {
               "$ref": "#/components/schemas/ReviewView"
@@ -239,6 +250,7 @@
           "created_at",
           "job_status",
           "outcome",
+          "reviewer_outcome",
           "extracted_by",
           "error",
           "pages",
@@ -262,6 +274,28 @@
             "title": "Created At",
             "type": "string"
           },
+          "decided_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided By"
+          },
+          "engine_outcome": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Outcome"
+          },
           "job": {
             "$ref": "#/components/schemas/JobView"
           },
@@ -279,6 +313,17 @@
           "procedure_code": {
             "title": "Procedure Code",
             "type": "string"
+          },
+          "reviewer_outcome": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer Outcome"
           },
           "submitter_case_id": {
             "anyOf": [
@@ -298,6 +343,9 @@
           "procedure_code",
           "created_at",
           "outcome",
+          "engine_outcome",
+          "reviewer_outcome",
+          "decided_by",
           "job"
         ],
         "title": "CaseView",

@@ -12,6 +12,9 @@ the worker that took over.
 
 Audit. With an AuditLog, every decision (job.decide) and every fail-closed failure (job.failed) is appended to the
 hash-chained audit log once its transaction has committed.
+
+Review. A reviewer's approval (record_review) is stored beside the engine's decision, never over it, and queues a
+`case.reviewed` webhook in the same transaction as the review itself.
 """
 
 import hashlib
@@ -27,11 +30,16 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from priorauth.api.fhir import ParsedBundle
-from priorauth.jobs.db import CaseRow, JobRow, WebhookDeliveryRow, utcnow
+from priorauth.jobs.db import CaseRow, JobRow, ReviewRow, WebhookDeliveryRow, utcnow
 from priorauth.pipeline import CaseRun
 from priorauth.security.audit import AuditLog
 
 EVENT_DECIDED = "case.decided"
+EVENT_REVIEWED = "case.reviewed"
+
+
+class _ReviewConflict(Exception):
+    pass
 
 
 class IdempotencyConflict(Exception):
@@ -285,23 +293,80 @@ class JobQueue:
                 f"worker:{worker_id}", "job.failed", job.case_id, job_id=job_id, error_kind=error_kind[:80]
             )
 
-    def _enqueue_webhook(self, s: AsyncSession, job_id: str, case_id: str, outcome: str, now: datetime) -> None:
+    # -- human review -------------------------------------------------------------------------------------------
+
+    async def record_review(self, review: ReviewRow) -> bool:
+        """Store a review of a finished, pended case. An approval also records the reviewer's decision on the job
+        (beside the engine's, which is kept) and queues a `case.reviewed` webhook, in the same transaction.
+        False if the case is not finished, not pended, or already approved by a reviewer."""
+        try:
+            async with self.sessions.begin() as s:
+                job = (
+                    await s.execute(
+                        select(JobRow.id, JobRow.status, JobRow.outcome, JobRow.review_outcome).where(
+                            JobRow.case_id == review.case_id
+                        )
+                    )
+                ).first()
+                if job is None or job.status not in ("done", "failed") or job.outcome != "PEND" or job.review_outcome:
+                    raise _ReviewConflict
+                s.add(review)
+                if review.action == "approve":
+                    moved = await _count(
+                        s,
+                        update(JobRow)
+                        .where(JobRow.id == job.id, JobRow.review_outcome.is_(None))
+                        .values(
+                            review_outcome="APPROVE",
+                            review_id=review.id,
+                            reviewed_by=review.reviewer_id,
+                            reviewed_at=review.created_at,
+                            version=JobRow.version + 1,
+                            updated_at=review.created_at,
+                        ),
+                    )
+                    if moved != 1:  # another reviewer approved it in between
+                        raise _ReviewConflict
+                    self._enqueue_webhook(
+                        s,
+                        job.id,
+                        review.case_id,
+                        "APPROVE",
+                        review.created_at,
+                        event=EVENT_REVIEWED,
+                        extra={"decided_by": "reviewer", "engine_outcome": "PEND"},
+                    )
+        except _ReviewConflict:
+            return False
+        return True
+
+    def _enqueue_webhook(
+        self,
+        s: AsyncSession,
+        job_id: str,
+        case_id: str,
+        outcome: str,
+        now: datetime,
+        *,
+        event: str = EVENT_DECIDED,
+        extra: dict[str, str] | None = None,
+    ) -> None:
         if not self.webhook_url:
             return
         delivery_id = str(uuid.uuid4())
         payload = {
-            "event": EVENT_DECIDED,
+            "event": event,
             "delivery_id": delivery_id,
             "case_id": case_id,
             "job_id": job_id,
             "outcome": outcome,
             "result_url": f"/cases/{case_id}/result",
-        }
+        } | (extra or {})
         s.add(
             WebhookDeliveryRow(
                 id=delivery_id,
                 job_id=job_id,
-                event=EVENT_DECIDED,
+                event=event,
                 url=self.webhook_url,
                 payload_json=json.dumps(payload, sort_keys=True),
                 next_attempt_at=now,
