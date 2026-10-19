@@ -90,6 +90,7 @@ async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, see
             jwt_secret=secrets.token_urlsafe(32),
             audit_key=secrets.token_urlsafe(32),
             demo_password=password,
+            review_feedback_path=None,
         )
         app = create_app(settings, system_factory=system)
         transport_ = httpx.ASGITransport(app=app)
