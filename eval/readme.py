@@ -5,7 +5,8 @@
 
 Every number in the README is read from a committed result file, and every paragraph and list item links to the file
 (result, test, code or workflow) it rests on; tests/test_readme.py checks both. The demo URL comes from
-docs/demo_url.txt (empty until the demo is deployed, see docs/DEPLOY.md).
+docs/demo_url.txt (empty until the demo is deployed, see docs/DEPLOY.md); the date of the smoke test run by hand
+against that deployment is LIVE_SMOKE_DATE, recorded in docs/PROGRESS.md ("Demo deployment").
 """
 
 import argparse
@@ -21,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "README.md"
 SPLITS = ("dev", "test", "robust")
 REPO = "26sneakysnake/priorauth-agent"
+LIVE_SMOKE_DATE = "2026-10-19"  # python -m priorauth.demo.smoke against the live demo, run by hand (docs/PROGRESS.md)
 SYSTEMS = (
     ("rules_baseline", "Baseline 1: rules, no LLM"),
     ("llm_single_haiku", "Baseline 2: one Haiku call, no tools"),
@@ -77,15 +79,20 @@ def demo_url() -> str:
 
 def header() -> list[str]:
     url = demo_url()
+    local = (
+        f"Run the same demo locally with `make demo-up` and open http://localhost:3000 "
+        f"({link('docker-compose.demo.yml')}, tested in the `demo-images` job of {link('.github/workflows/ci.yml')})."
+    )
     if url:
-        where = f"**Live demo: <{url}>** (source of the URL: {link('docs/demo_url.txt')})."
+        where = [
+            f"**Live demo: <{url}>** (URL from {link('docs/demo_url.txt')}). Deployed by hand: API on Azure Container "
+            f"Apps, UI on Vercel. The demo smoke test, `python -m priorauth.demo.smoke` (what `make smoke-demo` runs), "
+            f"passed against its live API and UI on {LIVE_SMOKE_DATE}; no workflow re-runs it against this deployment "
+            f"({link('src/priorauth/demo/smoke.py')}, record in {link('docs/PROGRESS.md')}).",
+            local,
+        ]
     else:
-        where = (
-            "**Live demo: not deployed yet** (the deployment steps are in "
-            f"{link('docs/DEPLOY.md')}). Run the same demo locally with `make demo-up` and open "
-            f"http://localhost:3000 ({link('docker-compose.demo.yml')}, tested in the `demo-images` job of "
-            f"{link('.github/workflows/ci.yml')})."
-        )
+        where = [f"**Live demo: not deployed yet** (the deployment steps are in {link('docs/DEPLOY.md')}). {local}"]
     seen: list[str] = []
     for e in EXAMPLES:
         label = e.label.removeprefix("Trap: ")
@@ -111,7 +118,7 @@ def header() -> list[str]:
         "",
         "## Try it",
         "",
-        f"- {where}",
+        *[f"- {line}" for line in where],
         f"- Demo account (reviewer role, nothing else): username `{REVIEWER}`, password "
         f"`{DEFAULT_REVIEWER_PASSWORD}`; the login page shows it ({link('src/priorauth/demo/server.py')}).",
         "- The demo resets on every restart: its database lives in its container and is seeded at start "
@@ -290,8 +297,9 @@ def done_and_not() -> list[str]:
         f"{link('eval/review_to_cases.py')}).",
         "- Load test on SQLite and Postgres with a simulated model "
         f"({link('results/load_test.json')}, {link('results/load_test_postgres.json')}).",
-        "- Demo images, smoke-tested on every push in CI; deployment workflow with a smoke test after each deployment "
-        f"and every night ({link('src/priorauth/demo/smoke.py')}, {link('.github/workflows/ci.yml')}, "
+        "- Demo images, smoke-tested on every push in CI; a deployment workflow (Azure Container Apps and Vercel, "
+        "then a smoke test after each deployment and every night) that has not deployed anything yet "
+        f"({link('src/priorauth/demo/smoke.py')}, {link('.github/workflows/ci.yml')}, "
         f"{link('.github/workflows/deploy.yml')}).",
         "- Kubernetes manifests (kustomize), applied to a kind cluster and smoke-tested on every push in CI "
         f"({link('deploy/k8s/base/kustomization.yaml')}, {link('scripts/k8s_smoke.sh')}, "
@@ -307,7 +315,14 @@ def done_and_not() -> list[str]:
         "",
         "## What is not done",
         "",
-        f"- The demo is not deployed: no deployment has run ({link('docs/DEPLOY.md')}).",
+        (
+            "- The live demo was deployed by hand, not by `deploy.yml`: ACR Tasks (`az acr build`, the workflow's "
+            "build path) is blocked on the Azure subscription, so its API image comes from GHCR; the workflow's "
+            f"nightly smoke test does not run against it ({link('docs/PROGRESS.md')}, "
+            f"{link('.github/workflows/deploy.yml')})."
+            if demo_url()
+            else f"- The demo is not deployed: no deployment has run ({link('docs/DEPLOY.md')})."
+        ),
         f"- `eval-live.yml` has never run ({link('.github/workflows/eval-live.yml')}, {link('docs/LIMITS.md')}).",
         "- No real or de-identified real data, no clinician agreement study, one recorded run per system "
         f"({link('docs/LIMITS.md')}).",

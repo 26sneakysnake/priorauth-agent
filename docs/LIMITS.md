@@ -163,8 +163,11 @@ same agent through the API pipeline (minimum-necessary pages, redacted identifie
   restart; the per-IP limit trusts `X-Forwarded-For` only when told to (`DEMO_LIVE_TRUST_FORWARDED_FOR`).
 - **Single replica, public account.** One replica only, because state lives in the container. The reviewer account
   is public: anyone can approve or flag the demo's cases until the next restart.
-- **Not deployed from here.** `.github/workflows/deploy.yml` and `docs/DEPLOY.md` have not run against Azure or
-  Vercel; the images and the smoke test are verified in CI only.
+- **Deployed by hand, checked once.** The live demo (`docs/demo_url.txt`) was deployed by hand on Azure Container
+  Apps and Vercel, with the API image pulled from GHCR because ACR Tasks is blocked on the Azure subscription.
+  `.github/workflows/deploy.yml` did not produce it, and its nightly smoke test does not run against it. The smoke
+  test passed against it once, on 2026-10-19, run by hand (`docs/PROGRESS.md`, "Demo deployment"). Nothing has
+  re-checked it since, so it can be down without any workflow failing.
 
 ## 11. Kubernetes, published images, policies file, command line (step D)
 

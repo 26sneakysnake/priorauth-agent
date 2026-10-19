@@ -8,7 +8,8 @@
 
 ## Try it
 
-- **Live demo: not deployed yet** (the deployment steps are in [docs/DEPLOY.md](docs/DEPLOY.md)). Run the same demo locally with `make demo-up` and open http://localhost:3000 ([docker-compose.demo.yml](docker-compose.demo.yml), tested in the `demo-images` job of [.github/workflows/ci.yml](.github/workflows/ci.yml)).
+- **Live demo: <https://priorauth-agent.vercel.app>** (URL from [docs/demo_url.txt](docs/demo_url.txt)). Deployed by hand: API on Azure Container Apps, UI on Vercel. The demo smoke test, `python -m priorauth.demo.smoke` (what `make smoke-demo` runs), passed against its live API and UI on 2026-10-19; no workflow re-runs it against this deployment ([src/priorauth/demo/smoke.py](src/priorauth/demo/smoke.py), record in [docs/PROGRESS.md](docs/PROGRESS.md)).
+- Run the same demo locally with `make demo-up` and open http://localhost:3000 ([docker-compose.demo.yml](docker-compose.demo.yml), tested in the `demo-images` job of [.github/workflows/ci.yml](.github/workflows/ci.yml)).
 - Demo account (reviewer role, nothing else): username `demo-reviewer`, password `synthetic-demo-only`; the login page shows it ([src/priorauth/demo/server.py](src/priorauth/demo/server.py)).
 - The demo resets on every restart: its database lives in its container and is seeded at start ([src/priorauth/demo/server.py](src/priorauth/demo/server.py)).
 - 10 labelled synthetic examples (clean record to approve; clean record to approve (paraphrased); clean record to pend; dose x4; left/right inverted; inconsistent dates; hidden instruction (prompt injection); contradiction; missing evidence); "Run the agent" shows the decision, the reasons of a PEND and the cited text highlighted. Their decisions come from real claude-haiku-5-5 responses recorded once and replayed, never from another model ([src/priorauth/demo/examples.py](src/priorauth/demo/examples.py), [tests/test_demo.py](tests/test_demo.py), [eval/cassettes/agent_v2_haiku_pipeline/dev.jsonl](eval/cassettes/agent_v2_haiku_pipeline/dev.jsonl)).
@@ -84,7 +85,7 @@ One decision from the command line, replayed from the recordings: `uv run priora
 - Security controls aligned with the HIPAA Security Rule principles: redaction, minimum necessary, roles with JWT, encryption at rest, hash-chained audit log ([docs/HIPAA_ALIGNMENT.md](docs/HIPAA_ALIGNMENT.md)).
 - Reviewer UI with exact highlights; reviewer approvals change the ClaimResponse and send a webhook; review feedback becomes dev evaluation cases ([ui/tests/e2e/review.spec.ts](ui/tests/e2e/review.spec.ts), [eval/review_to_cases.py](eval/review_to_cases.py)).
 - Load test on SQLite and Postgres with a simulated model ([results/load_test.json](results/load_test.json), [results/load_test_postgres.json](results/load_test_postgres.json)).
-- Demo images, smoke-tested on every push in CI; deployment workflow with a smoke test after each deployment and every night ([src/priorauth/demo/smoke.py](src/priorauth/demo/smoke.py), [.github/workflows/ci.yml](.github/workflows/ci.yml), [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
+- Demo images, smoke-tested on every push in CI; a deployment workflow (Azure Container Apps and Vercel, then a smoke test after each deployment and every night) that has not deployed anything yet ([src/priorauth/demo/smoke.py](src/priorauth/demo/smoke.py), [.github/workflows/ci.yml](.github/workflows/ci.yml), [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
 - Kubernetes manifests (kustomize), applied to a kind cluster and smoke-tested on every push in CI ([deploy/k8s/base/kustomization.yaml](deploy/k8s/base/kustomization.yaml), [scripts/k8s_smoke.sh](scripts/k8s_smoke.sh), [.github/workflows/ci.yml](.github/workflows/ci.yml)).
 - Demo images published to GHCR only from commits whose CI passed, then pulled back and smoke-tested ([.github/workflows/images.yml](.github/workflows/images.yml)).
 - Payer policies in a YAML file validated when loaded; a `priorauth` command line lists and checks them and decides one record ([src/priorauth/policy/policies.yaml](src/priorauth/policy/policies.yaml), [tests/test_criteria.py](tests/test_criteria.py), [src/priorauth/cli.py](src/priorauth/cli.py)).
@@ -92,7 +93,7 @@ One decision from the command line, replayed from the recordings: `uv run priora
 
 ## What is not done
 
-- The demo is not deployed: no deployment has run ([docs/DEPLOY.md](docs/DEPLOY.md)).
+- The live demo was deployed by hand, not by `deploy.yml`: ACR Tasks (`az acr build`, the workflow's build path) is blocked on the Azure subscription, so its API image comes from GHCR; the workflow's nightly smoke test does not run against it ([docs/PROGRESS.md](docs/PROGRESS.md), [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
 - `eval-live.yml` has never run ([.github/workflows/eval-live.yml](.github/workflows/eval-live.yml), [docs/LIMITS.md](docs/LIMITS.md)).
 - No real or de-identified real data, no clinician agreement study, one recorded run per system ([docs/LIMITS.md](docs/LIMITS.md)).
 - No TLS in the application, no MFA, no key management service, no WORM audit storage ([docs/HIPAA_ALIGNMENT.md](docs/HIPAA_ALIGNMENT.md)).

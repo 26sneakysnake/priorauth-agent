@@ -412,8 +412,9 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
   #1 ran its configuration check and skipped every deploy and smoke job, as expected while nothing is configured.
 
 **Left**
-- Not deployed: no access to Azure or Vercel from here. `deploy.yml` has never run; the commands of `docs/DEPLOY.md`
-  have not been executed.
+- Not deployed from here: no access to Azure or Vercel from this environment. `deploy.yml` has never deployed
+  anything; the commands of `docs/DEPLOY.md` were not executed from here. The demo was later deployed by hand by the
+  repository owner, not by `deploy.yml` (see "Demo deployment" below).
 - One replica only (state per container); the live mode's counters reset on restart; the live mode cannot redact
   names from free text (no structured header), hence the "synthetic data only" warning.
 
@@ -446,7 +447,8 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
 - CI run #24 (`9233215`) green on its four jobs.
 
 **Left**
-- The demo URL line will change once `docs/demo_url.txt` holds the deployed URL (then `make readme`).
+- The demo URL line will change once `docs/demo_url.txt` holds the deployed URL (then `make readme`). Done later,
+  see "Demo deployment" below.
 - The screenshot is a still image, not a GIF.
 
 ## Step C (P10) — Audit from a fresh clone
@@ -479,10 +481,11 @@ the Postgres and Jaeger test services of CI available locally)
 - CI run #25 (`c549099`) green on its four jobs.
 
 **Not verified**
-- **Deployment.** Nothing is deployed:
-  - `deploy.yml` has only run its configuration check;
-  - the commands of `docs/DEPLOY.md` have not been executed;
-  - the nightly smoke test has nothing to test yet.
+- **Deployment.** At the time of the audit nothing was deployed:
+  - `deploy.yml` had only run its configuration check;
+  - the commands of `docs/DEPLOY.md` had not been executed;
+  - the nightly smoke test had nothing to test.
+  The demo was deployed by hand afterwards, without `deploy.yml` (see "Demo deployment" below).
 - **Live runs.** `eval-live.yml` has never run (0 runs on GitHub). The demo's live mode was run once by hand, not in
   a deployed container.
 - **The audit itself:**
@@ -500,6 +503,8 @@ the Postgres and Jaeger test services of CI available locally)
   and variables). Then run **Deploy demo** and check that its smoke job is green.
 - **Demo link.** Only after that smoke job is green: put the UI URL in `docs/demo_url.txt`, run `make readme` and
   commit. Optionally retake the screenshot on the deployed demo.
+- What happened instead (see "Demo deployment" below): the demo was deployed by hand, not through **Deploy demo**,
+  and the smoke test was run by hand against it before the URL went into `docs/demo_url.txt`.
 - **Paid live runs (optional).** Add the `ANTHROPIC_API_KEY` secret for `eval-live.yml`, or leave it absent: CI
   needs no key.
 - **Key hygiene.** Revoke or rotate the API key used for the recordings once no more recordings are planned.
@@ -557,3 +562,30 @@ the Postgres and Jaeger test services of CI available locally)
   mutable `main` tag (`docs/LIMITS.md` §11).
 - Policies are not versioned and decisions do not record a policy version.
 - `priorauth decide` cannot run live; paid runs stay with `make eval-live`.
+
+## Demo deployment (by hand, by the repository owner)
+
+**Done**
+- The demo is live at https://priorauth-agent.vercel.app (`docs/demo_url.txt`). It was deployed by hand:
+  - API: Azure Container Apps, region Switzerland North, on an Azure for Students subscription;
+  - UI: Vercel.
+- **Where the API image comes from.** It is pulled from GHCR (`ghcr.io/26sneakysnake/priorauth-agent-api`,
+  published by `.github/workflows/images.yml`). ACR Tasks is blocked on that subscription, so the Azure build path
+  of `.github/workflows/deploy.yml` (`az acr build`, then `az containerapp update`) could not be used. That workflow
+  did not produce this deployment.
+- `README.md` is regenerated: it links the live demo and states its smoke test (`LIVE_SMOKE_DATE` in
+  `eval/readme.py`, checked against this section by `tests/test_readme.py`).
+
+**Measured**
+- On 2026-10-19 the repository owner ran the demo smoke test by hand against the live API and UI and it passed. The
+  command was `python -m priorauth.demo.smoke --api <API URL> --ui https://priorauth-agent.vercel.app`, which is
+  what `make smoke-demo` runs. Its output is not stored in the repository.
+- Read-only checks from this environment on 2026-10-19: `/login`, `/try`, `/api/healthz` (`{"status":"ok"}`) and
+  `/api/demo/info` (live mode off) answered 200 through the UI.
+
+**Not verified, left**
+- The nightly smoke test of `deploy.yml` does not run against this deployment. No other workflow checks it either,
+  so it can go down without any check failing.
+- Not recorded here: which image tag the container app runs, and whether later pushes to `main` reach the
+  deployment.
+- `deploy.yml` itself has still deployed nothing.

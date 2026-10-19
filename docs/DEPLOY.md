@@ -14,6 +14,13 @@ Nothing here has been run by the author of this file: there was no access to Azu
 compose file and `make smoke-demo` are tested in CI (`.github/workflows/ci.yml`, job `demo-images`); the commands
 below follow the Azure CLI and Vercel CLI documentation and have not been executed.
 
+**The live demo did not come from this workflow.** The demo at the URL in `docs/demo_url.txt` was deployed by hand
+by the repository owner: Azure Container Apps (Switzerland North, Azure for Students subscription) and Vercel. ACR
+Tasks (`az acr build`, used in §1 and by the workflow) is blocked on that subscription, so the API image was pulled
+from GHCR (`.github/workflows/images.yml`) instead. `deploy.yml` did not produce that deployment, and its nightly
+smoke test does not run against it. The smoke test was run by hand against it on 2026-10-19 (`docs/PROGRESS.md`,
+"Demo deployment").
+
 ## 0. What you need
 
 - An Azure subscription where you can create resource groups and app registrations; the Azure CLI (`az`, 2.60 or

@@ -67,6 +67,20 @@ def test_the_readme_opens_with_the_warnings_then_the_demo_account() -> None:
     assert "demo-reviewer" in head and "resets on every restart" in head and "docs/img/" in head
 
 
+def test_a_live_demo_link_comes_with_its_recorded_smoke_test() -> None:
+    url = readme.demo_url()
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    if not url:
+        assert "Live demo: not deployed yet" in text
+        return
+    assert f"<{url}>" in text and "not deployed yet" not in text and "The demo is not deployed" not in text
+    assert f"passed against its live API and UI on {readme.LIVE_SMOKE_DATE}" in text
+    assert "deployed by hand, not by `deploy.yml`" in text  # the workflow must not be credited with it
+    progress = (ROOT / "docs" / "PROGRESS.md").read_text(encoding="utf-8")
+    record = progress[progress.index("## Demo deployment") :]
+    assert url in record and readme.LIVE_SMOKE_DATE in record
+
+
 def test_no_document_claims_compliance_or_certification() -> None:
     for path in [ROOT / "README.md", *sorted((ROOT / "docs").glob("*.md"))]:
         text = " ".join(path.read_text(encoding="utf-8").split())
