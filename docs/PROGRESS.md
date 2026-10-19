@@ -275,6 +275,8 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
   (`tests/test_audit.py`).
 - `make load-test` re-run with the production wiring (token, model view, encryption, audit): 200/200 done and
   matching gold; timings in `results/load_test.json` (the model is still simulated).
+- CI run #15 (`ac68995`) green: lint, the full suite with the Postgres and Jaeger services, `make hipaa-tests`, the
+  gate and the secret scan.
 
 **Left**
 - The effect of redaction and page selection on a real model's accuracy is **not measured**: no API call was made,
