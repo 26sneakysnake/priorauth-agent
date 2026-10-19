@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: docker/api.Dockerfile
+      args:
+        BASE_REGISTRY: ${BASE_REGISTRY:-docker.io/library}
     image: priorauth-api:local
     ports: ["127.0.0.1:8000:8000"]
     environment:
@@ -13,6 +15,8 @@ services:
     build:
       context: .
       dockerfile: docker/ui.Dockerfile
+      args:
+        BASE_REGISTRY: ${BASE_REGISTRY:-docker.io/library}
     image: priorauth-ui:local
     ports: ["127.0.0.1:3000:3000"]
     environment:

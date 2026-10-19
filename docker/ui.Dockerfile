@@ -2,7 +2,8 @@
 # request time, so one image works with any API address.
 # Behind a TLS-intercepting proxy: docker build --secret id=extra_ca,src=/path/to/ca-bundle.crt ... (optional).
 #   docker build -f docker/ui.Dockerfile -t priorauth-ui .
-FROM public.ecr.aws/docker/library/node:22-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392 AS build
+ARG BASE_REGISTRY=docker.io/library
+FROM ${BASE_REGISTRY}/node:22-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392 AS build
 WORKDIR /ui
 COPY ui/package.json ui/package-lock.json ./
 RUN --mount=type=secret,id=extra_ca,required=false \
@@ -12,7 +13,7 @@ COPY ui/ ./
 ENV NEXT_TELEMETRY_DISABLED=1 NEXT_OUTPUT=standalone
 RUN npm run build
 
-FROM public.ecr.aws/docker/library/node:22-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392
+FROM ${BASE_REGISTRY}/node:22-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392
 WORKDIR /ui
 ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 PORT=3000 HOSTNAME=0.0.0.0
 COPY --from=build --chown=node:node /ui/.next/standalone ./

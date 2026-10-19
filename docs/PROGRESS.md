@@ -386,7 +386,8 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
 - UI: permanent banner "Demonstration on synthetic data…", demo account shown on the login page (one click), `/try`
   page with "Run the agent": decision, PEND reasons, cited text highlighted, link to the full review page; live-mode
   form with its "synthetic data only" warning when enabled.
-- `docker/api.Dockerfile`, `docker/ui.Dockerfile` (base images from the public ECR mirror, pinned by digest),
+- `docker/api.Dockerfile`, `docker/ui.Dockerfile` (official base images pinned by digest; `BASE_REGISTRY` selects an
+  identical mirror where Docker Hub rate-limits, as here),
   `docker-compose.demo.yml`, `make demo-up`, `make smoke-demo URL=… [UI_URL=…]` (`priorauth.demo.smoke`).
 - CI job `demo-images`: builds both images, starts them, runs the smoke test through the UI proxy.
 - `.github/workflows/deploy.yml` (API → Azure Container Apps with OIDC, UI → Vercel CLI, then the smoke test; nightly
