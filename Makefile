@@ -3,10 +3,10 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate readme report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests audit ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate readme report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests audit ui-setup ui-test ui-e2e demo demo-up demo-down smoke-demo k8s-smoke up down
 
 help: ## List available targets
-	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z0-9_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
 
 setup: ## Install the locked environment and the git pre-commit hook
 	$(UV) sync --locked
@@ -108,6 +108,9 @@ demo-down: ## Stop the demo containers
 smoke-demo: ## Smoke test of a running demo: make smoke-demo URL=<api url> [UI_URL=<ui url>]
 	@test -n "$(URL)" || { echo "usage: make smoke-demo URL=<api base url> [UI_URL=<ui base url>]"; exit 1; }
 	$(UV) run python -m priorauth.demo.smoke --api "$(URL)" $(if $(UI_URL),--ui "$(UI_URL)")
+
+k8s-smoke: ## The demo on a throwaway kind cluster (deploy/k8s/overlays/kind): build, load, apply, smoke test
+	scripts/k8s_smoke.sh
 
 demo: ## Demo API on :8000 (examples decided by replayed real responses); then `cd ui && npm run dev`
 	$(UV) run python -m priorauth.demo --port 8000

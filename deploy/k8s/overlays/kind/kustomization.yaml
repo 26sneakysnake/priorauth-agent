@@ -1,0 +1,12 @@
+# kind: the images built by docker-compose.demo.yml and loaded into the cluster with `kind load docker-image`.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+images:
+  - name: ghcr.io/26sneakysnake/priorauth-agent-api
+    newName: priorauth-api
+    newTag: local
+  - name: ghcr.io/26sneakysnake/priorauth-agent-ui
+    newName: priorauth-ui
+    newTag: local

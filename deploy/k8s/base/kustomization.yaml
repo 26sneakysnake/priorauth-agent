@@ -1,0 +1,21 @@
+# The public demo on Kubernetes: the API (workers in-process, SQLite seeded at start) and the reviewer UI.
+# Synthetic data only; every pod restart resets the state, so each Deployment runs exactly one replica.
+#   kubectl apply -k deploy/k8s/base            images from GHCR (.github/workflows/images.yml)
+#   kubectl apply -k deploy/k8s/overlays/kind   locally built images, tested in CI (make k8s-smoke)
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: priorauth-demo
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: priorauth-demo
+resources:
+  - namespace.yaml
+  - api.yaml
+  - ui.yaml
+images:
+  - name: priorauth-api
+    newName: ghcr.io/26sneakysnake/priorauth-agent-api
+    newTag: main
+  - name: priorauth-ui
+    newName: ghcr.io/26sneakysnake/priorauth-agent-ui
+    newTag: main
