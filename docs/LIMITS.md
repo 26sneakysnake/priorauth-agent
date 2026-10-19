@@ -93,11 +93,11 @@ From the `*_errors.jsonl` files of the systems on test and robust (never used to
 Aligned with the principles of the HIPAA Security Rule, synthetic data, no claim of compliance or certification, no
 BAA with anyone. What each control does not do:
 
-- **Model view, not measured with a model.** Redaction and page selection were checked with the scripted oracle
-  only (`tests/test_redaction.py`); how a real model's accuracy changes with them is unknown. No API call was made.
-- **Page selection** is a keyword deny-list written from dev headings. Test shares dev's generator, so its 100 %
-  evidence recall says little about real records; on robust, whose headings it does not know, it withholds nothing
-  (`results/minimum_necessary.json`). It cannot read scanned images, only text.
+- **Model view, measured once with a real model (P7bis), see §9.** In P6 it was checked with the scripted oracle only.
+- **The page-selection rule was written from dev and sends 100 % of the pages on robust.** It is a keyword deny-list
+  built from the dev document headings; on robust, whose headings it does not know, it withholds nothing: 224 of 224
+  pages sent, against 62.1 % on dev and 61.0 % on test (`results/minimum_necessary.json`). Test shares dev's
+  generator, so its 100 % evidence recall says little about real records. It cannot read scanned images, only text.
 - **De-identification** removes only the identifiers the structured header announces (and phone numbers): a
   misspelled or OCR-damaged name, an address, a relative's name, provider names, NPIs and service dates stay. The
   residual check in `results/minimum_necessary.json` looks for the same identifiers, so its zero is by construction;
@@ -115,9 +115,12 @@ BAA with anyone. What each control does not do:
 
 ## 8. Reviewer UI (P7)
 
-- Demonstrated only with the scripted oracle (`eval/demo_api.py`): the review pages have never shown a real model's
-  findings. The UI says which system extracted the evidence.
-- A human approval does not propagate: the ClaimResponse and the webhook still carry the engine's PEND.
+- The demo (`eval/demo_api.py`) shows real model findings, but replayed: claude-haiku-5-5 responses recorded once on
+  dev by `eval/pipeline.py` (P7bis). Only the 100 dev cases have recordings; a new record cannot be decided without
+  `LLM_MODE=record` or `live` and a key. The UI says which system extracted the evidence.
+- A reviewer's approval is final for the ClaimResponse and the webhook (P7bis) but only approvals are: a reviewer
+  cannot turn an engine APPROVE into PEND, and "request more information" is recorded without changing the
+  ClaimResponse (it stays pended). There is no second-reviewer rule.
 - Reviewers see whole records with identifiers (no field masking for people); the review comment is free text,
   encrypted at rest but shown to every reviewer and admin.
 - The queue is computed in memory from every pended job (no pagination in the database).
@@ -127,3 +130,22 @@ BAA with anyone. What each control does not do:
 - Feedback cases from reviews keep the agent's evidence only where the reviewer did not change the status; a
   corrected criterion has no evidence in its gold label.
 - No accessibility audit, no internationalisation, desktop layout first.
+
+## 9. The API pipeline measured with a real model (P7bis)
+
+`results/pipeline_comparison.md` compares agent v2 on Haiku reading whole, unredacted records (P3 harness) with the
+same agent through the API pipeline (minimum-necessary pages, redacted identifiers), one recorded run each.
+
+- **On dev, accuracy went down with the pipeline**: criterion accuracy 425/433 = 0.9815 against 429/433 = 0.9908,
+  decision accuracy 98/100 against 100/100, two unjustified PENDs (dev-059, dev-093) where there were none. In both,
+  the model quoted the page summary that `list_pages` returns ("Group | Rheumatology Follow-up", two heading lines
+  joined) as if it were page text; the verifier rejected the quote and the criterion fell to INSUFFICIENT. Five
+  laterality criteria expected NOT_MET were reported NOT_MET with `conflict: true` and kept as INSUFFICIENT (still
+  pended). On test the pipeline did better (0.9884 against 0.9806), on robust the same (0.9831).
+- Dangerous approvals stayed at 0 on all three splits (0/65, 0/39, 0/28).
+- One run per arm, no repetition: the model cannot be run at temperature 0, so the differences above are within what
+  run-to-run variation alone could produce (the Wilson intervals overlap on every split). They are reported, not
+  claimed as an effect of the pipeline.
+- Nothing was changed after looking at test or robust; nothing was changed after dev either (the dev errors above
+  were analysed, not fixed).
+- The pipeline ran in-process on SQLite (the same code as the API, not a deployment).

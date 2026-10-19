@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo up down
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run field-key openapi load-test load-test-postgres minimum-necessary pipeline hipaa-tests ui-setup ui-test ui-e2e demo up down
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -65,8 +65,12 @@ field-key: ## Print a new Fernet key for PRIORAUTH_FIELD_KEY (never commit it)
 openapi: ## Export the API schema to docs/openapi.json
 	$(UV) run python -m priorauth.api.openapi
 
-load-test: ## 200 cases at once against the API with a SIMULATED model; writes results/load_test.json
+load-test: ## 200 cases at once against the API with a SIMULATED model, on SQLite; writes results/load_test.json
 	$(UV) run python -m eval.load_test
+
+load-test-postgres: ## Same on Postgres (LOAD_TEST_DATABASE_URL, its tables are dropped); results/load_test_postgres.json
+	@test -n "$$LOAD_TEST_DATABASE_URL" || { echo "set LOAD_TEST_DATABASE_URL (a Postgres URL whose tables may be dropped)"; exit 1; }
+	$(UV) run python -m eval.load_test --database-url "$$LOAD_TEST_DATABASE_URL" --reset-database --out results/load_test_postgres.json
 
 pipeline: ## Replay agent v2 through the API pipeline on every split (real-model cassettes) + results/pipeline_comparison.md
 	for s in dev test robust; do $(UV) run python -m eval.pipeline --split $$s || exit 1; done

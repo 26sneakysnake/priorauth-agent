@@ -1,15 +1,17 @@
 """Load test: every synthetic case submitted at once to the API, with a SIMULATED model.
 
-    make load-test        # 200 cases, 32 workers, simulated model latency 0.25 s + up to 0.25 s per call
+    make load-test            # SQLite (a fresh file), 200 cases, 32 workers -> results/load_test.json
+    make load-test-postgres   # the same against LOAD_TEST_DATABASE_URL (Postgres) -> results/load_test_postgres.json
 
-No model is called. The "model" is priorauth.llm.fake.OracleTransport, a scripted oracle that replays the gold
-labels with a seeded, simulated latency: this measures the API, the queue, the workers and the database under
-concurrency, not a model. The API runs in-process (httpx.ASGITransport, no network) on a fresh SQLite file, with the
-production wiring otherwise: bearer token (demo `system` user), model view (minimum necessary + redaction), field
-encryption (an ephemeral key unless PRIORAUTH_FIELD_KEY is set) and the audit log.
+What runs is the API's production code path: bearer token (demo `system` user), FHIR parsing, job queue and worker
+pool, model view (minimum necessary + redaction), verifier and engine, field encryption (an ephemeral key unless
+PRIORAUTH_FIELD_KEY is set) and the audit log. What does not: this is NOT a production deployment. No model is called
+(priorauth.llm.fake.OracleTransport replays the gold labels with a seeded, simulated latency); the API runs in the
+test process (httpx.ASGITransport: no network, no TLS, one process); the database is the one given by
+--database-url, SQLite by default. It measures the API, the queue, the workers and the database under concurrency.
 
-Output: results/load_test.json. Its `deterministic` section (counts, outcomes, agreement with gold) is identical
-from run to run; its `timing` section depends on the machine, which is described in `machine`.
+Output: its `deterministic` section (counts, outcomes, agreement with gold) is identical from run to run; its
+`timing` section depends on the machine (`machine`) and the database (`settings.database`).
 """
 
 import argparse
@@ -26,14 +28,14 @@ from pathlib import Path
 from typing import Any
 
 import httpx
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 
 from eval.metrics import distribution
 from eval.run import load_split
 from priorauth.agent.loop import AgentSystem
 from priorauth.api.app import Settings, create_app
 from priorauth.api.fhir import case_to_bundle
-from priorauth.jobs.db import CaseRow, JobRow
+from priorauth.jobs.db import Base, CaseRow, JobRow, make_engine
 from priorauth.llm.fake import fake_client, protected_oracle
 from priorauth.llm.pricing import HAIKU
 from priorauth.pipeline import System
@@ -60,7 +62,37 @@ def machine() -> dict[str, Any]:
     }
 
 
-async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, seed: int, data: Path) -> dict[str, Any]:
+async def describe_database(url: str) -> str:
+    if url.startswith("sqlite"):
+        return "SQLite (aiosqlite), a fresh file in a temporary directory"
+    engine = make_engine(url)
+    try:
+        async with engine.connect() as conn:
+            version = (await conn.execute(text("SHOW server_version"))).scalar_one()
+    finally:
+        await engine.dispose()
+    pool = "SQLAlchemy default pool (5 connections + 10 overflow)"
+    return f"PostgreSQL {version} (asyncpg), tables dropped and recreated before the run; {pool}"
+
+
+async def reset_database(url: str) -> None:
+    engine = make_engine(url)
+    try:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.drop_all)
+    finally:
+        await engine.dispose()
+
+
+async def run(
+    n_cases: int,
+    workers: int,
+    latency_s: float,
+    jitter_s: float,
+    seed: int,
+    data: Path,
+    database_url: str | None = None,
+) -> dict[str, Any]:
     pairs = [p for split in ("dev", "test", "robust") for p in load_split(data, split)][:n_cases]
     golds = {case.case_id: gold for case, gold in pairs}
     transport = protected_oracle(pairs, latency_s=latency_s, jitter_s=jitter_s, seed=seed)
@@ -84,8 +116,12 @@ async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, see
 
     password = secrets.token_urlsafe(16)
     with tempfile.TemporaryDirectory() as tmp:
+        url = database_url or f"sqlite+aiosqlite:///{Path(tmp) / 'load.db'}"
+        if database_url:
+            await reset_database(url)
+        database = await describe_database(url)
         settings = Settings(
-            database_url=f"sqlite+aiosqlite:///{Path(tmp) / 'load.db'}",
+            database_url=url,
             workers=workers,
             jwt_secret=secrets.token_urlsafe(32),
             audit_key=secrets.token_urlsafe(32),
@@ -141,8 +177,9 @@ async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, see
     e2e = [(r[4] - r[3]).total_seconds() for r in rows if r[4] is not None]
     return {
         "schema_version": 1,
-        "description": "Load test of the API, queue and workers with a SIMULATED model (eval/load_test.py). "
-        "No model was called: latency and answers come from a scripted oracle. Generated, never edited by hand.",
+        "description": "Load test of the API, queue, workers and database with a SIMULATED model "
+        "(eval/load_test.py). No model was called: latency and answers come from a scripted oracle. Not a production "
+        "deployment (in-process HTTP, one process). Generated, never edited by hand.",
         "llm": {
             "simulated": True,
             "transport": "priorauth.llm.fake.OracleTransport (replays gold labels; not a model)",
@@ -154,9 +191,11 @@ async def run(n_cases: int, workers: int, latency_s: float, jitter_s: float, see
         "settings": {
             "cases": len(pairs),
             "workers": workers,
-            "database": "SQLite file (aiosqlite), encrypted record fields, audit log",
-            "api": "in-process ASGI (httpx.ASGITransport), no network, bearer token",
-            "system": "agent@v2 behind the model view (minimum necessary + redaction)",
+            "database": database,
+            "api": "in-process ASGI (httpx.ASGITransport): no network, no TLS, one process; bearer token",
+            "code_path": "the API's production code: FHIR parsing, queue, workers, model view (minimum necessary + "
+            "redaction), verifier, engine, encrypted record fields, audit log",
+            "not_production": "simulated model, in-process HTTP, single process; not a deployment",
         },
         "deterministic": {
             "cases": len(rows),
@@ -184,8 +223,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--data", type=Path, default=Path("data"))
     parser.add_argument("--out", type=Path, default=OUTPUT)
+    parser.add_argument("--database-url", help="default: a fresh SQLite file; any other database is wiped first")
+    parser.add_argument("--reset-database", action="store_true", help="required with --database-url: drop its tables")
+    parser.add_argument("--expect", type=Path, help="fail unless the deterministic section equals this file's")
     args = parser.parse_args(argv)
-    report = asyncio.run(run(args.cases, args.workers, args.latency, args.jitter, args.seed, args.data))
+    if args.database_url and not args.reset_database:
+        parser.error("--database-url drops every table of that database first; confirm with --reset-database")
+    report = asyncio.run(
+        run(args.cases, args.workers, args.latency, args.jitter, args.seed, args.data, args.database_url)
+    )
+    args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     d, t = report["deterministic"], report["timing"]
     print(
@@ -193,6 +240,12 @@ def main(argv: list[str] | None = None) -> int:
         f"{t['throughput_cases_per_s']} cases/s, peak {t['peak_concurrent_llm_calls']} concurrent (simulated) "
         f"model calls -> {args.out}"
     )
+    if args.expect:
+        expected = json.loads(args.expect.read_text(encoding="utf-8"))["deterministic"]
+        if expected != d:
+            print(f"deterministic section differs from {args.expect}: {expected} != {d}")
+            return 1
+        print(f"deterministic section matches {args.expect}")
     return 0
 
 

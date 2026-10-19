@@ -273,8 +273,9 @@ tests (`tests/test_hipaa_alignment.py` checks they exist, `make hipaa-tests` run
 - Six kinds of tampering detected (modified entry, entry re-hashed without the key, deleted middle or last entry,
   relinked entry, rewound head) and 60 concurrent appends from two writers stay one chain, on SQLite and Postgres 16
   (`tests/test_audit.py`).
-- `make load-test` re-run with the production wiring (token, model view, encryption, audit): 200/200 done and
-  matching gold; timings in `results/load_test.json` (the model is still simulated).
+- `make load-test` re-run through the API's production code path (token, model view, encryption, audit) on SQLite,
+  in-process, with the simulated model: 200/200 done and matching gold; timings in `results/load_test.json`. (This
+  is not a production configuration: no Postgres, no network, no real model; see P7bis for the Postgres run.)
 - CI run #15 (`ac68995`) green: lint, the full suite with the Postgres and Jaeger services, `make hipaa-tests`, the
   gate and the secret scan.
 

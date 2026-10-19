@@ -50,6 +50,16 @@ jobs:
         run: make hipaa-tests
       - name: Regression gate (replayed cassettes)
         run: make gate
+      - name: Load tests on SQLite and on the Postgres service (simulated model; deterministic part checked)
+        run: |
+          uv run python -m eval.load_test --out ci-results/load_test.json --expect results/load_test.json
+          uv run python -m eval.load_test --database-url "$PRIORAUTH_TEST_POSTGRES_URL" --reset-database \
+            --out ci-results/load_test_postgres.json --expect results/load_test_postgres.json
+      - name: Upload the load-test results of this runner
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-results
+          path: ci-results/
 
   ui:
     name: reviewer UI (types, Vitest, build, Playwright)

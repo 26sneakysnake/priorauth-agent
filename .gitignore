@@ -22,3 +22,4 @@ eval/cassettes/_scratch/
 live-results/
 priorauth.db
 priorauth.db-*
+ci-results/
