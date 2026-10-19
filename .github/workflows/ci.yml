@@ -17,8 +17,18 @@ jobs:
     name: lint, types, tests
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    services:
+      postgres: # the job-queue tests also run against Postgres (FOR UPDATE SKIP LOCKED)
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: priorauth_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
     env:
       LLM_MODE: replay # every model call comes from eval/cassettes; no API key exists in this job
+      PRIORAUTH_TEST_POSTGRES_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/priorauth_test
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6

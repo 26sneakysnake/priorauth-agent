@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 UV ?= uv
 
-.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets
+.PHONY: help setup lint fmt test data data-check data-pdf eval-offline gate report eval-live secrets run openapi
 
 help: ## List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -54,3 +54,9 @@ gate: ## Regression gate: replay the production agent on dev, compare with resul
 secrets: ## Secret scan of every commit and of the working tree (needs gitleaks >= 8.28 on PATH, as in CI)
 	gitleaks git --redact --no-banner --exit-code 1 .
 	gitleaks dir --redact --no-banner --exit-code 1 .
+
+run: ## API + workers on SQLite (LLM_MODE as set; replay misses on new cases, see docs/PROGRESS.md P4)
+	$(UV) run uvicorn priorauth.api.app:app --host 127.0.0.1 --port 8000
+
+openapi: ## Export the API schema to docs/openapi.json
+	$(UV) run python -m priorauth.api.openapi

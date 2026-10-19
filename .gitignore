@@ -20,3 +20,5 @@ out/
 # Debugging recordings (subset runs); their spend is still in results/spend.json
 eval/cassettes/_scratch/
 live-results/
+priorauth.db
+priorauth.db-*
